@@ -84,8 +84,8 @@ They are the difference between describing it accurately and overstating it.
 ${licenceStates.map(([code, s]) => `  - ${s.state} (${code}) — ${s.authority}, ${s.classification}, check at ${s.searchUrl}`).join('\n')}
   In the other 47 states the absence of a badge means there is no
   garage-door-specific register to check, not that a check failed.
-- **A listing is not a recommendation.** ${CLAIMS.listingMeaning} We have not
-  visited these businesses or inspected their work.
+- **${CLAIMS.listingMeaning}** We have not visited these businesses, inspected
+  their work or spoken to their customers, and we do not rank them by quality.
 - **Cost figures are national 2026 estimates, not quotes.** Ranges vary by
   region, door size, access and installer. Every figure quoted on a city or
   business page is read from the guide that owns it, so figures agree
