@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import BizCard from '../../../../components/BizCard.astro';
+import AdSlot from '../../../../components/AdSlot.astro';
+import { SITE, CLAIMS } from '../../../../lib/site.js';
+import {
+  getAllBusinesses, getBusiness, getBusinessesByCity, telHref,
+} from '../../../../lib/data.js';
+import { licenceInfo } from '../../../../lib/licensing.js';
+import { getGuide } from '../../../../lib/guides.js';
+import { breadcrumbSchema, businessSchema } from '../../../../lib/schema.js';
+import { fitTitle, fitDescription, clamp } from '../../../../lib/seo.js';
+import attribution from '../../../../data/overture-attribution.json';
+
+export function getStaticPaths() {
+  return getAllBusinesses().map((b) => ({
+    params: { state: b.stateSlug, city: b.citySlug, business: b.slug },
+  }));
+}
+
+const { state, city, business } = Astro.params;
+const b = getBusiness(state, city, business);
+const nearby = getBusinessesByCity(state, city)
+  .filter((x) => x.slug !== b.slug)
+  .slice(0, 3);
+
+const lic = licenceInfo(b.stateCode);
+const base = SITE.domain.replace(/\/$/, '');
+const path = `/garage-door-repair/${state}/${city}/${business}/`;
+const tel = telHref(b.phone);
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Garage door directory', url: '/garage-door-repair/' },
+  { name: b.state, url: `/garage-door-repair/${state}/` },
+  { name: b.city, url: `/garage-door-repair/${state}/${city}/` },
+  { name: b.name, url: path },
+];
+
+const schemas = [breadcrumbSchema(crumbs), businessSchema(b, base + path)];
+
+// Cost context from our own guides, same figures as everywhere else.
+const repair = getGuide('garage-door-repair-cost');
+const costRows = (repair?.costTable?.rows || []).filter(([job]) =>
+  /service call|torsion spring — pair|opener repair|opener replacement/i.test(job));
+
+// Map is embedded only when we actually have coordinates. An iframe pointing
+// at a query built from a partial address drops a pin in the wrong place,
+// which is worse than no map on a page whose whole job is "where are they".
+const mapEmbed = b.lat != null && b.lng != null
+  ? `https://maps.google.com/maps?q=${b.lat},${b.lng}&z=14&output=embed`
+  : null;
+---
+<BaseLayout
+  title={fitTitle(
+    `${b.name} — Garage Doors in ${b.city}, ${b.stateCode}`,
+    `${b.name} — ${b.city}, ${b.stateCode}`,
+    `${clamp(b.name, 40)} — ${b.city}, ${b.stateCode}`,
+    clamp(b.name, 58),
+  )}
+  description={fitDescription(
+    `${b.name} is a garage door company in ${b.city}, ${b.stateCode}. Contact details, service categories${b.licenceNumber ? ' and licence verification' : ''} and local repair costs.`,
+    `${b.name} — garage door company in ${b.city}, ${b.stateCode}. Phone number, services and what local garage door repairs typically cost.`,
+    `Garage door company in ${b.city}, ${b.stateCode}. Phone number, service categories and what local garage door repair and installation typically costs.`,
+  )}
+  canonical={path}
+  schemas={schemas}
+  type="article"
+>
+  <div class="wrap">
+    <Breadcrumbs items={crumbs} />
+
+    <div class="biz-layout">
+      <div>
+        <div style="display:flex;gap:.4rem;margin-bottom:.6rem;flex-wrap:wrap;">
+          {b.licenceNumber && <span class="badge badge-licence">✓ State licence verified</span>}
+          {b.services?.[0] && <span class="badge badge-cat">{b.services[0]}</span>}
+        </div>
+
+        <h1 style="margin-bottom:.5rem;">{b.name}</h1>
+        <p class="muted mb-3">
+          {b.street ? `${b.street}, ` : ''}{b.city}, {b.stateCode}{b.postalCode ? ` ${b.postalCode}` : ''}
+        </p>
+
+        {b.licenceNumber ? (
+          <p class="claim-note">
+            <strong>Licence #{b.licenceNumber}</strong> — matched to
+            {' '}{b.licenceStatus ? `a ${b.licenceStatus.toLowerCase()} record` : 'an active record'} on the
+            {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authority}</a>
+            {' '}register{b.licenceCheckedOn ? `, checked ${b.licenceCheckedOn}` : ''}.
+            {' '}{CLAIMS.licenceMeaning}
+          </p>
+        ) : (
+          <p class="claim-note">
+            {lic
+              ? `We have not matched a ${lic.authorityShort} licence number to this business. That is not a finding against the company — it may hold a licence under a different registered name. Ask them for the number and check it yourself on the ${lic.authorityShort} register.`
+              : `${b.state} does not license garage door installation as a separate trade, so there is no state garage door register to check. Ask for a certificate of general liability insurance instead.`}
+          </p>
+        )}
+
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+          {tel && <a href={tel} class="btn btn-signal">Call {b.phone}</a>}
+          {b.website && (
+            <a href={b.website} class="btn btn-ghost" rel="nofollow noopener" target="_blank">
+              Visit website
+            </a>
+          )}
+        </div>
+
+        <section class="prose">
+          <h2>About this listing</h2>
+          <p>
+            <strong>{b.name}</strong> is listed as a garage door business in
+            {' '}{b.city}, {b.stateCode}
+            {b.services?.length > 1
+              ? `, categorised in our source data as ${b.services.slice(0, 3).join(', ').toLowerCase()}`
+              : ''}.
+            {' '}{CLAIMS.listingMeaning} We have not visited this business, inspected
+            its work, or spoken to its customers.
+          </p>
+          <p>
+            {lic
+              ? `Garage door work is a licensed trade in ${b.state} — the ${lic.authority} issues ${lic.classification}. That makes the licence number the one credential you can verify yourself in about a minute, and it is worth doing before any work starts.`
+              : `Garage door work is not licensed as a separate trade in ${b.state}, so ask for proof of general liability insurance rather than a licence number, and check whether ${b.city} requires a permit for your job.`}
+          </p>
+          <p>
+            Before you call, it helps to know the going rate. Our
+            {' '}<a href="/guides/garage-door-repair-cost/">garage door repair cost guide</a>
+            {' '}breaks down every common job, and the
+            {' '}<a href="/guides/hiring-a-garage-door-company/">hiring checklist</a>
+            {' '}covers the four questions that reveal whether a quote is fair.
+          </p>
+        </section>
+
+        <section class="section-sm">
+          <h2 style="font-size:1.25rem;">What to expect to pay</h2>
+          <div class="table-scroll">
+            <table class="cost-table">
+              <caption>National 2026 estimates from our own cost guides — not quotes from {b.name}</caption>
+              <thead>
+                <tr><th scope="col">Job</th><th scope="col" style="text-align:right;">Typical cost</th></tr>
+              </thead>
+              <tbody>
+                {costRows.map(([job, cost]) => (
+                  <tr><td>{job}</td><td class="num">{cost}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {mapEmbed && (
+          <section class="section-sm">
+            <h2 style="font-size:1.25rem;">Location</h2>
+            <iframe
+              src={mapEmbed}
+              title={`Map showing the location of ${b.name} in ${b.city}, ${b.stateCode}`}
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="width:100%;height:300px;border:1px solid var(--line);border-radius:var(--radius);"
+            ></iframe>
+            <p class="muted mt-1" style="font-size:.8rem;">
+              Coordinates from {attribution.source}. The pin is the recorded business
+              location, which for a mobile service company may be an office rather
+              than a place to visit.
+            </p>
+          </section>
+        )}
+
+        <AdSlot label="Advertisement" />
+      </div>
+
+      <aside>
+        {nearby.length > 0 && (
+          <>
+            <h2 style="font-size:1.1rem;margin-bottom:.75rem;">
+              Other garage door companies in {b.city}
+            </h2>
+            <div class="grid" style="gap:.75rem;">
+              {nearby.map((n) => <BizCard biz={n} />)}
+            </div>
+          </>
+        )}
+        <p class="mt-3">
+          <a href={`/garage-door-repair/${state}/${city}/`}>← All {b.city} companies</a>
+        </p>
+        <p class="claim-note mt-3">
+          Is this your business and something here is wrong?
+          {' '}<a href="/contact/">Tell us</a> and we will correct or remove it.
+        </p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

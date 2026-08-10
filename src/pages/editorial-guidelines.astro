@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, LEGAL, CLAIMS } from '../lib/site.js';
+import { LICENCE_STATES } from '../lib/licensing.js';
+import { getSiteStats, formatCount } from '../lib/data.js';
+import attribution from '../data/overture-attribution.json';
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Editorial guidelines', url: '/editorial-guidelines/' },
+];
+const stats = getSiteStats();
+const states = Object.values(LICENCE_STATES);
+---
+<BaseLayout
+  title="How We Choose and Verify Listings"
+  description="How GarageDoorHQ builds its directory: the data we use, the bar a listing must clear, what a licence badge means, and why we publish no ratings."
+  canonical="/editorial-guidelines/"
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article style="margin-top:1rem;">
+      <h1 style="margin:1rem 0 .5rem;">Editorial guidelines</h1>
+      <p class="muted" style="margin:0 0 2rem;font-size:.85rem;">
+        Last updated: {LEGAL.lastUpdated}
+      </p>
+
+      <div class="prose">
+        <p>
+          This page exists so that nothing about how the directory works is a mystery. If
+          something here does not match what you see on a page, that is a bug and we want
+          to know: <a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a>.
+        </p>
+
+        <h2>Nobody pays to be here</h2>
+        <p>
+          We do not sell listings, placement, ranking, badges or removal from a competitor's
+          city page. There is no paid tier and no "featured" slot for sale. The site is
+          funded by advertising and, in future, affiliate arrangements — neither of which
+          affects which businesses are listed or in what order.
+        </p>
+        <p>
+          Listing is free, and <a href="/get-listed/">anyone can ask to be added</a>.
+        </p>
+
+        <h2>Where the listing data comes from</h2>
+        <p>
+          Business names, addresses, phone numbers, websites, coordinates and categories
+          come from <strong>{attribution.source}</strong>, release {attribution.release},
+          published under the {attribution.license}.
+        </p>
+        <p>
+          That choice is deliberate and it is a legal one. An Apache 2.0 licensed dataset
+          may lawfully be stored, republished and redistributed. Google Places data may not
+          — its terms forbid rehosting, and buying the same data from a scraper does not
+          change that, because the restriction follows the data rather than the method of
+          acquisition. We do not use it, in any form, from any intermediary.
+        </p>
+
+        <h2>Why there are no star ratings on this site</h2>
+        <p>
+          Because there is no rating source we are allowed to republish. The dataset above
+          contains no ratings and no reviews. The datasets that do contain them forbid
+          storing and reproducing them.
+        </p>
+        <p>
+          So a five-star average on this site could only have come from somewhere we are not
+          entitled to take it from, or from us inventing it. Rather than do either, we
+          publish no ratings at all and do not rank contractors by quality. The trade-off is
+          real and we would rather state it than paper over it.
+        </p>
+        <p>
+          For the same reason there are no opening hours. Where we ever show an availability
+          claim, the wording will be "advertises 24/7" rather than "open 24/7", because
+          {' '}{CLAIMS.hoursMeaning.replace(/^Where a listing says a contractor advertises 24\/7 service, that claim/, 'the claim')}
+        </p>
+
+        <h2>The quality bar a listing must clear</h2>
+        <p>A record is only published if all of the following are true:</p>
+        <ul>
+          <li><strong>Identified by category, not by name.</strong> The business is categorised as a garage door service in the source data. A business matched only because its name contains "garage door" is quarantined for human review, never auto-published — a name search alone returns storage companies, car washes, a gas station and, in one case, a condominium.</li>
+          <li><strong>Currently operating.</strong> The source marks the business as open. Closed records are dropped.</li>
+          <li><strong>Contactable.</strong> A phone number is present. A listing nobody can ring does not do the one job it exists to do.</li>
+          <li><strong>Locatable.</strong> A city is present, taken from the record's own address rather than inferred from a map bounding box.</li>
+          <li><strong>In scope.</strong> Storage units, parking operators, car washes, auto body shops and commercial-only rolling-steel and loading-dock suppliers are excluded. This site is about residential garage doors.</li>
+          <li><strong>In a city with enough listings.</strong> A city page needs at least three listings to publish. One or two makes a page too thin to be useful. Held-back records are not deleted — they publish automatically when the city reaches the threshold.</li>
+        </ul>
+        <p>
+          {formatCount(stats.businesses)} listings currently clear that bar, across
+          {' '}{formatCount(stats.cities)} cities. Every one has a phone number, because
+          that is a condition of publishing.
+        </p>
+
+        <h2>What a licence badge means</h2>
+        <p>
+          Garage door work is licensed as a distinct trade in exactly three states:
+        </p>
+        <ul>
+          {states.map((s) => (
+            <li><strong>{s.state}</strong> — {s.authority}, {s.classification}</li>
+          ))}
+        </ul>
+        <p>
+          In those three states a listing may show a <strong>✓ State licence verified</strong>
+          {' '}badge. That badge means precisely this: we matched a licence number to a
+          record on that state's public register on the date shown on the listing.
+        </p>
+        <p>
+          <strong>{CLAIMS.licenceMeaning}</strong> We do not verify insurance, pricing,
+          qualifications or the quality of anyone's work. We do not visit businesses. We do
+          not re-check a licence between data refreshes, which is why the check date is
+          published and why we tell you to check the number yourself — the register is free
+          and takes about a minute.
+        </p>
+        <p>
+          In the other 47 states there is no garage-door-specific register, so no listing
+          carries a badge. The absence of a badge outside California, Florida and Arizona
+          means nothing about the business. Those pages explain what to ask for instead,
+          which is proof of liability insurance.
+        </p>
+
+        <h2>How the cost guides are written</h2>
+        <ul>
+          <li>Figures are national 2026 estimates researched in-house. They are ranges, not quotes, and every guide says so.</li>
+          <li>Every guide carries a visible last-updated date.</li>
+          <li><strong>Figures must agree across the site.</strong> A cost quoted on a city page or a business page is read from the guide that owns it, not retyped — so the two cannot drift apart. When a guide's figure changes, everywhere that quotes it changes with it.</li>
+          <li>We do not publish two pages targeting the same question. Two of our own pages competing for one search means the weaker one wins, which serves nobody.</li>
+          <li>We publish a guide when it is finished, not as a stub. There are no placeholder pages on this site.</li>
+        </ul>
+
+        <h2>Safety comes before completeness</h2>
+        <p>
+          We do not publish instructions for garage door spring or cable work, and we will
+          not, regardless of search demand for them. A wound torsion spring holds enough
+          stored energy to cause serious injury, and a partial instruction is more dangerous
+          than none. Where the honest answer to "how do I do this" is "you should not", the
+          page says that and stops.
+        </p>
+
+        <h2>Corrections</h2>
+        <p>
+          If a figure, a listing or a licence detail is wrong, email
+          {' '}<a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a>. We correct
+          errors on the page rather than quietly deleting them, and if a listing is removed
+          its URL redirects to the city page rather than returning an error.
+        </p>
+        <p>
+          {SITE.name} is run by {LEGAL.founderName}, {LEGAL.founderRole} — see
+          {' '}<a href="/about/">about</a>.
+        </p>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

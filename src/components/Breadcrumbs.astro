@@ -1,0 +1,18 @@
+---
+// items: [{ name, url }] — the last item is the current page and is not
+// linked. Pair every use with breadcrumbSchema(items) so the visible trail
+// and the BreadcrumbList structured data cannot disagree.
+const { items } = Astro.props;
+---
+<nav class="crumbs" aria-label="Breadcrumb">
+  {items.map((it, i) => (
+    <>
+      {i > 0 && <span class="sep" aria-hidden="true">/</span>}
+      {i < items.length - 1 ? (
+        <a href={it.url}>{it.name}</a>
+      ) : (
+        <span aria-current="page" style="color:var(--ink-soft);">{it.name}</span>
+      )}
+    </>
+  ))}
+</nav>

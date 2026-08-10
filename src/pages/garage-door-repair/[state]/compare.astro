@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { getAllStates, getState, getCitiesByState } from '../../../lib/data.js';
+import { licenceInfo } from '../../../lib/licensing.js';
+import { breadcrumbSchema, itemListSchema } from '../../../lib/schema.js';
+import { fitTitle, fitDescription } from '../../../lib/seo.js';
+
+// Only states with more than one city get a comparison page. A "compare"
+// table with a single row is a thin page with no reason to exist, and it
+// would still need indexing.
+export function getStaticPaths() {
+  return getAllStates()
+    .filter((s) => s.cityCount > 1)
+    .map((s) => ({ params: { state: s.stateSlug } }));
+}
+
+const { state } = Astro.params;
+const s = getState(state);
+const lic = licenceInfo(s.stateCode);
+
+// Server-rendered in the order the table defaults to: most listings first.
+// AirProHQ's comparison table shipped sorting ascending on first click,
+// which is backwards for someone comparing options — the useful answer to
+// "which city has the most choice" is at the top, not the bottom.
+const cities = getCitiesByState(state);
+
+const url = `/garage-door-repair/${state}/compare/`;
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Garage door directory', url: '/garage-door-repair/' },
+  { name: s.state, url: `/garage-door-repair/${state}/` },
+  { name: 'Compare cities', url },
+];
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  itemListSchema(cities.map((c) => ({ name: `${c.city}, ${c.stateCode}`, ...c })),
+    (c) => `/garage-door-repair/${c.stateSlug}/${c.citySlug}/`),
+];
+---
+<BaseLayout
+  title={fitTitle(
+    `${s.state} Garage Door Companies by City`,
+    `Compare ${s.state} Cities`,
+  )}
+  description={fitDescription(
+    `Compare garage door companies across ${s.cityCount} ${s.state} cities — listing counts, how many have a street address and how many have a website.`,
+    `Side-by-side comparison of garage door listing coverage across ${s.cityCount} cities in ${s.state}, sorted by number of companies listed.`,
+  )}
+  canonical={url}
+  schemas={schemas}
+>
+  <div class="wrap">
+    <Breadcrumbs items={crumbs} />
+
+    <span class="eyebrow">{s.state}</span>
+    <h1 style="margin:.5rem 0 .75rem;">Compare {s.state} cities</h1>
+    <p class="muted mb-3" style="max-width:62ch;">
+      How much choice there is in each {s.state} city, and how complete the listings
+      are. Sorted by number of listings, highest first.
+    </p>
+
+    <p class="claim-note">
+      These columns measure the <em>data</em>, not the contractors. A city with more
+      listings offers more choice; it does not have better companies. We do not rank
+      contractors by quality. <a href="/editorial-guidelines/">How listings are chosen</a>.
+    </p>
+
+    {/* Progressive enhancement: the controls are hidden by CSS and only
+        revealed by the script below, so JavaScript-off visitors never see a
+        dead button. The table itself is complete and readable without any
+        script at all. */}
+    <div class="cmp-controls" id="cmpControls" role="group" aria-label="Sort the table">
+      <span class="muted" style="align-self:center;font-size:.85rem;">Sort by:</span>
+      <button type="button" class="cmp-sort" data-col="0" data-type="text">City</button>
+      <button type="button" class="cmp-sort" data-col="1" data-type="num" aria-pressed="true">Listings</button>
+      <button type="button" class="cmp-sort" data-col="2" data-type="num">With address</button>
+      <button type="button" class="cmp-sort" data-col="3" data-type="num">With website</button>
+      {lic && <button type="button" class="cmp-sort" data-col="4" data-type="num">Licence-verified</button>}
+    </div>
+
+    <div class="table-scroll">
+      <table class="cost-table" id="cmpTable">
+        <caption>Garage door listings by city in {s.state}</caption>
+        <thead>
+          <tr>
+            <th scope="col">City</th>
+            <th scope="col" style="text-align:right;">Listings</th>
+            <th scope="col" style="text-align:right;">With address</th>
+            <th scope="col" style="text-align:right;">With website</th>
+            {lic && <th scope="col" style="text-align:right;">Licence-verified</th>}
+          </tr>
+        </thead>
+        <tbody>
+          {cities.map((c) => (
+            <tr>
+              <td>
+                <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>{c.city}</a>
+              </td>
+              <td class="num" data-v={c.count}>{c.count}</td>
+              <td class="num" data-v={c.withAddress}>{c.withAddress}</td>
+              <td class="num" data-v={c.withWebsite}>{c.withWebsite}</td>
+              {lic && <td class="num" data-v={c.licensedCount}>{c.licensedCount}</td>}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    {/* A table on its own is a thin page, and this one is in the sitemap. The
+        sections below are the genuinely page-specific reading of the numbers —
+        what each column is actually measuring and what it is safe to conclude
+        from it — rather than boilerplate padding to clear a word count. */}
+    <section class="section-sm prose">
+      <h2>What each column means</h2>
+      <p>
+        <strong>Listings</strong> is how many garage door companies we publish in that
+        city. It is a measure of how much choice you have to call around, and it is
+        driven by two things: how many companies actually operate there, and how
+        completely the underlying open business data covers the area. A city with 8
+        listings is not necessarily better served than one with 5 — but you do have more
+        numbers to ring before you accept a quote.
+      </p>
+      <p>
+        <strong>With address</strong> counts listings that carry a street address rather
+        than a city only. It matters more than it looks: many garage door companies are
+        mobile operations run from a van, and a recorded street address is often an office
+        or a yard rather than somewhere you can visit. A high figure here means the data
+        for that city is well filled in, not that the companies have showrooms.
+      </p>
+      <p>
+        <strong>With website</strong> counts listings we hold a website for. A website is
+        where you can usually check how long a company has traded, whether it names a
+        licence number, and whether it makes a 24/7 claim — all things worth reading
+        before the first phone call.
+      </p>
+      {lic && (
+        <p>
+          <strong>Licence-verified</strong> counts listings whose licence number we matched
+          to an active record on the {lic.authority} register. {s.state} is one of only
+          three states that licenses garage door work as a distinct trade, so this column
+          exists here and does not exist on most other state pages. A zero does not mean
+          the companies are unlicensed — it means we have not matched a number yet, often
+          because the licence is held under a different registered name.
+        </p>
+      )}
+
+      <h2>What this table cannot tell you</h2>
+      <p>
+        Nothing here ranks contractors, and nothing here is a quality signal. We publish
+        no ratings and no reviews, because the openly licensed dataset these listings come
+        from contains none and the datasets that do contain them forbid republishing them.
+        So a city at the top of this table has more companies listed, and that is the only
+        claim being made.
+      </p>
+      <p>
+        Use it the way it is meant to be used: find the nearest city with a healthy number
+        of listings, open it, and ring two or three. Then ask each of them for the price
+        split into parts and labour, and for the spring cycle rating in writing — the two
+        questions from our
+        {' '}<a href="/guides/hiring-a-garage-door-company/">hiring checklist</a> that do
+        the most to reveal whether a quote is fair.
+      </p>
+    </section>
+
+    <section class="section-sm">
+      <h2 style="font-size:1.3rem;">Know the price before you call</h2>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem;">
+        <a href="/guides/garage-door-repair-cost/" class="btn btn-ink">Repair cost guide</a>
+        <a href="/guides/garage-door-spring-replacement-cost/" class="btn btn-ghost">Spring costs</a>
+        <a href="/guides/garage-door-opener-repair-cost/" class="btn btn-ghost">Opener costs</a>
+      </div>
+      <p class="mt-3">
+        <a href={`/garage-door-repair/${state}/`}>← All {s.state} cities</a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  const table = document.getElementById('cmpTable');
+  const controls = document.getElementById('cmpControls');
+  if (table && controls) {
+    // Reveal the controls only now that the script has run.
+    controls.classList.add('ready');
+
+    const tbody = table.querySelector('tbody');
+    const buttons = [...controls.querySelectorAll('.cmp-sort')];
+    // Tracks direction per column so a second click on the same button
+    // reverses it. Numeric columns start descending (the useful direction
+    // when comparing); the text column starts A–Z.
+    const dir = new Map();
+
+    function sort(col, type) {
+      const desc = dir.has(col) ? !dir.get(col) : type === 'num';
+      dir.set(col, desc);
+
+      const rows = [...tbody.rows];
+      rows.sort((a, b) => {
+        const av = a.cells[col], bv = b.cells[col];
+        if (type === 'num') {
+          const an = Number(av.dataset.v ?? 0), bn = Number(bv.dataset.v ?? 0);
+          return desc ? bn - an : an - bn;
+        }
+        const at = av.textContent.trim(), bt = bv.textContent.trim();
+        return desc ? bt.localeCompare(at) : at.localeCompare(bt);
+      });
+      rows.forEach((r) => tbody.appendChild(r));
+
+      buttons.forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.col) === col)));
+    }
+
+    buttons.forEach((b) => {
+      b.addEventListener('click', () => sort(Number(b.dataset.col), b.dataset.type));
+    });
+  }
+</script>

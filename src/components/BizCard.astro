@@ -1,0 +1,48 @@
+---
+import { telHref } from '../lib/data.js';
+
+// ─────────────────────────────────────────────────────────────
+//  There is no star rating on this card, and there must not be one.
+//  The only business data source this site may lawfully republish
+//  (Overture / Foursquare, Apache 2.0) carries no ratings. See the note at
+//  the top of src/lib/data.js.
+//
+//  What the card shows instead is what we can actually stand behind:
+//  where the business is, what the source says it does, whether a state
+//  licence was verified, and a phone number that works.
+// ─────────────────────────────────────────────────────────────
+const { biz } = Astro.props;
+const url = `/garage-door-repair/${biz.stateSlug}/${biz.citySlug}/${biz.slug}/`;
+const tel = telHref(biz.phone);
+---
+<article class="biz-card">
+  <div class="biz-card-head">
+    <div style="min-width:0;">
+      <h3 class="biz-name"><a href={url}>{biz.name}</a></h3>
+      <div class="biz-meta">
+        {biz.street ? `${biz.street}, ` : ''}{biz.city}, {biz.stateCode}
+        {biz.postalCode ? ` ${biz.postalCode}` : ''}
+      </div>
+    </div>
+    {biz.licenceNumber && (
+      <div class="biz-badges">
+        <span class="badge badge-licence" title="Licence number matched to an active record on the state register">
+          ✓ Licence verified
+        </span>
+      </div>
+    )}
+  </div>
+
+  {biz.services?.length > 0 && (
+    <div class="biz-tags">
+      {biz.services.slice(0, 3).map((t) => <span class="biz-tag">{t}</span>)}
+    </div>
+  )}
+
+  <div class="biz-foot">
+    {tel
+      ? <a href={tel} class="btn btn-signal">Call {biz.phone}</a>
+      : <a href={url} class="btn btn-signal">See details</a>}
+    <a href={url} class="btn btn-ghost">Profile</a>
+  </div>
+</article>

@@ -1,0 +1,21 @@
+{
+  "name": "garagedoorhq",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "GarageDoorHQ \u00e2\u20ac\u201d USA garage door contractor directory + guides. Astro static site.",
+  "scripts": {
+    "dev": "astro dev",
+    "check:pages": "node scripts/check-pages.mjs",
+    "prebuild": "node scripts/check-pages.mjs && node scripts/check-content.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check:content": "node scripts/check-content.mjs"
+  },
+  "dependencies": {
+    "astro": "7.0.6"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

@@ -1,0 +1,24 @@
+---
+import { SITE } from '../lib/site.js';
+
+// Renders nothing until AdSense is actually live — a publisher ID in
+// src/lib/site.js AND a real slot ID passed in. No placeholder boxes taking
+// up layout while ads are not running, which also keeps the mobile
+// Lighthouse layout-shift score honest before approval.
+const { slot = '', label = 'Advertisement', format = 'auto', style = '' } = Astro.props;
+const live = SITE.adsensePublisherId && slot;
+---
+{live && (
+  <div class="ad-slot" style={style}>
+    <div class="ad-label">{label}</div>
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client={SITE.adsensePublisherId}
+      data-ad-slot={slot}
+      data-ad-format={format}
+      data-full-width-responsive="true"
+    ></ins>
+    <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+)}

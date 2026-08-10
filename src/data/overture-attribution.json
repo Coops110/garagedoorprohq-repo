@@ -1,0 +1,7 @@
+{
+ "source": "Foursquare Open Source Places, distributed by Overture Maps Foundation",
+ "release": "2026-07-22.0",
+ "license": "Apache License 2.0",
+ "licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0",
+ "note": "Business names, addresses, phone numbers, websites, coordinates and categories derive from this dataset. Records were filtered to the garage_door_service category, restricted to businesses marked as currently operating, deduplicated, and reformatted. No ratings, reviews or opening hours are published because this dataset does not contain them."
+}

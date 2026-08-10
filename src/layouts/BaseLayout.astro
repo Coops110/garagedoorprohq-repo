@@ -1,0 +1,29 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import '../styles/global.css';
+
+// Every page on the site renders through here. That is what supplies the
+// <head> (canonical, OG, JSON-LD, analytics), the header, the footer and
+// the consent banner. scripts/check-pages.mjs fails the build if a page
+// skips it, because such a page still looks fine in a browser while
+// silently collecting no analytics and carrying no SEO tags.
+const seoProps = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <SEO {...seoProps} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <ConsentBanner />
+  </body>
+</html>

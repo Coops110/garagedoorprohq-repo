@@ -1,0 +1,223 @@
+---
+// ─────────────────────────────────────────────────────────────
+//  COOKIE CONSENT BANNER (GDPR / UK PECR)
+//
+//  Pairs with the Consent Mode v2 defaults in SEO.astro. Storage starts
+//  denied in UK/EEA/CH, so GA sends cookieless pings until the visitor
+//  accepts — coarse traffic numbers without a cookie, full data after.
+//
+//  Legal properties baked into the markup:
+//   • Decline is exactly as prominent as Accept. A reject buried behind a
+//     submenu is a common enforcement finding, so both buttons share one
+//     footprint and differ only in fill.
+//   • Nothing is pre-ticked, and scrolling is not treated as consent.
+//   • Consent is withdrawable — the footer button reopens this banner.
+//   • Declining actually deletes the GA cookies rather than only telling
+//     Google to stop using them.
+// ─────────────────────────────────────────────────────────────
+import { GA_ID, CONSENT_STORAGE_KEY, CONSENT_BANNER_SCOPE, SITE } from '../lib/site.js';
+
+// Nothing to consent to until analytics is configured, so render nothing.
+const active = Boolean(GA_ID);
+---
+{active && (
+  <>
+    <div
+      id="consent-banner"
+      class="consent-banner"
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="consent-title"
+      aria-describedby="consent-body"
+      hidden
+    >
+      <div class="consent-inner">
+        <div class="consent-copy">
+          <h2 id="consent-title">Cookies on {SITE.name}</h2>
+          <p id="consent-body">
+            We use analytics cookies to see which guides people find useful, so we can
+            improve them. They are optional — decline and the site works exactly the
+            same. We do not sell your data. See our <a href="/privacy/">privacy policy</a>.
+          </p>
+        </div>
+        <div class="consent-actions">
+          <button type="button" id="consent-reject" class="consent-btn consent-btn-ghost">
+            Decline
+          </button>
+          <button type="button" id="consent-accept" class="consent-btn consent-btn-solid">
+            Accept
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline define:vars={{ CONSENT_STORAGE_KEY, CONSENT_BANNER_SCOPE }}>
+      (function () {
+        var banner = document.getElementById('consent-banner');
+        if (!banner) return;
+
+        var acceptBtn = document.getElementById('consent-accept');
+        var rejectBtn = document.getElementById('consent-reject');
+        var lastFocused = null;
+
+        function read() {
+          try {
+            return JSON.parse(localStorage.getItem(CONSENT_STORAGE_KEY) || 'null');
+          } catch (e) { return null; }
+        }
+
+        function save(choice) {
+          try {
+            localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify({
+              choice: choice,
+              at: new Date().toISOString(),
+            }));
+          } catch (e) { /* private mode — the choice applies to this view only */ }
+        }
+
+        // Rough client-side region check, used ONLY to decide whether to show
+        // the banner. Whether storage is actually allowed is handled by
+        // Consent Mode's server-side region matching, so a wrong guess here
+        // cannot cause a consent violation.
+        function probablyNeedsBanner() {
+          if (CONSENT_BANNER_SCOPE === 'all') return true;
+          try {
+            var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            return /^(Europe|Atlantic\/(Canary|Madeira|Faroe|Azores)|Arctic\/Longyearbyen)/.test(tz);
+          } catch (e) {
+            return true; // uncertain → show it
+          }
+        }
+
+        // Consent Mode stops sending identifiers but does not remove cookies
+        // already written. Withdrawing consent should actually clear them.
+        // Cookies are set on the registrable domain, so expire against both
+        // the host and the dot-prefixed parent.
+        function clearAnalyticsCookies() {
+          var host = location.hostname;
+          var parent = host.replace(/^www\./, '');
+          var domains = [host, '.' + parent, parent];
+          document.cookie.split(';').forEach(function (raw) {
+            var name = raw.split('=')[0].trim();
+            if (!/^(_ga|_gid|_gat|_gcl)/.test(name)) return;
+            domains.forEach(function (d) {
+              document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + d;
+            });
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+          });
+        }
+
+        function apply(choice) {
+          var state = choice === 'accepted' ? 'granted' : 'denied';
+          if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+              ad_storage: state,
+              ad_user_data: state,
+              ad_personalization: state,
+              analytics_storage: state,
+            });
+          }
+          if (state === 'denied') clearAnalyticsCookies();
+        }
+
+        function show() {
+          lastFocused = document.activeElement;
+          banner.hidden = false;
+          requestAnimationFrame(function () { banner.classList.add('is-visible'); });
+          if (acceptBtn) acceptBtn.focus();
+        }
+
+        function hide() {
+          banner.classList.remove('is-visible');
+          var done = function () {
+            banner.hidden = true;
+            banner.removeEventListener('transitionend', done);
+            if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+          };
+          banner.addEventListener('transitionend', done);
+          // Fallback for disabled transitions (reduced motion, old browsers).
+          setTimeout(done, 400);
+        }
+
+        function choose(choice) {
+          save(choice);
+          apply(choice);
+          hide();
+        }
+
+        if (acceptBtn) acceptBtn.addEventListener('click', function () { choose('accepted'); });
+        if (rejectBtn) rejectBtn.addEventListener('click', function () { choose('declined'); });
+
+        // Esc dismisses without consenting — same effect as Decline for this
+        // visit, but deliberately not saved, so we ask again next time.
+        banner.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { apply('declined'); hide(); }
+        });
+
+        // Right to withdraw consent — wired to the footer button.
+        window.garageDoorHQOpenConsent = function () { show(); };
+
+        if (!read() && probablyNeedsBanner()) show();
+      })();
+    </script>
+  </>
+)}
+
+<style>
+  /* Mobile-first: stacked copy above two equal-width buttons. The row
+     layout is added back at the tablet breakpoint. */
+  .consent-banner {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999;
+    background: var(--ink); color: #fff;
+    box-shadow: 0 -8px 30px rgba(27, 34, 43, 0.22);
+    border-top: 3px solid var(--signal);
+    opacity: 0; transform: translateY(100%);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .consent-banner.is-visible { opacity: 1; transform: translateY(0); }
+  .consent-banner[hidden] { display: none; }
+
+  .consent-inner {
+    max-width: var(--wrap); margin: 0 auto;
+    padding: 1rem var(--gut) 1.15rem;
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+
+  .consent-copy { min-width: 0; }
+  .consent-copy h2 {
+    font-family: Inter, sans-serif; font-size: 0.95rem; font-weight: 700;
+    margin: 0 0 0.3rem; color: #fff; letter-spacing: 0;
+  }
+  .consent-copy p {
+    margin: 0; font-size: 0.85rem; line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85); max-width: 62ch;
+  }
+  .consent-copy a { color: #fff; text-decoration: underline; }
+  .consent-copy a:hover { color: var(--amber); }
+
+  /* Identical footprint on both buttons — declining must be no harder
+     than accepting. Only the fill differs. */
+  .consent-actions { display: flex; gap: 0.5rem; }
+  .consent-btn {
+    font: inherit; font-weight: 600; font-size: 0.9rem;
+    min-height: var(--tap); padding: 0.65rem 0.9rem; border-radius: 8px;
+    cursor: pointer; flex: 1 1 0; min-width: 0;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .consent-btn-solid { background: var(--signal); color: #fff; border: 1.5px solid var(--signal); }
+  .consent-btn-solid:hover { background: var(--signal-dark); border-color: var(--signal-dark); }
+  .consent-btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.55); }
+  .consent-btn-ghost:hover { background: rgba(255, 255, 255, 0.1); border-color: #fff; }
+  .consent-btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+  @media (min-width: 48em) {
+    .consent-inner { flex-direction: row; align-items: center; gap: 1.75rem; padding: 1.15rem var(--gut); }
+    .consent-copy { flex: 1 1 auto; }
+    .consent-actions { flex: 0 0 auto; gap: 0.6rem; }
+    .consent-btn { flex: 0 0 auto; min-width: 7.5rem; padding: 0.65rem 1.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .consent-banner { transition: none; }
+  }
+</style>

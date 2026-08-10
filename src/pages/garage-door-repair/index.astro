@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE, CLAIMS } from '../../lib/site.js';
+import { getAllStates, getAllCities, getSiteStats, formatCount } from '../../lib/data.js';
+import { breadcrumbSchema, itemListSchema } from '../../lib/schema.js';
+import { fitDescription } from '../../lib/seo.js';
+
+const states = getAllStates();
+const cities = getAllCities();
+const stats = getSiteStats();
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Garage door directory', url: '/garage-door-repair/' },
+];
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  ...(states.length
+    ? [itemListSchema(
+        states.map((s) => ({ name: s.state, stateSlug: s.stateSlug })),
+        (s) => `/garage-door-repair/${s.stateSlug}/`
+      )]
+    : []),
+];
+---
+<BaseLayout
+  title="Garage Door Repair Companies by State"
+  description={fitDescription(
+    `Browse garage door companies by state and city. ${formatCount(stats.businesses)} listings compiled from openly licensed public business data, every one with a phone number.`,
+    'Browse garage door repair and installation companies by state and city, compiled from openly licensed public business data with no paid placement.',
+  )}
+  canonical="/garage-door-repair/"
+  schemas={schemas}
+>
+  <div class="wrap">
+    <Breadcrumbs items={crumbs} />
+
+    <span class="eyebrow">Directory</span>
+    <h1 style="margin:.5rem 0 .75rem;">Garage door companies by state</h1>
+
+    {states.length > 0 ? (
+      <>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-value">{formatCount(stats.businesses)}</span>
+            <span class="stat-label">Listings</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">{formatCount(stats.cities)}</span>
+            <span class="stat-label">Cities</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">{formatCount(stats.states)}</span>
+            <span class="stat-label">States</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">{formatCount(stats.withPhone)}</span>
+            <span class="stat-label">With a phone</span>
+          </div>
+        </div>
+
+        <p class="claim-note">
+          {CLAIMS.listingMeaning} {CLAIMS.licenceMeaning}
+          <a href="/editorial-guidelines/">How listings are chosen</a>.
+        </p>
+
+        <h2 class="mt-3" style="font-size:1.2rem;">States</h2>
+        <ul class="link-list mt-2">
+          {states.map((s) => (
+            <li>
+              <a href={`/garage-door-repair/${s.stateSlug}/`}>
+                {s.state}
+              </a>
+              <span class="n">{s.cityCount} {s.cityCount === 1 ? 'city' : 'cities'} · {s.count}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 class="mt-4" style="font-size:1.2rem;">Cities</h2>
+        <ul class="link-list mt-2">
+          {cities.map((c) => (
+            <li>
+              <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>
+                {c.city}, {c.stateCode}
+              </a>
+              <span class="n">{c.count}</span>
+            </li>
+          ))}
+        </ul>
+      </>
+    ) : (
+      /* No listings staged yet. Saying so plainly beats an empty grid that
+         looks broken — and this page is in the sitemap from batch 0, before
+         any city page exists. */
+      <>
+        <p style="max-width:60ch;">
+          The directory is being built metro by metro rather than dumped nationally
+          in one go. Nothing is listed here yet.
+        </p>
+        <p style="max-width:60ch;" class="mt-2">
+          In the meantime, our <a href="/guides/">cost guides</a> cover what garage
+          door repairs and replacements actually cost in 2026, and
+          <a href="/guides/hiring-a-garage-door-company/">how to hire a garage door company</a>
+          {' '}covers what to ask before you book anyone.
+        </p>
+        <p class="claim-note mt-3">
+          Run a garage door company? <a href="/get-listed/">Get listed</a> — listing is free
+          and we do not sell placement.
+        </p>
+      </>
+    )}
+  </div>
+</BaseLayout>

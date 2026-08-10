@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { SITE, CLAIMS } from '../lib/site.js';
+import { getAllCities, getAllStates, getSiteStats, formatCount } from '../lib/data.js';
+import { getPillars, guides } from '../lib/guides.js';
+import { glossary } from '../lib/glossary.js';
+import { organizationSchema, websiteSchema } from '../lib/schema.js';
+
+const cities = getAllCities().slice(0, 8);
+const states = getAllStates();
+const stats = getSiteStats();
+const pillars = getPillars();
+
+const schemas = [organizationSchema(), websiteSchema()];
+---
+<BaseLayout
+  title={`${SITE.name} — Garage Door Repair Costs & Local Companies`}
+  description="What garage door repair actually costs in 2026, and which companies operate in your city. Cost guides researched in-house, no paid placement."
+  canonical="/"
+  schemas={schemas}
+>
+  <!-- HERO -->
+  <section class="wrap" style="padding:2rem 1.1rem 1rem;">
+    <span class="eyebrow">Garage doors, honestly priced</span>
+    <h1 style="margin:.6rem 0 .75rem;">
+      Find out what it should cost, then find someone to do it
+    </h1>
+    <p style="max-width:58ch;font-size:1.08rem;">
+      A snapped spring on a Sunday is a bad time to be guessing at prices.
+      {' '}{SITE.name} publishes what each garage door job actually costs in 2026, then
+      lists the companies operating in your city — with no paid placement and no
+      ratings we cannot stand behind.
+    </p>
+
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.25rem;">
+      <a href="/guides/garage-door-repair-cost/" class="btn btn-signal">See repair costs</a>
+      <a href="/garage-door-repair/" class="btn btn-ghost">Browse the directory</a>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO AND DO NOT CLAIM. Placed high on purpose: it is the
+       differentiator, and burying it would make it look like a disclaimer. -->
+  <section class="wrap" style="padding-top:1.5rem;">
+    <div class="highlight-box">
+      <h3>What a listing here means</h3>
+      <p>{CLAIMS.listingMeaning}</p>
+      <p>
+        In California, Florida and Arizona — the only three states that license garage
+        door work as its own trade — some listings carry a verified licence badge.
+        {' '}{CLAIMS.licenceMeaning} Everywhere else there is no state garage door
+        register to check, and we say so on the page rather than implying a check we
+        did not make.
+      </p>
+      <p>
+        We publish no star ratings and no opening hours, because no data source we are
+        legally allowed to republish contains them.
+        {' '}<a href="/editorial-guidelines/">Our editorial guidelines</a> explain both
+        in full.
+      </p>
+    </div>
+  </section>
+
+  <!-- GUIDES -->
+  <section class="wrap section">
+    <div class="section-head">
+      <span class="eyebrow">Cost guides</span>
+      <h2>Know the price before you call</h2>
+      <p>Researched in-house, updated with a visible date, and consistent with each other.</p>
+    </div>
+    <div class="grid grid-3">
+      {guides.map((g) => (
+        <article class="biz-card">
+          <h3 class="biz-name"><a href={`/guides/${g.slug}/`}>{g.h1.replace(/:.*$/, '')}</a></h3>
+          <p style="font-size:.9rem;">{g.description}</p>
+          <div class="biz-foot">
+            <a href={`/guides/${g.slug}/`} class="btn btn-ghost btn-block">Read the guide</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <AdSlot label="Advertisement" />
+
+  <!-- DIRECTORY -->
+  <section class="wrap section-sm">
+    <div class="section-head">
+      <span class="eyebrow">Directory</span>
+      <h2>Garage door companies near you</h2>
+      {states.length > 0 ? (
+        <p>
+          {formatCount(stats.businesses)} listings across {formatCount(stats.cities)}
+          {' '}cities. Every listing has a phone number — a listing that cannot be
+          contacted is not worth publishing.
+        </p>
+      ) : (
+        <p>
+          Being built metro by metro rather than dumped nationally on day one. Nothing
+          is listed yet.
+        </p>
+      )}
+    </div>
+
+    {cities.length > 0 && (
+      <ul class="link-list">
+        {cities.map((c) => (
+          <li>
+            <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>
+              Garage door repair in {c.city}, {c.stateCode}
+            </a>
+            <span class="n">{c.count}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <p class="mt-3">
+      <a href="/garage-door-repair/" class="btn btn-ghost">
+        {states.length > 0 ? 'Browse all states' : 'About the directory'}
+      </a>
+    </p>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section class="wrap section-sm">
+    <div class="section-head">
+      <span class="eyebrow">Glossary</span>
+      <h2>What the technician just said</h2>
+      <p>{glossary.length} garage door terms in plain English, so you can read the quote.</p>
+    </div>
+    <ul class="link-list">
+      {glossary.slice(0, 6).map((t) => (
+        <li><a href={`/glossary/${t.slug}/`}>{t.term}</a></li>
+      ))}
+    </ul>
+    <p class="mt-3"><a href="/glossary/" class="btn btn-ghost">All terms</a></p>
+  </section>
+
+  <!-- SAFETY — the one piece of advice worth putting on the homepage -->
+  <section class="wrap section-sm">
+    <div class="alert-box">
+      <span class="alert-label">If a spring has snapped</span>
+      <p>
+        Leave the door closed and stop pressing the opener button — with the spring
+        gone, the opener is trying to lift the door's full weight on its own, and that
+        turns one repair into two.
+      </p>
+      <p>
+        Do not attempt the replacement yourself. A wound torsion spring holds enough
+        stored energy to cause serious injury.
+        {' '}<a href="/guides/why-diy-spring-repair-is-dangerous/">Here is why, in detail</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTRACTOR CTA -->
+  <section class="wrap section-sm">
+    <div class="highlight-box">
+      <h3>Run a garage door company?</h3>
+      <p>
+        Listing is free and we do not sell placement or ranking.
+        {' '}<a href="/get-listed/">Add or correct a listing</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
