@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import { SITE } from '../../lib/site.js';
+import { guides, getGuide, getClusters } from '../../lib/guides.js';
+import { getTerms } from '../../lib/glossary.js';
+import { getAllCities } from '../../lib/data.js';
+import {
+  articleSchema, breadcrumbSchema, faqSchema,
+} from '../../lib/schema.js';
+import { fitTitle, fitDescription } from '../../lib/seo.js';
+
+export function getStaticPaths() {
+  return guides.map((g) => ({ params: { slug: g.slug } }));
+}
+
+const { slug } = Astro.params;
+const g = getGuide(slug);
+
+const url = `/guides/${g.slug}/`;
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Guides', url: '/guides/' },
+  { name: g.h1.replace(/:.*$/, ''), url },
+];
+
+// Pillar/cluster linking, per the BUILD-PLAN rule:
+//   · a cluster links UP to its pillar and sideways to its siblings
+//   · a pillar links DOWN to all its clusters
+// Both directions are derived from the data rather than hand-written, so a
+// new cluster wires itself in and no link can go stale.
+const parent = g.parent ? getGuide(g.parent) : null;
+const clusters = getClusters(g.slug);
+const siblings = parent
+  ? getClusters(parent.slug).filter((s) => s.slug !== g.slug)
+  : [];
+const related = (g.related || []).map(getGuide).filter(Boolean);
+const terms = getTerms(g.glossary || []);
+
+// Pillars link out to the highest-listing city pages — real depth into the
+// directory rather than a dead-end article. Empty until listings are staged,
+// and the block below simply does not render then.
+const topCities = g.pillar ? getAllCities().slice(0, 3) : [];
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  articleSchema({
+    title: g.title,
+    description: g.description,
+    url,
+    datePublished: g.datePublished,
+    dateModified: g.dateModified,
+  }),
+  ...(g.faqs?.length ? [faqSchema(g.faqs)] : []),
+];
+
+const modified = new Date(g.dateModified || g.datePublished)
+  .toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<BaseLayout
+  title={fitTitle(g.title, g.h1.replace(/:.*$/, ''))}
+  description={fitDescription(g.description, g.quickAnswer)}
+  canonical={url}
+  schemas={schemas}
+  type="article"
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article class="prose">
+      <span class="eyebrow">{g.pillar ? 'Cost guide' : 'Guide'}</span>
+      <h1 style="margin:.5rem 0 .75rem;">{g.h1}</h1>
+      <p class="muted" style="font-size:.85rem;margin-bottom:1.5rem;">
+        Updated {modified} · {g.readTime} min read · Researched in-house by {SITE.name}
+      </p>
+
+      {/* Cluster pages announce their pillar in the intro, which is both the
+          internal-linking rule and genuinely useful orientation. */}
+      {parent && (
+        <p class="claim-note">
+          Part of our guide to <a href={`/guides/${parent.slug}/`}>{parent.h1.replace(/:.*$/, '')}</a>.
+        </p>
+      )}
+
+      <div class="answer-box">
+        <span class="eyebrow">Short answer</span>
+        <p>{g.quickAnswer}</p>
+      </div>
+
+      {g.costTable && (
+        <div class="table-scroll">
+          <table class="cost-table">
+            <caption>{g.costTable.caption}</caption>
+            <thead>
+              <tr><th scope="col">Job</th><th scope="col" style="text-align:right;">Typical cost</th></tr>
+            </thead>
+            <tbody>
+              {g.costTable.rows.map(([job, cost]) => (
+                <tr><td>{job}</td><td class="num">{cost}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      <AdSlot label="Advertisement" />
+
+      {g.sections.map((s) => (
+        <section>
+          <h2>{s.h2}</h2>
+          {s.body.map((p) => <p>{p}</p>)}
+        </section>
+      ))}
+
+      {terms.length > 0 && (
+        <section>
+          <h2>Terms used on this page</h2>
+          <ul class="link-list" style="margin-top:.75rem;">
+            {terms.map((t) => (
+              <li><a href={`/glossary/${t.slug}/`}>{t.term}</a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {g.faqs?.length > 0 && (
+        <section>
+          <h2>Frequently asked questions</h2>
+          {g.faqs.map((f) => (
+            <div class="faq-item">
+              <h3>{f.q}</h3>
+              <p>{f.a}</p>
+            </div>
+          ))}
+        </section>
+      )}
+
+      {clusters.length > 0 && (
+        <section>
+          <h2>In this series</h2>
+          <ul class="link-list" style="margin-top:.75rem;">
+            {clusters.map((c) => (
+              <li><a href={`/guides/${c.slug}/`}>{c.h1.replace(/:.*$/, '')}</a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {siblings.length > 0 && (
+        <section>
+          <h2>Related in this series</h2>
+          <ul class="link-list" style="margin-top:.75rem;">
+            {siblings.map((s) => (
+              <li><a href={`/guides/${s.slug}/`}>{s.h1.replace(/:.*$/, '')}</a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {related.length > 0 && (
+        <section>
+          <h2>Read next</h2>
+          <ul class="link-list" style="margin-top:.75rem;">
+            {related.map((r) => (
+              <li><a href={`/guides/${r.slug}/`}>{r.h1.replace(/:.*$/, '')}</a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {topCities.length > 0 && (
+        <section>
+          <h2>Find a garage door pro near you</h2>
+          <ul class="link-list" style="margin-top:.75rem;">
+            {topCities.map((c) => (
+              <li>
+                <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>
+                  Garage door repair in {c.city}, {c.stateCode}
+                </a>
+                <span class="n">{c.count}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Every cost figure on the site is an estimate, and saying so once
+          per guide is the difference between a researched range and an
+          implied quote. */}
+      <p class="claim-note mt-4">
+        Figures are national 2026 estimates researched in-house and are not quotes.
+        Local labour rates, door size and access all move the price. {SITE.name} does not
+        endorse, recommend, certify or guarantee any contractor —
+        see our <a href="/editorial-guidelines/">editorial guidelines</a>.
+      </p>
+    </article>
+  </div>
+</BaseLayout>

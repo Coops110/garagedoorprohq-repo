@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, LEGAL } from '../lib/site.js';
+import { breadcrumbSchema } from '../lib/schema.js';
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Contact', url: '/contact/' },
+];
+const schemas = [breadcrumbSchema(crumbs)];
+---
+<BaseLayout
+  title="Contact"
+  description={`How to reach ${SITE.name} — corrections, listing removals, data requests and general enquiries.`}
+  canonical="/contact/"
+  schemas={schemas}
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article style="margin-top:1rem;" class="prose">
+      <h1 style="margin:1rem 0 1rem;">Contact us</h1>
+
+      <p>
+        One address, monitored by a person:
+        {' '}<a href={`mailto:${LEGAL.contactEmail}`}><strong>{LEGAL.contactEmail}</strong></a>
+      </p>
+
+      <h2>Correcting or removing a listing</h2>
+      <p>
+        If you own or manage a listed business and something is wrong — the phone number,
+        the address, the name, the category, or the fact that you are listed at all — email
+        us and we will fix or remove it. Include the URL of the listing so we can find it
+        quickly.
+      </p>
+      <p>
+        Removal is unconditional. We do not ask why, we do not offer to keep the listing in
+        exchange for anything, and there is nothing to pay. When a listing is removed its
+        URL redirects to the city page rather than returning an error, and we keep a note of
+        the removal so a later data refresh cannot re-add it.
+      </p>
+
+      <h2>Adding a listing</h2>
+      <p>
+        Use the <a href="/get-listed/">get listed</a> page. Listing is free and we do not
+        sell placement.
+      </p>
+
+      <h2>Reporting a wrong figure</h2>
+      <p>
+        If a cost figure in a guide does not match what you are being quoted in your market,
+        tell us — that is useful information and we would rather correct a range than defend
+        it. Include the guide URL and, if you can, the quote you were given.
+      </p>
+
+      <h2>Data protection requests</h2>
+      <p>
+        Requests to access, correct, delete or object to the processing of personal data go
+        to the same address. We respond within one month. See the
+        {' '}<a href="/privacy/">privacy policy</a> for the full list of rights and our
+        lawful basis for each type of processing.
+      </p>
+
+      <h2>Press and business enquiries</h2>
+      <p>
+        Also the same address. We do not accept paid guest posts, paid links, or sponsored
+        placement in the directory, so please do not pitch them.
+      </p>
+
+      <p class="claim-note">
+        {LEGAL.legalName}, {LEGAL.address}
+      </p>
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { guides, getPillars, getClusters } from '../../lib/guides.js';
+import { breadcrumbSchema, itemListSchema } from '../../lib/schema.js';
+
+const pillars = getPillars();
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Guides', url: '/guides/' },
+];
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  itemListSchema(
+    guides.map((g) => ({ name: g.h1, slug: g.slug })),
+    (g) => `/guides/${g.slug}/`
+  ),
+];
+---
+<BaseLayout
+  title="Garage Door Cost Guides for 2026"
+  description="Free, in-house researched guides to garage door repair and replacement costs in 2026 — springs, openers, panels — plus how to hire a garage door company."
+  canonical="/guides/"
+  schemas={schemas}
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <span class="eyebrow">Guides</span>
+    <h1 style="margin:.5rem 0 .75rem;">Garage door cost guides</h1>
+    <p class="muted mb-3" style="max-width:60ch;">
+      What garage door work actually costs in 2026, researched in-house and written
+      to be read before you call anyone. Every figure is a national estimate, not a quote.
+    </p>
+
+    {pillars.map((p) => {
+      const clusters = getClusters(p.slug);
+      return (
+        <section class="section-sm">
+          <h2 style="font-size:1.25rem;">
+            <a href={`/guides/${p.slug}/`}>{p.h1.replace(/:.*$/, '')}</a>
+          </h2>
+          <p style="margin:.4rem 0 .75rem;">{p.description}</p>
+          {clusters.length > 0 && (
+            <ul class="link-list">
+              {clusters.map((c) => (
+                <li><a href={`/guides/${c.slug}/`}>{c.h1.replace(/:.*$/, '')}</a></li>
+              ))}
+            </ul>
+          )}
+        </section>
+      );
+    })}
+
+    <p class="claim-note mt-3">
+      More guides are being written. We publish a guide when it is finished and has
+      been checked against the figures already on the site — not as a placeholder.
+    </p>
+  </div>
+</BaseLayout>

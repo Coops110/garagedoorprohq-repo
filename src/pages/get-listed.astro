@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, LEGAL } from '../lib/site.js';
+import { LICENCE_STATES } from '../lib/licensing.js';
+import { breadcrumbSchema } from '../lib/schema.js';
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Get listed', url: '/get-listed/' },
+];
+const schemas = [breadcrumbSchema(crumbs)];
+
+// The form only renders with a Web3Forms key registered to THIS site's
+// address. Without one, submissions would either fail silently or — worse,
+// if AirProHQ's key were reused — land in the wrong inbox. A mailto with a
+// prefilled subject is a worse UX and a strictly better outcome.
+const formLive = Boolean(SITE.web3FormsKey);
+const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', ');
+---
+<BaseLayout
+  title="Get Your Garage Door Business Listed (Free)"
+  description="Add your garage door company to GarageDoorHQ for free. No paid placement, no ranking to buy — just the details we need to publish an accurate listing."
+  canonical="/get-listed/"
+  schemas={schemas}
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article style="margin-top:1rem;" class="prose">
+      <h1 style="margin:1rem 0 .75rem;">Get your garage door business listed</h1>
+
+      <div class="answer-box">
+        <span class="eyebrow">The short version</span>
+        <p>
+          Listing is free. There is no paid tier, no featured slot, and no way to buy a
+          higher position — we have not built one. Send us the details below and we will add
+          the listing or tell you why not.
+        </p>
+      </div>
+
+      <h2>What we need</h2>
+      <ul>
+        <li><strong>Business name</strong> exactly as you trade under it</li>
+        <li><strong>Street address</strong>, city, state and ZIP</li>
+        <li><strong>Phone number</strong> — required. We do not publish a listing nobody can ring.</li>
+        <li><strong>Website</strong>, if you have one</li>
+        <li><strong>What you actually do</strong> — residential repair, installation, openers, commercial, or some mix</li>
+        <li><strong>State licence number</strong> if you are in {licenceStates}, so we can verify it</li>
+      </ul>
+
+      <h2>What happens next</h2>
+      <p>
+        We check the business is real and currently trading, and that garage door work is
+        genuinely what it does — this is not a general contractor directory. If you are in a
+        state that licenses the trade and you give us a licence number, we look it up on the
+        state register. If it matches an active record, the listing gets a
+        {' '}<strong>✓ State licence verified</strong> badge and shows the date we checked.
+      </p>
+      <p>
+        That badge means one thing only: the number matched the register on that date. It is
+        not a statement about your work, your insurance or your pricing, and our
+        {' '}<a href="/editorial-guidelines/">editorial guidelines</a> say so on the record.
+      </p>
+      <p>
+        If your city currently has fewer than three listings, your listing is held until it
+        reaches three and then publishes automatically. Thin city pages hurt everyone on
+        them, so we would rather wait.
+      </p>
+
+      <h2>What we will not do</h2>
+      <ul>
+        <li>Sell you placement, ranking, a badge, or removal of a competitor</li>
+        <li>Publish review scores or star ratings — we do not have a source we are allowed to republish</li>
+        <li>Publish a "24/7" claim as verified opening hours. If you advertise round-the-clock service on your own site, the wording will be "advertises 24/7".</li>
+        <li>Charge you anything, ever, for the listing</li>
+      </ul>
+
+      {formLive ? (
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          style="display:grid;gap:.85rem;margin-top:1.5rem;"
+        >
+          <input type="hidden" name="access_key" value={SITE.web3FormsKey} />
+          <input type="hidden" name="subject" value={`${SITE.name} listing request`} />
+          {/* Honeypot — bots fill it, humans never see it. */}
+          <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" />
+
+          <label>Business name<br />
+            <input type="text" name="business_name" required style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
+          </label>
+          <label>City and state<br />
+            <input type="text" name="location" required style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
+          </label>
+          <label>Phone<br />
+            <input type="tel" name="phone" required style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
+          </label>
+          <label>Website<br />
+            <input type="url" name="website" style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
+          </label>
+          <label>State licence number, if you have one<br />
+            <input type="text" name="licence" style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
+          </label>
+          <label>What you do<br />
+            <textarea name="services" rows="4" style="width:100%;padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;"></textarea>
+          </label>
+          <button type="submit" class="btn btn-signal">Send listing request</button>
+          <p class="muted" style="font-size:.82rem;">
+            We use what you send only to process this request and reply to you — see the
+            {' '}<a href="/privacy/">privacy policy</a>.
+          </p>
+        </form>
+      ) : (
+        <>
+          <h2>How to send it</h2>
+          <p>
+            Email the details to
+            {' '}<a href={`mailto:${LEGAL.contactEmail}?subject=${encodeURIComponent(SITE.name + ' listing request')}`}>
+              <strong>{LEGAL.contactEmail}</strong></a>
+            {' '}with "listing request" in the subject. A form will replace this once the
+            site's own form endpoint is configured — until then email reaches us just as
+            reliably and we reply to every one.
+          </p>
+        </>
+      )}
+    </article>
+  </div>
+</BaseLayout>

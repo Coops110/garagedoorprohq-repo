@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { glossary } from '../../lib/glossary.js';
+import { breadcrumbSchema, definedTermSetSchema } from '../../lib/schema.js';
+
+const terms = [...glossary].sort((a, b) => a.term.localeCompare(b.term));
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Glossary', url: '/glossary/' },
+];
+
+const schemas = [breadcrumbSchema(crumbs), definedTermSetSchema(terms)];
+---
+<BaseLayout
+  title="Garage Door Glossary: Terms Explained"
+  description={`Plain-English definitions of ${terms.length} garage door terms — torsion springs, cycle rating, photo-eye sensors, jackshaft openers and more.`}
+  canonical="/glossary/"
+  schemas={schemas}
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <span class="eyebrow">Glossary</span>
+    <h1 style="margin:.5rem 0 .75rem;">Garage door glossary</h1>
+    <p class="muted mb-3" style="max-width:60ch;">
+      {terms.length} terms you will hear from a garage door technician, defined in
+      plain English so you can tell what is on the quote.
+    </p>
+
+    <dl style="display:grid;gap:.85rem;">
+      {terms.map((t) => (
+        <div class="faq-item">
+          <dt><h2 style="font-size:1.05rem;font-family:Inter,sans-serif;margin:0 0 .35rem;">
+            <a href={`/glossary/${t.slug}/`}>{t.term}</a>
+          </h2></dt>
+          <dd style="margin:0;font-size:.94rem;">{t.short}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</BaseLayout>

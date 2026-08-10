@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { CLAIMS } from '../../../lib/site.js';
+import {
+  getAllStates, getState, getCitiesByState, formatCount,
+} from '../../../lib/data.js';
+import { licenceInfo, noLicenceGuidance } from '../../../lib/licensing.js';
+import { breadcrumbSchema, itemListSchema, faqSchema } from '../../../lib/schema.js';
+import { fitTitle, fitDescription } from '../../../lib/seo.js';
+
+export function getStaticPaths() {
+  return getAllStates().map((s) => ({ params: { state: s.stateSlug } }));
+}
+
+const { state } = Astro.params;
+const s = getState(state);
+const cities = getCitiesByState(state);
+const lic = licenceInfo(s.stateCode);
+
+const url = `/garage-door-repair/${state}/`;
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Garage door directory', url: '/garage-door-repair/' },
+  { name: s.state, url },
+];
+
+const faqs = [
+  {
+    q: `How many garage door companies are listed in ${s.state}?`,
+    a: `${CLAIMS.listingMeaning.replace(/\.$/, '')} — we list ${s.count} garage door ${s.count === 1 ? 'company' : 'companies'} across ${s.cityCount} ${s.cityCount === 1 ? 'city' : 'cities'} in ${s.state}${lic ? `, of which ${s.licensedCount} have a licence number matched to an active record on the ${lic.authorityShort} register` : ''}.`,
+  },
+  {
+    q: `Do garage door installers need a licence in ${s.state}?`,
+    a: lic
+      ? `Yes. ${s.state} licenses the trade through the ${lic.authority} under ${lic.classification}. You can check any licence number yourself on the state register in about a minute.`
+      : `Not as a separate trade. ${s.state} has no garage-door-specific state licence, so the work falls under a general contractor licence, a local registration, or no licence at all depending on the job. Ask for proof of liability insurance instead.`,
+  },
+  {
+    q: `How much does garage door repair cost in ${s.state}?`,
+    a: `Most garage door repairs run $150–$400 nationally, with springs at $250–$550 for a pair and a new opener at $300–$700 installed. Local labour rates move the figure. See our garage door repair cost guide for the full breakdown by job.`,
+  },
+];
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  itemListSchema(cities.map((c) => ({ name: `${c.city}, ${c.stateCode}`, ...c })),
+    (c) => `/garage-door-repair/${c.stateSlug}/${c.citySlug}/`),
+  faqSchema(faqs),
+];
+---
+<BaseLayout
+  title={fitTitle(
+    `Garage Door Repair in ${s.state}: By City`,
+    `${s.state} Garage Door Companies`,
+  )}
+  description={fitDescription(
+    `${s.count} garage door companies across ${s.cityCount} ${s.cityCount === 1 ? 'city' : 'cities'} in ${s.state}. Contact details, service categories${lic ? ` and ${lic.authorityShort} licence checks` : ''}.`,
+    `Garage door repair and installation companies across ${s.cityCount} cities in ${s.state}, with phone numbers, service categories and local cost guidance.`,
+  )}
+  canonical={url}
+  schemas={schemas}
+>
+  <div class="wrap">
+    <Breadcrumbs items={crumbs} />
+
+    <span class="eyebrow">{s.state}</span>
+    <h1 style="margin:.5rem 0 .75rem;">Garage door companies in {s.state}</h1>
+    <p class="muted mb-3">
+      {formatCount(s.count)} {s.count === 1 ? 'listing' : 'listings'} across
+      {' '}{s.cityCount} {s.cityCount === 1 ? 'city' : 'cities'}
+      {lic && s.licensedCount > 0 ? ` · ${s.licensedCount} licence-verified` : ''}
+    </p>
+
+    <p class="claim-note">
+      {CLAIMS.listingMeaning}
+      {lic ? ` ${CLAIMS.licenceMeaning}` : ''}
+      {' '}<a href="/editorial-guidelines/">How listings are chosen</a>.
+    </p>
+
+    {cities.length > 1 && (
+      <p class="mb-3">
+        <a href={`/garage-door-repair/${state}/compare/`} class="btn btn-ghost">
+          Compare {s.cityCount} {s.state} cities side by side
+        </a>
+      </p>
+    )}
+
+    <h2 style="font-size:1.2rem;">Cities</h2>
+    <ul class="link-list mt-2">
+      {cities.map((c) => (
+        <li>
+          <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>
+            Garage door repair in {c.city}
+          </a>
+          <span class="n">{c.count}</span>
+        </li>
+      ))}
+    </ul>
+
+    <section class="section">
+      <h2 style="font-size:1.3rem;">
+        {lic ? `Garage door licensing in ${s.state}` : `Licensing in ${s.state}`}
+      </h2>
+      {lic ? (
+        <>
+          <p class="mt-2">
+            {s.state} is one of only three states that license garage door work as a
+            distinct trade. The {lic.authority} issues {lic.classification}, and the
+            register is public, free and searchable by licence number or business name.
+          </p>
+          <div class="highlight-box">
+            <h3>Verify a licence yourself, in about a minute</h3>
+            <ol style="margin:.6rem 0 0 1.2rem;">
+              {lic.verifySteps.map((step) => <li style="margin-bottom:.4rem;">{step}</li>)}
+            </ol>
+            <p class="mt-2">
+              <a href={lic.searchUrl} rel="nofollow noopener" target="_blank">{lic.searchLabel}</a>
+              {' '}(opens on the {lic.authorityShort} site)
+            </p>
+          </div>
+          <p>{CLAIMS.licenceMeaning}</p>
+        </>
+      ) : (
+        noLicenceGuidance(s.state).map((p) => <p class="mt-2">{p}</p>)
+      )}
+    </section>
+
+    <section class="section-sm">
+      <h2 style="font-size:1.3rem;">Before you call around</h2>
+      <p class="mt-2 mb-2">Know the fair price first, so nobody oversells you.</p>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
+        <a href="/guides/garage-door-repair-cost/" class="btn btn-ink">Repair cost guide</a>
+        <a href="/guides/garage-door-spring-replacement-cost/" class="btn btn-ghost">Spring costs</a>
+        <a href="/guides/hiring-a-garage-door-company/" class="btn btn-ghost">How to hire</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

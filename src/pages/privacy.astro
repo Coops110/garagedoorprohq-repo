@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, LEGAL, GA_ID, CONSENT_STORAGE_KEY } from '../lib/site.js';
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Privacy Policy', url: '/privacy/' },
+];
+
+// Cookies and storage this site actually uses. Derived from the real config
+// rather than copied from a template, so the table cannot describe a cookie
+// we do not set or miss one we do. The GA rows are conditional on GA_ID
+// because with analytics unconfigured they genuinely are not set.
+const cookies = [
+  {
+    name: CONSENT_STORAGE_KEY,
+    type: 'Strictly necessary',
+    purpose: 'Remembers whether you accepted or declined analytics cookies, so you are not asked again on every page. Stored in your browser’s local storage and contains only your choice and its date.',
+    expiry: 'Until you clear your browser storage',
+  },
+  ...(GA_ID ? [
+    {
+      name: '_ga',
+      type: 'Analytics',
+      purpose: 'Google Analytics. Distinguishes one visitor from another so we can count unique visitors rather than raw page loads. Only set if you accept analytics cookies.',
+      expiry: '2 years',
+    },
+    {
+      name: `_ga_${GA_ID.replace(/^G-/, '')}`,
+      type: 'Analytics',
+      purpose: 'Google Analytics. Keeps session state for our analytics property so one visit is not counted as several. Only set if you accept analytics cookies.',
+      expiry: '2 years',
+    },
+  ] : []),
+];
+
+const recipients = [
+  ['Google LLC', 'Web fonts on every page; embedded Google Maps on business profile pages' + (GA_ID ? '; Google Analytics' : ''), 'United States'],
+  ['Vercel Inc.', 'Website hosting. Server logs may include IP addresses.', 'United States'],
+  ...(SITE.web3FormsKey ? [['Web3Forms', 'Delivers listing enquiries submitted through our form', 'United States']] : []),
+];
+---
+<BaseLayout
+  title="Privacy Policy"
+  description="How GarageDoorHQ collects, uses and protects your personal data, the cookies we set, and your rights under UK and EU data protection law."
+  canonical="/privacy/"
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article style="margin-top:1rem;">
+      <h1 style="margin:1rem 0 .5rem;">Privacy Policy</h1>
+      <p class="muted" style="margin:0 0 2rem;font-size:.85rem;">
+        Last updated: {LEGAL.lastUpdated}
+      </p>
+
+      <div class="prose">
+        <h2>Who we are</h2>
+        <p>
+          {SITE.name} ({SITE.domain.replace(/^https?:\/\//, '')}) is a free directory of
+          garage door companies and garage door cost guides for U.S. homeowners.
+        </p>
+        <p>
+          The data controller responsible for your personal data is
+          {' '}<strong>{LEGAL.legalName}</strong>, {LEGAL.address}. You can contact us
+          about anything in this policy at
+          {' '}<a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a>.
+        </p>
+
+        <h2>What we collect</h2>
+        <p>Only what we need to run the site and understand what people find useful:</p>
+        <ul>
+          <li><strong>Usage data</strong> — pages viewed, how long you stay, how far you scroll, links you click, and any terms you type into our search box.</li>
+          <li><strong>Device and online identifiers</strong> — IP address, browser, operating system, device type and screen size, plus a randomly generated analytics identifier.</li>
+          <li><strong>Approximate location</strong> — a country, region and city estimate derived from your IP address. This is not precise location data and we do not use GPS.</li>
+          <li><strong>Contact and business details you give us</strong> — if you ask to be listed or email us, the business name, location, phone number, email address and website you provide.</li>
+          <li><strong>Correspondence</strong> — the content of any email you send us.</li>
+        </ul>
+        <p>
+          We do not collect payment details, we do not operate user accounts, and we do not
+          knowingly collect data from children. We do not sell personal data and we make no
+          automated decisions that produce legal effects.
+        </p>
+
+        <h2>Business listings from public sources</h2>
+        <p>
+          Our directory includes business names, addresses, phone numbers, websites and
+          categories compiled from openly licensed public business data — specifically
+          Foursquare Open Source Places, distributed by the Overture Maps Foundation under
+          the Apache License 2.0. Where a business is a sole trader, that information may
+          constitute personal data. We publish it on the basis of our legitimate interest
+          in operating a public business directory that helps homeowners find local
+          contractors.
+        </p>
+        <p>
+          Where a listing shows a verified licence, the licence number and status come from
+          a public state licensing register. That information is published by the state for
+          exactly this purpose — so that consumers can check it.
+        </p>
+        <p>
+          If you are listed and want your entry corrected or removed, email
+          {' '}<a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a> and we will
+          action it. We keep a record of removed listings so the URL redirects rather than
+          returning an error, and so the listing is not re-added by a later data refresh.
+        </p>
+
+        <h2>How we use your data, and our lawful basis</h2>
+        <ul>
+          <li><strong>Analytics — consent.</strong> We use Google Analytics to see which guides are useful and how people find us. Analytics cookies are set only where you have consented, and you can withdraw consent at any time.</li>
+          <li><strong>Responding to enquiries — legitimate interests.</strong> If you ask to be listed or email us, we use your details to reply and to process the request.</li>
+          <li><strong>Running and securing the site — legitimate interests.</strong> Our host keeps server logs to deliver pages and protect against abuse.</li>
+          <li><strong>Directory listings — legitimate interests.</strong> As described above.</li>
+        </ul>
+
+        <h2>Cookies and similar technologies</h2>
+        {GA_ID ? (
+          <p>
+            We show a consent banner the first time you visit. If you decline, no analytics
+            cookies are set and any existing ones are deleted; Google Analytics receives
+            only an anonymous, cookieless signal that a page was viewed, with nothing
+            stored on your device. You can change your choice at any time using the
+            {' '}<strong>Cookie settings</strong> link in our footer.
+          </p>
+        ) : (
+          <p>
+            <strong>At the date of this policy we run no analytics on this website</strong>,
+            so the only browser storage we use is the entry below, which records a cookie
+            choice if one is ever offered. When we do enable analytics we will update this
+            policy and the table below first, and ask for consent before setting anything.
+          </p>
+        )}
+        <div class="table-scroll">
+          <table class="cost-table">
+            <caption>Cookies and browser storage used on this website</caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th><th scope="col">Type</th>
+                <th scope="col">Purpose</th><th scope="col" style="text-align:right;">Expires</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cookies.map((c) => (
+                <tr>
+                  <td><code>{c.name}</code></td>
+                  <td>{c.type}</td>
+                  <td>{c.purpose}</td>
+                  <td>{c.expiry}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>We do not use functionality or targeting cookies.</p>
+
+        <h2>Advertising</h2>
+        <p>
+          <strong>At the date of this policy we do not display advertising on this
+          website.</strong> This section explains how advertising will work if and when we
+          introduce it, so you know what to expect.
+        </p>
+        <p>
+          Advertising may be served by third-party advertising networks and technology
+          providers (for example Google AdSense), and by media agencies, exchanges and
+          their partners acting for advertisers. Those third parties may set cookies or
+          similar technologies and may process information such as your IP address, device
+          and browser details, the pages you view and your approximate location, in order
+          to select, deliver, measure and report on adverts — including personalised
+          advertising where you have consented to it.
+        </p>
+        <p>
+          Advertising and personalisation cookies will only be set where you have given
+          consent, and you will be able to withdraw it at any time through Cookie settings.
+          We will update this policy and the cookie table above before any advertising goes
+          live.
+        </p>
+
+        <h2>Embedded content</h2>
+        <p>
+          Business profile pages embed a Google Map so you can see a location, and our
+          pages load fonts hosted by Google. When these load, Google receives your IP
+          address and may set its own cookies under
+          {' '}<a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google's privacy policy</a>.
+          We do not control that processing.
+        </p>
+
+        <h2>Who we share data with</h2>
+        <div class="table-scroll">
+          <table class="cost-table">
+            <caption>Service providers who process data on our behalf</caption>
+            <thead>
+              <tr>
+                <th scope="col">Provider</th><th scope="col">What they do</th>
+                <th scope="col" style="text-align:right;">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              {recipients.map((r) => (
+                <tr><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          We may also disclose data where required by law. We do not sell your personal
+          data or share it with anyone for their own marketing purposes.
+        </p>
+
+        <h2>International transfers</h2>
+        <p>
+          We operate from Thailand and our service providers are based in the United
+          States, so if you are in the UK or European Economic Area your data is
+          transferred outside that area. Where it is, we rely on appropriate safeguards
+          including the UK International Data Transfer Addendum and the European
+          Commission's Standard Contractual Clauses. Some providers are also certified
+          under the EU–US Data Privacy Framework.
+        </p>
+        <p>
+          This website is aimed at homeowners in the United States. We nonetheless apply
+          the standards in this policy — consent before analytics cookies, and the rights
+          below — to all visitors, wherever you are.
+        </p>
+
+        <h2>How long we keep it</h2>
+        <ul>
+          <li><strong>Analytics data</strong> — retained by Google Analytics for the period set in our account, then deleted automatically.</li>
+          <li><strong>Analytics cookies</strong> — up to 2 years, or until you decline or clear them.</li>
+          <li><strong>Your consent choice</strong> — stored in your browser until you clear it.</li>
+          <li><strong>Listing enquiries and correspondence</strong> — kept for as long as needed to deal with the request and a reasonable period afterwards, then deleted.</li>
+          <li><strong>Removal requests</strong> — we keep the business name and URL of a removed listing indefinitely, so the page redirects instead of erroring and so a later data refresh cannot re-add it. This is the minimum needed to honour the removal.</li>
+        </ul>
+
+        <h2>Your rights</h2>
+        <p>Under UK and EU data protection law you have the right to:</p>
+        <ul>
+          <li>ask what personal data we hold about you and get a copy of it;</li>
+          <li>have inaccurate data corrected;</li>
+          <li>ask us to delete your data;</li>
+          <li>object to, or ask us to restrict, our processing;</li>
+          <li>receive data you gave us in a portable format;</li>
+          <li>withdraw consent at any time, without affecting processing already carried out.</li>
+        </ul>
+        <p>
+          To exercise any of these, email
+          {' '}<a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a>. We will
+          respond within one month. These rights are free to use.
+        </p>
+
+        <h2>Complaints</h2>
+        <p>
+          If you are unhappy with how we have handled your data, please tell us first so we
+          can put it right. You also have the right to complain to the UK Information
+          Commissioner's Office at
+          {' '}<a href="https://ico.org.uk" rel="noopener noreferrer" target="_blank">ico.org.uk</a>,
+          or to your local supervisory authority if you are in the EEA.
+        </p>
+
+        <h2>Security</h2>
+        <p>
+          This site is served entirely over encrypted HTTPS. It is a static website with no
+          user accounts and no payment processing, which keeps the personal data we hold to
+          a minimum.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          We may update this policy as the site develops — in particular if we introduce
+          advertising or analytics. When we do, we will change the "last updated" date
+          above, and where the change affects how we use your data we will ask for your
+          consent again.
+        </p>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,81 @@
+---
+import { SITE, SISTER_SITES } from '../lib/site.js';
+import { getAllStates, getCitiesByState } from '../lib/data.js';
+import { guides } from '../lib/guides.js';
+
+const states = getAllStates();
+// Top cities from the largest state, for internal linking depth.
+const topState = states[0];
+const topCities = topState ? getCitiesByState(topState.stateSlug).slice(0, 5) : [];
+const year = new Date().getFullYear();
+
+// Deliberately NOT rendering sister-site links here. See SISTER_SITES in
+// src/lib/site.js: a site-wide reciprocal footer link between commonly
+// owned domains is the pattern Google's link spam policy names, and this
+// domain has no indexing history to spend on it. Ownership disclosure
+// lives on /about/ and is gated on SISTER_SITES.disclose.
+const _sisterSitesIntentionallyNotLinkedHere = SISTER_SITES.disclose;
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Garage<em>Door</em>HQ</div>
+        <p class="footer-note">
+          A free, ad-supported directory of local garage door contractors and honest
+          repair and installation cost guides for U.S. homeowners.
+        </p>
+      </div>
+
+      <div>
+        <h4>Cost Guides</h4>
+        {guides.map((g) => (
+          <a href={`/guides/${g.slug}/`}>{g.h1.replace(/:.*$/, '').replace(/ in 2026$/, '')}</a>
+        ))}
+        <a href="/guides/">All guides</a>
+      </div>
+
+      {topCities.length > 0 && (
+        <div>
+          <h4>Popular Cities</h4>
+          {topCities.map((c) => (
+            <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>
+              {`Garage door repair in ${c.city}, ${c.stateCode}`}
+            </a>
+          ))}
+        </div>
+      )}
+
+      <div>
+        <h4>Site</h4>
+        <a href="/garage-door-repair/">Browse all states</a>
+        {states.map((s) => (
+          <a href={`/garage-door-repair/${s.stateSlug}/`}>{s.state}</a>
+        ))}
+        <a href="/glossary/">Glossary</a>
+        <a href="/about/">About</a>
+        <a href="/editorial-guidelines/">Editorial guidelines</a>
+        <a href="/get-listed/">Get listed</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {year} {SITE.legalName}. Information is provided free for homeowners.</span>
+      <span>
+        Listings compiled from openly licensed public business data · Not affiliated
+        with listed companies · A listing is not a recommendation.
+      </span>
+      <span class="footer-legal">
+        <a href="/privacy/">Privacy policy</a>
+        <a href="/terms/">Terms of service</a>
+        <!-- Consent must be withdrawable as easily as it was given. A real
+             <button>, so it is keyboard-reachable and honest about being an
+             action rather than a link to a page. -->
+        <button type="button" class="consent-reopen" onclick="window.garageDoorHQOpenConsent && window.garageDoorHQOpenConsent()">
+          Cookie settings
+        </button>
+      </span>
+    </div>
+  </div>
+</footer>

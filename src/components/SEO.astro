@@ -1,0 +1,133 @@
+---
+import {
+  SITE, GA_ID, GSC_VERIFICATION,
+  CONSENT_REQUIRED_REGIONS, CONSENT_STORAGE_KEY,
+} from '../lib/site.js';
+
+const {
+  title,
+  description = SITE.description,
+  canonical,          // relative path, e.g. "/garage-door-repair/texas/"
+  image,              // optional OG image path
+  noindex = false,
+  schemas = [],       // array of JSON-LD objects
+  type = 'website',
+} = Astro.props;
+
+const base = SITE.domain.replace(/\/$/, '');
+const canonicalUrl = canonical ? base + canonical : base + Astro.url.pathname;
+const fullTitle = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
+const ogImage = image ? (image.startsWith('http') ? image : base + image) : null;
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+{GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION} />}
+
+<!-- Fonts. Preconnect before the stylesheet so the DNS/TLS handshake to
+     the font host overlaps CSS parsing instead of queueing behind it —
+     webfonts are the usual cause of a poor mobile LCP on a site like this.
+     `display=swap` means text paints in the fallback immediately. -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+{ogImage && <meta property="og:image" content={ogImage} />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+{ogImage && <meta name="twitter:image" content={ogImage} />}
+
+<!-- Icons / theme -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="theme-color" content="#1B222B" />
+
+<!-- JSON-LD structured data -->
+{schemas.map((s) => (
+  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}
+
+<!-- Google AdSense (loads only once a publisher ID is set) -->
+{SITE.adsensePublisherId && (
+  <script
+    async
+    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`}
+    crossorigin="anonymous"
+  ></script>
+)}
+
+<!-- Google Analytics 4 — production builds only, so `npm run dev`
+     sessions never appear as real traffic.
+
+     Consent Mode v2: the `consent default` command must reach dataLayer
+     before gtag.js processes it, so the inline block comes first and the
+     library loads async after. In UK/EEA/CH storage starts denied (GA sends
+     cookieless pings until the visitor accepts); elsewhere it starts
+     granted, since opt-in consent is not required there. Google resolves
+     the region server-side from IP, which is far more reliable than
+     guessing location in the browser. -->
+{GA_ID && import.meta.env.PROD && (
+  <>
+    <script is:inline define:vars={{ GA_ID, CONSENT_REQUIRED_REGIONS, CONSENT_STORAGE_KEY }}>
+      // Assigned to window explicitly: Astro wraps define:vars scripts in an
+      // IIFE, so a bare `function gtag(){}` would be function-scoped and any
+      // gtag('event', ...) call elsewhere on the page would throw.
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(){ window.dataLayer.push(arguments); };
+
+      // 1. Consent-required regions: deny until the visitor chooses.
+      //    wait_for_update holds tags briefly so a fast click still counts.
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        region: CONSENT_REQUIRED_REGIONS,
+        wait_for_update: 500,
+      });
+
+      // 2. Everywhere else: granted. A more specific region always wins
+      //    over this, regardless of command order.
+      gtag('consent', 'default', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted',
+      });
+
+      // 3. Re-apply a previously saved choice on repeat visits.
+      try {
+        var saved = JSON.parse(localStorage.getItem(CONSENT_STORAGE_KEY) || 'null');
+        if (saved && saved.choice) {
+          var state = saved.choice === 'accepted' ? 'granted' : 'denied';
+          gtag('consent', 'update', {
+            ad_storage: state,
+            ad_user_data: state,
+            ad_personalization: state,
+            analytics_storage: state,
+          });
+        }
+      } catch (e) { /* private mode / storage disabled — defaults stand */ }
+
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    </script>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+  </>
+)}

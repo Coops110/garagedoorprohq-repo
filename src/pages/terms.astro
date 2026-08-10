@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, LEGAL } from '../lib/site.js';
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Terms of Service', url: '/terms/' },
+];
+const host = SITE.domain.replace(/^https?:\/\//, '');
+---
+<BaseLayout
+  title="Terms of Service"
+  description="The terms governing your use of GarageDoorHQ — our content, directory listings, cost estimates, licence verification and limitation of liability."
+  canonical="/terms/"
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article style="margin-top:1rem;">
+      <h1 style="margin:1rem 0 .5rem;">Terms of Service</h1>
+      <p class="muted" style="margin:0 0 2rem;font-size:.85rem;">
+        Last updated: {LEGAL.lastUpdated}
+      </p>
+
+      <div class="prose">
+        <h2>About these terms</h2>
+        <p>
+          These terms are a contract between you and <strong>{LEGAL.legalName}</strong>,
+          {LEGAL.address} ("we", "us"), and govern your use of {host} (the "Service").
+          By using the Service you accept these terms. If you do not accept them, please
+          do not use the Service.
+        </p>
+
+        <h2>Your use of our content</h2>
+        <p>
+          The content on this website was created, compiled, prepared, selected and
+          arranged by us, using our own methods and judgment and through the expenditure
+          of substantial time and effort. The Service and its content are proprietary and
+          protected by these terms, copyright law and other intellectual property laws,
+          including as a collective work or compilation. We provide it for your personal,
+          non-commercial use.
+        </p>
+        <p>
+          You may not use, or authorise a third party to use, the Service or its content
+          in any manner that (i) is a source of or substitute for the Service or its
+          content; (ii) affects our ability to earn money in connection with the Service;
+          or (iii) competes with the Service. These restrictions apply to any robot,
+          spider, scraper, crawler or other automated means, and to any similar manual
+          process. You agree not to bypass any robot exclusion headers or other measures
+          limiting automated access.
+        </p>
+        <p>
+          You may quote short extracts for comment, review or news reporting, provided you
+          credit {SITE.name} and link to the page you took them from.
+        </p>
+        <p>
+          <strong>One exception, and it is deliberate.</strong> Business listing data on
+          this site derives from Foursquare Open Source Places, distributed by the Overture
+          Maps Foundation under the Apache License 2.0. That underlying data remains
+          available to you under its own licence directly from its source, and nothing in
+          these terms purports to restrict your rights in it. What we claim is our
+          selection, filtering, verification, arrangement and written content — not the
+          openly licensed facts themselves.
+        </p>
+
+        <h2>Cost guides are estimates, not professional advice</h2>
+        <p>
+          Our guides publish typical price ranges and averages for garage door work. These
+          are general information drawn from market research. They are <strong>not</strong>
+          {' '}a quote, an appraisal, or professional engineering, financial, legal or tax
+          advice, and they do not account for your specific door, opening, opener or local
+          market.
+        </p>
+        <p>
+          Prices change and vary considerably by region, season, door size and installer.
+          Always obtain written quotes before making a decision, and rely on the
+          contractor's assessment rather than ours.
+        </p>
+
+        <h2>Safety content</h2>
+        <p>
+          Some of our content describes work that is dangerous, in particular anything
+          involving garage door springs and cables, which hold substantial stored energy.
+          Where we advise against a task, that advice is deliberate and we do not publish
+          instructions for it. Nothing on this Service is a substitute for a qualified
+          technician, and any work you choose to attempt is at your own risk.
+        </p>
+
+        <h2>Directory listings</h2>
+        <p>
+          Our directory includes garage door business information compiled from openly
+          licensed and publicly available business data. We are not affiliated with, and
+          do not endorse, recommend, certify, vet or guarantee any listed business. A
+          listing is not a recommendation, and we do not rank businesses by quality. No
+          business pays for inclusion, position or prominence.
+        </p>
+        <p>
+          <strong>What licence verification does and does not mean.</strong> In California,
+          Florida and Arizona — the only states that license garage door work as a distinct
+          trade — a listing may show a verified licence badge. That badge means one
+          specific thing: we matched a licence number to a record on that state's public
+          register at the date shown. It does <strong>not</strong> mean we have verified
+          insurance, workmanship, pricing, qualifications, or that the licence remains
+          current now. We do not inspect work and we do not visit businesses. Everywhere
+          else, no licence is checked because there is no garage-door-specific state
+          register to check against, and those pages say so.
+        </p>
+        <p>
+          Listings are provided for information only. Any dealings you have with a listed
+          business — including any contract, payment or dispute — are solely between you
+          and that business. We are not a party to them and accept no responsibility for
+          them. We recommend you verify licensing and insurance independently before
+          hiring anyone.
+        </p>
+        <p>
+          Information may be incomplete, out of date or inaccurate. If you own a listed
+          business and want your entry corrected or removed, email
+          {' '}<a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a>.
+        </p>
+
+        <h2>Submitting a listing</h2>
+        <p>
+          If you submit your business to us, you confirm you are authorised to do so and
+          that the information you give is accurate. We may publish, decline, edit or
+          remove any submission at our discretion, and we do not guarantee that a
+          submitted business will be listed or remain listed. We do not charge for
+          listing, and paying us is not an option we offer.
+        </p>
+
+        <h2>Advertising and commercial relationships</h2>
+        <p>
+          We may display advertising served by third-party advertising networks and
+          technology providers, and by media agencies, exchanges and their partners acting
+          for advertisers. We may also participate in affiliate or referral arrangements
+          under which we earn a commission.
+        </p>
+        <p>
+          Advertising is selected by those third parties and its presence is not an
+          endorsement by us. Advertising never affects which businesses are listed or in
+          what order. Where we have a commercial relationship that could reasonably affect
+          how you read our content, we will disclose it. How advertising affects your data
+          is explained in our <a href="/privacy/">privacy policy</a>.
+        </p>
+
+        <h2>Third-party links and content</h2>
+        <p>
+          The Service links to third-party websites, including state licensing registers,
+          and embeds third-party content such as maps. We do not control those sites and
+          are not responsible for their content, accuracy or privacy practices. Following
+          an external link is at your own risk.
+        </p>
+
+        <h2>Availability</h2>
+        <p>
+          We provide the Service "as is" and "as available". We do not guarantee it will be
+          uninterrupted, error-free or continuously available, and we may change, suspend
+          or discontinue any part of it at any time without notice.
+        </p>
+
+        <h2>Limitation of liability</h2>
+        <p>
+          To the fullest extent permitted by law, we exclude all warranties, express or
+          implied, as to the accuracy, completeness or fitness for purpose of the Service
+          and its content. We are not liable for any loss or damage arising from your use
+          of, or reliance on, the Service — including any decision to repair or replace a
+          garage door or opener, any dealings with a listed business, any reliance on a
+          licence check, or any costs that differ from our published estimates.
+        </p>
+        <p>
+          Nothing in these terms excludes or limits liability where it would be unlawful to
+          do so, including for death or personal injury caused by negligence, or for fraud.
+          Some jurisdictions do not allow certain exclusions, so parts of this section may
+          not apply to you.
+        </p>
+
+        <h2>Privacy</h2>
+        <p>
+          Our <a href="/privacy/">privacy policy</a> explains what data we collect, the
+          cookies we set and your rights over that data. It forms part of these terms.
+        </p>
+
+        <h2>Changes to these terms</h2>
+        <p>
+          We may update these terms from time to time. The current version is always the
+          one on this page, with the date shown above. Continuing to use the Service after
+          a change means you accept the updated terms.
+        </p>
+
+        <h2>Governing law</h2>
+        <p>
+          These terms are governed by the laws of {LEGAL.governingLaw}, and the courts of
+          {' '}{LEGAL.governingLaw} have jurisdiction over any dispute. If you are a
+          consumer, this does not deprive you of the protection of any mandatory consumer
+          rights available under the law of the country where you live.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about these terms:
+          {' '}<a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a>.
+        </p>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

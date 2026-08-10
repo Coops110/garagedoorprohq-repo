@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, LEGAL, SISTER_SITES, CLAIMS } from '../lib/site.js';
+import { getSiteStats, formatCount } from '../lib/data.js';
+import { guides } from '../lib/guides.js';
+import { glossary } from '../lib/glossary.js';
+import { organizationSchema } from '../lib/schema.js';
+import { breadcrumbSchema } from '../lib/schema.js';
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'About', url: '/about/' },
+];
+const stats = getSiteStats();
+const schemas = [breadcrumbSchema(crumbs), organizationSchema()];
+---
+<BaseLayout
+  title={`About ${SITE.name}: Who Writes It, How It Is Funded`}
+  description={`Who runs ${SITE.name}, how the garage door directory is built, how cost figures are researched, and what we will and will not claim about a listing.`}
+  canonical="/about/"
+  schemas={schemas}
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article style="margin-top:1rem;" class="prose">
+      <h1 style="margin:1rem 0 1rem;">About {SITE.name}</h1>
+
+      <p>
+        {SITE.name} does two things. It publishes what garage door work actually costs in
+        2026, and it lists the garage door companies operating in a given city. Both are
+        free, and no business pays to be included or promoted.
+      </p>
+
+      <h2>Why it exists</h2>
+      <p>
+        Garage door repair is a trade where the customer is usually at their worst
+        negotiating position. The door has failed, the car is stuck, it is often a weekend,
+        and almost nobody knows whether $600 for a pair of springs is a fair price or
+        double. The information asymmetry is the whole problem.
+      </p>
+      <p>
+        So the first thing this site publishes is the price. {guides.length} guides cover
+        what each job costs, what drives the number, and where the arithmetic tips from
+        repair to replacement — plus a {glossary.length}-term
+        {' '}<a href="/glossary/">glossary</a> so you can read the quote you are handed.
+      </p>
+
+      <h2>What we will and will not claim</h2>
+      <p>
+        {CLAIMS.listingMeaning} We do not rank businesses by quality, and we do not publish
+        star ratings — not as an oversight, but because no data source we are legally
+        permitted to republish contains any. That is explained in full in our
+        {' '}<a href="/editorial-guidelines/">editorial guidelines</a>, along with the exact
+        quality bar a listing has to clear.
+      </p>
+      <p>
+        In California, Florida and Arizona — the only three states that license garage door
+        work as its own trade — some listings show a verified licence badge.
+        {' '}{CLAIMS.licenceMeaning} In the other 47 states there is no garage door register
+        to check, and those pages say so plainly rather than leaving you to assume a check
+        happened.
+      </p>
+
+      {stats.businesses > 0 && (
+        <>
+          <h2>Where it is up to</h2>
+          <p>
+            {formatCount(stats.businesses)} listings across {formatCount(stats.cities)}
+            {' '}cities in {formatCount(stats.states)} states, every one with a working phone
+            number. The directory is being built metro by metro rather than dumped
+            nationally in one go, because a city page with two listings on it is not worth
+            publishing.
+          </p>
+        </>
+      )}
+
+      <h2>Who writes it</h2>
+      <p>
+        {SITE.name} is written and run by {LEGAL.founderName}, {LEGAL.founderRole}. The
+        cost research is done in-house against contractor pricing, manufacturer
+        documentation and trade sources, and every guide carries a visible last-updated
+        date.
+      </p>
+      <p>
+        We are not garage door technicians and we do not pretend to be. What we do is
+        research prices carefully, read the licensing rules properly, and say exactly how
+        confident we are in each. Where the right answer is "call a professional", the page
+        says that instead of walking you into a job that can break your arm.
+      </p>
+
+      <h2>How it is funded</h2>
+      <p>
+        Advertising, and in future affiliate arrangements. Neither affects which businesses
+        appear or in what order — there is no mechanism for a business to pay us for
+        placement, because we have not built one. If we ever have a commercial relationship
+        that could reasonably change how you read a page, it will be disclosed on that page.
+      </p>
+
+      {SISTER_SITES.disclose && (
+        <>
+          <h2>Related sites</h2>
+          <p>
+            The same operator publishes
+            {' '}{SISTER_SITES.sites.map((s, i) => (
+              <>
+                {i > 0 ? (i === SISTER_SITES.sites.length - 1 ? ' and ' : ', ') : ''}
+                <a href={s.url} rel="noopener">{s.name}</a> ({s.trade})
+              </>
+            ))}. They are separate sites with separate editorial, disclosed here so common
+            ownership is not something you have to discover.
+          </p>
+        </>
+      )}
+
+      <h2>Corrections and contact</h2>
+      <p>
+        If a figure is wrong, a listing is out of date, or you own a listed business and
+        want the entry corrected or removed, email
+        {' '}<a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a> or use the
+        {' '}<a href="/contact/">contact page</a>. We correct errors on the page rather than
+        deleting them quietly.
+      </p>
+      <p class="claim-note">
+        {LEGAL.legalName}, {LEGAL.address}.
+        {' '}<a href="/terms/">Terms of service</a> ·
+        {' '}<a href="/privacy/">Privacy policy</a>
+      </p>
+    </article>
+  </div>
+</BaseLayout>

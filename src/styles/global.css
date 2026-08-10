@@ -1,0 +1,437 @@
+/* ============================================================
+   GarageDoorHQ design system
+
+   MOBILE-FIRST, and that is structural, not a style preference.
+   Every media query below is `min-width`. Base styles are the phone
+   layout, and wider screens add to them. The audience for a garage door
+   directory is standing in a driveway in front of a door that will not
+   open, on a phone — so the phone layout is the real layout and the
+   desktop one is the enhancement.
+
+   Ported from AirProHQ's token set (spacing scale, radius, shadow, card
+   and prose patterns all carry over) but re-derived at 375px first, since
+   that design system was written desktop-down and its `max-width` queries
+   do not invert cleanly.
+
+   Tap targets: interactive elements are 44px minimum. --tap holds the
+   value so it cannot drift between buttons, nav links and table controls.
+   ============================================================ */
+
+:root {
+  /* Core palette — graphite and steel, one safety-orange signal colour.
+     Deliberately not AirProHQ's navy/ember: the two sites should not look
+     like the same site wearing a different logo. */
+  --paper: #F8F7F4;
+  --card: #FFFFFF;
+  --ink: #1B222B;
+  --ink-soft: #4B5563;
+  --muted: #78828F;
+  --line: #E4E2DC;
+  --line-cool: #DFE4EA;
+
+  /* Accents */
+  --signal: #D9480F;      /* primary CTA */
+  --signal-dark: #B23A0B;
+  --steel: #2C5F7C;       /* secondary / links */
+  --steel-dark: #204A61;
+  --amber: #C77D02;       /* highlights, licence badges */
+
+  --shadow-sm: 0 1px 3px rgba(27,34,43,.06), 0 1px 2px rgba(27,34,43,.04);
+  --shadow-md: 0 8px 30px rgba(27,34,43,.10);
+  --shadow-lg: 0 20px 60px rgba(27,34,43,.16);
+
+  --radius: 12px;
+  --radius-lg: 20px;
+  --wrap: 1160px;
+
+  /* Minimum comfortable touch target. WCAG 2.2 target size (minimum) is
+     24px; 44px is the iOS HIG figure and the one that actually feels right
+     one-handed. */
+  --tap: 44px;
+
+  --gut: 1.1rem;          /* page gutter on phones */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  /* Stops iOS Safari inflating text in landscape and breaking the layout. */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--paper);
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Belt and braces against a single wide child forcing sideways scroll of
+     the whole document — the failure the BUILD-PLAN mobile rule names. */
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: Sora, system-ui, sans-serif;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(1.65rem, 6vw, 2.5rem); }
+h2 { font-size: clamp(1.3rem, 4.5vw, 1.9rem); }
+h3 { font-size: 1.08rem; }
+
+a { color: var(--steel); text-decoration: none; }
+a:hover { color: var(--steel-dark); }
+a:focus-visible,
+button:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 4px; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
+.wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 var(--gut); }
+
+/* Skip link — first tab stop, invisible until focused. */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 200;
+  background: var(--ink); color: #fff; padding: .75rem 1rem; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; color: #fff; }
+
+/* ── HEADER ──────────────────────────────────────────────── */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(248,247,244,.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut);
+  min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+}
+.brand {
+  font-family: Sora, sans-serif; font-weight: 700; font-size: 1.12rem;
+  color: var(--ink); display: flex; align-items: center; gap: .45rem;
+  letter-spacing: -0.03em; min-height: var(--tap);
+}
+.brand-mark {
+  width: 28px; height: 28px; border-radius: 8px; flex: 0 0 28px;
+  background: linear-gradient(135deg, var(--steel) 0%, var(--signal) 100%);
+  display: grid; place-items: center; color: #fff; font-size: .9rem; font-weight: 700;
+}
+.brand em { font-style: normal; color: var(--signal); }
+
+/* Phone: nav is a disclosure panel. Desktop rules are further down. */
+.nav-links { display: none; }
+.nav-links.open {
+  display: flex; position: absolute; top: 100%; left: 0; right: 0;
+  flex-direction: column; background: var(--paper); padding: .5rem var(--gut) 1rem;
+  border-bottom: 1px solid var(--line); gap: 0; align-items: stretch;
+  box-shadow: var(--shadow-md);
+}
+.nav-links a {
+  color: var(--ink-soft); font-weight: 500; font-size: 1rem;
+  display: flex; align-items: center; min-height: var(--tap);
+  border-bottom: 1px solid var(--line);
+}
+.nav-links a:last-child { border-bottom: 0; }
+.nav-links a:hover { color: var(--signal); }
+.nav-cta {
+  background: var(--ink); color: #fff !important; border-radius: 999px;
+  justify-content: center; font-weight: 600; margin-top: .6rem; border-bottom: 0 !important;
+}
+.nav-cta:hover { background: var(--signal); }
+.nav-toggle {
+  display: grid; place-items: center; background: none; border: 1px solid var(--line);
+  border-radius: 10px; width: var(--tap); height: var(--tap); flex: 0 0 var(--tap);
+  font-size: 1.25rem; cursor: pointer; color: var(--ink);
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+  font-family: Inter, sans-serif; font-weight: 600; font-size: .95rem;
+  min-height: var(--tap); padding: .7rem 1.25rem; border-radius: 999px;
+  border: none; cursor: pointer; text-decoration: none; line-height: 1.2;
+  transition: background .15s, box-shadow .15s, border-color .15s;
+}
+.btn-signal { background: var(--signal); color: #fff; box-shadow: var(--shadow-sm); }
+.btn-signal:hover { background: var(--signal-dark); color: #fff; }
+.btn-ink { background: var(--ink); color: #fff; }
+.btn-ink:hover { background: #0F151C; color: #fff; }
+.btn-ghost { background: var(--card); color: var(--ink); border: 1.5px solid var(--line); }
+.btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+.btn-steel { background: var(--steel); color: #fff; }
+.btn-steel:hover { background: var(--steel-dark); color: #fff; }
+.btn-block { width: 100%; }
+
+/* ── EYEBROW ─────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-weight: 700; font-size: .7rem; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--steel);
+}
+.eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--signal); border-radius: 2px; }
+
+/* ── BADGES ──────────────────────────────────────────────── */
+.badge {
+  display: inline-flex; align-items: center; gap: .28rem;
+  font-size: .72rem; font-weight: 700; padding: .25rem .6rem;
+  border-radius: 999px; letter-spacing: .01em; line-height: 1.4;
+}
+.badge-licence { background: rgba(199,125,2,.12); color: #8A5602; border: 1px solid rgba(199,125,2,.3); }
+.badge-24 { background: rgba(44,95,124,.12); color: var(--steel-dark); }
+.badge-cat { background: rgba(27,34,43,.06); color: var(--ink-soft); }
+.badge-signal { background: rgba(217,72,15,.1); color: var(--signal-dark); }
+
+/* ── LISTING CARD ────────────────────────────────────────── */
+.biz-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.1rem; display: flex; flex-direction: column; gap: .7rem;
+  transition: border-color .18s, box-shadow .18s;
+}
+.biz-card:hover { border-color: rgba(217,72,15,.4); box-shadow: var(--shadow-md); }
+.biz-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: .6rem; }
+.biz-name { font-family: Sora, sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+/* The card heading is the natural thing to tap, so the link itself carries the
+   44px target rather than relying on the button below it. Block-level also
+   widens the hit area to the full card width instead of just the glyphs. */
+.biz-name a { color: inherit; display: flex; align-items: center; min-height: var(--tap); }
+.biz-name a:hover { color: var(--signal); }
+.biz-meta { font-size: .85rem; color: var(--muted); margin-top: .2rem; }
+.biz-badges { display: flex; flex-direction: column; gap: .3rem; align-items: flex-end; flex-shrink: 0; }
+.biz-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
+.biz-tag {
+  background: var(--paper); border: 1px solid var(--line); color: var(--ink-soft);
+  font-size: .72rem; padding: .18rem .5rem; border-radius: 999px;
+}
+/* Phone: stacked full-width actions. Two 44px buttons side by side at
+   375px leaves each about 150px wide, which is fine — but the call button
+   is the one that matters, so it goes first and takes the accent colour. */
+.biz-foot { display: flex; gap: .5rem; margin-top: .2rem; }
+.biz-foot .btn { flex: 1; padding: .6rem .75rem; font-size: .88rem; }
+
+/* ── SECTIONS / GRID ─────────────────────────────────────── */
+.section { padding: 2.5rem 0; }
+.section-sm { padding: 1.75rem 0; }
+.section-head { margin-bottom: 1.5rem; }
+.section-head p { color: var(--muted); max-width: 56ch; margin-top: .5rem; }
+
+.grid { display: grid; gap: 1rem; }
+.grid-3 { grid-template-columns: 1fr; }
+.grid-2 { grid-template-columns: 1fr; }
+.grid-4 { grid-template-columns: 1fr 1fr; }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.site-footer { background: var(--ink); color: rgba(255,255,255,.72); padding: 2.5rem 0 1.5rem; margin-top: 3rem; }
+.footer-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; margin-bottom: 2rem; }
+.site-footer h4 {
+  color: #fff; font-family: Inter, sans-serif; font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; margin-bottom: .6rem; font-weight: 700;
+}
+/* Footer links are dense, but they are still primary navigation on a phone —
+   they get the full 44px target rather than a compromise height. */
+.site-footer a { color: rgba(255,255,255,.72); display: flex; align-items: center; min-height: var(--tap); font-size: .92rem; }
+.site-footer a:hover { color: var(--signal); }
+.footer-brand { font-family: Sora, sans-serif; font-size: 1.25rem; color: #fff; margin-bottom: .4rem; font-weight: 700; }
+.footer-brand em { font-style: normal; color: var(--signal); }
+.footer-note { font-size: .88rem; max-width: 40ch; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.25rem; font-size: .8rem;
+  color: rgba(255,255,255,.55); display: flex; flex-direction: column; gap: .6rem;
+}
+.footer-legal { display: flex; flex-wrap: wrap; gap: 1rem; }
+.footer-legal a { color: rgba(255,255,255,.55); text-decoration: underline; min-height: var(--tap); }
+.footer-legal a:hover { color: rgba(255,255,255,.9); }
+.consent-reopen {
+  background: none; border: 0; padding: 0; font: inherit; color: rgba(255,255,255,.55);
+  text-decoration: underline; cursor: pointer; text-align: left; min-height: var(--tap);
+}
+.consent-reopen:hover { color: rgba(255,255,255,.9); }
+
+/* ── BREADCRUMBS ─────────────────────────────────────────── */
+/* Breadcrumb links get the full 44px target like every other control. The
+   container's own padding is reduced to compensate, so the trail occupies
+   about the same vertical space as it did at 21px — the tap area grows, the
+   layout does not. */
+.crumbs {
+  font-size: .82rem; color: var(--muted); padding: .3rem 0;
+  display: flex; gap: .35rem; flex-wrap: wrap; align-items: center;
+}
+.crumbs a, .crumbs > span {
+  color: var(--steel); display: inline-flex; align-items: center;
+  min-height: var(--tap);
+}
+.crumbs span.sep { min-height: auto; }
+.crumbs span.sep { color: var(--line); }
+
+/* ── AD SLOT ─────────────────────────────────────────────── */
+.ad-slot { margin: 2rem auto; text-align: center; }
+.ad-label { font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .35rem; }
+.ad-placeholder {
+  border: 1px dashed var(--line); border-radius: var(--radius); background: rgba(255,255,255,.5);
+  min-height: 100px; display: grid; place-items: center; color: var(--muted); font-size: .8rem;
+}
+
+/* ── PROSE (guides, glossary, legal) ─────────────────────── */
+.prose { font-size: 1.03rem; color: var(--ink-soft); }
+.prose h2 { margin: 2rem 0 .85rem; }
+.prose h3 { margin: 1.5rem 0 .6rem; }
+.prose p { margin-bottom: 1rem; }
+.prose ul, .prose ol { margin: 0 0 1rem 1.2rem; }
+.prose li { margin-bottom: .35rem; }
+.prose a { text-decoration: underline; text-underline-offset: 2px; }
+
+.answer-box {
+  background: linear-gradient(135deg, rgba(44,95,124,.06), rgba(217,72,15,.05));
+  border: 1px solid var(--line); border-left: 4px solid var(--steel);
+  border-radius: var(--radius); padding: 1.1rem 1.2rem; margin: 1.25rem 0 2rem;
+}
+.answer-box .eyebrow { margin-bottom: .4rem; }
+.answer-box p { font-size: 1.02rem; color: var(--ink); margin: 0; }
+
+/* Tables. `.table-scroll` is not optional decoration — a cost table with
+   three columns does not fit 375px, and without this the whole page
+   scrolls sideways instead of the table. */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.25rem 0; }
+.cost-table {
+  width: 100%; border-collapse: collapse; background: var(--card);
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.table-scroll .cost-table { margin: 0; min-width: 22rem; }
+.cost-table caption { text-align: left; font-size: .8rem; color: var(--muted); margin-bottom: .5rem; caption-side: top; }
+.cost-table th, .cost-table td { padding: .7rem .85rem; text-align: left; border-bottom: 1px solid var(--line); font-size: .92rem; }
+.cost-table th {
+  background: var(--paper); font-weight: 700; color: var(--ink); font-size: .72rem;
+  letter-spacing: .05em; text-transform: uppercase; white-space: nowrap;
+}
+.cost-table td.num { font-weight: 700; color: var(--ink); text-align: right; white-space: nowrap; }
+.cost-table tr:last-child td { border-bottom: none; }
+/* A linked table cell hands its padding to the link, so the whole cell is the
+   tap target rather than just the width of the text. Without this, city names
+   in the comparison table are 18px tall — the smallest targets on the site, on
+   the page most likely to be used one-handed. */
+.cost-table td:has(> a) { padding: 0; }
+.cost-table td:has(> a) > a {
+  display: flex; align-items: center; min-height: var(--tap);
+  padding: .4rem .85rem; width: 100%;
+}
+
+.faq-item { border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; margin-bottom: .7rem; background: var(--card); }
+.faq-item h3 { font-family: Inter, sans-serif; font-size: 1rem; font-weight: 700; color: var(--ink); margin: 0 0 .4rem; }
+.faq-item p { margin: 0; font-size: .94rem; }
+
+.pro-tip { background: rgba(199,125,2,.08); border: 1px solid rgba(199,125,2,.32); border-left: 4px solid var(--amber); border-radius: var(--radius); padding: 1rem 1.15rem; margin: 1.5rem 0; }
+.pro-tip .pro-tip-label { color: #8A5602; font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; display: block; margin-bottom: .35rem; }
+.pro-tip p { margin: 0; }
+
+.alert-box { background: rgba(185,28,28,.05); border: 1px solid rgba(185,28,28,.25); border-left: 4px solid #B91C1C; border-radius: var(--radius); padding: 1rem 1.15rem; margin: 1.5rem 0; }
+.alert-box .alert-label { color: #B91C1C; font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; display: block; margin-bottom: .35rem; }
+.alert-box p { margin: 0; }
+.alert-box p + p { margin-top: .7rem; }
+
+.highlight-box { background: rgba(44,95,124,.05); border: 1.5px dashed var(--steel); border-radius: var(--radius); padding: 1.1rem 1.25rem; margin: 1.5rem 0; }
+.highlight-box h3 { font-size: 1.05rem; margin: 0 0 .5rem; }
+.highlight-box p { margin: 0; }
+.highlight-box p + p { margin-top: .7rem; }
+
+/* Source/claim disclosure — the wording that must never contradict the
+   terms of service. Styled to be read, not skipped. */
+.claim-note {
+  font-size: .86rem; color: var(--ink-soft); background: rgba(44,95,124,.05);
+  border-left: 3px solid var(--steel); border-radius: 8px; padding: .75rem .9rem;
+  margin: 0 0 1.25rem;
+}
+.claim-note a { color: var(--steel-dark); }
+
+/* ── STAT / TRUST BAR ────────────────────────────────────── */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin: 1.25rem 0 2rem; }
+.stat-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; text-align: center; }
+.stat-value { font-family: Sora, sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); display: block; line-height: 1.1; }
+.stat-label { font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); display: block; margin-top: .3rem; }
+
+/* ── LINK LISTS (city/state/term indexes) ────────────────── */
+.link-list { display: grid; grid-template-columns: 1fr; gap: .4rem; list-style: none; margin: 0; }
+.link-list a {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  min-height: var(--tap); padding: .5rem .85rem; background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px; color: var(--ink);
+}
+.link-list a:hover { border-color: var(--signal); color: var(--signal-dark); }
+.link-list .n { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
+
+/* ── COMPARISON TABLE (sortable, progressive enhancement) ── */
+/* The table is complete and readable with JavaScript off. The sort
+   buttons are injected by script and only appear if the script runs, so
+   there is never a dead control. Numeric columns sort highest-first on the
+   first click — AirProHQ shipped lowest-first, which is backwards for
+   someone comparing options. */
+.cmp-controls { display: none; gap: .5rem; flex-wrap: wrap; margin-bottom: .75rem; }
+.cmp-controls.ready { display: flex; }
+.cmp-sort {
+  min-height: var(--tap); padding: .5rem .9rem; border-radius: 999px;
+  border: 1.5px solid var(--line); background: var(--card); color: var(--ink);
+  font: inherit; font-size: .86rem; font-weight: 600; cursor: pointer;
+}
+.cmp-sort[aria-pressed='true'] { border-color: var(--signal); color: var(--signal-dark); background: rgba(217,72,15,.06); }
+
+/* ── UTILITIES ───────────────────────────────────────────── */
+.text-center { text-align: center; }
+.mt-1 { margin-top: .5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; } .mt-4 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 1rem; } .mb-3 { margin-bottom: 1.5rem; }
+.muted { color: var(--muted); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ════════════════════════════════════════════════════════════
+   WIDER SCREENS — additive only. Everything above is the phone
+   layout and stays correct if these never apply.
+   ════════════════════════════════════════════════════════════ */
+
+@media (min-width: 34em) {          /* ~544px — large phones */
+  :root { --gut: 1.35rem; }
+  .grid-3, .grid-2 { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .stat-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .link-list { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+}
+
+@media (min-width: 48em) {          /* ~768px — tablet */
+  :root { --gut: 1.5rem; }
+  .section { padding: 3.5rem 0; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .link-list { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+  .answer-box { padding: 1.4rem 1.6rem; }
+  .prose { font-size: 1.06rem; }
+}
+
+@media (min-width: 62em) {          /* ~992px — desktop */
+  .header-inner { min-height: 66px; }
+  .brand { font-size: 1.3rem; }
+  .brand-mark { width: 30px; height: 30px; flex-basis: 30px; }
+  .nav-toggle { display: none; }
+  .nav-links {
+    display: flex; position: static; flex-direction: row; gap: 1.6rem;
+    align-items: center; padding: 0; border: 0; box-shadow: none; background: none;
+  }
+  .nav-links a { font-size: .93rem; border-bottom: 0; min-height: auto; }
+  .nav-cta { margin-top: 0; padding: .5rem 1.1rem; font-size: .88rem; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+  .grid { gap: 1.25rem; }
+  /* Business page: sidebar beside the article rather than under it. */
+  .biz-layout { display: grid; grid-template-columns: 1fr 330px; gap: 2.5rem; align-items: start; }
+}
+
+/* Respect a reduced-motion preference — the only motion here is smooth
+   scrolling and hover transitions, but both are trivially removable. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: .01ms !important; }
+}

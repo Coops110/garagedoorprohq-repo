@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllCities } from '../lib/data.js';
+import { guides } from '../lib/guides.js';
+
+// A 404 that offers real next steps rather than an apology. On AirProHQ the
+// 404 page was taking 27.7% of pageviews before redirect coverage was
+// built — every one of those was someone who wanted a real answer, so this
+// page is worth designing.
+const cities = getAllCities().slice(0, 6);
+---
+<BaseLayout
+  title="Page not found"
+  description="That page does not exist. Here is where to find garage door cost guides and local companies instead."
+  noindex={true}
+>
+  <div class="wrap-narrow" style="padding:2.5rem 1.1rem;">
+    <span class="eyebrow">404</span>
+    <h1 style="margin:.5rem 0 .75rem;">That page is not here</h1>
+    <p style="max-width:56ch;">
+      The URL may have changed, or it may never have existed. Nothing here is your fault.
+      These are the pages people usually want:
+    </p>
+
+    <h2 class="mt-4" style="font-size:1.15rem;">Cost guides</h2>
+    <ul class="link-list mt-2">
+      {guides.map((g) => (
+        <li><a href={`/guides/${g.slug}/`}>{g.h1.replace(/:.*$/, '')}</a></li>
+      ))}
+    </ul>
+
+    {cities.length > 0 && (
+      <>
+        <h2 class="mt-4" style="font-size:1.15rem;">Find a local company</h2>
+        <ul class="link-list mt-2">
+          {cities.map((c) => (
+            <li>
+              <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>
+                Garage door repair in {c.city}, {c.stateCode}
+              </a>
+              <span class="n">{c.count}</span>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
+    <p class="mt-4">
+      <a href="/" class="btn btn-ghost">Back to the homepage</a>
+    </p>
+    <p class="claim-note mt-3">
+      Landed here from a link on another site, or from a search result?
+      {' '}<a href="/contact/">Tell us the URL</a> — we redirect broken URLs rather than
+      leaving them to fail.
+    </p>
+  </div>
+</BaseLayout>

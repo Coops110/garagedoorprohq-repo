@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllBusinesses, getAllCities } from '../lib/data.js';
+import { guides } from '../lib/guides.js';
+import { glossary } from '../lib/glossary.js';
+
+// noindex: this page has no unique content of its own — it renders a query
+// over content that is already indexed at its own URLs. Indexing it would
+// create near-duplicate result pages for every query string.
+//
+// The index is embedded as JSON at build time rather than fetched, so search
+// works on first paint with no request. It stays small because it carries
+// only what is needed to match and render a link.
+const index = [
+  ...guides.map((g) => ({
+    t: g.h1.replace(/:.*$/, ''), u: `/guides/${g.slug}/`, k: 'Guide',
+    s: `${g.keyword} ${g.description}`,
+  })),
+  ...glossary.map((t) => ({
+    t: t.term, u: `/glossary/${t.slug}/`, k: 'Glossary', s: t.short,
+  })),
+  ...getAllCities().map((c) => ({
+    t: `Garage door repair in ${c.city}, ${c.stateCode}`,
+    u: `/garage-door-repair/${c.stateSlug}/${c.citySlug}/`,
+    k: 'City', s: `${c.city} ${c.state} ${c.count} listings`,
+  })),
+  ...getAllBusinesses().map((b) => ({
+    t: b.name,
+    u: `/garage-door-repair/${b.stateSlug}/${b.citySlug}/${b.slug}/`,
+    k: 'Company', s: `${b.city} ${b.stateCode} ${(b.services || []).join(' ')}`,
+  })),
+];
+---
+<BaseLayout
+  title="Search"
+  description="Search GarageDoorHQ cost guides, glossary terms, cities and garage door companies."
+  noindex={true}
+>
+  <div class="wrap-narrow" style="padding:2rem 1.1rem;">
+    <h1 style="margin-bottom:.75rem;">Search</h1>
+
+    <form id="searchForm" role="search" style="margin-bottom:1.5rem;">
+      <label for="q" class="sr-only">Search {index.length} pages</label>
+      <input
+        type="search"
+        id="q"
+        name="q"
+        placeholder="spring cost, opener, Houston…"
+        autocomplete="off"
+        style="width:100%;min-height:var(--tap);padding:.7rem .9rem;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:1rem;"
+      />
+    </form>
+
+    <p id="searchStatus" class="muted" style="font-size:.88rem;">
+      Searching {index.length} pages. Type to begin.
+    </p>
+    <ul class="link-list mt-2" id="searchResults"></ul>
+
+    <noscript>
+      <p class="claim-note">
+        Search needs JavaScript. Everything is reachable without it —
+        {' '}<a href="/guides/">all guides</a>,
+        {' '}<a href="/glossary/">the glossary</a> and
+        {' '}<a href="/garage-door-repair/">the directory</a> are ordinary linked pages.
+      </p>
+    </noscript>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ index }}>
+  const input = document.getElementById('q');
+  const list = document.getElementById('searchResults');
+  const status = document.getElementById('searchStatus');
+  const form = document.getElementById('searchForm');
+
+  form?.addEventListener('submit', (e) => e.preventDefault());
+
+  function render(q) {
+    const needle = q.trim().toLowerCase();
+    list.innerHTML = '';
+    if (needle.length < 2) {
+      status.textContent = `Searching ${index.length} pages. Type to begin.`;
+      return;
+    }
+    const words = needle.split(/\s+/);
+    const hits = index
+      .map((item) => {
+        const hay = (item.t + ' ' + item.s).toLowerCase();
+        // Every word must appear somewhere; a title hit outranks a body hit.
+        if (!words.every((w) => hay.includes(w))) return null;
+        const title = item.t.toLowerCase();
+        return { item, score: words.filter((w) => title.includes(w)).length };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 25);
+
+    status.textContent = hits.length
+      ? `${hits.length} result${hits.length === 1 ? '' : 's'} for “${q.trim()}”`
+      : `No results for “${q.trim()}”. Try a single word — “spring”, “opener”, “Houston”.`;
+
+    for (const { item } of hits) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = item.u;
+      a.textContent = item.t;
+      const n = document.createElement('span');
+      n.className = 'n';
+      n.textContent = item.k;
+      li.append(a, n);
+      list.append(li);
+    }
+  }
+
+  input?.addEventListener('input', () => render(input.value));
+
+  // Honour ?q= so the SearchAction in the WebSite schema actually works —
+  // a urlTemplate pointing at a page that ignores the parameter is a broken
+  // promise to anything that follows it.
+  const initial = new URLSearchParams(location.search).get('q');
+  if (initial) {
+    input.value = initial;
+    render(initial);
+  }
+</script>

@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { glossary, getTerm, getTerms } from '../../lib/glossary.js';
+import { getGuide } from '../../lib/guides.js';
+import { breadcrumbSchema, definedTermSchema } from '../../lib/schema.js';
+import { fitDescription } from '../../lib/seo.js';
+
+export function getStaticPaths() {
+  return glossary.map((t) => ({ params: { term: t.slug } }));
+}
+
+const { term } = Astro.params;
+const t = getTerm(term);
+
+const url = `/glossary/${t.slug}/`;
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Glossary', url: '/glossary/' },
+  { name: t.term, url },
+];
+
+const also = getTerms(t.also || []);
+const guides = (t.guides || []).map(getGuide).filter(Boolean);
+
+const schemas = [breadcrumbSchema(crumbs), definedTermSchema(t)];
+---
+<BaseLayout
+  title={t.title}
+  description={fitDescription(
+    t.short,
+    `${t.term}: what it is, why it matters on a garage door, and what it means when a technician mentions it on a quote.`,
+  )}
+  canonical={url}
+  schemas={schemas}
+  type="article"
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article class="prose">
+      <span class="eyebrow">Glossary</span>
+      <h1 style="margin:.5rem 0 .75rem;">{t.term}</h1>
+
+      <div class="answer-box">
+        <span class="eyebrow">Definition</span>
+        <p>{t.short}</p>
+      </div>
+
+      {t.body.map((p) => <p>{p}</p>)}
+
+      {also.length > 0 && (
+        <section>
+          <h2>Related terms</h2>
+          <ul class="link-list" style="margin-top:.75rem;">
+            {also.map((r) => (
+              <li><a href={`/glossary/${r.slug}/`}>{r.term}</a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {guides.length > 0 && (
+        <section>
+          <h2>Guides that cover this</h2>
+          <ul class="link-list" style="margin-top:.75rem;">
+            {guides.map((g) => (
+              <li><a href={`/guides/${g.slug}/`}>{g.h1.replace(/:.*$/, '')}</a></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <p class="mt-3"><a href="/glossary/">← All garage door terms</a></p>
+    </article>
+  </div>
+</BaseLayout>

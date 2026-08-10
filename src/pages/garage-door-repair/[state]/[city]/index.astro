@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import BizCard from '../../../../components/BizCard.astro';
+import AdSlot from '../../../../components/AdSlot.astro';
+import { SITE, CLAIMS } from '../../../../lib/site.js';
+import {
+  getAllCities, getCity, getBusinessesByCity, formatCount,
+} from '../../../../lib/data.js';
+import { licenceInfo, noLicenceGuidance } from '../../../../lib/licensing.js';
+import { getGuide } from '../../../../lib/guides.js';
+import {
+  breadcrumbSchema, itemListSchema, faqSchema,
+} from '../../../../lib/schema.js';
+import { fitTitle, fitDescription } from '../../../../lib/seo.js';
+
+export function getStaticPaths() {
+  return getAllCities().map((c) => ({
+    params: { state: c.stateSlug, city: c.citySlug },
+  }));
+}
+
+const { state, city } = Astro.params;
+const c = getCity(state, city);
+const businesses = getBusinessesByCity(state, city);
+const lic = licenceInfo(c.stateCode);
+
+const cityUrl = `/garage-door-repair/${state}/${city}/`;
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Garage door directory', url: '/garage-door-repair/' },
+  { name: c.state, url: `/garage-door-repair/${state}/` },
+  { name: c.city, url: cityUrl },
+];
+
+// Cost context pulled from our own guides, so a city page can never quote a
+// figure the guide contradicts. AirProHQ's lesson: numbers that disagree
+// across neighbouring pages are the fastest way to lose a reader's trust,
+// and the only reliable fix is one source of truth.
+const repair = getGuide('garage-door-repair-cost');
+const costRows = (repair?.costTable?.rows || []).filter(([job]) =>
+  /service call|torsion spring — pair|opener repair|off-track|panel replacement|opener replacement/i.test(job));
+
+const faqs = [
+  {
+    q: `How many garage door companies are there in ${c.city}, ${c.stateCode}?`,
+    a: `${SITE.name} lists ${c.count} garage door ${c.count === 1 ? 'company' : 'companies'} in ${c.city}, ${c.stateCode}${lic && c.licensedCount ? `, of which ${c.licensedCount === c.count ? 'all' : c.licensedCount} have a licence number matched to an active record on the ${lic.authorityShort} register` : ''}. ${CLAIMS.listingMeaning}`,
+  },
+  {
+    q: `How much does garage door repair cost in ${c.city}?`,
+    a: `Most repairs in ${c.city} fall in the $150–$400 range. A torsion spring pair runs $250–$550, an opener repair $100–$300, and a replacement opener $300–$700 installed. Expect a $75–$150 diagnostic fee, usually credited against the work.`,
+  },
+  {
+    q: lic
+      ? `Are garage door companies in ${c.city} licensed?`
+      : `Do garage door companies in ${c.city} need a licence?`,
+    a: lic
+      ? `${c.state} licenses the trade through the ${lic.authority} under ${lic.classification}. Ask any company for its licence number and check it on the ${lic.authorityShort} register yourself — it takes about a minute. ${CLAIMS.licenceMeaning}`
+      : `${c.state} does not license garage door installation as a separate trade, so there is no state garage door register to check. Ask for a certificate of general liability insurance instead, and check whether your city requires a permit for the work.`,
+  },
+  {
+    q: `Which garage door company in ${c.city} should I call first?`,
+    a: `We do not rank contractors by quality and we do not sell placement, so treat this list as a starting point rather than a recommendation. Call two or three, ask each for the price split into parts and labour, and ask for the spring cycle rating in writing.`,
+  },
+];
+
+const schemas = [
+  breadcrumbSchema(crumbs),
+  itemListSchema(businesses, (b) => `/garage-door-repair/${state}/${city}/${b.slug}/`),
+  faqSchema(faqs),
+];
+---
+<BaseLayout
+  title={fitTitle(
+    `${c.count} Garage Door Companies in ${c.city}, ${c.stateCode}`,
+    `Garage Door Repair in ${c.city}, ${c.stateCode}`,
+    `Garage Doors in ${c.city}, ${c.stateCode}`,
+  )}
+  description={fitDescription(
+    `${c.count} garage door companies in ${c.city}, ${c.stateCode} with phone numbers and service categories${lic ? `, plus how to check a ${lic.authorityShort} licence yourself` : ''}.`,
+    `${c.count} garage door repair and installation companies in ${c.city}, ${c.stateCode}, with phone numbers, service categories and local cost guidance.`,
+  )}
+  canonical={cityUrl}
+  schemas={schemas}
+>
+  <div class="wrap">
+    <Breadcrumbs items={crumbs} />
+
+    <span class="eyebrow">{c.city}, {c.stateCode}</span>
+    <h1 style="margin:.5rem 0 .5rem;">Garage door companies in {c.city}, {c.stateCode}</h1>
+    <p class="muted mb-3">
+      {formatCount(c.count)} {c.count === 1 ? 'listing' : 'listings'}
+      {c.withAddress ? ` · ${c.withAddress} with a street address` : ''}
+      {lic && c.licensedCount ? ` · ${c.licensedCount} licence-verified` : ''}
+    </p>
+
+    <p class="claim-note">
+      {CLAIMS.listingMeaning} We do not rank by quality and no contractor pays for
+      placement. <a href="/editorial-guidelines/">How listings are chosen</a>.
+    </p>
+
+    <p style="max-width:66ch;margin-bottom:1.5rem;">
+      Whether a spring has snapped and the door will not lift, or the opener has
+      finally given up, this page gathers the garage door companies operating in
+      {' '}{c.city} with their contact details in one place. Call two or three before
+      you book — and read our
+      {' '}<a href="/guides/hiring-a-garage-door-company/">hiring checklist</a>
+      {' '}first so you know which four questions actually reveal a quote.
+    </p>
+
+    <div class="grid grid-3">
+      {businesses.map((b, i) => (
+        <>
+          <BizCard biz={b} />
+          {i === 5 && (
+            <div style="grid-column:1/-1;">
+              <AdSlot label="Advertisement" />
+            </div>
+          )}
+        </>
+      ))}
+    </div>
+
+    {/* Per-city cost table. Genuinely page-specific rather than boilerplate
+        padding: it answers the question someone on this page is about to ask
+        a contractor, and every figure comes from our own guide so the two
+        cannot drift. */}
+    <section class="section">
+      <h2 style="font-size:1.3rem;">What garage door work costs in {c.city}</h2>
+      <p class="mt-2">
+        These are national 2026 estimates from our own
+        {' '}<a href="/guides/garage-door-repair-cost/">garage door repair cost guide</a>,
+        not quotes from the companies above. Labour rates in {c.city} move the
+        figure up or down, and a double-width door sits at the top of every range.
+      </p>
+      <div class="table-scroll">
+        <table class="cost-table">
+          <caption>Typical installed cost by job, 2026 national estimate</caption>
+          <thead>
+            <tr><th scope="col">Job</th><th scope="col" style="text-align:right;">Typical cost</th></tr>
+          </thead>
+          <tbody>
+            {costRows.map(([job, cost]) => (
+              <tr><td>{job}</td><td class="num">{cost}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    {/* Licence section. In a licensing state this is a walkthrough; in the
+        other 47 it explains why there is no badge, which is more useful than
+        silence and stops the absence reading as a failed check. */}
+    <section class="section-sm">
+      <h2 style="font-size:1.3rem;">
+        {lic ? `Check a ${c.city} contractor's licence yourself` : `Licensing and insurance in ${c.state}`}
+      </h2>
+      {lic ? (
+        <>
+          <p class="mt-2">
+            {c.state} is one of three states that license garage door work specifically.
+            Any company quoting you should give you its licence number on request, and
+            you can confirm it on the {lic.authority} register without any expertise:
+          </p>
+          <div class="highlight-box">
+            <ol style="margin:0 0 0 1.2rem;">
+              {lic.verifySteps.map((step) => <li style="margin-bottom:.4rem;">{step}</li>)}
+            </ol>
+            <p class="mt-2">
+              <a href={lic.searchUrl} rel="nofollow noopener" target="_blank">{lic.searchLabel}</a>
+              {' '}(opens on the {lic.authorityShort} site)
+            </p>
+          </div>
+          <p>{CLAIMS.licenceMeaning}</p>
+        </>
+      ) : (
+        noLicenceGuidance(c.state).map((p) => <p class="mt-2">{p}</p>)
+      )}
+    </section>
+
+    <section class="section-sm">
+      <h2 style="font-size:1.3rem;">Garage doors in {c.city}: common questions</h2>
+      {faqs.map((f) => (
+        <div class="faq-item">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+    </section>
+
+    <section class="section-sm">
+      <h2 style="font-size:1.3rem;">Before you call around</h2>
+      <p class="mt-2 mb-2">Know the fair price first.</p>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
+        <a href="/guides/garage-door-repair-cost/" class="btn btn-ink">Repair cost guide</a>
+        <a href="/guides/garage-door-spring-replacement-cost/" class="btn btn-ghost">Spring costs</a>
+        <a href="/guides/garage-door-opener-repair-cost/" class="btn btn-ghost">Opener costs</a>
+      </div>
+      <p class="mt-3">
+        <a href={`/garage-door-repair/${state}/`}>← All {c.state} cities</a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>
