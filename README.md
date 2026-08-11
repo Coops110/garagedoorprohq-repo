@@ -32,6 +32,13 @@ npm run build && python scripts/check-seo.py && python scripts/check-links.py &&
 | `scripts/check-links.py` | No internal link in the built site points at a missing page |
 | `scripts/build-redirects.py` | Writes `vercel.json`; rejects any rule with a missing destination or a real page as its source |
 
+Share cards are generated separately, not on every build:
+
+```bash
+pip install pillow
+python scripts/build-og-images.py
+```
+
 ## Data pipeline
 
 Base layer is **Foursquare Open Source Places via Overture Maps** (Apache 2.0) —
@@ -106,6 +113,7 @@ src/lib/seo.js         title/description budget helpers
 src/lib/diagrams.js    diagram captions + legends (words live here, not in the SVG)
 src/lib/costmap.js     cost-map anchors, matched onto a guide's own costTable
 src/components/diagrams/  authored inline SVG — no photography, see CLAUDE.md
+public/og/             pre-rendered 1200x630 share cards (committed, not built on Vercel)
 src/pages/garage-door-repair/[state]/[city]/[business]/
 src/pages/guides/, src/pages/glossary/
 ```

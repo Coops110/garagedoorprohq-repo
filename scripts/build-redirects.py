@@ -32,7 +32,7 @@ def from_node(expr):
     drift from the site's own source of truth."""
     out = subprocess.run(
         ['node', '--input-type=module', '-e', expr],
-        capture_output=True, text=True,
+        capture_output=True, text=True, encoding='utf-8',
     )
     if out.returncode != 0:
         sys.exit(f'  node failed reading site data:\n{out.stderr}')
