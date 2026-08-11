@@ -4,11 +4,13 @@ dist/
 
 # Pipeline working directory. Regenerable from Overture, and pilot-raw.json is
 # ~2MB of cached query result — it belongs on disk, not in git history.
-# src/data/ IS committed: that is the published site's data.
+# src/data/ IS committed: that is the published site data.
 data-work/
 
 .DS_Store
 *.log
 .env
 .env.production
+
+# Vercel CLI project link (contains project + org IDs)
 .vercel
