@@ -71,12 +71,29 @@ where every business is a garage door company those words carry no
 distinguishing information, and leaving them in makes "A1 Garage Door" and "A1
 Garage Doors Inc" look different.
 
-**Register access is uneven and that is not a bug to fix in code.** CA is
-scriptable from the CSLB portal. FL (myfloridalicense.com) and AZ (a Salesforce
-Experience Cloud app) both refuse scripted requests, so they need a manual export
-fed in via `--fl-file` / `--az-file`. Do not reach for a third-party scraper to
-paper over that — the reasoning that keeps Google Places off this site applies
-identically.
+**All three registers need a manual download. None of them is scriptable, and
+this was established by trying.**
+
+- **CA** — `web.cslb.ca.gov` serves the search form over GET, but the POST is
+  rejected by an F5 web application firewall ("Request Rejected" plus a support
+  ID). There is no static file URL; every export is generated behind that form.
+  Getting through would mean impersonating a browser to defeat bot protection,
+  which this project will not do for a file a human downloads in four clicks.
+- **FL** — `myfloridalicense.com` returns 403 to scripted requests.
+- **AZ** — the ROC search is a Salesforce Experience Cloud app backed by an
+  internal Aura endpoint, not a stable public interface.
+
+So `fetch-licences.py` does not fetch. It normalises a downloaded export into the
+matcher's schema, sniffs the delimiter (CSLB and DBPR files have appeared comma,
+tab and pipe delimited — the wrong one yields a single giant column, which looks
+exactly like an empty register), and prints the status and classification
+distributions so a wrong column mapping is visible immediately rather than as a
+mysteriously empty badge count two steps later. Where to click for each file is
+in the script header.
+
+Do not substitute a third-party scraper. The official registers are free and
+authoritative; buying the same rows from a middleman inherits their terms while
+adding nothing — the reasoning that keeps Google Places off this site.
 
 ## www redirects to the apex, and that rule is fragile
 
