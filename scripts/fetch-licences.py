@@ -65,19 +65,25 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 # columns differently and renames them between exports, so each field lists
 # several possibilities and the first one present wins.
 MAPS = {
+    # Confirmed against a real CSLB export: LicenseNumber, LastUpdated,
+    # BusinessType, BusinessName, Address, City, State, Zip, County, PhoneNumber,
+    # IssueDate, ExpirationDate, Classification, Status. Values carry leading
+    # spaces and Classification is pipe-separated (" D21 | D28").
     'CA': {
-        'licence': ['license number', 'licenseno', 'license no.', 'license no', 'license', 'lic #'],
-        'name': ['business name', 'businessname', 'name', 'dba'],
+        'licence': ['licensenumber', 'license number', 'licenseno', 'license no.', 'license'],
+        'name': ['businessname', 'business name', 'name', 'dba'],
         'city': ['city', 'mailing city', 'business city'],
         'zip': ['zip', 'zip code', 'zipcode', 'mailing zip'],
-        'status': ['primary status', 'license status', 'status'],
-        'classification': ['classification', 'classifications', 'class', 'classification(s)'],
-        'expires': ['expiration date', 'expires', 'expiration'],
+        'phone': ['phonenumber', 'phone number', 'phone', 'telephone'],
+        'status': ['status', 'primary status', 'license status'],
+        'classification': ['classification', 'classifications', 'class'],
+        'expires': ['expirationdate', 'expiration date', 'expires'],
     },
     'FL': {
         'licence': ['license number', 'licensenumber', 'lic number', 'license'],
         'name': ['business name', 'dba name', 'licensee name', 'name'],
         'city': ['city', 'business city', 'mailing city'],
+        'phone': ['phone', 'phone number', 'telephone', 'business phone'],
         'zip': ['zip', 'zip code', 'business zip'],
         'status': ['status', 'license status', 'primary status'],
         'classification': ['license type', 'profession', 'classification', 'rank'],
@@ -87,6 +93,7 @@ MAPS = {
         'licence': ['license number', 'license #', 'licensenumber', 'roc number', 'license'],
         'name': ['business name', 'dba', 'entity name', 'name'],
         'city': ['city', 'business city'],
+        'phone': ['phone', 'phone number', 'telephone', 'business phone'],
         'zip': ['zip', 'zip code', 'postal code'],
         'status': ['status', 'license status'],
         'classification': ['classification', 'class', 'license class', 'scope'],
@@ -115,11 +122,40 @@ def sniff_reader(fh):
     return csv.DictReader(fh, dialect=dialect)
 
 
+def read_xlsx(p):
+    """CSLB's portal hands out .xlsx, not CSV. openpyxl is a local-only dev
+    dependency; nothing on Vercel needs it."""
+    try:
+        from openpyxl import load_workbook
+    except ImportError:
+        sys.exit('  reading .xlsx needs openpyxl:  pip install openpyxl')
+    wb = load_workbook(p, read_only=True, data_only=True)
+    ws = wb[wb.sheetnames[0]]
+    it = ws.iter_rows(values_only=True)
+    header = [str(h or '').strip() for h in next(it)]
+    return header, [dict(zip(header, r)) for r in it]
+
+
 def normalise(path, state):
     mapping = MAPS[state]
     p = Path(path).expanduser()
     if not p.exists():
         sys.exit(f'  {p} not found')
+
+    if p.suffix.lower() in ('.xlsx', '.xlsm'):
+        raw_header, raw_rows = read_xlsx(p)
+        headers = [h.lower() for h in raw_header]
+        rows, skipped = [], 0
+        for r in raw_rows:
+            low = {str(k or '').strip().lower(): str(v or '').strip() for k, v in r.items()}
+            rec = {'state': state}
+            for field, candidates in mapping.items():
+                rec[field] = next((low[c] for c in candidates if low.get(c)), '')
+            if rec['licence'] and rec['name']:
+                rows.append(rec)
+            else:
+                skipped += 1
+        return report(state, p, rows, skipped, headers, mapping)
 
     with p.open(encoding='utf-8-sig', newline='') as fh:
         reader = sniff_reader(fh)
@@ -135,6 +171,10 @@ def normalise(path, state):
             else:
                 skipped += 1
 
+    return report(state, p, rows, skipped, headers, mapping)
+
+
+def report(state, p, rows, skipped, headers, mapping):
     if not rows:
         print(f'\n  ! No usable rows in {p.name}.')
         print(f'    Columns found: {headers}')
@@ -147,6 +187,8 @@ def normalise(path, state):
 
     print(f'  {state}: {len(rows)} usable rows'
           + (f', {skipped} skipped (no licence number or no name)' if skipped else ''))
+    print(f"     with a phone: {sum(1 for r in rows if r.get('phone'))}"
+          f"   with a ZIP: {sum(1 for r in rows if r.get('zip'))}")
     # Surface what the matcher will actually filter on, so a wrong column
     # mapping is visible here rather than as a mysteriously empty badge count
     # two steps later.

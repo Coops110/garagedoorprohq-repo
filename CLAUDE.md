@@ -52,18 +52,38 @@ stated differentiator — so a wrong one is worse than none at all.
 Matching is on name, which is exactly the operation that put a Lubbock firm in
 Wharton on AirProHQ. `match-licences.py` therefore requires all four of:
 
-1. **Corroboration** — the city or ZIP must agree too. Cities present and
-   differing means the record is logged as a conflict and gets no badge.
+1. **Corroboration** — a phone, ZIP or city must agree too, in that order of
+   strength. Phone is very nearly unique and the CSLB export carries one for
+   2,780 of 2,786 records, so in practice phone does the work.
 2. **Unambiguity** — two register records matching one business with different
    licence numbers means neither is used. Texas has eight licensed "Mendoza"
    HVAC firms; the same holds here.
 3. **Active status only** — the badge says "active record", so expired,
    suspended and inactive earn nothing.
 4. **Right classification** — a California B general licence is not a C-61/D-28.
+5. **A contradicted stronger signal beats an agreeing weaker one.** If both
+   sides carry a phone and the numbers differ, that is evidence *against* the
+   match. This check must run **before** the ZIP and city fallbacks — ordering
+   it after the ZIP check let an agreeing ZIP override a contradicting phone,
+   which is how "Mesa Garage Door Services" got badged from "MESA GARAGE DOORS".
+6. **One licence, one listing.** A licence number may badge at most one
+   business, kept only for a single phone-corroborated claimant and otherwise
+   dropped. Licence #1015910 was badging two different "Garage Door Hero"
+   listings in Anaheim; at least one was wrong and nothing said which.
+
+Guards 5 and 6 both came out of spot-checking real output, not from review — the
+first pass produced 47 badges that all four original guards accepted. **Always
+eyeball the matches against the register before staging them.** The current
+result is 28, all phone-corroborated, all licence numbers distinct.
+
+That strictness rejects some true matches: a firm whose Overture number is a
+call-tracking line and whose register number is the office line reads as a
+conflict. That is the intended trade — a missing badge costs a reader nothing,
+a false one tells them a business is licensed when we have not established it.
 
 `python scripts/match-licences.py --self-test` runs the real matcher over a
 fixture built to trip each guard, needs no network and no data, and must stay at
-11/11. Run it after touching that file: a silent regression in a guard ships a
+21/21. Run it after touching that file: a silent regression in a guard ships a
 false badge, which is the worst thing this codebase can emit.
 
 Note the name normaliser strips `garage`, `door` and `doors` as noise. On a site
@@ -71,14 +91,21 @@ where every business is a garage door company those words carry no
 distinguishing information, and leaving them in makes "A1 Garage Door" and "A1
 Garage Doors Inc" look different.
 
-**All three registers need a manual download. None of them is scriptable, and
-this was established by trying.**
+**Getting the registers: CA works via a real browser, FL and AZ do not.**
 
-- **CA** — `web.cslb.ca.gov` serves the search form over GET, but the POST is
-  rejected by an F5 web application firewall ("Request Rejected" plus a support
-  ID). There is no static file URL; every export is generated behind that form.
-  Getting through would mean impersonating a browser to defeat bot protection,
-  which this project will not do for a file a human downloads in four clicks.
+- **CA** — `web.cslb.ca.gov` rejects a *scripted* POST at an F5 web application
+  firewall ("Request Rejected" plus a support ID), and there is no static file
+  URL. Do **not** try to defeat that by spoofing headers on an HTTP client;
+  that is bot-detection evasion. Driving an actual browser through the form is
+  a different thing and works fine — the control is satisfied because it
+  genuinely is a browser. Open
+  `/onlineservices/Dataportal/ListByClassification`, select `C-61/D-28`, click
+  Download, and the xlsx lands in Downloads. 2,786 statewide records.
+
+  Two details in the real export would otherwise silently yield zero badges:
+  CSLB's word for good standing is **CLEAR**, not ACTIVE; and Classification is
+  pipe-separated and abbreviated (`" D21 | D28"`), not `"C-61/D-28"`. Both are
+  handled, and `ACTIVE_WORDS` is where to add another state's vocabulary.
 - **FL** — `myfloridalicense.com` returns 403 to scripted requests.
 - **AZ** — the ROC search is a Salesforce Experience Cloud app backed by an
   internal Aura endpoint, not a stable public interface.
