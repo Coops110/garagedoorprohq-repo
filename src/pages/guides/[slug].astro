@@ -83,6 +83,8 @@ const modified = new Date(g.dateModified || g.datePublished)
   title={fitTitle(g.title, g.h1.replace(/:.*$/, ''))}
   description={fitDescription(g.description, g.quickAnswer)}
   canonical={url}
+  image={`/og/guides/${g.slug}.png`}
+  imageAlt={`${g.h1} — a ${SITE.name} cost guide`}
   schemas={schemas}
   type="article"
 >

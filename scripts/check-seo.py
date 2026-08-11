@@ -15,6 +15,7 @@ import os
 import re
 import sys
 from collections import Counter
+from pathlib import Path
 
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
@@ -37,6 +38,9 @@ SVG = re.compile(r'<svg\b([^>]*)>', re.S)
 SVG_BLOCK = re.compile(r'<svg\b.*?</svg>', re.S)
 VIEWBOX = re.compile(r'viewBox="([^"]+)"')
 CIRCLE = re.compile(r'<circle cx="([\d.-]+)" cy="([\d.-]+)" r="([\d.]+)"')
+OG_IMAGE = re.compile(r'<meta property="og:image" content="([^"]+)"')
+OG_IMAGE_ALT = re.compile(r'<meta property="og:image:alt" content="[^"]+"')
+SITE_ORIGIN = 'https://garagedoorhq.com'
 
 
 def unescape(s):
@@ -92,6 +96,23 @@ for f in pages:
         # Two pages claiming one canonical URL means one of them is telling
         # Google to drop it. Almost always a copy-paste in a template.
         canonicals.setdefault(m.group(1), []).append(page)
+
+    # Share cards. A missing og:image is a page that shares as a bare text stub;
+    # a present-but-broken one is worse, because the consumer caches the failure.
+    # So the tag must exist, carry alt text, and point at a file that is actually
+    # in the build.
+    if not noindexed:
+        og = OG_IMAGE.search(html)
+        if not og:
+            fail('no og:image', page, '')
+        else:
+            url = og.group(1)
+            local = url.replace(SITE_ORIGIN, '') if url.startswith(SITE_ORIGIN) else url
+            if local.startswith('/'):
+                if not (Path('dist') / local.lstrip('/')).is_file():
+                    fail('og:image points at a file not in the build', page, local)
+            if not OG_IMAGE_ALT.search(html):
+                fail('og:image without og:image:alt', page, local)
 
     h1s = H1.findall(html)
     if not h1s:
@@ -153,7 +174,8 @@ print(f'  pages audited {len(pages)}')
 if not fails:
     print(f'  ✓ all pass — title ≤{TITLE_MAX}, description {DESC_MIN}–{DESC_MAX}, '
           f'one h1, canonical present, unique canonicals, images have alt, '
-          f'every inline svg labelled or explicitly decorative')
+          f'every inline svg labelled or explicitly decorative, '
+          f'og:image present with alt and backed by a real file')
     sys.exit(0)
 
 print()
