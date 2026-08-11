@@ -1,0 +1,84 @@
+---
+// Torsion vs extension springs — the "look above your door and tell me which
+// you have" question that decides the price. Two stacked panels rather than one
+// wide side-by-side drawing, so neither panel is squeezed on a phone.
+const { id = 'dg-springs' } = Astro.props;
+---
+<div class="dg-stack">
+  <svg
+    viewBox="0 0 420 210" width="420" height="210" role="img"
+    aria-labelledby={`${id}-a-title`} xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id={`${id}-a-title`}>
+      Torsion springs: one or two coiled springs on a shaft above the door opening
+    </title>
+    <rect x="0" y="0" width="420" height="210" fill="var(--paper)" />
+    <rect x="30" y="52" width="360" height="130" fill="var(--card)" stroke="var(--line)" stroke-width="2" />
+
+    <!-- shaft across the top -->
+    <line x1="44" y1="40" x2="376" y2="40" stroke="var(--ink)" stroke-width="6" stroke-linecap="round" />
+    <!-- two springs on the shaft -->
+    <g fill="none" stroke="var(--signal)" stroke-width="3.5">
+      {Array.from({ length: 9 }, (_, i) => <ellipse cx={80 + i * 12} cy="40" rx="5.5" ry="14" />)}
+      {Array.from({ length: 9 }, (_, i) => <ellipse cx={232 + i * 12} cy="40" rx="5.5" ry="14" />)}
+    </g>
+    <rect x="196" y="30" width="22" height="20" rx="3" fill="var(--ink)" />
+    <circle cx="56" cy="40" r="13" fill="var(--steel)" />
+    <circle cx="364" cy="40" r="13" fill="var(--steel)" />
+    <!-- cables down the sides -->
+    <line x1="56" y1="53" x2="56" y2="172" stroke="var(--steel)" stroke-width="2.5" />
+    <line x1="364" y1="53" x2="364" y2="172" stroke="var(--steel)" stroke-width="2.5" />
+    <!-- door -->
+    {[0, 1, 2].map((i) => (
+      <rect x="66" y={64 + i * 38} width="288" height="34" rx="2" fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="1.8" />
+    ))}
+    <line x1="16" y1="182" x2="404" y2="182" stroke="var(--ink)" stroke-width="2.5" />
+
+    <g font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle" dominant-baseline="central">
+      <circle cx="210" cy="14" r="14" fill="var(--signal)" />
+      <text x="210" y="14" fill="#fff">1</text>
+    </g>
+  </svg>
+
+  <svg
+    viewBox="0 0 420 210" width="420" height="210" role="img"
+    aria-labelledby={`${id}-b-title`} xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id={`${id}-b-title`}>
+      Extension springs: a long spring stretched along the horizontal track on
+      each side of the door
+    </title>
+    <rect x="0" y="0" width="420" height="210" fill="var(--paper)" />
+    <rect x="30" y="52" width="360" height="130" fill="var(--card)" stroke="var(--line)" stroke-width="2" />
+
+    <!-- horizontal tracks running back into the garage, drawn in perspective -->
+    <line x1="44" y1="46" x2="150" y2="30" stroke="var(--ink-soft)" stroke-width="2.5" />
+    <line x1="376" y1="46" x2="270" y2="30" stroke="var(--ink-soft)" stroke-width="2.5" />
+
+    <!-- extension springs stretched alongside them -->
+    <g fill="none" stroke="var(--amber)" stroke-width="3.5">
+      {Array.from({ length: 14 }, (_, i) => (
+        <ellipse cx={56 + i * 7} cy={44 - i * 1.05} rx="3.4" ry="8" />
+      ))}
+      {Array.from({ length: 14 }, (_, i) => (
+        <ellipse cx={364 - i * 7} cy={44 - i * 1.05} rx="3.4" ry="8" />
+      ))}
+    </g>
+    <!-- safety cable threaded through each spring -->
+    <line x1="50" y1="46" x2="156" y2="30" stroke="var(--steel)" stroke-width="1.6" stroke-dasharray="5 3" />
+    <line x1="370" y1="46" x2="264" y2="30" stroke="var(--steel)" stroke-width="1.6" stroke-dasharray="5 3" />
+
+    <!-- door -->
+    {[0, 1, 2].map((i) => (
+      <rect x="66" y={64 + i * 38} width="288" height="34" rx="2" fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="1.8" />
+    ))}
+    <line x1="16" y1="182" x2="404" y2="182" stroke="var(--ink)" stroke-width="2.5" />
+
+    <g font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle" dominant-baseline="central">
+      <circle cx="118" cy="14" r="14" fill="var(--amber)" />
+      <text x="118" y="14" fill="#fff">2</text>
+      <circle cx="302" cy="14" r="14" fill="var(--steel)" />
+      <text x="302" y="14" fill="#fff">3</text>
+    </g>
+  </svg>
+</div>

@@ -1,0 +1,49 @@
+---
+// ─────────────────────────────────────────────────────────────
+//  FIGURE — wrapper for the SVG diagrams in src/components/diagrams/.
+//
+//  WHY NUMBERED CALLOUTS INSTEAD OF LABELS INSIDE THE DRAWING
+//  A 700-unit-wide viewBox scaled into a 350px phone screen halves every
+//  font size with it: 14px label text renders at 7px. Text inside a
+//  responsive SVG is only legible at the width it was designed for.
+//
+//  So the drawings carry numbered markers — large, high-contrast, legible at
+//  any scale — and the words live in an HTML legend below, at real body-text
+//  size that respects the reader's font settings. The legend doubles as
+//  internal linking, since most callouts have a glossary page.
+//
+//  No layout shift: every diagram has width/height plus viewBox, giving an
+//  intrinsic aspect ratio, so the browser reserves the right box before
+//  paint. `height: auto` in the CSS is what preserves it.
+// ─────────────────────────────────────────────────────────────
+const {
+  caption,
+  // [{ n, label, href?, value? }] — n must match the marker in the drawing.
+  // `value` is rendered right-aligned, which turns the legend into a readable
+  // price list for the cost-map diagram.
+  legend = [],
+  // Renders the legend as a plain list where the diagram has no numbering.
+  unnumbered = false,
+} = Astro.props;
+---
+<figure class="fig">
+  <div class="fig-media">
+    <slot />
+  </div>
+
+  {legend.length > 0 && (
+    <ul class={unnumbered ? 'fig-legend fig-legend-plain' : 'fig-legend'}>
+      {legend.map((item) => (
+        <li>
+          {!unnumbered && <span class="fig-num" aria-hidden="true">{item.n}</span>}
+          {item.href
+            ? <a href={item.href}>{item.label}</a>
+            : <span>{item.label}</span>}
+          {item.value && <span class="fig-value">{item.value}</span>}
+        </li>
+      ))}
+    </ul>
+  )}
+
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

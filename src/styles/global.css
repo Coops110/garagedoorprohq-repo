@@ -435,3 +435,105 @@ img { max-width: 100%; height: auto; display: block; }
   html { scroll-behavior: auto; }
   * { transition-duration: .01ms !important; }
 }
+
+/* ── FIGURES / DIAGRAMS ──────────────────────────────────────
+   The SVGs in src/components/diagrams/ carry viewBox plus width and height,
+   so they have an intrinsic aspect ratio and the browser reserves the correct
+   box before paint. `height: auto` is what preserves that — setting a fixed
+   height here would reintroduce the layout shift the attributes prevent.
+
+   Labels are NOT inside the drawings. A 640-unit viewBox scaled into a 350px
+   phone screen halves every font size with it, so 14px label text lands at
+   7px. The drawings carry numbered markers and the words live in .fig-legend
+   below at real body-text size, which also respects the reader's font
+   settings and gets picked up as page text. */
+.fig { margin: 1.5rem 0 2rem; }
+.fig-media {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .6rem;
+  overflow: hidden;
+}
+.fig-media svg { width: 100%; height: auto; display: block; }
+
+/* Multi-panel diagrams. Stacked on a phone; side by side once there is room,
+   because two 200-wide panels at 375px would be 170px each. */
+.dg-stack { display: grid; gap: .6rem; }
+.dg-row { display: grid; gap: .6rem; grid-template-columns: 1fr; }
+
+.fig-legend {
+  list-style: none;
+  margin: .85rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .3rem;
+  font-size: .92rem;
+}
+.fig-legend li {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: var(--tap);
+  padding: .2rem .1rem;
+  border-bottom: 1px dashed var(--line);
+}
+.fig-legend li:last-child { border-bottom: 0; }
+/* Legend links are navigation into the glossary, not links inside a sentence,
+   so they take the full 44px target rather than the inline-link exemption. The
+   link stretches to fill the row so the whole line is tappable, not just the
+   width of the words. */
+.fig-legend a {
+  color: var(--steel-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: flex;
+  align-items: center;
+  min-height: var(--tap);
+  flex: 1 1 auto;
+}
+.fig-legend-plain li { border-bottom: 0; }
+
+/* The marker. Matches the circles in the drawing, and is the only thing tying
+   the two together — keep the colours in step if a diagram changes. */
+.fig-num {
+  flex: 0 0 1.55rem;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+/* Right-aligned value turns the legend into a price list for the cost map. */
+.fig-value {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.fig figcaption {
+  font-size: .84rem;
+  color: var(--muted);
+  margin-top: .7rem;
+  line-height: 1.5;
+}
+
+/* Homepage hero illustration. Decorative, so it sits below the copy on a phone
+   where vertical space is the scarce resource, and beside it on desktop. */
+.hero-art { margin: 1.5rem 0 0; max-width: 30rem; }
+.hero-art svg { width: 100%; height: auto; display: block; }
+
+@media (min-width: 34em) {
+  .dg-row { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 62em) {
+  .dg-stack { grid-template-columns: 1fr 1fr; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem; align-items: center; }
+  .hero-art { margin: 0; }
+}

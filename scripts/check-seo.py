@@ -33,6 +33,10 @@ CANON = re.compile(r'<link rel="canonical" href="(.*?)"')
 NOINDEX = re.compile(r'<meta name="robots" content="noindex')
 H1 = re.compile(r'<h1[^>]*>(.*?)</h1>', re.S)
 IMG = re.compile(r'<img\b([^>]*)>', re.S)
+SVG = re.compile(r'<svg\b([^>]*)>', re.S)
+SVG_BLOCK = re.compile(r'<svg\b.*?</svg>', re.S)
+VIEWBOX = re.compile(r'viewBox="([^"]+)"')
+CIRCLE = re.compile(r'<circle cx="([\d.-]+)" cy="([\d.-]+)" r="([\d.]+)"')
 
 
 def unescape(s):
@@ -106,6 +110,41 @@ for f in pages:
         if 'alt=' not in attrs:
             fail('image without alt', page, attrs.strip()[:70])
 
+    # Inline SVG is invisible to the alt-text rule above, because it is not an
+    # <img>. Every diagram must therefore declare itself either meaningful
+    # (role="img" plus an accessible name) or decorative (aria-hidden). An SVG
+    # that does neither is announced by a screen reader as an unlabelled
+    # graphic, which is worse than silence.
+    for attrs in SVG.findall(html):
+        named = 'aria-labelledby=' in attrs or 'aria-label=' in attrs
+        decorative = 'aria-hidden="true"' in attrs
+        if decorative:
+            continue
+        if 'role="img"' not in attrs or not named:
+            fail('svg without role=img + accessible name (or aria-hidden)',
+                 page, attrs.strip()[:70])
+
+    # Callout markers must fit inside their viewBox. Raising the marker radius
+    # from 15 to 21 (needed for phone legibility) pushed seven markers past the
+    # edge of their drawings, where they render as clipped half-circles. That is
+    # pure arithmetic, so it is checked rather than eyeballed — and eyeballing
+    # missed it once already.
+    for svg in SVG_BLOCK.finditer(html):
+        vb = VIEWBOX.search(svg.group(0))
+        if not vb:
+            continue
+        minx, miny, w, h = (float(v) for v in vb.group(1).split())
+        for cx, cy, r in CIRCLE.findall(svg.group(0)):
+            cx, cy, r = float(cx), float(cy), float(r)
+            # Radius >= 13 identifies a callout marker; component circles
+            # (drums, rollers, sensor lenses) are smaller.
+            if r < 13:
+                continue
+            if (cx - r < minx or cx + r > minx + w
+                    or cy - r < miny or cy + r > miny + h):
+                fail('callout marker clipped by its viewBox', page,
+                     f'cx={cx:g} cy={cy:g} r={r:g} in viewBox {vb.group(1)}')
+
 for url, hits in canonicals.items():
     if len(hits) > 1:
         fail('duplicate canonical', hits[0], f'{url} also claimed by {len(hits) - 1} other page(s)')
@@ -113,7 +152,8 @@ for url, hits in canonicals.items():
 print(f'  pages audited {len(pages)}')
 if not fails:
     print(f'  ✓ all pass — title ≤{TITLE_MAX}, description {DESC_MIN}–{DESC_MAX}, '
-          f'one h1, canonical present, unique canonicals, images have alt')
+          f'one h1, canonical present, unique canonicals, images have alt, '
+          f'every inline svg labelled or explicitly decorative')
     sys.exit(0)
 
 print()

@@ -5,6 +5,15 @@ import { glossary, getTerm, getTerms } from '../../lib/glossary.js';
 import { getGuide } from '../../lib/guides.js';
 import { breadcrumbSchema, definedTermSchema } from '../../lib/schema.js';
 import { fitDescription } from '../../lib/seo.js';
+import { getDiagram } from '../../lib/diagrams.js';
+import Figure from '../../components/Figure.astro';
+import TorsionSystem from '../../components/diagrams/TorsionSystem.astro';
+import SpringTypes from '../../components/diagrams/SpringTypes.astro';
+import PhotoEye from '../../components/diagrams/PhotoEye.astro';
+import BalanceTest from '../../components/diagrams/BalanceTest.astro';
+import OpenerTypes from '../../components/diagrams/OpenerTypes.astro';
+
+const DIAGRAMS = { TorsionSystem, SpringTypes, PhotoEye, BalanceTest, OpenerTypes };
 
 export function getStaticPaths() {
   return glossary.map((t) => ({ params: { term: t.slug } }));
@@ -21,6 +30,8 @@ const crumbs = [
 ];
 
 const also = getTerms(t.also || []);
+const dg = t.diagram ? getDiagram(t.diagram) : null;
+const DgSvg = dg ? DIAGRAMS[dg.component] : null;
 const guides = (t.guides || []).map(getGuide).filter(Boolean);
 
 const schemas = [breadcrumbSchema(crumbs), definedTermSchema(t)];
@@ -46,6 +57,12 @@ const schemas = [breadcrumbSchema(crumbs), definedTermSchema(t)];
         <span class="eyebrow">Definition</span>
         <p>{t.short}</p>
       </div>
+
+      {DgSvg && (
+        <Figure caption={dg.caption} legend={dg.legend || []}>
+          <DgSvg id={`dg-${t.slug}`} />
+        </Figure>
+      )}
 
       {t.body.map((p) => <p>{p}</p>)}
 

@@ -28,7 +28,7 @@ npm run build && python scripts/check-seo.py && python scripts/check-links.py &&
 |---|---|
 | `scripts/check-pages.mjs` | Every page uses `BaseLayout`, has a title, and has a canonical unless noindexed |
 | `scripts/check-content.mjs` | Reciprocal cross-links, unique keywords, agreeing cost figures, word-count floors |
-| `scripts/check-seo.py` | Built HTML: title ≤60, description 70–155, one `h1`, unique canonicals, image alt |
+| `scripts/check-seo.py` | Built HTML: title ≤60, description 70–155, one `h1`, unique canonicals, image alt, inline SVG labelled or decorative, no callout marker clipped by its viewBox |
 | `scripts/check-links.py` | No internal link in the built site points at a missing page |
 | `scripts/build-redirects.py` | Writes `vercel.json`; rejects any rule with a missing destination or a real page as its source |
 
@@ -103,6 +103,9 @@ src/lib/glossary.js    DefinedTerm pages
 src/lib/licensing.js   CA/FL/AZ registers and verification steps
 src/lib/schema.js      JSON-LD builders
 src/lib/seo.js         title/description budget helpers
+src/lib/diagrams.js    diagram captions + legends (words live here, not in the SVG)
+src/lib/costmap.js     cost-map anchors, matched onto a guide's own costTable
+src/components/diagrams/  authored inline SVG — no photography, see CLAUDE.md
 src/pages/garage-door-repair/[state]/[city]/[business]/
 src/pages/guides/, src/pages/glossary/
 ```

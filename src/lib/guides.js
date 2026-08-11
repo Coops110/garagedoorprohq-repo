@@ -25,6 +25,7 @@ export const guides = [
   {
     slug: 'garage-door-repair-cost',
     pillar: true,
+    heroDiagram: 'cost-map',
     title: 'Garage Door Repair Cost in 2026: By Job',
     h1: 'Garage Door Repair Cost in 2026: What Each Job Actually Costs',
     description:
@@ -62,6 +63,7 @@ export const guides = [
       },
       {
         h2: 'Springs: the most common failure, and the most expensive small job',
+        diagram: 'torsion-system',
         body: [
           'Torsion springs are wound steel bars mounted above the door that carry almost all of its weight. They are rated in cycles — one open and one close is a cycle — and a standard 10,000-cycle spring lasts roughly seven to ten years on a door used four times a day. When one breaks it usually goes with a bang loud enough to be heard indoors, and the door then feels impossibly heavy or will not lift at all.',
           'Replacing one torsion spring runs $180–$350 installed. Replacing the pair runs $250–$550, and it is almost always the better buy: the second spring has done identical work for identical years, the labour is already on site, and paying the call-out twice inside a year is the expensive outcome.',
@@ -162,6 +164,7 @@ export const guides = [
     sections: [
       {
         h2: 'Torsion or extension: which springs you have',
+        diagram: 'spring-types',
         body: [
           'Look above the door. A single steel bar running horizontally above the opening, with one or two springs wound around it, is a torsion system — that is what most doors fitted in the last thirty years use. Long springs running parallel to the horizontal tracks on each side, stretching as the door closes, are extension springs, common on older and lighter single doors.',
           'Torsion springs cost more to replace but last longer, balance the door better and fail less dramatically. Extension springs run $120–$300 for the pair. If yours are extension springs without safety cables threaded through them, ask for those to be added — they cost very little and they stop a snapping spring becoming a projectile.',
@@ -257,6 +260,7 @@ export const guides = [
     sections: [
       {
         h2: 'Check the cheap things first',
+        diagram: 'photo-eye',
         body: [
           'Two faults account for a large share of call-outs and neither needs a technician. If the door closes a few inches then reverses and the opener light flashes, the photo-eye sensors near the floor are misaligned or blocked — a cobweb, a leaf, a bike wheel, or a bracket knocked out of line. They should face each other with a steady indicator light. Wipe both lenses and nudge one until the light is solid.',
           'If nothing responds to the remote but the wall button works, it is the remote — a battery or, at worst, a $40–$120 replacement. If nothing responds to anything and there is no light, check the outlet and the breaker before booking anyone.',
@@ -281,6 +285,7 @@ export const guides = [
       },
       {
         h2: 'Chain, belt or direct drive',
+        diagram: 'opener-types',
         body: [
           'Chain drives are the cheapest at $300–$550 installed and the loudest. On a detached garage, the noise is irrelevant and the saving is real.',
           'Belt drives run $400–$700 installed and are markedly quieter, which is the whole argument if there is a bedroom above or beside the garage. Direct-drive and wall-mount jackshaft units sit at or above the top of that range; a jackshaft mounts beside the door rather than on the ceiling, which is the answer for a garage with a low ceiling or overhead storage.',
@@ -289,6 +294,7 @@ export const guides = [
       },
       {
         h2: 'One thing to check before blaming the opener',
+        diagram: 'balance-test',
         body: [
           'An opener that strains, stalls partway or reverses under load is frequently a spring problem wearing the opener out, not an opener problem. Pull the release cord, disconnect the door from the opener and lift it by hand. A correctly balanced door lifts with modest effort and stays put when you let go halfway.',
           'If it is heavy, or drops, the springs are the fault and the opener is the symptom. Replacing the opener without fixing that puts a new motor straight back under the same overload — and spring work runs $250–$550, which is money far better spent than $700 on an opener that will fail the same way.',
@@ -346,6 +352,7 @@ export const guides = [
     sections: [
       {
         h2: 'What the stored energy actually is',
+        diagram: 'torsion-system',
         body: [
           'A torsion spring does not simply hold a door up. It is wound under tension so that it counterbalances the door’s entire weight — 150 pounds for a typical insulated single, well over 300 for a double. That energy is held in a coil of hardened steel on a bar above your head, and it stays there whether the door is open, closed, or already broken.',
           'Releasing it is done with winding bars inserted into the spring cone, turned in a controlled sequence. If a bar slips, is the wrong size, or is substituted with a screwdriver, the spring unwinds against whatever is holding it. Hand and forearm fractures are the common outcome. Head injuries are the serious one.',
@@ -369,6 +376,7 @@ export const guides = [
       },
       {
         h2: 'The jobs that are genuinely fine to do yourself',
+        diagram: 'balance-test',
         body: [
           'Plenty of garage door maintenance carries no stored-energy risk at all. Cleaning and realigning the photo-eye sensors near the floor. Replacing remote batteries. Wiping the tracks out — tracks are cleaned, not greased. Lubricating hinges, rollers and the spring coil itself with a garage-door-specific lubricant, which is the single maintenance job that most extends component life.',
           'Testing the balance is also safe and worth doing twice a year: pull the release cord, lift the door by hand to waist height and let go. It should stay put. If it slides or slams, the springs need attention — from someone else.',
