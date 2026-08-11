@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../lib/site.js';
 import { getAllBusinesses, getAllCities } from '../lib/data.js';
 import { guides } from '../lib/guides.js';
 import { glossary } from '../lib/glossary.js';
@@ -33,7 +34,7 @@ const index = [
 ---
 <BaseLayout
   title="Search"
-  description="Search GarageDoorHQ cost guides, glossary terms, cities and garage door companies."
+  description={`Search ${SITE.name} cost guides, glossary terms, cities and garage door companies.`}
   noindex={true}
 >
   <div class="wrap-narrow" style="padding:2rem 1.1rem;">

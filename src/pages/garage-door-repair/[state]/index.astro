@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import { CLAIMS } from '../../../lib/site.js';
+import { SITE, CLAIMS } from '../../../lib/site.js';
 import {
   getAllStates, getState, getCitiesByState, formatCount,
 } from '../../../lib/data.js';
@@ -60,7 +60,7 @@ const schemas = [
   )}
   canonical={url}
   image="/og/directory.png"
-  imageAlt={`Garage door companies across ${s.state} on GarageDoorHQ`}
+  imageAlt={`Garage door companies across ${s.state} on ${SITE.name}`}
   schemas={schemas}
 >
   <div class="wrap">

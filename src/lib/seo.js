@@ -5,7 +5,7 @@ import { SITE } from './site.js';
 //
 //  BUILD-PLAN requires titles ≤60 characters and descriptions ≤155. Those are
 //  limits on the FINAL RENDERED TAG, not on the string a template passes in —
-//  SEO.astro appends " | GarageDoorHQ" to any title that does not already
+//  SEO.astro appends " | GarageDoorProHQ" to any title that does not already
 //  contain the site name, so a comfortable 50-character template title becomes
 //  a 65-character <title> in the output.
 //
@@ -42,7 +42,7 @@ export function clamp(str, max) {
  * brand. Candidates run most-informative first; falsy entries are skipped.
  *
  * Every return path is brand-inclusive, and that is load-bearing rather than
- * stylistic. SEO.astro appends " | GarageDoorHQ" to any title that does not
+ * stylistic. SEO.astro appends " | GarageDoorProHQ" to any title that does not
  * already contain the site name — so returning a "complete but brand-less"
  * 49-character title does not save 15 characters, it produces a 64-character
  * <title>. That is exactly the bug this helper existed to prevent, and it

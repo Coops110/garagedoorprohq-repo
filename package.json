@@ -1,8 +1,8 @@
 {
-  "name": "garagedoorhq",
+  "name": "garagedoorprohq",
   "type": "module",
   "version": "1.0.0",
-  "description": "GarageDoorHQ \u00e2\u20ac\u201d USA garage door contractor directory + guides. Astro static site.",
+  "description": "GarageDoorProHQ — USA garage door contractor directory + guides. Astro static site.",
   "scripts": {
     "dev": "astro dev",
     "check:pages": "node scripts/check-pages.mjs",

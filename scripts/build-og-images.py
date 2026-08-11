@@ -180,7 +180,14 @@ def card(path, eyebrow, headline, kicker, eyebrow_colour=STEEL):
     fb = font('bold', 38)
     bx = pad + 64 + 18
     by = pad + 10
-    for part, colour in (('Garage', INK), ('Door', SIGNAL), ('HQ', INK)):
+    # Accent lands on "Pro" to match the site header and AirProHQ's wordmark.
+    name = SITE['name']
+    if 'Pro' in name:
+        head, _, tail = name.partition('Pro')
+        segments = ((head, INK), ('Pro', SIGNAL), (tail, INK))
+    else:
+        segments = ((name, INK),)
+    for part, colour in segments:
         d.text((bx, by), part, font=fb, fill=colour)
         bx += text_width(d, part, fb)
 
@@ -220,7 +227,7 @@ def card(path, eyebrow, headline, kicker, eyebrow_colour=STEEL):
             hy += 34
 
     fd = font('bold', 24)
-    d.text((pad, H - 14 - 46), 'garagedoorhq.com', font=fd, fill=MUTED)
+    d.text((pad, H - 14 - 46), HOST, font=fd, fill=MUTED)
 
     door_art(d, W - pad - art_w, pad + 40, art_w, H - 2 * pad - 96)
 
@@ -228,6 +235,24 @@ def card(path, eyebrow, headline, kicker, eyebrow_colour=STEEL):
     kb = path.stat().st_size / 1024
     print(f'  {path}  {img.width}x{img.height}  {kb:.0f} KB')
     return kb
+
+
+def site_from_source():
+    """Read name and domain from src/lib/site.js — the same single source of
+    truth the site itself uses. Hardcoding the domain here meant the rebrand to
+    garagedoorprohq.com left the old one printed on every card."""
+    out = subprocess.run(
+        ['node', '--input-type=module', '-e',
+         "import {SITE} from './src/lib/site.js';"
+         "console.log(JSON.stringify({name:SITE.name,domain:SITE.domain}))"],
+        capture_output=True, text=True, encoding='utf-8')
+    if out.returncode != 0:
+        sys.exit(f'  node failed reading site.js:\n{out.stderr}')
+    return json.loads(out.stdout.strip().splitlines()[-1])
+
+
+SITE = site_from_source()
+HOST = SITE['domain'].replace('https://', '').replace('http://', '').rstrip('/')
 
 
 def guides_from_source():

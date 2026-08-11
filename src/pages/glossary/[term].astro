@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE } from '../../lib/site.js';
 import { glossary, getTerm, getTerms } from '../../lib/glossary.js';
 import { getGuide } from '../../lib/guides.js';
 import { breadcrumbSchema, definedTermSchema } from '../../lib/schema.js';
@@ -44,7 +45,7 @@ const schemas = [breadcrumbSchema(crumbs), definedTermSchema(t)];
   )}
   canonical={url}
   image="/og/glossary.png"
-  imageAlt={`${t.term} — defined in the GarageDoorHQ garage door glossary`}
+  imageAlt={`${t.term} — defined in the ${SITE.name} garage door glossary`}
   schemas={schemas}
   type="article"
 >

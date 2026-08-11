@@ -44,7 +44,7 @@ for (const file of pages) {
     continue;
   }
   // A page with no title falls back to nothing useful, and SEO.astro would
-  // build "undefined | GarageDoorHQ" into the <title>.
+  // build "undefined | GarageDoorProHQ" into the <title>.
   if (!/<BaseLayout[^>]*\btitle=/s.test(src)) {
     problems.push(`${rel} — renders BaseLayout without a title prop`);
   }
