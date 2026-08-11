@@ -39,6 +39,13 @@ def from_node(expr):
     return json.loads(out.stdout.strip().splitlines()[-1])
 
 
+SITE = from_node(
+    "import {SITE} from './src/lib/site.js';"
+    "console.log(JSON.stringify({domain:SITE.domain}))"
+)
+APEX = SITE['domain'].rstrip('/')
+APEX_HOST = APEX.replace('https://', '').replace('http://', '')
+
 guide_slugs = from_node(
     "import {guides} from './src/lib/guides.js';"
     "console.log(JSON.stringify(guides.map(g=>g.slug)))"
@@ -91,6 +98,35 @@ WRONG_PARENTS = ['cost-guides', 'cost-guide', 'guide', 'cost', 'costs',
                  'blog', 'articles', 'resources']
 
 rules = []
+
+# ── www -> apex, before anything else ─────────────────────────
+# Both hostnames were attached to the Vercel project and both served every page
+# with a 200, so all 976 pages existed at two URLs. The canonical tags name the
+# apex, and Google usually honours that, but serving duplicates and hoping the
+# canonical is respected is weaker than a 301.
+#
+# This IS a wildcard, which CLAUDE.md warns against — but the rule there is
+# "never wildcard a redirect whose DESTINATION is data-driven", and this
+# destination is not: it is the same path on a different host, a 1:1 mapping. A
+# path that 404s on www would have 404'd on the apex too, so this cannot
+# manufacture a 301-into-404 the way /cost-guides/:slug did.
+#
+# It goes first because Vercel evaluates redirects in order and takes the first
+# match — host canonicalisation has to win over any path rule.
+#
+# The source is the regex `/(.*)` and NOT `/:path*`, which is the obvious
+# choice and half-works in a way that is easy to miss. `:path*` does not match a
+# path ending in a slash, and astro.config.mjs sets trailingSlash: 'always' — so
+# every real page URL on this site ends in one. The `:path*` version redirected
+# /privacy-policy and /og/default.png correctly while serving /about/ and
+# /glossary/cycle-rating/ with a 200 on both hosts: it fired on exactly the URLs
+# that did not matter and missed all 976 that did.
+rules.append({
+    'source': '/(.*)',
+    'has': [{'type': 'host', 'value': f'www.{APEX_HOST}'}],
+    'destination': f'{APEX}/$1',
+    'permanent': True,
+})
 
 
 def add(source, destination):
@@ -197,6 +233,11 @@ for r in json.loads(Path('src/data/removed-listings.json').read_text(encoding='u
 
 # ── validate every destination against the build output ───
 def exists(dest):
+    # An absolute destination is a host-level rule (the www -> apex
+    # canonicalisation), not a path into this build, so there is nothing in
+    # dist/ to check it against. Everything else must resolve to a real page.
+    if dest.startswith('http://') or dest.startswith('https://'):
+        return True
     p = DIST / dest.strip('/')
     return (p / 'index.html').exists() or p.exists() or dest == '/'
 

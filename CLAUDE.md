@@ -24,12 +24,40 @@ belonging to *this* site, not copied from AirProHQ:
 
 ## Deploying
 
-`git push origin main` deploys via Vercel once the project is linked. There is
-no manual deploy step.
+The project is **not git-linked**. It was created by `vercel --prod` from disk, so
+`git push` deploys nothing — the repo has no remote and the branch is `master`.
+To restore the usual GitHub -> Vercel flow, create the repo and connect it in the
+Vercel dashboard.
+
+**Always deploy with `--archive=tgz`:**
+
+    npx vercel --prod --archive=tgz
+
+Without it the CLI uploads one request per file. It was picking up `dist/` too
+despite `.gitignore` listing it, so each deploy shipped ~976 built pages, and
+about ten deploys exhausted the free tier's 5000-file daily upload allowance —
+after which it refuses to deploy for 24 hours. `.vercelignore` now excludes
+`dist/` explicitly, and the archive flag sidesteps the file count entirely.
 
 **Do not poll the live site in a loop after pushing.** On AirProHQ, repeated
 `curl` in an `until` loop tripped Vercel's bot mitigation and got every
 scripted request 403'd for hours. Wait once, check once, or use a browser.
+
+## www redirects to the apex, and that rule is fragile
+
+`garagedoorprohq.com` is canonical; `www` 308s to it. The rule is generated at
+the top of `vercel.json` by `build-redirects.py` and its source is the regex
+`/(.*)`, **not** `/:path*`.
+
+That distinction matters and cost a deploy to find. `:path*` does not match a
+path ending in a slash, and `trailingSlash: 'always'` means every real page URL
+here ends in one — so the `:path*` version redirected `/privacy-policy` and
+`/og/default.png` correctly while serving `/about/` and every guide with a 200 on
+both hosts. It fired on exactly the URLs that did not matter.
+
+It is also the one legitimate wildcard on the site. The rule against wildcards is
+about data-driven *destinations*; this is a 1:1 host swap with the path
+preserved, so it cannot manufacture a 301-into-404.
 
 ## What this site is allowed to claim
 

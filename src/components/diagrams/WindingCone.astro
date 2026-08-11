@@ -1,0 +1,78 @@
+---
+// The winding cone at the end of a torsion spring, with a correctly sized bar in
+// place and the set screws that hold the cone to the shaft.
+//
+// THIS IS A PARTS DIAGRAM, NOT A PROCEDURE, AND THAT IS DELIBERATE.
+// It shows what the components are so a homeowner can tell a properly equipped
+// technician from an improvised one — the point the winding-bar page makes. It
+// deliberately shows no turn count, no sequence, no order of operations and no
+// arrows implying "do this next". A partial instruction for spring work is more
+// dangerous than none, which is the rule in CLAUDE.md, and it applies to drawings
+// exactly as it applies to prose.
+const { id = 'dg-cone' } = Astro.props;
+---
+<svg
+  viewBox="0 0 460 260" width="460" height="260" role="img"
+  aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id={`${id}-title`}>Parts of a torsion spring winding cone</title>
+  <desc id={`${id}-desc`}>
+    The end of a torsion spring where it meets a cast winding cone on the torsion
+    shaft. The cone has holes around it for winding bars, and set screws that
+    clamp it to the shaft. A solid steel winding bar is shown inserted into one
+    hole. This shows the parts only and is not instructions for winding a spring.
+  </desc>
+
+  <rect x="0" y="0" width="460" height="260" fill="var(--paper)" />
+
+  {/* torsion shaft running through */}
+  <line x1="20" y1="130" x2="440" y2="130" stroke="var(--ink)" stroke-width="12" stroke-linecap="round" />
+
+  {/* spring coils approaching the cone from the left */}
+  <g fill="none" stroke="var(--signal)" stroke-width="5">
+    {Array.from({ length: 8 }, (_, i) => (
+      <ellipse cx={54 + i * 24} cy="130" rx="10" ry="34" />
+    ))}
+  </g>
+
+  {/* the cone: a tapered casting */}
+  <path d="M256 96 L300 106 L300 154 L256 164 Z" fill="var(--ink-soft)" />
+  <rect x="300" y="104" width="40" height="52" rx="4" fill="var(--ink)" />
+
+  {/* winding bar holes around the cone */}
+  <circle cx="318" cy="118" r="6" fill="var(--paper)" />
+  <circle cx="318" cy="142" r="6" fill="var(--paper)" />
+
+  {/* set screws clamping the cone to the shaft */}
+  <rect x="308" y="94" width="10" height="12" rx="2" fill="var(--amber)" />
+  <rect x="324" y="94" width="10" height="12" rx="2" fill="var(--amber)" />
+
+  {/* a correctly sized solid steel bar, seated in a hole. Static: no rotation
+      arrow, because an arrow would read as an instruction. */}
+  <rect x="312" y="30" width="13" height="90" rx="3" fill="var(--steel)" />
+  <rect x="309" y="26" width="19" height="10" rx="3" fill="var(--steel-dark)" />
+
+  <g font-family="Inter, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">
+    <g>
+      <line x1="120" y1="130" x2="120" y2="212" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="120" cy="228" r="15" fill="var(--signal)" />
+      <text x="120" y="228" fill="#fff">1</text>
+    </g>
+    <g>
+      <line x1="278" y1="130" x2="230" y2="212" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="222" cy="228" r="15" fill="var(--ink-soft)" />
+      <text x="222" y="228" fill="#fff">2</text>
+    </g>
+    <g>
+      <line x1="329" y1="100" x2="392" y2="72" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="410" cy="66" r="15" fill="var(--amber)" />
+      <text x="410" y="66" fill="#fff">3</text>
+    </g>
+    <g>
+      <line x1="325" y1="60" x2="380" y2="150" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="392" cy="164" r="15" fill="var(--steel)" />
+      <text x="392" y="164" fill="#fff">4</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+# Files not to upload when deploying. Vercel builds the site itself, so
+# shipping the built output is pure waste — and it is not harmless waste: each
+# `vercel --prod` was uploading the ~976 files in dist/, which burned through the
+# free tier's 5000-file-per-day upload allowance in about ten deploys and then
+# refused to deploy at all for 24 hours.
+#
+# .gitignore already lists dist/, but the CLI was clearly still picking it up, so
+# this file states it explicitly rather than relying on that fallback.
+#
+# Prefer `vercel --prod --archive=tgz` as well: it uploads a single tarball
+# instead of one request per file, which sidesteps the file-count limit entirely.
+
+dist/
+node_modules/
+.astro/
+
+# Pipeline working directory — regenerable, and pilot-raw.json alone is ~2MB.
+data-work/
+
+# Python tooling that only ever runs locally. The build needs the two .mjs
+# checks (npm prebuild calls them), so those are NOT excluded.
+scripts/*.py
+
+*.log
+.env
+.env.production
+.vercel
+.git/

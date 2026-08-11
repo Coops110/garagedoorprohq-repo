@@ -13,8 +13,16 @@ import SpringTypes from '../../components/diagrams/SpringTypes.astro';
 import PhotoEye from '../../components/diagrams/PhotoEye.astro';
 import BalanceTest from '../../components/diagrams/BalanceTest.astro';
 import OpenerTypes from '../../components/diagrams/OpenerTypes.astro';
+import SpringLife from '../../components/diagrams/SpringLife.astro';
+import DoorLayers from '../../components/diagrams/DoorLayers.astro';
+import WindingCone from '../../components/diagrams/WindingCone.astro';
+import TrolleyCord from '../../components/diagrams/TrolleyCord.astro';
+import RollingCode from '../../components/diagrams/RollingCode.astro';
 
-const DIAGRAMS = { TorsionSystem, SpringTypes, PhotoEye, BalanceTest, OpenerTypes };
+const DIAGRAMS = {
+  TorsionSystem, SpringTypes, PhotoEye, BalanceTest, OpenerTypes,
+  SpringLife, DoorLayers, WindingCone, TrolleyCord, RollingCode,
+};
 
 export function getStaticPaths() {
   return glossary.map((t) => ({ params: { term: t.slug } }));

@@ -537,3 +537,13 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.5rem; align-items: center; }
   .hero-art { margin: 0; }
 }
+
+/* Glossary index: the term name is the primary way into each page, so its link
+   takes the full 44px target rather than the inline-link exemption — it is
+   navigation, not a link inside a sentence. Block-level also widens the hit area
+   to the full card instead of just the width of the word. */
+.glossary-list h2 a {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap);
+}

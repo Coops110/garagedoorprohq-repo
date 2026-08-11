@@ -3,6 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { glossary } from '../../lib/glossary.js';
 import { breadcrumbSchema, definedTermSetSchema } from '../../lib/schema.js';
+import { getDiagram } from '../../lib/diagrams.js';
+import Figure from '../../components/Figure.astro';
+import TorsionSystem from '../../components/diagrams/TorsionSystem.astro';
+
+// The index had no image at all. The torsion-system drawing is the right anchor
+// for it: seven of the fifteen terms are parts of it, so the legend doubles as a
+// visual table of contents into the glossary.
+const anchor = getDiagram('torsion-system');
 
 const terms = [...glossary].sort((a, b) => a.term.localeCompare(b.term));
 const crumbs = [
@@ -30,7 +38,13 @@ const schemas = [breadcrumbSchema(crumbs), definedTermSetSchema(terms)];
       plain English so you can tell what is on the quote.
     </p>
 
-    <dl style="display:grid;gap:.85rem;">
+    <Figure caption={anchor.caption} legend={anchor.legend}>
+      <TorsionSystem id="dg-glossary-index" />
+    </Figure>
+
+    <h2 style="font-size:1.2rem;margin:2rem 0 .75rem;">All terms</h2>
+
+    <dl class="glossary-list" style="display:grid;gap:.85rem;">
       {terms.map((t) => (
         <div class="faq-item">
           <dt><h2 style="font-size:1.05rem;font-family:Inter,sans-serif;margin:0 0 .35rem;">
