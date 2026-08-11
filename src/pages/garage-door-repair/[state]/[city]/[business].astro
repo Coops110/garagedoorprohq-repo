@@ -86,13 +86,29 @@ const mapEmbed = b.lat != null && b.lng != null
         </p>
 
         {b.licenceNumber ? (
-          <p class="claim-note">
-            <strong>Licence #{b.licenceNumber}</strong> — matched to
-            {' '}{b.licenceStatus ? `a ${b.licenceStatus.toLowerCase()} record` : 'an active record'} on the
-            {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authority}</a>
-            {' '}register{b.licenceCheckedOn ? `, checked ${b.licenceCheckedOn}` : ''}.
-            {' '}{CLAIMS.licenceMeaning}
-          </p>
+          /* Everything asserted here is a fact from the register, plus the date
+             we read it. The expiry and classification are shown because they are
+             the two things that decide whether the badge still means anything
+             tomorrow — a licence number alone invites the reader to assume more
+             than we checked. */
+          <div class="claim-note">
+            <p style="margin:0 0 .5rem;">
+              <strong>Licence #{b.licenceNumber}</strong> — matched to
+              {' '}{b.licenceStatus ? `an ${b.licenceStatus.toLowerCase()} record` : 'an active record'} on the
+              {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authority}</a>
+              {' '}register{b.licenceCheckedOn ? ` when we last checked on ${b.licenceCheckedOn}` : ''}.
+            </p>
+            <ul style="margin:0 0 .5rem 1.1rem;padding:0;font-size:.85rem;">
+              {b.licenceClass && <li>Classification: {b.licenceClass}</li>}
+              {b.licenceExpires && <li>Register shows it valid to {b.licenceExpires}</li>}
+            </ul>
+            <p style="margin:0;">
+              {CLAIMS.licenceMeaning} We do not re-check between data refreshes, so
+              confirm it yourself on the
+              {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authorityShort} register</a>
+              {' '}before work starts — it takes about a minute.
+            </p>
+          </div>
         ) : (
           <p class="claim-note">
             {lic

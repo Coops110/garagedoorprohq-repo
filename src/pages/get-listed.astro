@@ -117,14 +117,23 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
         </form>
       ) : (
         <>
+          {/* Fallback when no form endpoint is configured. It must read as a
+              normal way to get in touch, not as a note about our build state —
+              the previous wording said "a form will replace this once the site's
+              own form endpoint is configured", which tells a contractor
+              something about our TODO list and nothing about how to be listed. */}
           <h2>How to send it</h2>
           <p>
             Email the details to
             {' '}<a href={`mailto:${LEGAL.contactEmail}?subject=${encodeURIComponent(SITE.name + ' listing request')}`}>
-              <strong>{LEGAL.contactEmail}</strong></a>
-            {' '}with "listing request" in the subject. A form will replace this once the
-            site's own form endpoint is configured — until then email reaches us just as
-            reliably and we reply to every one.
+              <strong>{LEGAL.contactEmail}</strong></a>, with "listing request" in
+            the subject line. That address is read by a person and every enquiry
+            gets a reply.
+          </p>
+          <p>
+            You do not need to write much — the business name, the city and a phone
+            number is enough to start, and we will come back to you if anything else
+            is needed.
           </p>
         </>
       )}
