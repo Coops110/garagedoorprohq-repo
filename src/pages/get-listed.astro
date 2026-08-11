@@ -19,8 +19,12 @@ const formLive = Boolean(SITE.web3FormsKey);
 const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', ');
 ---
 <BaseLayout
-  title="Get Your Garage Door Business Listed (Free)"
-  description="Add your garage door company to GarageDoorHQ for free. No paid placement, no ranking to buy — just the details we need to publish an accurate listing."
+  {/* The brand grew from GarageDoorHQ to GarageDoorProHQ, so the " | brand"
+      suffix SEO.astro appends is now 18 characters, not 15. That pushed this
+      title and description over budget — caught by check-seo.py rather than
+      shipped. */}
+  title="Get Your Garage Door Business Listed"
+  description={`Add your garage door company to ${SITE.name} for free. No paid placement, no ranking to buy — just what we need to publish an accurate listing.`}
   canonical="/get-listed/"
   schemas={schemas}
 >

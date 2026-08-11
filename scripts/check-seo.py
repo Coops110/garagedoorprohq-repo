@@ -2,7 +2,7 @@
 #
 # These are checkable facts, so they are checked rather than trusted. The
 # title-length rule in particular is easy to get wrong by accident: SEO.astro
-# appends " | GarageDoorHQ" to any title that does not already contain the site
+# appends " | GarageDoorProHQ" to any title that does not already contain the site
 # name, so a 50-character title in a template becomes a 65-character <title>
 # in the output. Only the built HTML shows the real number.
 #
@@ -40,7 +40,25 @@ VIEWBOX = re.compile(r'viewBox="([^"]+)"')
 CIRCLE = re.compile(r'<circle cx="([\d.-]+)" cy="([\d.-]+)" r="([\d.]+)"')
 OG_IMAGE = re.compile(r'<meta property="og:image" content="([^"]+)"')
 OG_IMAGE_ALT = re.compile(r'<meta property="og:image:alt" content="[^"]+"')
-SITE_ORIGIN = 'https://garagedoorhq.com'
+
+
+# Derived from the canonical tags the build actually emitted, never hardcoded. A
+# hardcoded origin silently stops matching after a domain change, at which point
+# every og:image URL looks external and skips the "is this file in the build"
+# check — so the move to garagedoorprohq.com would have quietly disabled the
+# guard rather than failing loudly.
+def _origin_from_build():
+    for f in pages:
+        with open(f, encoding='utf-8') as fh:
+            m = CANON.search(fh.read())
+        if m:
+            parts = m.group(1).split('/')
+            if len(parts) >= 3:
+                return f'{parts[0]}//{parts[2]}'
+    return ''
+
+
+SITE_ORIGIN = _origin_from_build()
 
 
 def unescape(s):

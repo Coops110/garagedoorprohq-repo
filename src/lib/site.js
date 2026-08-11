@@ -5,12 +5,12 @@
 // ─────────────────────────────────────────────────────────────
 
 export const SITE = {
-  name: 'GarageDoorHQ',
+  name: 'GarageDoorProHQ',
   tagline: 'Find Garage Door Pros Across America',
-  domain: 'https://garagedoorhq.com',
-  legalName: 'GarageDoorHQ Garage Door Directory',
+  domain: 'https://garagedoorprohq.com',
+  legalName: 'GarageDoorProHQ Garage Door Directory',
   description:
-    'GarageDoorHQ is a free directory of local garage door contractors and honest garage door repair and installation cost guides for U.S. homeowners.',
+    'GarageDoorProHQ is a free directory of local garage door contractors and honest garage door repair and installation cost guides for U.S. homeowners.',
   // Google AdSense publisher ID. Empty hides every ad slot until approved.
   adsensePublisherId: '',
   // Web3Forms access key for the get-listed form. Not a secret — Web3Forms
@@ -19,13 +19,13 @@ export const SITE = {
   //
   // ⚠️ EMPTY ON PURPOSE. This must be a key registered to
   // SITE.email below, not AirProHQ's key — reusing that one would post
-  // GarageDoorHQ enquiries into the AirProHQ inbox. /get-listed/ shows a
+  // GarageDoorProHQ enquiries into the AirProHQ inbox. /get-listed/ shows a
   // mailto fallback until this is filled in.
   web3FormsKey: '',
   // Public contact address. Must match LEGAL.contactEmail — it is published
   // in the Organization schema, on /contact/ and in the privacy policy as
   // the route for data requests.
-  email: 'contact@garagedoorhq.com',
+  email: 'contact@garagedoorprohq.com',
 };
 
 // ── Sister sites ────────────────────────────────────────────
@@ -33,7 +33,7 @@ export const SITE = {
 // to them yet, deliberately: a brand new domain trading site-wide
 // reciprocal footer links with two established ones is the exact
 // reciprocal-network footprint Google's link spam policy describes, and
-// GarageDoorHQ has no indexing history of its own to risk it against.
+// GarageDoorProHQ has no indexing history of its own to risk it against.
 //
 // When this domain is indexed and holding a stable indexing ratio (see
 // BUILD-PLAN section 3), flip `disclose` to true. That surfaces the
@@ -80,7 +80,7 @@ export const CONSENT_REQUIRED_REGIONS = [
 
 // Bump the version suffix to re-prompt everyone (e.g. after adding a
 // tracking vendor the old consent did not cover).
-export const CONSENT_STORAGE_KEY = 'garagedoorhq_consent_v1';
+export const CONSENT_STORAGE_KEY = 'garagedoorprohq_consent_v1';
 
 // 'all' shows the banner everywhere and gives non-EU visitors an opt-out
 // too, increasingly expected under US state privacy laws. 'eu' limits it to
@@ -93,7 +93,7 @@ export const CONSENT_BANNER_SCOPE = 'all';
 // public.
 export const LEGAL = {
   entityType: 'sole-trader',
-  legalName: 'GarageDoorHQ',
+  legalName: 'GarageDoorProHQ',
   address: '483 Chaiyaphruek 3 Alley, Muang Pattaya, Bang Lamung District, Chon Buri 20150, Thailand',
   // Derived from SITE.email so the address in the privacy policy can never
   // drift from the one published elsewhere. Must be a monitored mailbox:
