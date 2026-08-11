@@ -85,6 +85,22 @@ def slugify(s):
     return re.sub(r'-{2,}', '-', s)
 
 
+# Overture title-cases some names mechanically, which mangles ordinals:
+# "1st Choice Garage Doors" arrives as "1St Choice Garage Doors" and renders
+# that way in the page title, the h1 and every link to it.
+#
+# This is the ONLY name normalisation applied, deliberately. Broader re-casing
+# breaks real names — "ASAP GARAGE DOOR GROUP" and "LAFORCE" are trading styles
+# rather than errors, and a generic title-caser turns "AAA" into "Aaa". An
+# ordinal suffix after a digit has exactly one correct form, so it is safe to
+# fix without judgement.
+ORDINAL = re.compile(r'\b(\d+)(St|Nd|Rd|Th)\b')
+
+
+def clean_name(s):
+    return ORDINAL.sub(lambda m: m.group(1) + m.group(2).lower(), str(s).strip())
+
+
 def title_city(s):
     """Overture localities arrive in mixed case. Title-case them, but keep
     the small words that read wrong capitalised."""
@@ -134,7 +150,7 @@ def main():
 
         staged.append({
             'id': r['id'],
-            'name': str(r['name']).strip(),
+            'name': clean_name(r['name']),
             'slug': slugify(r['name']),
             'phone': r['phone'],
             'website': (r.get('website') or '').split('?')[0] or None,
