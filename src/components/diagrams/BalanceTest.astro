@@ -1,0 +1,70 @@
+---
+// The balance test, in three states. This is the safe, free diagnostic the site
+// recommends twice a year, and it is the thing that distinguishes a spring fault
+// from an opener fault — the most common misdiagnosis in the trade.
+const { id = 'dg-balance' } = Astro.props;
+
+// Each panel is the same drawing with a different outcome, so it is generated
+// rather than copy-pasted three times: one set of geometry to correct.
+const panels = [
+  { key: 'ok', label: 'Balanced', accent: 'var(--steel)', arrow: null, n: 1,
+    note: 'stays put' },
+  { key: 'low', label: 'Too little tension', accent: 'var(--signal)', arrow: 'down', n: 2,
+    note: 'slides shut' },
+  { key: 'high', label: 'Too much tension', accent: 'var(--amber)', arrow: 'up', n: 3,
+    note: 'pulls up' },
+];
+---
+<div class="dg-row">
+  {panels.map((p) => (
+    <svg
+      viewBox="0 0 200 220" width="200" height="220" role="img"
+      aria-labelledby={`${id}-${p.key}-title`} xmlns="http://www.w3.org/2000/svg"
+    >
+      <title id={`${id}-${p.key}-title`}>
+        {p.label}: with the opener disconnected, a door lifted to waist height {p.note}.
+      </title>
+      <rect x="0" y="0" width="200" height="220" fill="var(--paper)" />
+
+      {/* opening */}
+      <rect x="28" y="18" width="144" height="164" fill="var(--card)" stroke="var(--line)" stroke-width="2" />
+      {/* tracks */}
+      <line x1="36" y1="18" x2="36" y2="182" stroke="var(--ink-soft)" stroke-width="2" />
+      <line x1="164" y1="18" x2="164" y2="182" stroke="var(--ink-soft)" stroke-width="2" />
+
+      {/* door held at waist height — two sections visible at the top */}
+      <rect x="40" y="26" width="120" height="34" rx="2" fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="1.8" />
+      <rect x="40" y="62" width="120" height="34" rx="2" fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="1.8" />
+
+      {/* hand holding the bottom edge */}
+      <rect x="86" y="98" width="28" height="12" rx="6" fill="var(--ink)" />
+
+      {/* outcome arrow */}
+      {p.arrow === 'down' && (
+        <g stroke={p.accent} stroke-width="4" fill="none">
+          <line x1="100" y1="118" x2="100" y2="152" />
+          <polyline points="88,140 100,156 112,140" stroke-linejoin="round" />
+        </g>
+      )}
+      {p.arrow === 'up' && (
+        <g stroke={p.accent} stroke-width="4" fill="none">
+          <line x1="100" y1="152" x2="100" y2="118" />
+          <polyline points="88,130 100,114 112,130" stroke-linejoin="round" />
+        </g>
+      )}
+      {p.arrow === null && (
+        <g stroke={p.accent} stroke-width="4" fill="none">
+          <line x1="80" y1="136" x2="120" y2="136" />
+          <line x1="80" y1="148" x2="120" y2="148" />
+        </g>
+      )}
+
+      <line x1="12" y1="182" x2="188" y2="182" stroke="var(--ink)" stroke-width="2.5" />
+
+      <g font-family="Inter, sans-serif" font-size="15" font-weight="700" text-anchor="middle" dominant-baseline="central">
+        <circle cx="100" cy="204" r="14" fill={p.accent} />
+        <text x="100" y="204" fill="#fff">{p.n}</text>
+      </g>
+    </svg>
+  ))}
+</div>

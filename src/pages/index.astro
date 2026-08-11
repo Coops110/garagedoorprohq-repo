@@ -6,6 +6,7 @@ import { getAllCities, getAllStates, getSiteStats, formatCount } from '../lib/da
 import { getPillars, guides } from '../lib/guides.js';
 import { glossary } from '../lib/glossary.js';
 import { organizationSchema, websiteSchema } from '../lib/schema.js';
+import HeroDoor from '../components/diagrams/HeroDoor.astro';
 
 const cities = getAllCities().slice(0, 8);
 const states = getAllStates();
@@ -22,6 +23,8 @@ const schemas = [organizationSchema(), websiteSchema()];
 >
   <!-- HERO -->
   <section class="wrap" style="padding:2rem 1.1rem 1rem;">
+   <div class="hero-grid">
+    <div>
     <span class="eyebrow">Garage doors, honestly priced</span>
     <h1 style="margin:.6rem 0 .75rem;">
       Find out what it should cost, then find someone to do it
@@ -37,6 +40,9 @@ const schemas = [organizationSchema(), websiteSchema()];
       <a href="/guides/garage-door-repair-cost/" class="btn btn-signal">See repair costs</a>
       <a href="/garage-door-repair/" class="btn btn-ghost">Browse the directory</a>
     </div>
+    </div>
+    <div class="hero-art"><HeroDoor /></div>
+   </div>
   </section>
 
   <!-- WHAT WE DO AND DO NOT CLAIM. Placed high on purpose: it is the

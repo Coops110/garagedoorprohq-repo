@@ -149,6 +149,40 @@ brand-less title that then got the suffix appended anyway. Every return path is
 now brand-inclusive. `scripts/check-seo.py` audits the built HTML, which is the
 only place the real length is visible.
 
+## Diagrams
+
+All imagery on this site is **authored inline SVG** in `src/components/diagrams/`.
+There is no photography, and that is a content decision as much as a licensing
+one: a photo of a van or a technician next to a listing would imply we have seen
+that business, which directly contradicts the editorial line that we have not.
+
+Three rules, each of which was learned by breaking it:
+
+- **No prose labels inside a drawing.** A 640-unit viewBox renders at about
+  319px in the article column on a 375px phone, so a 15px label lands at 7px.
+  One "Header (wall above the opening)" label shipped like that and also
+  collided with two callouts. Labels go in the HTML legend, which is real body
+  text at the reader's own font size and gets picked up as page content.
+  `Figure.astro` carries the full reasoning.
+- **Marker geometry is sized per drawing**, so every callout renders at roughly
+  21px whatever the viewBox: `r ≈ 10.5 × viewBoxWidth / 319`. Markers use
+  `dominant-baseline="central"` so the digit centres itself and there is no
+  offset arithmetic to get wrong when a size changes.
+- **Marker centres must sit at least `r` inside the viewBox.** Raising the
+  radius from 15 to 21 for legibility pushed seven markers past the edge, where
+  they render as clipped half-circles. `scripts/check-seo.py` now enforces this
+  against the built HTML, along with requiring every inline `<svg>` to be either
+  `role="img"` with an accessible name or explicitly `aria-hidden`.
+
+Captions and legends live in `src/lib/diagrams.js`, keyed by name; a guide
+section references one with `diagram: '<name>'` and a guide can set
+`heroDiagram`. Legend numbers must match the drawing — nothing can enforce that,
+so change both in one edit.
+
+The cost-map diagram is data-driven: `src/lib/costmap.js` matches anchors onto a
+guide's own `costTable`, so a renamed row drops its callout rather than showing a
+stale price. Same one-source-of-truth rule as the city and business pages.
+
 ## Mobile-first is structural
 
 Every media query in `global.css` is `min-width`. Base styles are the 375px

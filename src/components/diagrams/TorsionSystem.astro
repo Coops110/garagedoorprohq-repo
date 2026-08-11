@@ -1,0 +1,151 @@
+---
+// Front elevation of a torsion-spring garage door: what is above the opening
+// and how the load actually reaches the door. This is the one drawing the
+// repair-cost pillar, the spring guide and four glossary terms all point at,
+// because every expensive failure on this site happens somewhere on it.
+//
+// Flat fills only, no gradients or patterns — those need document-unique ids,
+// and a diagram reused on the same page as another would collide.
+const { id = 'dg-torsion' } = Astro.props;
+const titleId = `${id}-title`;
+const descId = `${id}-desc`;
+---
+<svg
+  viewBox="0 0 640 400"
+  width="640"
+  height="400"
+  role="img"
+  aria-labelledby={titleId}
+  aria-describedby={descId}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id={titleId}>Anatomy of a torsion-spring garage door</title>
+  <desc id={descId}>
+    Front view of a garage door opening. A horizontal steel shaft runs above the
+    door carrying two coiled torsion springs, with a cable drum at each end. A
+    lift cable runs from each drum down to the bottom bracket of the door. The
+    door itself is four hinged sections running in a vertical track on each side.
+  </desc>
+
+  <!-- wall / opening -->
+  <rect x="0" y="0" width="640" height="400" fill="var(--paper)" />
+  <rect x="40" y="86" width="560" height="284" fill="var(--card)" stroke="var(--line)" stroke-width="2" />
+
+  <!-- Header wall above the opening. Deliberately unlabelled: a text label here
+       rendered at about 7px on a phone AND collided with callouts 1 and 3.
+       Anything worth naming goes in the HTML legend, which is the entire point
+       of the callout system — see the note in Figure.astro. -->
+  <rect x="40" y="30" width="560" height="56" fill="#EFEDE6" stroke="var(--line)" stroke-width="2" />
+
+  <!-- torsion shaft -->
+  <line x1="60" y1="104" x2="580" y2="104" stroke="var(--ink)" stroke-width="7" stroke-linecap="round" />
+
+  <!-- centre bearing plate -->
+  <rect x="306" y="92" width="28" height="24" rx="3" fill="var(--ink)" />
+
+  <!-- left spring: coils drawn as a run of ellipses along the shaft -->
+  <g fill="none" stroke="var(--signal)" stroke-width="4">
+    {Array.from({ length: 13 }, (_, i) => (
+      <ellipse cx={122 + i * 13} cy="104" rx="6" ry="17" />
+    ))}
+  </g>
+  <!-- right spring -->
+  <g fill="none" stroke="var(--signal)" stroke-width="4">
+    {Array.from({ length: 13 }, (_, i) => (
+      <ellipse cx={362 + i * 13} cy="104" rx="6" ry="17" />
+    ))}
+  </g>
+
+  <!-- winding cones at the inner ends -->
+  <rect x="288" y="95" width="14" height="18" rx="2" fill="var(--ink-soft)" />
+  <rect x="338" y="95" width="14" height="18" rx="2" fill="var(--ink-soft)" />
+
+  <!-- cable drums at the outer ends -->
+  <circle cx="78" cy="104" r="19" fill="var(--steel)" />
+  <circle cx="78" cy="104" r="8" fill="var(--card)" />
+  <circle cx="562" cy="104" r="19" fill="var(--steel)" />
+  <circle cx="562" cy="104" r="8" fill="var(--card)" />
+
+  <!-- lift cables running down to the bottom bracket -->
+  <line x1="78" y1="123" x2="78" y2="352" stroke="var(--steel)" stroke-width="3" stroke-dasharray="1 0" />
+  <line x1="562" y1="123" x2="562" y2="352" stroke="var(--steel)" stroke-width="3" />
+
+  <!-- vertical tracks -->
+  <rect x="60" y="128" width="12" height="230" fill="none" stroke="var(--ink-soft)" stroke-width="2.5" />
+  <rect x="568" y="128" width="12" height="230" fill="none" stroke="var(--ink-soft)" stroke-width="2.5" />
+
+  <!-- door sections -->
+  {[0, 1, 2, 3].map((i) => (
+    <rect
+      x="88" y={144 + i * 54} width="464" height="50" rx="3"
+      fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="2"
+    />
+  ))}
+  <!-- panel detail -->
+  {[0, 1, 2, 3].map((i) => (
+    <g>
+      <rect x="112" y={156 + i * 54} width="188" height="26" rx="2" fill="none" stroke="var(--line)" stroke-width="2" />
+      <rect x="340" y={156 + i * 54} width="188" height="26" rx="2" fill="none" stroke="var(--line)" stroke-width="2" />
+    </g>
+  ))}
+
+  <!-- rollers on the door edges -->
+  {[0, 1, 2, 3].map((i) => (
+    <g>
+      <circle cx="80" cy={169 + i * 54} r="7" fill="var(--amber)" />
+      <circle cx="560" cy={169 + i * 54} r="7" fill="var(--amber)" />
+    </g>
+  ))}
+
+  <!-- bottom bracket where the cable anchors -->
+  <rect x="68" y="346" width="24" height="16" rx="2" fill="var(--ink)" />
+  <rect x="548" y="346" width="24" height="16" rx="2" fill="var(--ink)" />
+
+  <!-- floor -->
+  <line x1="20" y1="370" x2="620" y2="370" stroke="var(--ink)" stroke-width="3" />
+
+  <!-- Numbered callouts. Marker geometry is sized so it renders at roughly
+       21px across whatever the drawing scales to: a 640-wide viewBox lands at
+       about 319px on a 375px phone, so r=15 would have rendered a 7px circle
+       with an unreadable 8px digit. See the note in Figure.astro. -->
+  <g font-family="Inter, sans-serif" font-size="23" font-weight="700" text-anchor="middle" dominant-baseline="central">
+    <g>
+      <line x1="200" y1="104" x2="200" y2="62" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="200" cy="48" r="21" fill="var(--signal)" />
+      <text x="200" y="48" fill="#fff">1</text>
+    </g>
+    <g>
+      <line x1="320" y1="116" x2="320" y2="150" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="320" cy="62" r="21" fill="var(--ink)" />
+      <text x="320" y="62" fill="#fff">2</text>
+      <line x1="320" y1="92" x2="320" y2="77" stroke="var(--ink-soft)" stroke-width="1.5" />
+    </g>
+    <g>
+      <line x1="78" y1="85" x2="78" y2="70" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="78" cy="55" r="21" fill="var(--steel)" />
+      <text x="78" y="55" fill="#fff">3</text>
+    </g>
+    <g>
+      <line x1="562" y1="240" x2="592" y2="240" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="614" cy="240" r="21" fill="var(--steel)" />
+      <text x="614" y="240" fill="#fff">4</text>
+    </g>
+    <g>
+      <line x1="60" y1="290" x2="48" y2="290" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="26" cy="290" r="21" fill="var(--ink-soft)" />
+      <text x="26" y="290" fill="#fff">5</text>
+    </g>
+    <g>
+      <line x1="567" y1="331" x2="592" y2="331" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="614" cy="331" r="21" fill="var(--amber)" />
+      <text x="614" y="331" fill="#fff">6</text>
+    </g>
+    {/* Points at a real bottom bracket. The leader previously ran to the centre
+        of the floor, implying the bracket sits somewhere it does not. */}
+    <g>
+      <line x1="90" y1="354" x2="172" y2="374" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="196" cy="377" r="21" fill="var(--ink)" />
+      <text x="196" y="377" fill="#fff">7</text>
+    </g>
+  </g>
+</svg>

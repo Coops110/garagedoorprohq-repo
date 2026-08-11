@@ -14,6 +14,7 @@
 export const glossary = [
   {
     slug: 'torsion-spring',
+    diagram: 'torsion-system',
     title: 'What Is a Torsion Spring?',
     term: 'Torsion spring',
     short:
@@ -29,6 +30,7 @@ export const glossary = [
   },
   {
     slug: 'extension-spring',
+    diagram: 'spring-types',
     title: 'What Is an Extension Spring?',
     term: 'Extension spring',
     short:
@@ -59,6 +61,7 @@ export const glossary = [
   },
   {
     slug: 'photo-eye-sensor',
+    diagram: 'photo-eye',
     title: 'What Is a Photo-Eye Sensor?',
     term: 'Photo-eye sensor',
     short:
@@ -74,6 +77,7 @@ export const glossary = [
   },
   {
     slug: 'lift-cable',
+    diagram: 'torsion-system',
     title: 'What Is a Garage Door Lift Cable?',
     term: 'Lift cable',
     short:
@@ -89,6 +93,7 @@ export const glossary = [
   },
   {
     slug: 'door-balance',
+    diagram: 'balance-test',
     title: 'Garage Door Balance: What It Means',
     term: 'Door balance',
     short:
@@ -119,6 +124,7 @@ export const glossary = [
   },
   {
     slug: 'jackshaft-opener',
+    diagram: 'opener-types',
     title: 'What Is a Jackshaft Opener?',
     term: 'Jackshaft opener',
     short:
@@ -164,6 +170,7 @@ export const glossary = [
   },
   {
     slug: 'roller',
+    diagram: 'torsion-system',
     title: 'Garage Door Rollers Explained',
     term: 'Roller',
     short:
@@ -179,6 +186,7 @@ export const glossary = [
   },
   {
     slug: 'track',
+    diagram: 'torsion-system',
     title: 'Garage Door Tracks Explained',
     term: 'Track',
     short:

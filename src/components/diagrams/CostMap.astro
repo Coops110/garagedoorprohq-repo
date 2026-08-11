@@ -1,0 +1,81 @@
+---
+// A garage door with every common repair priced in place, so the reader can see
+// *where* on the door the money goes before reading the table.
+//
+// The prices are NOT written into this drawing. They are matched out of the
+// guide's own costTable and returned for the legend to render, which is the
+// same discipline the city and business pages follow: one source of truth for a
+// figure, so a diagram can never quietly disagree with the table beneath it.
+// If a row is renamed in guides.js, its callout disappears rather than showing
+// a stale number.
+import { costCallouts } from '../../lib/costmap.js';
+
+const { id = 'dg-costmap', rows = [] } = Astro.props;
+const callouts = costCallouts(rows);
+---
+<svg
+  viewBox="0 0 640 300" width="640" height="300" role="img"
+  aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id={`${id}-title`}>Where garage door repair costs sit on the door</title>
+  <desc id={`${id}-desc`}>
+    A garage door with numbered markers on the parts that commonly fail: the
+    torsion springs and opener above the opening, the lift cables and track down
+    each side, the rollers on the door edge, and the door panels themselves. The
+    price range for each is listed below the drawing.
+  </desc>
+
+  <rect x="0" y="0" width="640" height="300" fill="var(--paper)" />
+
+  <!-- header -->
+  <rect x="40" y="52" width="560" height="34" fill="#EFEDE6" stroke="var(--line)" stroke-width="2" />
+  <!-- opening -->
+  <rect x="40" y="86" width="560" height="184" fill="var(--card)" stroke="var(--line)" stroke-width="2" />
+
+  <!-- shaft, springs, drums -->
+  <line x1="60" y1="70" x2="580" y2="70" stroke="var(--ink)" stroke-width="6" stroke-linecap="round" />
+  <g fill="none" stroke="var(--signal)" stroke-width="3.5">
+    {Array.from({ length: 11 }, (_, i) => <ellipse cx={140 + i * 13} cy="70" rx="5.5" ry="14" />)}
+    {Array.from({ length: 11 }, (_, i) => <ellipse cx={368 + i * 13} cy="70" rx="5.5" ry="14" />)}
+  </g>
+  <rect x="306" y="60" width="26" height="20" rx="3" fill="var(--ink)" />
+  <circle cx="78" cy="70" r="21" fill="var(--steel)" />
+  <circle cx="562" cy="70" r="21" fill="var(--steel)" />
+
+  <!-- opener unit, drawn small behind the header -->
+  <rect x="104" y="96" width="48" height="24" rx="4" fill="var(--steel)" opacity="0.9" />
+  <rect x="152" y="104" width="150" height="6" rx="3" fill="var(--ink-soft)" />
+
+  <!-- cables -->
+  <line x1="78" y1="85" x2="78" y2="252" stroke="var(--steel)" stroke-width="3" />
+  <line x1="562" y1="85" x2="562" y2="252" stroke="var(--steel)" stroke-width="3" />
+
+  <!-- tracks -->
+  <rect x="60" y="100" width="11" height="152" fill="none" stroke="var(--ink-soft)" stroke-width="2.5" />
+  <rect x="569" y="100" width="11" height="152" fill="none" stroke="var(--ink-soft)" stroke-width="2.5" />
+
+  <!-- door sections -->
+  {[0, 1, 2, 3].map((i) => (
+    <rect x="88" y={116 + i * 36} width="464" height="32" rx="3" fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="2" />
+  ))}
+  <!-- rollers -->
+  {[0, 1, 2, 3].map((i) => (
+    <g>
+      <circle cx="80" cy={132 + i * 36} r="6" fill="var(--amber)" />
+      <circle cx="560" cy={132 + i * 36} r="6" fill="var(--amber)" />
+    </g>
+  ))}
+  <line x1="20" y1="270" x2="620" y2="270" stroke="var(--ink)" stroke-width="3" />
+
+  <!-- numbered callouts, generated from the surviving anchors -->
+  <g font-family="Inter, sans-serif" font-size="23" font-weight="700" text-anchor="middle" dominant-baseline="central">
+    {callouts.map((c) => (
+      <g>
+        <line x1={c.x} y1={c.y} x2={c.lx} y2={c.ly} stroke="var(--ink-soft)" stroke-width="1.5" />
+        <circle cx={c.lx} cy={c.ly} r="21" fill={c.colour} />
+        <text x={c.lx} y={c.ly} fill="#fff">{c.n}</text>
+      </g>
+    ))}
+  </g>
+</svg>

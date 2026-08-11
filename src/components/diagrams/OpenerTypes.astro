@@ -1,0 +1,103 @@
+---
+// Side elevation: a rail-mounted opener (chain or belt) versus a wall-mounted
+// jackshaft. The jackshaft argument is entirely about the ceiling, and that is
+// impossible to convey in a sentence and obvious in a drawing.
+const { id = 'dg-openers' } = Astro.props;
+---
+<div class="dg-stack">
+  <svg
+    viewBox="0 0 460 220" width="460" height="220" role="img"
+    aria-labelledby={`${id}-rail-title`} aria-describedby={`${id}-rail-desc`}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id={`${id}-rail-title`}>Rail-mounted chain or belt drive opener</title>
+    <desc id={`${id}-rail-desc`}>
+      Side view of a garage. The motor unit hangs from the ceiling toward the back,
+      with a rail running forward to the top of the door opening. A trolley travels
+      along the rail and pulls the door open, occupying the centre of the ceiling.
+    </desc>
+    <rect x="0" y="0" width="460" height="220" fill="var(--paper)" />
+
+    {/* ceiling and floor */}
+    <line x1="20" y1="34" x2="440" y2="34" stroke="var(--ink)" stroke-width="3" />
+    <line x1="20" y1="186" x2="440" y2="186" stroke="var(--ink)" stroke-width="3" />
+    {/* back wall */}
+    <line x1="20" y1="34" x2="20" y2="186" stroke="var(--ink-soft)" stroke-width="2" />
+
+    {/* door in the closed position at the opening (right) */}
+    <rect x="410" y="42" width="14" height="144" fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="2" />
+
+    {/* horizontal track */}
+    <line x1="150" y1="52" x2="410" y2="52" stroke="var(--ink-soft)" stroke-width="2.5" />
+
+    {/* motor unit hanging from the ceiling */}
+    <line x1="96" y1="34" x2="96" y2="56" stroke="var(--ink-soft)" stroke-width="2" />
+    <line x1="132" y1="34" x2="132" y2="56" stroke="var(--ink-soft)" stroke-width="2" />
+    <rect x="82" y="56" width="64" height="38" rx="4" fill="var(--steel)" />
+
+    {/* rail forward to the opening, with a trolley on it */}
+    <rect x="146" y="70" width="264" height="8" rx="4" fill="var(--ink-soft)" />
+    <rect x="300" y="64" width="26" height="20" rx="3" fill="var(--signal)" />
+
+    {/* headroom the rail consumes */}
+    <line x1="240" y1="34" x2="240" y2="70" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 3" />
+
+    <g font-family="Inter, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">
+      <circle cx="114" cy="118" r="15" fill="var(--steel)" />
+      <text x="114" y="118" fill="#fff">1</text>
+      <line x1="114" y1="96" x2="114" y2="104" stroke="var(--ink-soft)" stroke-width="1.5" />
+
+      <circle cx="313" cy="112" r="15" fill="var(--signal)" />
+      <text x="313" y="112" fill="#fff">2</text>
+      <line x1="313" y1="86" x2="313" y2="98" stroke="var(--ink-soft)" stroke-width="1.5" />
+
+      <circle cx="240" cy="16" r="15" fill="var(--muted)" />
+      <text x="240" y="16" fill="#fff">3</text>
+    </g>
+  </svg>
+
+  <svg
+    viewBox="0 0 460 220" width="460" height="220" role="img"
+    aria-labelledby={`${id}-jack-title`} aria-describedby={`${id}-jack-desc`}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title id={`${id}-jack-title`}>Wall-mounted jackshaft opener</title>
+    <desc id={`${id}-jack-desc`}>
+      Side view of the same garage. The motor mounts on the wall beside the
+      opening and turns the torsion shaft directly, so there is no ceiling rail
+      and the whole ceiling stays clear for storage.
+    </desc>
+    <rect x="0" y="0" width="460" height="220" fill="var(--paper)" />
+
+    <line x1="20" y1="34" x2="440" y2="34" stroke="var(--ink)" stroke-width="3" />
+    <line x1="20" y1="186" x2="440" y2="186" stroke="var(--ink)" stroke-width="3" />
+    <line x1="20" y1="34" x2="20" y2="186" stroke="var(--ink-soft)" stroke-width="2" />
+
+    <rect x="410" y="42" width="14" height="144" fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="2" />
+    <line x1="150" y1="52" x2="410" y2="52" stroke="var(--ink-soft)" stroke-width="2.5" />
+
+    {/* torsion shaft end, at the opening */}
+    <circle cx="398" cy="52" r="9" fill="var(--ink)" />
+
+    {/* jackshaft motor on the wall beside the opening */}
+    <rect x="356" y="62" width="42" height="52" rx="4" fill="var(--steel)" />
+    {/* short drive belt up to the shaft */}
+    <line x1="377" y1="62" x2="394" y2="56" stroke="var(--signal)" stroke-width="4" />
+
+    {/* ceiling now free — storage shown */}
+    <rect x="120" y="40" width="150" height="26" rx="3" fill="none" stroke="var(--amber)" stroke-width="2.5" stroke-dasharray="6 4" />
+    <text x="195" y="58" font-family="Inter, sans-serif" font-size="17" fill="var(--amber)" text-anchor="middle" font-weight="700">
+      ceiling free
+    </text>
+
+    <g font-family="Inter, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">
+      <circle cx="377" cy="140" r="15" fill="var(--steel)" />
+      <text x="377" y="140" fill="#fff">4</text>
+      <line x1="377" y1="116" x2="377" y2="126" stroke="var(--ink-soft)" stroke-width="1.5" />
+
+      <circle cx="195" cy="100" r="15" fill="var(--amber)" />
+      <text x="195" y="100" fill="#fff">5</text>
+      <line x1="195" y1="70" x2="195" y2="86" stroke="var(--ink-soft)" stroke-width="1.5" />
+    </g>
+  </svg>
+</div>
