@@ -1,0 +1,83 @@
+---
+// Cross-section through a door panel and its bottom seal. Covers two terms that
+// are impossible to picture from prose: what "insulated" physically means, and
+// where a weatherstrip actually sits.
+const { id = 'dg-layers' } = Astro.props;
+---
+<svg
+  viewBox="0 0 560 300" width="560" height="300" role="img"
+  aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id={`${id}-title`}>Cross-section of an insulated garage door panel</title>
+  <desc id={`${id}-desc`}>
+    A cut-through view of a garage door panel. An outer steel skin faces the
+    street, an insulating foam core fills the middle, and an inner steel skin
+    faces the garage. At the base of the door a flexible bottom seal sits in an
+    aluminium retainer and compresses against the floor.
+  </desc>
+
+  <rect x="0" y="0" width="560" height="300" fill="var(--paper)" />
+
+  {/* outside / inside orientation */}
+  <text x="34" y="40" font-family="Inter, sans-serif" font-size="20" fill="var(--muted)" font-weight="600">outside</text>
+  <text x="526" y="40" font-family="Inter, sans-serif" font-size="20" fill="var(--muted)" font-weight="600" text-anchor="end">inside</text>
+
+  {/* the panel, cut through: skin | core | skin */}
+  <rect x="150" y="58" width="26" height="150" fill="var(--ink-soft)" />
+  <rect x="176" y="58" width="180" height="150" fill="#EDE7D6" />
+  <rect x="356" y="58" width="26" height="150" fill="var(--ink-soft)" />
+
+  {/* foam texture in the core — sparse circles, not a pattern fill, because a
+      <pattern> needs a document-unique id and these diagrams get reused. */}
+  {Array.from({ length: 7 }, (_, r) =>
+    Array.from({ length: 6 }, (_, c) => (
+      <circle
+        cx={192 + c * 30 + (r % 2 ? 15 : 0)} cy={74 + r * 21}
+        r="7" fill="none" stroke="var(--amber)" stroke-width="2"
+      />
+    ))
+  )}
+
+  {/* tongue-and-groove joint at the top, how sections meet */}
+  <path d="M150 58 L176 58 L176 44 L356 44 L356 58 L382 58" fill="none" stroke="var(--ink)" stroke-width="2.5" />
+
+  {/* bottom seal in its retainer, compressed on the floor */}
+  <rect x="150" y="208" width="232" height="16" fill="var(--muted)" />
+  <path
+    d="M166 224 Q150 250 190 252 L342 252 Q382 250 366 224 Z"
+    fill="var(--signal)" opacity="0.28" stroke="var(--signal)" stroke-width="3"
+  />
+
+  {/* floor */}
+  <line x1="60" y1="252" x2="500" y2="252" stroke="var(--ink)" stroke-width="3.5" />
+  <line x1="60" y1="258" x2="500" y2="258" stroke="var(--line)" stroke-width="2" />
+
+  <g font-family="Inter, sans-serif" font-size="21" font-weight="700" text-anchor="middle" dominant-baseline="central">
+    <g>
+      <line x1="163" y1="58" x2="120" y2="86" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="100" cy="90" r="19" fill="var(--ink-soft)" />
+      <text x="100" y="90" fill="#fff">1</text>
+    </g>
+    <g>
+      <line x1="266" y1="130" x2="266" y2="30" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="266" cy="24" r="19" fill="var(--amber)" />
+      <text x="266" y="24" fill="#fff">2</text>
+    </g>
+    <g>
+      <line x1="369" y1="58" x2="430" y2="86" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="452" cy="90" r="19" fill="var(--ink-soft)" />
+      <text x="452" y="90" fill="#fff">3</text>
+    </g>
+    <g>
+      <line x1="266" y1="216" x2="480" y2="196" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="504" cy="192" r="19" fill="var(--muted)" />
+      <text x="504" y="192" fill="#fff">4</text>
+    </g>
+    <g>
+      <line x1="266" y1="244" x2="80" y2="212" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="54" cy="206" r="19" fill="var(--signal)" />
+      <text x="54" y="206" fill="#fff">5</text>
+    </g>
+  </g>
+</svg>

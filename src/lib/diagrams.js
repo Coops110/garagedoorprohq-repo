@@ -88,6 +88,64 @@ export const diagrams = {
     caption:
       'Prices are read from the table below this drawing rather than written into it, so the two cannot disagree. All are national 2026 estimates, not quotes.',
   },
+
+
+  'spring-life': {
+    component: 'SpringLife',
+    caption:
+      'Cycle life divided by real use. The dashed line is the seven-year figure usually quoted for a standard spring — it only holds at about four openings a day.',
+    legend: [
+      { n: 1, label: 'Standard spring, 10,000 cycles' },
+      { n: 2, label: 'High-cycle spring, 25,000 cycles' },
+    ],
+  },
+
+  'door-layers': {
+    component: 'DoorLayers',
+    caption:
+      'What "insulated" physically means, and where the bottom seal sits. A thicker foam core is also a heavier door, which is why the springs have to be sized for it.',
+    legend: [
+      { n: 1, label: 'Outer steel skin, facing the street' },
+      { n: 2, label: 'Insulating foam core — this is what R-value measures', href: '/glossary/r-value/' },
+      { n: 3, label: 'Inner steel skin, facing the garage' },
+      { n: 4, label: 'Aluminium retainer holding the seal' },
+      { n: 5, label: 'Bottom seal, compressed against the floor', href: '/glossary/weatherstrip/' },
+    ],
+  },
+
+  'winding-cone': {
+    component: 'WindingCone',
+    caption:
+      'Parts only. There is no turn count, sequence or order of operations here on purpose — a partial instruction for spring work is more dangerous than none. It is here so you can tell a properly equipped technician from an improvised one.',
+    legend: [
+      { n: 1, label: 'Torsion spring coils', href: '/glossary/torsion-spring/' },
+      { n: 2, label: 'Winding cone, cast onto the spring end' },
+      { n: 3, label: 'Set screws clamping the cone to the shaft' },
+      { n: 4, label: 'Solid steel winding bar, correctly sized to the hole', href: '/glossary/winding-bar/' },
+    ],
+  },
+
+  'trolley-cord': {
+    component: 'TrolleyCord',
+    caption:
+      'The two things on an opener a homeowner actually interacts with: the red cord that disconnects the door, and the stored positions that decide where it stops.',
+    legend: [
+      { n: 1, label: 'Trolley, travelling along the rail' },
+      { n: 2, label: 'Emergency release cord — red, always', href: '/glossary/emergency-release-cord/' },
+      { n: 3, label: 'Stored open and closed limits', href: '/glossary/limit-switch/' },
+      { n: 4, label: 'Arm connecting the trolley to the door' },
+    ],
+  },
+
+  'rolling-code': {
+    component: 'RollingCode',
+    caption:
+      'The whole difference in one picture. A fixed-code remote sends the same number every press, so a captured signal still works later; a rolling-code remote has already moved on.',
+    legend: [
+      { n: 1, label: 'Fixed code — note the DIP switch bank inside older remotes' },
+      { n: 2, label: 'Rolling code, on every current opener', href: '/glossary/rolling-code/' },
+    ],
+  },
 };
 
 export function getDiagram(name) {

@@ -1,0 +1,94 @@
+---
+// How long a spring lasts at real usage rates, standard vs high-cycle.
+//
+// This is the one diagram on the site that MUST carry text inside the drawing:
+// a chart without axis labels is not a chart. So it is sized for it — a 560-wide
+// viewBox lands at ~319px in the article column, and 20 units renders at ~11px,
+// which is readable. Everything else keeps its words in the HTML legend.
+//
+// Years are computed, not drawn by hand, so the bars cannot disagree with the
+// arithmetic the cycle-rating page describes: cycles / (openings per day * 365).
+const { id = 'dg-springlife' } = Astro.props;
+
+const RATES = [2, 4, 6, 8, 10];
+const years = (cycles, perDay) => cycles / (perDay * 365);
+const MAX_YEARS = 35;
+
+const X0 = 132;              // left edge of the plot
+const X1 = 528;              // right edge
+const SCALE = (X1 - X0) / MAX_YEARS;
+
+// Row pitch has to fit five rows of two bars between Y0 and the x-axis. Each row
+// is 14 + 4 + 14 = 32 units of bars, so 5 rows need 160 plus four inter-row
+// gaps inside the 190 available. At the original 44 the last row ran to y=270,
+// past the axis at 252, and its bar rendered across the axis labels.
+const Y0 = 62;
+const Y_AXIS = 252;
+const ROW_H = 38;            // 5 rows -> last bar ends at 246, clear of the axis
+---
+<svg
+  viewBox="0 0 560 300" width="560" height="300" role="img"
+  aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id={`${id}-title`}>
+    How long garage door springs last at different daily usage rates
+  </title>
+  <desc id={`${id}-desc`}>
+    A bar chart comparing a standard 10,000-cycle spring against a high-cycle
+    25,000-cycle spring. At two openings a day the standard spring lasts about
+    13.7 years and the high-cycle about 34.2 years. At eight openings a day the
+    standard spring lasts about 3.4 years and the high-cycle about 8.6 years.
+  </desc>
+
+  <rect x="0" y="0" width="560" height="300" fill="var(--paper)" />
+
+  {/* vertical grid at 5-year intervals */}
+  {Array.from({ length: 8 }, (_, i) => i * 5).map((yr) => (
+    <g>
+      <line
+        x1={X0 + yr * SCALE} y1="52" x2={X0 + yr * SCALE} y2={Y_AXIS}
+        stroke="var(--line)" stroke-width="1.5"
+      />
+      <text
+        x={X0 + yr * SCALE} y="274" font-family="Inter, sans-serif" font-size="19"
+        fill="var(--muted)" text-anchor="middle"
+      >{yr}</text>
+    </g>
+  ))}
+  <text
+    x={(X0 + X1) / 2} y="296" font-family="Inter, sans-serif" font-size="19"
+    fill="var(--ink-soft)" text-anchor="middle" font-weight="600"
+  >years of service</text>
+
+  {/* one row per usage rate, two bars each */}
+  {RATES.map((rate, i) => {
+    const y = Y0 + i * ROW_H;
+    const wStd = years(10000, rate) * SCALE;
+    const wHigh = years(25000, rate) * SCALE;
+    return (
+      <g>
+        <text
+          x={X0 - 14} y={y + 17} font-family="Inter, sans-serif" font-size="20"
+          fill="var(--ink)" text-anchor="end" font-weight="600"
+        >{rate}/day</text>
+        <rect x={X0} y={y + 18} width={wHigh} height="14" rx="3" fill="var(--steel)" />
+        <rect x={X0} y={y} width={wStd} height="14" rx="3" fill="var(--signal)" />
+      </g>
+    );
+  })}
+
+  {/* axes */}
+  <line x1={X0} y1="52" x2={X0} y2={Y_AXIS} stroke="var(--ink)" stroke-width="2.5" />
+  <line x1={X0} y1={Y_AXIS} x2={X1} y2={Y_AXIS} stroke="var(--ink)" stroke-width="2.5" />
+
+  {/* The seven-year figure the guides quote, marked where it actually falls. */}
+  <line
+    x1={X0 + 7 * SCALE} y1="44" x2={X0 + 7 * SCALE} y2={Y_AXIS}
+    stroke="var(--amber)" stroke-width="2" stroke-dasharray="6 4"
+  />
+  <text
+    x={X0 + 7 * SCALE + 8} y="40" font-family="Inter, sans-serif" font-size="19"
+    fill="var(--amber)" font-weight="700"
+  >7 yrs</text>
+</svg>

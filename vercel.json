@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.garagedoorprohq.com"
+        }
+      ],
+      "destination": "https://garagedoorprohq.com/$1",
+      "permanent": true
+    },
+    {
       "source": "/garage-door-repair-cost",
       "destination": "/guides/garage-door-repair-cost/",
       "permanent": true

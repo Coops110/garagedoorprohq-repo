@@ -1,0 +1,79 @@
+---
+// The opener rail from the side: trolley, red release cord, and the two limit
+// positions the opener stores. Covers the release cord and the limit switch,
+// both of which are invisible concepts described in prose on their own pages.
+const { id = 'dg-trolley' } = Astro.props;
+---
+<svg
+  viewBox="0 0 560 260" width="560" height="260" role="img"
+  aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id={`${id}-title`}>
+    Opener trolley, emergency release cord and door travel limits
+  </title>
+  <desc id={`${id}-desc`}>
+    Side view of a garage door opener. A trolley travels along the rail below the
+    motor and connects to the door by an arm. A red cord hangs from the trolley to
+    disconnect the door so it can be moved by hand. Two marks show the stored
+    open and closed limit positions that tell the opener where to stop.
+  </desc>
+
+  <rect x="0" y="0" width="560" height="260" fill="var(--paper)" />
+
+  {/* ceiling and floor */}
+  <line x1="24" y1="34" x2="536" y2="34" stroke="var(--ink)" stroke-width="3" />
+  <line x1="24" y1="230" x2="536" y2="230" stroke="var(--ink)" stroke-width="3" />
+
+  {/* motor unit, hung at the back */}
+  <line x1="66" y1="34" x2="66" y2="52" stroke="var(--ink-soft)" stroke-width="2" />
+  <line x1="106" y1="34" x2="106" y2="52" stroke="var(--ink-soft)" stroke-width="2" />
+  <rect x="52" y="52" width="68" height="40" rx="5" fill="var(--steel)" />
+
+  {/* rail forward to the opening */}
+  <rect x="120" y="66" width="376" height="9" rx="4" fill="var(--ink-soft)" />
+
+  {/* the trolley on the rail */}
+  <rect x="300" y="58" width="34" height="24" rx="4" fill="var(--signal)" />
+
+  {/* arm down to the top of the door */}
+  <line x1="330" y1="82" x2="452" y2="112" stroke="var(--ink)" stroke-width="4" />
+
+  {/* the door, part way up, running on the curve */}
+  <rect x="452" y="106" width="18" height="124" rx="3" fill="#F3F1EA" stroke="var(--ink-soft)" stroke-width="2" />
+
+  {/* the red release cord hanging from the trolley */}
+  <line x1="317" y1="82" x2="317" y2="150" stroke="#C81E1E" stroke-width="3.5" />
+  <ellipse cx="317" cy="160" rx="9" ry="13" fill="#C81E1E" />
+
+  {/* limit positions: where the opener stops travelling */}
+  <g stroke="var(--amber)" stroke-width="3" stroke-dasharray="7 5">
+    <line x1="140" y1="96" x2="140" y2="128" />
+    <line x1="488" y1="96" x2="488" y2="128" />
+  </g>
+  <text x="140" y="150" font-family="Inter, sans-serif" font-size="19" fill="var(--amber)" text-anchor="middle" font-weight="700">open</text>
+  <text x="488" y="150" font-family="Inter, sans-serif" font-size="19" fill="var(--amber)" text-anchor="middle" font-weight="700">closed</text>
+
+  <g font-family="Inter, sans-serif" font-size="19" font-weight="700" text-anchor="middle" dominant-baseline="central">
+    <g>
+      <line x1="317" y1="70" x2="260" y2="34" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="242" cy="26" r="19" fill="var(--signal)" />
+      <text x="242" y="26" fill="#fff">1</text>
+    </g>
+    <g>
+      <line x1="317" y1="173" x2="317" y2="196" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="317" cy="212" r="19" fill="#C81E1E" />
+      <text x="317" y="212" fill="#fff">2</text>
+    </g>
+    <g>
+      <line x1="140" y1="128" x2="86" y2="176" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="68" cy="190" r="19" fill="var(--amber)" />
+      <text x="68" y="190" fill="#fff">3</text>
+    </g>
+    <g>
+      <line x1="461" y1="180" x2="520" y2="196" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="538" cy="200" r="19" fill="var(--ink)" />
+      <text x="538" y="200" fill="#fff">4</text>
+    </g>
+  </g>
+</svg>

@@ -28,7 +28,7 @@ import { guides, PLANNED, bodyWordCount } from '../src/lib/guides.js';
 import { glossary } from '../src/lib/glossary.js';
 
 const MIN_WORDS = 700;      // guides
-const MIN_TERM_WORDS = 200; // glossary terms
+const MIN_TERM_WORDS = 350; // glossary terms — see the note at rule 6
 
 const problems = [];
 const warnings = [];
@@ -136,11 +136,16 @@ for (const g of guides) {
   }
 }
 
-// Glossary pages have their own, lower floor. A definition page is legitimately
-// shorter than a cost guide, but 15 pages of ~180 words is still exactly the
-// thin-content drag that stalls indexing on an unproven domain — so each term
-// carries a definition, mechanism, failure mode and a practical "what this
-// means on a quote" paragraph rather than a dictionary entry.
+// Glossary pages have their own floor, lower than a guide's but not by much.
+// A definition page is legitimately shorter than a cost guide — but the first
+// version of this check used 200, and that let fifteen ~340-word pages through
+// while LESSONS-LEARNED's own QA rule says anything under ~500 words on the page
+// needs a content pass. 350 body words lands at roughly 500 rendered, once the
+// h1, the diagram legend and the related-term lists are counted.
+//
+// So each term now carries: a one-line definition, the mechanism, the failure
+// mode, a "what this means on a quote" paragraph, and one paragraph of something
+// a homeowner would not already know. That is a page, not a dictionary entry.
 for (const t of glossary) {
   const words = [t.short, ...(t.body || [])].join(' ').split(/\s+/).length;
   if (words < MIN_TERM_WORDS) {

@@ -1,0 +1,80 @@
+---
+// Fixed code versus rolling code. A protocol has nothing physical to draw, but
+// the difference IS the thing worth showing: the same number three times against
+// a different number every time. That lands instantly and takes a paragraph to
+// explain in words.
+const { id = 'dg-rolling' } = Astro.props;
+
+const FIXED = ['4271', '4271', '4271'];
+const ROLLING = ['4271', '8093', '1546'];
+---
+<svg
+  viewBox="0 0 460 280" width="460" height="280" role="img"
+  aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title id={`${id}-title`}>Fixed code versus rolling code garage door remotes</title>
+  <desc id={`${id}-desc`}>
+    Two remotes compared. An older fixed-code remote transmits the same code every
+    time it is pressed, so a captured signal can be replayed. A rolling-code
+    remote transmits a different code on every press, so a captured signal is
+    already out of date.
+  </desc>
+
+  <rect x="0" y="0" width="460" height="280" fill="var(--paper)" />
+
+  {/* ── fixed code, above ── */}
+  <rect x="26" y="40" width="74" height="104" rx="12" fill="var(--card)" stroke="var(--signal)" stroke-width="3" />
+  <circle cx="63" cy="72" r="13" fill="var(--signal)" />
+  {/* the DIP switch bank that identifies a fixed-code unit */}
+  <rect x="42" y="98" width="42" height="32" rx="3" fill="#EDE7D6" stroke="var(--ink-soft)" stroke-width="2" />
+  {Array.from({ length: 4 }, (_, i) => (
+    <rect x={47 + i * 9} y={i % 2 ? 114 : 102} width="5" height="12" rx="1" fill="var(--ink)" />
+  ))}
+
+  {FIXED.map((code, i) => (
+    <g>
+      <line
+        x1="112" y1={64 + i * 30} x2="252" y2={64 + i * 30}
+        stroke="var(--signal)" stroke-width="2.5" stroke-dasharray="8 5"
+      />
+      <text
+        x={264} y={64 + i * 30} font-family="Inter, sans-serif" font-size="22"
+        fill="var(--signal)" font-weight="700" dominant-baseline="central"
+      >{code}</text>
+    </g>
+  ))}
+  <text x="352" y="94" font-family="Inter, sans-serif" font-size="20" fill="var(--ink-soft)" dominant-baseline="central">replayable</text>
+
+  {/* ── rolling code, below ── */}
+  <rect x="26" y="176" width="74" height="80" rx="12" fill="var(--card)" stroke="var(--steel)" stroke-width="3" />
+  <circle cx="63" cy="206" r="13" fill="var(--steel)" />
+  <rect x="44" y="230" width="38" height="12" rx="6" fill="#EDE7D6" stroke="var(--ink-soft)" stroke-width="2" />
+
+  {ROLLING.map((code, i) => (
+    <g>
+      <line
+        x1="112" y1={186 + i * 26} x2="252" y2={186 + i * 26}
+        stroke="var(--steel)" stroke-width="2.5" stroke-dasharray="8 5"
+      />
+      <text
+        x={264} y={186 + i * 26} font-family="Inter, sans-serif" font-size="22"
+        fill="var(--steel)" font-weight="700" dominant-baseline="central"
+      >{code}</text>
+    </g>
+  ))}
+  <text x="352" y="212" font-family="Inter, sans-serif" font-size="20" fill="var(--ink-soft)" dominant-baseline="central">already stale</text>
+
+  <g font-family="Inter, sans-serif" font-size="17" font-weight="700" text-anchor="middle" dominant-baseline="central">
+    <g>
+      <circle cx="63" cy="20" r="15" fill="var(--signal)" />
+      <text x="63" y="20" fill="#fff">1</text>
+      <line x1="63" y1="35" x2="63" y2="40" stroke="var(--ink-soft)" stroke-width="1.5" />
+    </g>
+    <g>
+      <line x1="63" y1="144" x2="63" y2="156" stroke="var(--ink-soft)" stroke-width="1.5" />
+      <circle cx="63" cy="162" r="15" fill="var(--steel)" />
+      <text x="63" y="162" fill="#fff">2</text>
+    </g>
+  </g>
+</svg>
