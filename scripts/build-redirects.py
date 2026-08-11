@@ -94,9 +94,16 @@ rules = []
 
 
 def add(source, destination):
+    # The destination keeps its trailing slash. astro.config.mjs sets
+    # trailingSlash: 'always', so the slashed form is the canonical URL and the
+    # one in the sitemap and in every internal link. Emitting the slash-less
+    # form still works — Vercel resolves it in one hop — but it lands a crawler
+    # on a URL that immediately declares a different canonical. One redirect
+    # straight to the canonical URL is the version with nothing left to
+    # reconcile.
     rules.append({
         'source': '/' + source.strip('/'),
-        'destination': '/' + destination.strip('/'),
+        'destination': '/' + destination.strip('/') + '/',
         'permanent': True,
     })
 
@@ -184,11 +191,9 @@ for src, dest in [
 # taking 27.7% of pageviews before this; each of these preserves someone who
 # wanted a real answer.
 for r in json.loads(Path('src/data/removed-listings.json').read_text(encoding='utf-8')):
-    rules.append({
-        'source': r['source'].rstrip('/'),
-        'destination': r['destination'].rstrip('/') or '/',
-        'permanent': True,
-    })
+    # Routed through add() so these get the same trailing-slash treatment and
+    # the same destination validation as every other rule.
+    add(r['source'], r['destination'] or '/')
 
 # ── validate every destination against the build output ───
 def exists(dest):
@@ -205,7 +210,15 @@ def is_real_page(source):
 
 seen, final, bad_dest, shadowing = set(), [], [], []
 for r in rules:
-    if r['source'] in seen or r['source'] == r['destination']:
+    if r['source'] in seen:
+        continue
+    # Identity, including the trailing-slash-only case. A generated combination
+    # can land on its own destination — the alias "garage-door-spring-
+    # replacement" plus the "-cost" suffix reconstructs the real slug. Skipping
+    # it silently here matters: without this it falls through to the shadow
+    # check below and gets reported as a rejected rule on every run, which
+    # trains you to ignore output that is supposed to mean something.
+    if r['source'].rstrip('/') == r['destination'].rstrip('/'):
         continue
     if is_real_page(r['source']):
         shadowing.append(r)
