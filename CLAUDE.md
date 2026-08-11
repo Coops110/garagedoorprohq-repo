@@ -1,4 +1,4 @@
-# Working on GarageDoorHQ
+# Working on GarageDoorProHQ
 
 Rules for this repo. Most were carried over from AirProHQ and RigFloorHQ,
 where ignoring them caused a real shipped bug; the ones marked **new here**
@@ -16,8 +16,8 @@ belonging to *this* site, not copied from AirProHQ:
 - `GA_ID` — a new GA4 property. Pasting AirProHQ's `G-TFRNDW8TK5` merges two
   sites' traffic into one property and neither set of numbers is usable
   afterwards.
-- `SITE.web3FormsKey` — a key registered to `contact@garagedoorhq.com`.
-  AirProHQ's key would post GarageDoorHQ enquiries into the AirProHQ inbox.
+- `SITE.web3FormsKey` — a key registered to `contact@garagedoorprohq.com`.
+  AirProHQ's key would post GarageDoorProHQ enquiries into the AirProHQ inbox.
   `/get-listed/` shows a mailto fallback until this is set.
 - `GSC_VERIFICATION` — only needed if verifying by meta tag. Domain-level DNS
   TXT verification is preferred and needs nothing here.
@@ -42,6 +42,41 @@ after which it refuses to deploy for 24 hours. `.vercelignore` now excludes
 **Do not poll the live site in a loop after pushing.** On AirProHQ, repeated
 `curl` in an `until` loop tripped Vercel's bot mitigation and got every
 scripted request 403'd for hours. Wait once, check once, or use a browser.
+
+## Licence badges are the highest-risk output on the site
+
+A badge is the only claim here a reader cannot check at a glance, and it is the
+stated differentiator — so a wrong one is worse than none at all.
+
+**There is no shared identifier between Overture and any state register.**
+Matching is on name, which is exactly the operation that put a Lubbock firm in
+Wharton on AirProHQ. `match-licences.py` therefore requires all four of:
+
+1. **Corroboration** — the city or ZIP must agree too. Cities present and
+   differing means the record is logged as a conflict and gets no badge.
+2. **Unambiguity** — two register records matching one business with different
+   licence numbers means neither is used. Texas has eight licensed "Mendoza"
+   HVAC firms; the same holds here.
+3. **Active status only** — the badge says "active record", so expired,
+   suspended and inactive earn nothing.
+4. **Right classification** — a California B general licence is not a C-61/D-28.
+
+`python scripts/match-licences.py --self-test` runs the real matcher over a
+fixture built to trip each guard, needs no network and no data, and must stay at
+11/11. Run it after touching that file: a silent regression in a guard ships a
+false badge, which is the worst thing this codebase can emit.
+
+Note the name normaliser strips `garage`, `door` and `doors` as noise. On a site
+where every business is a garage door company those words carry no
+distinguishing information, and leaving them in makes "A1 Garage Door" and "A1
+Garage Doors Inc" look different.
+
+**Register access is uneven and that is not a bug to fix in code.** CA is
+scriptable from the CSLB portal. FL (myfloridalicense.com) and AZ (a Salesforce
+Experience Cloud app) both refuse scripted requests, so they need a manual export
+fed in via `--fl-file` / `--az-file`. Do not reach for a third-party scraper to
+paper over that — the reasoning that keeps Google Places off this site applies
+identically.
 
 ## www redirects to the apex, and that rule is fragile
 
@@ -84,7 +119,7 @@ The differentiator is honesty about a weak evidence base, not a strong one.
 
 **new here** — AirProHQ's terms say "We do not verify licences" while its
 listing badges say "State licence verified". That contradiction is exactly what
-this rule exists to prevent; GarageDoorHQ's `/terms/` states what *is* verified
+this rule exists to prevent; GarageDoorProHQ's `/terms/` states what *is* verified
 and what is not, in the same paragraph.
 
 ## Data pipeline
@@ -92,10 +127,17 @@ and what is not, in the same paragraph.
 Order matters. Each script's header comment repeats this.
 
 1. `python scripts/overture-pilot-pull.py` → `data-work/pilot-*.json|csv`
-2. `python scripts/stage-listings.py [--min-city=3] [--metros=…]` → `src/data/`
-3. `npm run build` (runs `check-pages` + `check-content` first)
-4. `python scripts/build-redirects.py` — validates against `dist/`
-5. `python scripts/check-links.py` and `python scripts/check-seo.py`
+2. `python scripts/fetch-licences.py …` → `data-work/licences/*.json` *(optional)*
+3. `python scripts/match-licences.py` → `data-work/licence-matches.json` *(optional)*
+4. `python scripts/stage-listings.py [--min-city=3] [--metros=…]` → `src/data/`
+5. `npm run build` (runs `check-pages` + `check-content` first)
+6. `python scripts/build-redirects.py` — validates against `dist/`
+7. `python scripts/check-links.py` and `python scripts/check-seo.py`
+
+Steps 2–3 are optional and their absence is a valid state: no register data means
+no badges, which is correct rather than broken. **`stage-listings.py` is the only
+writer of `src/data/`** — the matcher writes `data-work/` and staging merges it,
+so nothing reads and writes the same file.
 
 **Reading and writing separate directories is deliberate.** The pull writes
 `data-work/`, the staging script reads it and writes `src/data/`. On AirProHQ a
@@ -169,7 +211,7 @@ filesystem discovery, and `noindex={true}` also drops it from the sitemap.
 title, or is indexable without a canonical.
 
 **Use `fitTitle` / `fitDescription` from `src/lib/seo.js` for any title built
-from data.** `SEO.astro` appends `" | GarageDoorHQ"` to any title not already
+from data.** `SEO.astro` appends `" | GarageDoorProHQ"` to any title not already
 containing the site name, so a comfortable 50-character template title becomes a
 65-character `<title>`. 825 pages breached the 60-character limit before this
 existed, and the first version of `fitTitle` still shipped a bug by returning a

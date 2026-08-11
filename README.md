@@ -1,7 +1,10 @@
-# GarageDoorHQ
+# GarageDoorProHQ
 
-USA garage door contractor directory and cost guides. Astro static site,
-deployed on Vercel. Sibling to AirProHQ (HVAC) and RigFloorHQ.
+USA garage door contractor directory and cost guides, live at
+[garagedoorprohq.com](https://garagedoorprohq.com). Astro static site on Vercel.
+
+Independent of AirProHQ and RigFloorHQ — they share a Vercel account, not a
+network. See the note at the bottom of this file.
 
 ## Quick start
 

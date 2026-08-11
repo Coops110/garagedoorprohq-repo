@@ -37,6 +37,9 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 IN_FILE = Path('data-work/pilot-places.json')
+# Licence matches, produced by scripts/match-licences.py. Optional: absent means
+# no badges, which is the correct state before the registers have been pulled.
+LICENCE_FILE = Path('data-work/licence-matches.json')
 OUT_DIR = Path('src/data')
 
 arg = lambda name, default: next(
@@ -120,6 +123,12 @@ def main():
     rows = json.loads(IN_FILE.read_text(encoding='utf-8'))
     stats = Counter(total=len(rows))
 
+    # Merged here rather than written by the matcher, so src/data/ has exactly one
+    # writer. A script that reads and writes the same file is how AirProHQ ended
+    # up with a rejected record still holding its previous address.
+    licences = (json.loads(LICENCE_FILE.read_text(encoding='utf-8'))
+                if LICENCE_FILE.exists() else {})
+
     staged = []
     for r in rows:
         if ONLY_METROS and r.get('metro') not in ONLY_METROS:
@@ -167,14 +176,19 @@ def main():
             'services': services,
             'sourceCategory': r.get('category'),
             'metro': r.get('metro'),
-            # Populated by the licence cross-match step (CA/FL/AZ only).
-            # Present as explicit nulls so a template reading them cannot
-            # confuse "not checked" with "checked and absent".
+            # From the licence cross-match (CA/FL/AZ only). Explicit nulls so a
+            # template cannot confuse "not checked" with "checked and absent" —
+            # the business page says different things for each.
             'licenceNumber': None,
             'licenceAuthority': None,
             'licenceStatus': None,
+            'licenceClass': None,
+            'licenceExpires': None,
             'licenceCheckedOn': None,
+            'licenceMatchedOn': None,
         })
+        if r['id'] in licences:
+            staged[-1].update(licences[r['id']])
 
     # ── city threshold ──────────────────────────────────────
     by_city = defaultdict(list)
@@ -267,7 +281,7 @@ def main():
   city pages                        {len(cities)}
   state pages                       {len({c['stateSlug'] for c in cities})}
   business pages                    {len(published)}
-  licence-verified so far           {sum(1 for b in published if b['licenceNumber'])}
+  licence-verified                  {sum(1 for b in published if b['licenceNumber'])}
 ''')
     for c in cities[:15]:
         print(f"    {c['count']:>4}  {c['city']}, {c['stateCode']}")
