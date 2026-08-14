@@ -57,7 +57,7 @@ export const SISTER_SITES = {
 // ⚠️ MUST BE A NEW GA4 PROPERTY. Do not paste AirProHQ's G-TFRNDW8TK5 —
 // two sites on one measurement ID merge their traffic and neither set of
 // numbers is usable afterwards.
-export const GA_ID = '';
+export const GA_ID = 'G-4RH2GLSMX0';
 
 // Google Search Console HTML-tag verification token, if verifying by meta
 // tag. Domain-level DNS TXT verification is preferred (it covers every
