@@ -49,7 +49,7 @@ const schemas = [organizationSchema(), websiteSchema()];
        differentiator, and burying it would make it look like a disclaimer. -->
   <section class="wrap" style="padding-top:1.5rem;">
     <div class="highlight-box">
-      <h3>What a listing here means</h3>
+      <h2>What a listing here means</h2>
       <p>{CLAIMS.listingMeaning}</p>
       <p>
         In California, Florida and Arizona — the only three states that license garage
@@ -80,7 +80,13 @@ const schemas = [organizationSchema(), websiteSchema()];
           <h3 class="biz-name"><a href={`/guides/${g.slug}/`}>{g.h1.replace(/:.*$/, '')}</a></h3>
           <p style="font-size:.9rem;">{g.description}</p>
           <div class="biz-foot">
-            <a href={`/guides/${g.slug}/`} class="btn btn-ghost btn-block">Read the guide</a>
+            {/* Four "Read the guide" links pointing at four destinations read as
+                identical to a screen-reader user tabbing the list. The visible
+                label stays put — the sr-only suffix makes each accessible name
+                unique while still containing the visible text, so WCAG 2.5.3
+                (Label in Name) is satisfied. An aria-label alone would replace
+                the visible text and break that. */}
+            <a href={`/guides/${g.slug}/`} class="btn btn-ghost btn-block">Read the guide<span class="sr-only">: {g.h1.replace(/:.*$/, '')}</span></a>
           </div>
         </article>
       ))}

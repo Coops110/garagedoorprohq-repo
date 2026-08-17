@@ -25,13 +25,27 @@
   --card: #FFFFFF;
   --ink: #1B222B;
   --ink-soft: #4B5563;
-  --muted: #78828F;
+  /* --muted must clear 4.5:1 on BOTH light backgrounds, not just --card.
+     The original #78828F was 3.90:1 on white and 3.64:1 on --paper, which
+     failed every one of the ~13 places it is used at once — the count spans,
+     .section-head p, .biz-meta, .stat-label, .ad-label. #646E7A is 5.18:1
+     on --card and 4.83:1 on --paper. Check both before changing it. */
+  --muted: #646E7A;
   --line: #E4E2DC;
   --line-cool: #DFE4EA;
 
   /* Accents */
-  --signal: #D9480F;      /* primary CTA */
-  --signal-dark: #B23A0B;
+  /* The signal colour needs two tokens for the same reason AirProHQ's ember
+     does: --signal is only legible as a border or accent ON white, and white
+     text ON --signal is 4.30:1 — a fail. Anything with white text on top uses
+     --signal-dark (6.00:1), and --signal-darker is its hover. */
+  --signal: #D9480F;      /* borders, accents, focus rings — not white text */
+  --signal-dark: #B23A0B; /* solid buttons carrying white text */
+  --signal-darker: #8F2E08; /* hover for those buttons (8.20:1) */
+  /* And a fourth for the dark footer, where darkening makes it worse:
+     --signal on --ink is 3.73:1 and --signal-dark is 2.67:1. This is 6.33:1.
+     Three backgrounds, three different answers — hence four tokens. */
+  --signal-light: #F4854A; /* signal text ON --ink */
   --steel: #2C5F7C;       /* secondary / links */
   --steel-dark: #204A61;
   --amber: #C77D02;       /* highlights, licence badges */
@@ -88,6 +102,13 @@ h3 { font-size: 1.08rem; }
 
 a { color: var(--steel); text-decoration: none; }
 a:hover { color: var(--steel-dark); }
+
+/* Inline links in body copy must be underlined, not distinguished by colour
+   alone: --steel against --ink is only 2.32:1, well under the 3:1 WCAG wants
+   between link text and surrounding text. .prose a already did this; homepage
+   and landing-page paragraphs sit outside .prose and did not. Buttons are
+   excluded — they carry their own shape and background. */
+p a:not(.btn) { text-decoration: underline; text-underline-offset: 2px; }
 a:focus-visible,
 button:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 4px; }
 
@@ -124,7 +145,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: linear-gradient(135deg, var(--steel) 0%, var(--signal) 100%);
   display: grid; place-items: center; color: #fff; font-size: .9rem; font-weight: 700;
 }
-.brand em { font-style: normal; color: var(--signal); }
+.brand em { font-style: normal; color: var(--signal-dark); }
 
 /* Phone: nav is a disclosure panel. Desktop rules are further down. */
 .nav-links { display: none; }
@@ -140,7 +161,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-bottom: 1px solid var(--line);
 }
 .nav-links a:last-child { border-bottom: 0; }
-.nav-links a:hover { color: var(--signal); }
+.nav-links a:hover { color: var(--signal-dark); }
 .nav-cta {
   background: var(--ink); color: #fff !important; border-radius: 999px;
   justify-content: center; font-weight: 600; margin-top: .6rem; border-bottom: 0 !important;
@@ -160,8 +181,8 @@ img { max-width: 100%; height: auto; display: block; }
   border: none; cursor: pointer; text-decoration: none; line-height: 1.2;
   transition: background .15s, box-shadow .15s, border-color .15s;
 }
-.btn-signal { background: var(--signal); color: #fff; box-shadow: var(--shadow-sm); }
-.btn-signal:hover { background: var(--signal-dark); color: #fff; }
+.btn-signal { background: var(--signal-dark); color: #fff; box-shadow: var(--shadow-sm); }
+.btn-signal:hover { background: var(--signal-darker); color: #fff; }
 .btn-ink { background: var(--ink); color: #fff; }
 .btn-ink:hover { background: #0F151C; color: #fff; }
 .btn-ghost { background: var(--card); color: var(--ink); border: 1.5px solid var(--line); }
@@ -202,7 +223,7 @@ img { max-width: 100%; height: auto; display: block; }
    44px target rather than relying on the button below it. Block-level also
    widens the hit area to the full card width instead of just the glyphs. */
 .biz-name a { color: inherit; display: flex; align-items: center; min-height: var(--tap); }
-.biz-name a:hover { color: var(--signal); }
+.biz-name a:hover { color: var(--signal-dark); }
 .biz-meta { font-size: .85rem; color: var(--muted); margin-top: .2rem; }
 .biz-badges { display: flex; flex-direction: column; gap: .3rem; align-items: flex-end; flex-shrink: 0; }
 .biz-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
@@ -237,9 +258,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* Footer links are dense, but they are still primary navigation on a phone —
    they get the full 44px target rather than a compromise height. */
 .site-footer a { color: rgba(255,255,255,.72); display: flex; align-items: center; min-height: var(--tap); font-size: .92rem; }
-.site-footer a:hover { color: var(--signal); }
+.site-footer a:hover { color: var(--signal-light); }
 .footer-brand { font-family: Sora, sans-serif; font-size: 1.25rem; color: #fff; margin-bottom: .4rem; font-weight: 700; }
-.footer-brand em { font-style: normal; color: var(--signal); }
+.footer-brand em { font-style: normal; color: var(--signal-light); }
 .footer-note { font-size: .88rem; max-width: 40ch; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.25rem; font-size: .8rem;
@@ -336,7 +357,7 @@ img { max-width: 100%; height: auto; display: block; }
 .alert-box p + p { margin-top: .7rem; }
 
 .highlight-box { background: rgba(44,95,124,.05); border: 1.5px dashed var(--steel); border-radius: var(--radius); padding: 1.1rem 1.25rem; margin: 1.5rem 0; }
-.highlight-box h3 { font-size: 1.05rem; margin: 0 0 .5rem; }
+.highlight-box h2 { font-size: 1.05rem; margin: 0 0 .5rem; }
 .highlight-box p { margin: 0; }
 .highlight-box p + p { margin-top: .7rem; }
 
