@@ -16,5 +16,22 @@ export default defineConfig({
   trailingSlash: 'always',
   build: {
     format: 'directory', // clean URLs: /garage-door-repair/texas/houston/
+
+    // The bundled stylesheet was the last render-blocking request on the
+    // critical path: 5.1 KiB costing 160ms on throttled mobile, and the only
+    // entry left in Lighthouse's render-blocking list once the Google Fonts
+    // origins were removed. At that size inlining is strictly better than a
+    // second round trip — it arrives with the HTML, so first paint waits on
+    // nothing but the document.
+    //
+    // 'always' rather than 'auto': auto only inlines below a size threshold,
+    // and a stylesheet that grows past it would silently revert to a blocking
+    // <link> — a performance regression with no code change to point at.
+    //
+    // The trade is that ~5 KiB is repeated in all 976 pages instead of being
+    // cached once. That is the right way round here: this is a directory whose
+    // visitors arrive cold from search on one page, so a shared cache entry
+    // they never get a second hit from buys nothing.
+    inlineStylesheets: 'always',
   },
 });
