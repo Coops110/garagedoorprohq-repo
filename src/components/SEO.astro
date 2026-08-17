@@ -40,16 +40,19 @@ const ogImageAlt = imageAlt
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 {GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION} />}
 
-<!-- Fonts. Preconnect before the stylesheet so the DNS/TLS handshake to
-     the font host overlaps CSS parsing instead of queueing behind it —
-     webfonts are the usual cause of a poor mobile LCP on a site like this.
-     `display=swap` means text paints in the fallback immediately. -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
-/>
+<!-- Fonts are self-hosted from /fonts/ — see the @font-face block at the top
+     of global.css for why. Preloading them here rather than relying on the
+     stylesheet to reveal them is the point of the exercise: the bundled CSS
+     is itself a render-blocking request, so a font referenced only from
+     inside it cannot start downloading until that request completes. These
+     two start immediately, in parallel with the CSS, from our own origin —
+     no preconnect needed, because there is no third-party origin left.
+
+     `crossorigin` is required on a font preload even same-origin: fonts are
+     always fetched in CORS mode, and without it the browser downloads the
+     file twice — once for the preload, once for the real request. -->
+<link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/sora-latin-var.woff2" as="font" type="font/woff2" crossorigin />
 
 <!-- Open Graph -->
 <meta property="og:type" content={type} />

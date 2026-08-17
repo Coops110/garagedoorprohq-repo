@@ -17,6 +17,43 @@
    value so it cannot drift between buttons, nav links and table controls.
    ============================================================ */
 
+/* ── FONTS ───────────────────────────────────────────────────
+   Self-hosted, deliberately. Loading these from fonts.googleapis.com cost
+   ~900ms of render-blocking on mobile: the stylesheet was a blocking request
+   to one third-party origin, and the woff2 files then came from a second
+   (fonts.gstatic.com), so first paint waited on two DNS/TLS handshakes it
+   could not start until the HTML had parsed. Mobile Performance was 76 with
+   an LCP of 4.3s and that chain was the whole gap.
+
+   These are the *same two files* Google served — both are variable fonts, so
+   one file per family covers every weight, which is why six @font-face
+   blocks collapse into two. Latin subset only: this site is English-only,
+   and the latin-ext/Cyrillic/Greek/Vietnamese subsets were 26 further files
+   no page here would ever request.
+
+   No unicode-range: with a single subset hosted there is nothing to switch
+   between, and the browser already falls back per-glyph for anything the
+   file lacks (a listing named "Łukasz" renders that one character in
+   system-ui, which is the same outcome the range would produce).
+
+   Preloaded in SEO.astro. That matters — these declarations live in the
+   bundled stylesheet, which is itself a blocking request, so without a
+   preload the browser could not discover the fonts until that CSS landed. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700; /* variable range, not a single weight */
+  font-display: swap;
+  src: url('/fonts/inter-latin-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  src: url('/fonts/sora-latin-var.woff2') format('woff2');
+}
+
 :root {
   /* Core palette — graphite and steel, one safety-orange signal colour.
      Deliberately not AirProHQ's navy/ember: the two sites should not look
