@@ -106,9 +106,19 @@ def clean_name(s):
 
 def title_city(s):
     """Overture localities arrive in mixed case. Title-case them, but keep
-    the small words that read wrong capitalised."""
+    the small words that read wrong capitalised.
+
+    Trailing separators are stripped first. Some Overture localities carry a
+    comma left over from the source address string, and a city page builds its
+    own separator — so "Sugar Land," reached the <title> and <h1> of 17 pages
+    as "Sugar Land,, TX", which is what Google displays in results.
+
+    Only the ends are stripped, and only commas and semicolons. Interior
+    punctuation is legitimate (St. Louis, Coeur d'Alene, Winston-Salem), and a
+    trailing period is left alone deliberately so an abbreviation at the end of
+    a name survives."""
     small = {'of', 'the', 'de', 'del', 'las', 'los', 'in'}
-    parts = str(s).strip().split()
+    parts = str(s).strip().strip(',;').strip().split()
     out = []
     for i, w in enumerate(parts):
         lw = w.lower()
