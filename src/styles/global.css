@@ -423,6 +423,17 @@ img { max-width: 100%; height: auto; display: block; }
 .link-list a:hover { border-color: var(--signal); color: var(--signal-dark); }
 .link-list .n { color: var(--muted); font-size: .82rem; flex: 0 0 auto; }
 
+/* Cluster guides under a pillar on /guides/. Deliberately NOT .link-list:
+   that renders a single-line flex pill with nowhere for a sentence to go,
+   which is why the guides index silently dropped every cluster description
+   and listed five of eight guides as a bare title. --ink-soft is 7.66:1 on
+   --card and 7.15:1 on --paper, so the smaller size is still readable. */
+.guide-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.guide-list li { padding-left: .9rem; border-left: 2px solid var(--line-cool); }
+.guide-list a { font-weight: 600; min-height: 0; }
+.guide-list p { color: var(--ink-soft); font-size: .92rem; margin: .2rem 0 0; }
+.guide-meta { color: var(--muted); font-size: .8rem; }
+
 /* ── COMPARISON TABLE (sortable, progressive enhancement) ── */
 /* The table is complete and readable with JavaScript off. The sort
    buttons are injected by script and only appear if the script runs, so
