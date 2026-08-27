@@ -17,11 +17,11 @@ export const SITE = {
   // keys are designed to sit in public HTML. Submissions are emailed to the
   // address registered with the key.
   //
-  // ⚠️ EMPTY ON PURPOSE. This must be a key registered to
-  // SITE.email below, not AirProHQ's key — reusing that one would post
-  // GarageDoorProHQ enquiries into the AirProHQ inbox. /get-listed/ shows a
-  // mailto fallback until this is filled in.
-  web3FormsKey: '',
+  // Must be a key registered to SITE.email below, not AirProHQ's
+  // (797c8369-b3df-4fc6-b75d-7b48bdaa67f7) — reusing that one would post
+  // GarageDoorProHQ enquiries into the AirProHQ inbox. Checked: this is a
+  // different key. /get-listed/ shows a mailto fallback while this is empty.
+  web3FormsKey: '65ee7f71-2132-4cf4-81ed-ba637df6a332',
   // Public contact address. Must match LEGAL.contactEmail — it is published
   // in the Organization schema, on /contact/ and in the privacy policy as
   // the route for data requests.
