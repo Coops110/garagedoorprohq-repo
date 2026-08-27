@@ -123,8 +123,22 @@ const active = Boolean(GA_ID);
         function show() {
           lastFocused = document.activeElement;
           banner.hidden = false;
-          requestAnimationFrame(function () { banner.classList.add('is-visible'); });
-          if (acceptBtn) acceptBtn.focus();
+          // focus() moved INSIDE the rAF callback. Outside it, this function
+          // unhid the banner — invalidating layout — and then immediately asked
+          // the browser where the button was, which forces a synchronous layout
+          // flush to answer. Lighthouse measured 51ms of forced reflow here and
+          // attributed it to garagedoorprohq.com rather than to a third party,
+          // which is what made it worth chasing: it was the only self-inflicted
+          // entry left in the diagnostics.
+          //
+          // Inside the callback the browser has already recalculated layout for
+          // the frame, so focus() reads a fresh box instead of forcing one. The
+          // behaviour is unchanged — focus still lands on Accept when the banner
+          // appears, one frame later, which is imperceptible.
+          requestAnimationFrame(function () {
+            banner.classList.add('is-visible');
+            if (acceptBtn) acceptBtn.focus();
+          });
         }
 
         function hide() {
