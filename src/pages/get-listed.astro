@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { SITE, LEGAL } from '../lib/site.js';
+import { SITE, LEGAL, CLAIMS } from '../lib/site.js';
 import { LICENCE_STATES } from '../lib/licensing.js';
 import { breadcrumbSchema } from '../lib/schema.js';
 
@@ -24,7 +24,7 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
       title and description over budget — caught by check-seo.py rather than
       shipped. */}
   title="Get Your Garage Door Business Listed"
-  description={`Add your garage door company to ${SITE.name} for free. No paid placement, no ranking to buy — just what we need to publish an accurate listing.`}
+  description={`Add your garage door company to ${SITE.name} for free. What we need to publish an accurate listing, and how paid promotion is labelled.`}
   canonical="/get-listed/"
   schemas={schemas}
 >
@@ -37,9 +37,8 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
       <div class="answer-box">
         <span class="eyebrow">The short version</span>
         <p>
-          Listing is free. There is no paid tier, no featured slot, and no way to buy a
-          higher position — we have not built one. Send us the details below and we will add
-          the listing or tell you why not.
+          {CLAIMS.placementMeaning} Send us the details below and we will add the
+          listing or tell you why not.
         </p>
       </div>
 

@@ -122,4 +122,21 @@ export const CLAIMS = {
     'Listings are compiled from public and openly licensed business data. A listing is not a recommendation.',
   hoursMeaning:
     'Where a listing says a contractor advertises 24/7 service, that claim comes from the contractor’s own website. It is not verified opening hours.',
+
+  // Paid promotion. Lives here for the same reason licenceMeaning does: this
+  // claim appears on the homepage, the directory hub, every city page, the
+  // contact page, the editorial guidelines, llms.txt and the terms. When it was
+  // written as an absolute ("no paid tier, no featured slot, no way to buy a
+  // higher position — we have not built one") it foreclosed the site's own
+  // revenue model in nine places at once, and changing it in eight of them
+  // would leave the ninth contradicting the terms.
+  //
+  // The line this wording holds: what is sold is ATTENTION, clearly labelled.
+  // What is never sold is the editorial layer — the cost figures, the licence
+  // badges, or what a listing says about a business. Selling a labelled ad
+  // position is ordinary publishing; selling an unlabelled one, or selling a
+  // badge, is not, and the second kind is what the disclosure commitment here
+  // exists to keep out.
+  placementMeaning:
+    'Listing itself is free. We may sell advertising and sponsored positions, and anything paid for is labelled as advertising. Paying never changes what a listing says, whether it carries a licence badge, or any figure in our guides.',
 };
