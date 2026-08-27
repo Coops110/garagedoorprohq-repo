@@ -19,10 +19,22 @@ import PhotoEye from '../../components/diagrams/PhotoEye.astro';
 import BalanceTest from '../../components/diagrams/BalanceTest.astro';
 import OpenerTypes from '../../components/diagrams/OpenerTypes.astro';
 import CostMap from '../../components/diagrams/CostMap.astro';
+import SpringLife from '../../components/diagrams/SpringLife.astro';
+import DoorLayers from '../../components/diagrams/DoorLayers.astro';
+import WindingCone from '../../components/diagrams/WindingCone.astro';
+import TrolleyCord from '../../components/diagrams/TrolleyCord.astro';
+import RollingCode from '../../components/diagrams/RollingCode.astro';
 
 // Name -> component. Referenced by `diagram` on a guide section and by
 // `heroDiagram` at guide level; the words come from src/lib/diagrams.js.
-const DIAGRAMS = { TorsionSystem, SpringTypes, PhotoEye, BalanceTest, OpenerTypes, CostMap };
+// This map must carry EVERY component named in src/lib/diagrams.js. It used to
+// hold six of the eleven, and the five missing ones — the same five the
+// glossary template had always imported — rendered as nothing on a guide. The
+// guard below turns that into a build failure; see the note there.
+const DIAGRAMS = {
+  TorsionSystem, SpringTypes, PhotoEye, BalanceTest, OpenerTypes, CostMap,
+  SpringLife, DoorLayers, WindingCone, TrolleyCord, RollingCode,
+};
 
 export function getStaticPaths() {
   return guides.map((g) => ({ params: { slug: g.slug } }));
@@ -30,6 +42,25 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const g = getGuide(slug);
+
+// Fail loudly on a diagram that cannot render. Both render sites below are
+// guarded by `{Svg && ...}`, so a name missing from DIAGRAMS produced no
+// figure, no warning and no build error — the page just quietly had less on it
+// than the author wrote, and check-seo still passed because the SVGs that DID
+// render were all fine. Three guides shipped with two missing section diagrams
+// each before this existed. A wrong diagram is visible; an absent one is not.
+for (const name of [g.heroDiagram, ...(g.sections || []).map((s) => s.diagram)].filter(Boolean)) {
+  const entry = getDiagram(name);
+  if (!entry) {
+    throw new Error(`guide "${slug}": diagram "${name}" has no entry in src/lib/diagrams.js`);
+  }
+  if (!DIAGRAMS[entry.component]) {
+    throw new Error(
+      `guide "${slug}": diagram "${name}" needs component "${entry.component}", ` +
+      `which is not imported into DIAGRAMS in src/pages/guides/[slug].astro`
+    );
+  }
+}
 
 const hero = g.heroDiagram ? getDiagram(g.heroDiagram) : null;
 const HeroSvg = hero ? DIAGRAMS[hero.component] : null;
