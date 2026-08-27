@@ -44,6 +44,20 @@ const schemas = [
 
     {states.length > 0 ? (
       <>
+        {/* This page was 34 words of prose above a 90-link index — less body
+            text than the empty-state branch below it, which is the wrong way
+            round. It is the directory's front door and the page that should
+            answer "which garage door company do I call", so it now explains
+            what the list is before handing over a wall of city names. The
+            sections deliberately do not restate the claim-note above: each
+            adds something a reader cannot get from the links themselves. */}
+        <p style="max-width:62ch;">
+          {formatCount(stats.businesses)} garage door companies across {formatCount(stats.cities)}
+          {' '}cities, every one with a phone number. Pick a state below, or jump straight to
+          a city. What this is not is a ranking, and the short version of why is worth
+          reading before you call anyone.
+        </p>
+
         <div class="stat-grid">
           <div class="stat-card">
             <span class="stat-value">{formatCount(stats.businesses)}</span>
@@ -68,7 +82,58 @@ const schemas = [
           <a href="/editorial-guidelines/">How listings are chosen</a>.
         </p>
 
-        <h2 class="mt-3" style="font-size:1.2rem;">States</h2>
+        <h2 class="mt-4" style="font-size:1.2rem;">There are no star ratings here, and there never will be</h2>
+        <p style="max-width:62ch;">
+          Every business on this page comes from Foursquare Open Source Places, distributed
+          by the Overture Maps Foundation under the Apache 2.0 licence. It is the one
+          business dataset that may lawfully be stored and republished, and it contains
+          neither ratings nor opening hours.
+        </p>
+        <p style="max-width:62ch;" class="mt-2">
+          The datasets that do contain them forbid rehosting, and buying the same rows from
+          a scraper does not change that, because the restriction follows the data. So a
+          star rating on this page could only come from somewhere we are not entitled to
+          take it from. We would rather show you a phone number we can stand behind than a
+          score we cannot.
+        </p>
+
+        <h2 class="mt-4" style="font-size:1.2rem;">How to use this list</h2>
+        <p style="max-width:62ch;">
+          Treat it as a shortlist, not a verdict. Call two or three companies in your city
+          rather than the first one, and ask each for the price split into parts and labour —
+          it is the fastest way to see whether a quote is high on the component, high on the
+          hours, or fair. If springs are involved, ask for the cycle rating in writing.
+        </p>
+        <p style="max-width:62ch;" class="mt-2">
+          California, Florida and Arizona are the only three states that license garage door
+          work as its own trade. In those, ask for the licence number and check it on the
+          state register yourself — it takes about a minute and it is the one credential a
+          homeowner can verify without expertise. In the other 47 there is no register to
+          check, so a missing badge means nothing has been checked rather than something has
+          failed. <a href="/guides/hiring-a-garage-door-company/">What to ask before you book</a>
+          {' '}covers the rest.
+        </p>
+        <p style="max-width:62ch;" class="mt-2">
+          If you are not yet sure what is wrong, start with
+          {' '}<a href="/guides/garage-door-opener-wont-work/">the checks that cost nothing</a>.
+          If you know what is broken and want the price first,
+          {' '}<a href="/guides/garage-door-repair-cost/">what each job actually costs</a>
+          {' '}is the page to read before the phone call, not after it.
+        </p>
+
+        <h2 class="mt-4" style="font-size:1.2rem;">Why only {formatCount(stats.states)} states so far</h2>
+        <p style="max-width:62ch;">
+          The directory is being built metro by metro rather than dumped nationally on day
+          one. A city page needs at least three listings before it publishes, because one or
+          two is too thin to be worth anyone's time. Records held back below that threshold
+          are not deleted — they publish automatically once their city reaches it.
+        </p>
+        <p class="claim-note mt-3">
+          Run a garage door company? <a href="/get-listed/">Get listed</a> — listing is free,
+          and paying never changes what a listing says.
+        </p>
+
+        <h2 class="mt-4" style="font-size:1.2rem;">States</h2>
         <ul class="link-list mt-2">
           {states.map((s) => (
             <li>
