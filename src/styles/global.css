@@ -38,7 +38,14 @@
 
    Preloaded in SEO.astro. That matters — these declarations live in the
    bundled stylesheet, which is itself a blocking request, so without a
-   preload the browser could not discover the fonts until that CSS landed. */
+   preload the browser could not discover the fonts until that CSS landed.
+
+   ⚠️ THESE FILENAMES ARE CACHED FOR A YEAR AS IMMUTABLE. vercel.json sets
+   `public, max-age=31536000, immutable` on /fonts/, which is right for a file
+   that never changes and wrong for one that changes under the same name — a
+   returning visitor would keep the old font for up to a year and never
+   revalidate. So if you ever replace a font file, RENAME IT (and update the
+   src below and the preload in SEO.astro). Do not swap the bytes in place. */
 @font-face {
   font-family: 'Inter';
   font-style: normal;

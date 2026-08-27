@@ -270,8 +270,36 @@ for r in rules:
     seen.add(r['source'])
     final.append(r)
 
+# This script owns the `redirects` key and NOTHING ELSE in vercel.json.
+#
+# It used to write json.dumps({'redirects': final}), which replaced the whole
+# file. Anything else Vercel reads from here — headers, rewrites, cleanUrls,
+# functions — was destroyed on the next run, silently, with no diff to notice
+# unless you happened to look. The `headers` block that sets long-lived caching
+# on /fonts/ is exactly that kind of key, and it would have survived until the
+# next time someone added a guide.
+#
+# So: read what is there, replace only `redirects`, keep the rest in its
+# original order.
+existing = {}
+vercel_json = Path('vercel.json')
+if vercel_json.exists():
+    try:
+        existing = json.loads(vercel_json.read_text(encoding='utf-8'))
+    except json.JSONDecodeError as e:
+        # A corrupt vercel.json would otherwise be quietly replaced by a
+        # redirects-only file, taking every other key with it.
+        raise SystemExit(f'  vercel.json is not valid JSON ({e}) — fix or delete it first')
+    if not isinstance(existing, dict):
+        raise SystemExit('  vercel.json is not a JSON object — refusing to overwrite it')
+
+preserved = [k for k in existing if k != 'redirects']
+existing['redirects'] = final
 Path('vercel.json').write_text(
-    json.dumps({'redirects': final}, indent=2) + '\n', encoding='utf-8')
+    json.dumps(existing, indent=2) + '\n', encoding='utf-8')
+
+if preserved:
+    print(f'  preserved {len(preserved)} other key(s) in vercel.json: {", ".join(preserved)}')
 
 print(f'  {len(final)} redirects written, every destination verified against dist/')
 if shadowing:
