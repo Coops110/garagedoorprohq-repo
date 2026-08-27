@@ -362,6 +362,216 @@
       "permanent": true
     },
     {
+      "source": "/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-opener-wont-work-guide",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-opener-wont-work-2026",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guide/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/cost/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/costs/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/garage-door-opener-wont-work",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-door-opener-wont-work-guide",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-door-opener-wont-work-2026",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-door-opener-wont-work-cost",
+      "destination": "/guides/garage-door-opener-wont-work/",
+      "permanent": true
+    },
+    {
+      "source": "/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/torsion-vs-extension-springs-guide",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/torsion-vs-extension-springs-2026",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guide/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/cost/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/costs/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/torsion-vs-extension-springs",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/torsion-vs-extension-springs-guide",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/torsion-vs-extension-springs-2026",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/torsion-vs-extension-springs-cost",
+      "destination": "/guides/torsion-vs-extension-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-maintenance-guide",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-maintenance-2026",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guide/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/cost/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/costs/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/garage-door-maintenance",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-door-maintenance-guide",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-door-maintenance-2026",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-door-maintenance-cost",
+      "destination": "/guides/garage-door-maintenance/",
+      "permanent": true
+    },
+    {
       "source": "/garage-door-repair-prices",
       "destination": "/guides/garage-door-repair-cost/",
       "permanent": true
@@ -1602,16 +1812,6 @@
       "permanent": true
     },
     {
-      "source": "/guides/garage-door-opener-wont-work",
-      "destination": "/guides/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-opener-wont-work",
-      "destination": "/guides/",
-      "permanent": true
-    },
-    {
       "source": "/guides/smart-garage-door-openers",
       "destination": "/guides/",
       "permanent": true
@@ -1662,32 +1862,12 @@
       "permanent": true
     },
     {
-      "source": "/guides/torsion-vs-extension-springs",
-      "destination": "/guides/",
-      "permanent": true
-    },
-    {
-      "source": "/torsion-vs-extension-springs",
-      "destination": "/guides/",
-      "permanent": true
-    },
-    {
       "source": "/guides/garage-door-spring-lifespan",
       "destination": "/guides/",
       "permanent": true
     },
     {
       "source": "/garage-door-spring-lifespan",
-      "destination": "/guides/",
-      "permanent": true
-    },
-    {
-      "source": "/guides/garage-door-maintenance",
-      "destination": "/guides/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-maintenance",
       "destination": "/guides/",
       "permanent": true
     },

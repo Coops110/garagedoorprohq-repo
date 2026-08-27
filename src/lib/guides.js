@@ -129,7 +129,7 @@ export const guides = [
         a: 'Most single-fault repairs take 1–2 hours on site. Spring and cable replacement is usually under an hour of actual work; panel replacement can take longer or need a return visit if the panel has to be ordered.',
       },
     ],
-    related: ['garage-door-spring-replacement-cost', 'garage-door-opener-repair-cost', 'why-diy-spring-repair-is-dangerous', 'hiring-a-garage-door-company'],
+    related: ['garage-door-spring-replacement-cost', 'garage-door-opener-repair-cost', 'why-diy-spring-repair-is-dangerous', 'hiring-a-garage-door-company', 'torsion-vs-extension-springs', 'garage-door-opener-wont-work', 'garage-door-maintenance'],
     glossary: ['torsion-spring', 'extension-spring', 'cycle-rating', 'photo-eye-sensor', 'lift-cable'],
   },
 
@@ -221,7 +221,7 @@ export const guides = [
         a: 'It is strongly advised. Both springs have completed the same number of cycles, so the second is usually close behind the first. The pair costs $250–$550 against $180–$350 for one, and it avoids a second call-out fee within the year.',
       },
     ],
-    related: ['garage-door-repair-cost', 'why-diy-spring-repair-is-dangerous', 'garage-door-opener-repair-cost'],
+    related: ['garage-door-repair-cost', 'why-diy-spring-repair-is-dangerous', 'garage-door-opener-repair-cost', 'torsion-vs-extension-springs'],
     glossary: ['torsion-spring', 'extension-spring', 'cycle-rating', 'lift-cable', 'door-balance'],
   },
 
@@ -323,7 +323,7 @@ export const guides = [
         a: 'A chain-drive opener runs $300–$550 installed and a belt drive $400–$700. Wall-mount jackshaft and direct-drive units sit at or above the top of that range.',
       },
     ],
-    related: ['garage-door-repair-cost', 'garage-door-spring-replacement-cost', 'hiring-a-garage-door-company'],
+    related: ['garage-door-repair-cost', 'garage-door-spring-replacement-cost', 'hiring-a-garage-door-company', 'garage-door-opener-wont-work'],
     glossary: ['photo-eye-sensor', 'jackshaft-opener', 'limit-switch', 'rolling-code', 'door-balance'],
   },
 
@@ -401,7 +401,7 @@ export const guides = [
         a: 'Cleaning and realigning photo-eye sensors, replacing remote batteries, wiping out tracks, lubricating hinges and rollers, and testing the door balance. Anything involving springs, cables or the opener’s internals is not.',
       },
     ],
-    related: ['garage-door-repair-cost', 'garage-door-spring-replacement-cost'],
+    related: ['garage-door-repair-cost', 'garage-door-spring-replacement-cost', 'torsion-vs-extension-springs', 'garage-door-maintenance'],
     glossary: ['torsion-spring', 'winding-bar', 'door-balance', 'lift-cable'],
   },
 
@@ -489,6 +489,341 @@ export const guides = [
     related: ['garage-door-repair-cost', 'garage-door-opener-repair-cost'],
     glossary: ['cycle-rating', 'torsion-spring', 'door-balance'],
   },
+
+  // ═══════════════════════════════════════════════════════════
+  //  TROUBLESHOOTING — symptom-led, deliberately not a cost page
+  // ═══════════════════════════════════════════════════════════
+  {
+    slug: 'garage-door-opener-wont-work',
+    pillar: false,
+    parent: 'garage-door-repair-cost',
+    heroDiagram: 'photo-eye',
+    title: 'Garage Door Opener Not Working: Fixes',
+    h1: 'Garage Door Opener Not Working: What to Check, in Order',
+    description:
+      'Garage door opener not working? The free checks in the order a technician runs them, what each symptom actually means, and the point where you should stop.',
+    keyword: 'garage door opener not working',
+    datePublished: '2026-08-27',
+    dateModified: '2026-08-27',
+    readTime: 7,
+    // Structured by SYMPTOM, not by part. Someone searching this has a door
+    // that will not move and no idea which component owns the problem — a
+    // parts-ordered page asks them to diagnose before they can read it.
+    // Prices here are quoted, never tabled: garage-door-opener-repair-cost
+    // owns those figures and restating them in a second table is how two
+    // pages start disagreeing.
+    quickAnswer:
+      'Three checks cost nothing and cover most opener call-outs: mains power at the outlet, the photo-eye sensors near the floor, and the emergency release cord. Work through them in that order. If the door starts to close then reverses with the opener light flashing, it is the photo-eyes. If the motor runs but nothing moves, the release cord has been pulled. Beyond those, a diagnostic visit runs $75–$150 and is normally credited against the repair.',
+    sections: [
+      {
+        h2: 'The three checks that cost nothing',
+        body: [
+          'Start with power, because a dead circuit presents exactly like a dead motor: no light, no hum, no response from either the wall button or the remote. Garage outlets frequently share a circuit with an exterior socket, so whatever tripped it may be outside and nothing to do with the door. Check the breaker and, if the outlet is a GFCI, its reset button.',
+          'Second, look at the two photo-eye sensors mounted about six inches above the floor on either side of the opening. They are the most common cause of an opener that appears broken, and they are one of the few parts of the system a homeowner is actively meant to touch. Both should show a steady indicator light. A blinking light, or one that has gone dark, means the pair are no longer seeing each other.',
+          'Third, find the emergency release cord — the red handle hanging from the rail — and check whether it has been pulled. If it has, the trolley is disconnected from the door and the motor will run perfectly while nothing happens. This is the most misdiagnosed fault on the list, and it is often pulled by accident by someone tall, or deliberately by someone who has since forgotten.',
+        ],
+      },
+      {
+        h2: 'The door starts to close, then stops and goes back up',
+        body: [
+          'This is the photo-eye fault and it has a signature: the door travels a few inches, changes its mind, returns to fully open, and the opener light flashes several times. That flashing is the opener telling you the safety beam is broken. It is a report, not a fault of its own.',
+          'The causes are mundane. A cobweb across a lens. A leaf blown against a bracket. A bin or a bicycle wheel parked in the beam. A bracket knocked out of true by a car door. Overnight condensation fogging one lens. Wipe both lenses with a dry cloth and nudge one bracket until its indicator light is steady rather than blinking, then try the door again.',
+          'If one sensor stays dark no matter how it is aimed, suspect the wiring rather than the sensor. Low-voltage wire stapled to a stud and later pierced during a garage tidy-up is a recurring cause. That is where the free checks end — sensor realignment or replacement runs $85–$200 fitted, and chasing a damaged run through a wall is not a homeowner job.',
+        ],
+      },
+      {
+        h2: 'The motor runs but the door does not move',
+        diagram: 'trolley-cord',
+        body: [
+          'Two causes, easily told apart by watching the trolley — the carriage that travels along the rail. If the trolley is moving and the door is not, the emergency release has been pulled and the door is simply disconnected. Re-latching is usually a matter of pulling the cord back toward the door and running the opener until the carriage clicks in, though the exact method varies between makes.',
+          'One caution that matters more than it sounds: only re-latch, or unlatch, with the door fully closed. Doing it part way open puts the entire weight of the door on whatever is holding it up, and if a spring has already failed, that is nothing at all. A door in that state comes down fast.',
+          'If the trolley is not moving either, and the motor hums rather than turns, that is a failed capacitor or a stripped drive gear. Both run $120–$300 and both are genuine repairs rather than checks. The drive gear is worth knowing about: on chain-drive units it is a plastic part designed to be the one that fails, so a stripped gear usually means the motor is fine.',
+        ],
+      },
+      {
+        h2: 'The remote does nothing but the wall button works',
+        diagram: 'rolling-code',
+        body: [
+          'This narrows the fault usefully. The wall button working proves the motor, the drive and the power supply are all fine, so the problem is the remote, its battery, or the receiver’s memory of it. Nothing expensive is implicated.',
+          'Replace the battery first — it is the answer most of the time and costs almost nothing. If a fresh battery changes nothing, the remote needs reprogramming to the opener. Every manufacturer documents the sequence for its own units, and it is typically a learn button on the motor head followed by a press on the remote within thirty seconds.',
+          'Modern openers use rolling-code encryption, which changes the transmitted code on every press so a recorded code cannot be replayed later. That is a real security benefit, but it also means a remote that has fallen out of sync needs re-pairing rather than repairing. If the remote is physically damaged, a replacement remote or keypad runs $40–$120.',
+        ],
+      },
+      {
+        h2: 'The door stops short, or touches down and bounces straight back up',
+        body: [
+          'Both symptoms usually point at settings rather than failures. The limit switches tell the opener where the floor and the fully-open position are; the force setting tells it how much resistance should count as an obstruction. Either can drift after a power cut, a service visit, or simply over years.',
+          'A door that halts a foot short of closed, or that touches the floor and immediately reverses, is typically a limit set slightly wrong. Most openers expose the adjustment as two dials or buttons on the motor head, and professional adjustment runs $85–$175 if you would rather not.',
+          'There is one version of this symptom that is not a settings problem and deserves attention: if the door has also become noticeably harder to lift by hand, the opener is reading genuine resistance and doing exactly what it should. That points at the springs or the rollers, not the opener. Test the balance before touching anything electronic — an unbalanced door will defeat any force setting you choose, and raising the force to compensate removes the protection that setting exists to provide.',
+        ],
+      },
+      {
+        h2: 'Where the free checks stop',
+        body: [
+          'The line is easy to state: anything you can see and reach from the floor is fair game. Anything involving the springs, the lift cables, or the inside of the motor head is not.',
+          'The springs above the door hold enough stored energy to cause serious injury, and they stay loaded whether the door is open, closed or already broken. The logic board inside the opener is mains-connected. Neither is a reasonable place to learn, and neither failure is common enough to be worth the risk of finding out.',
+          'A diagnostic visit runs $75–$150 and is normally credited against the repair if you go ahead, so calling someone once the free checks are exhausted often costs nothing extra. Where the state licenses the trade — California, Florida and Arizona license garage door work specifically — ask for the licence number and check it on the state register yourself. It takes about a minute.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'Why does my garage door open but not close?',
+        a: 'Almost always the photo-eye sensors near the floor. An opener will raise a door with a broken safety beam but refuses to lower one, because that beam is the entrapment protection. Check both lenses for dirt and alignment — the indicator lights should be steady, not blinking.',
+      },
+      {
+        q: 'My garage door opener motor runs but the door does not move. Why?',
+        a: 'The emergency release cord has been pulled, disconnecting the trolley from the door. Re-latch it with the door fully closed, never part way open. If the trolley itself is not moving and the motor hums, it is usually a capacitor or a stripped drive gear at $120–$300.',
+      },
+      {
+        q: 'Why does my garage door reverse before it touches the ground?',
+        a: 'Either a blocked or misaligned photo-eye, or limit and force settings that have drifted. If the opener light flashes at the same time, start with the sensors. If the door has also become heavier to lift by hand, the springs are the real cause and the opener is behaving correctly.',
+      },
+      {
+        q: 'My garage door remote stopped working but the wall button still works.',
+        a: 'The motor and power supply are fine — the wall button proves it. Replace the remote battery, then reprogram the remote to the opener. Rolling-code openers change their code on every press, so a remote out of sync needs re-pairing rather than repair. A replacement remote runs $40–$120.',
+      },
+      {
+        q: 'How much does it cost to fix a garage door opener that is not working?',
+        a: 'Most opener repairs run $100–$300. Sensor work is $85–$200, a capacitor or drive gear $120–$300, a logic board $150–$400. Expect a $75–$150 diagnostic fee, usually credited against the repair.',
+      },
+      {
+        q: 'Should I repair or replace an opener that keeps failing?',
+        a: 'If the quoted repair exceeds half the installed price of a replacement and the unit is over ten years old, replace it. Any opener made before 1993 predates the federal photo-eye requirement and should be replaced rather than repaired, whatever has actually failed.',
+      },
+    ],
+    related: ['garage-door-opener-repair-cost', 'garage-door-repair-cost', 'garage-door-maintenance'],
+    glossary: ['photo-eye-sensor', 'limit-switch', 'emergency-release-cord', 'rolling-code'],
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  //  SPRINGS — explanatory only. See the comment before the body.
+  // ═══════════════════════════════════════════════════════════
+  {
+    slug: 'torsion-vs-extension-springs',
+    pillar: false,
+    parent: 'garage-door-repair-cost',
+    heroDiagram: 'spring-types',
+    title: 'Torsion vs Extension Garage Door Springs',
+    h1: 'Torsion vs Extension Springs: What You Have and Why It Matters',
+    description:
+      'How to tell torsion and extension garage door springs apart, what each costs to replace, how each one fails, and why safety cables are not optional.',
+    keyword: 'torsion vs extension springs',
+    datePublished: '2026-08-27',
+    dateModified: '2026-08-27',
+    readTime: 7,
+    // ⚠️ THIS PAGE DESCRIBES, IT DOES NOT INSTRUCT. Same rule as
+    // why-diy-spring-repair-is-dangerous: no procedure, no tool list, no
+    // sequence, no winding counts. The search intent behind "what are
+    // extension springs" is comprehension — someone reading a quote or
+    // identifying what broke — not a method. A partial instruction on a
+    // loaded spring is more dangerous than none, and the last section says
+    // so to the reader rather than only to whoever edits this file.
+    // The cost rows are COPIED VERBATIM from garage-door-spring-replacement-cost.
+    // Identical labels and identical ranges is the point: check-content.mjs
+    // compares them, and a shared row cannot drift.
+    quickAnswer:
+      'Torsion springs sit on a steel shaft above the door and store energy by twisting. Extension springs run front-to-back alongside the horizontal tracks and store it by stretching. Torsion is what almost every door built in the last thirty years uses: it balances better, lasts longer and fails more predictably. Extension springs are cheaper — $120–$300 a pair against $250–$550 for a torsion pair — and must have safety cables threaded through them. Neither type is a homeowner replacement.',
+    costTable: {
+      caption: 'Spring replacement by type, typical installed cost 2026 (US national)',
+      rows: [
+        ['Extension springs, pair', '$120 – $300'],
+        ['Torsion spring, one', '$180 – $350'],
+        ['Torsion spring, pair', '$250 – $550'],
+        ['High-cycle torsion pair (25,000 cycle)', '$300 – $630'],
+      ],
+    },
+    sections: [
+      {
+        h2: 'How to tell which system you have, in ten seconds',
+        body: [
+          'Open the door fully and look up. A single steel shaft running horizontally across the wall directly above the opening, with one or two tightly wound springs threaded onto it, is a torsion system. Two long springs running front-to-back along the horizontal tracks instead, one each side, visibly stretching as the door closes, are extension springs.',
+          'The two are unmistakable once you know what you are looking at, and the difference matters more than most homeowners expect. It changes the replacement price, it changes how the door fails, and it changes what a competent quote should include.',
+          'A small number of doors — usually wide, heavy, or fitted where there is no headroom above the opening — use a jackshaft arrangement, with the torsion assembly mounted to one side of the door rather than centred above it. That is still a torsion system for pricing and safety purposes.',
+        ],
+      },
+      {
+        h2: 'What each one actually does',
+        body: [
+          'Both types do the same job: counterbalance the weight of the door so that the opener, or your arm, only has to overcome friction rather than lift 150 to 300 pounds of steel. A garage door opener is not built to lift a door. It is built to move a door that is already balanced.',
+          'A torsion spring stores that energy in twist. It is wound onto a shaft that spans the opening, and as the door lowers the spring winds tighter; as the door rises it unwinds and gives the energy back. Because that one shaft drives both lift cables from a drum at each end, the pull on the two sides is mechanically linked and therefore even. This is why torsion doors track straighter, sit level, and are generally quieter.',
+          'An extension spring stores energy in stretch. Each is anchored at the rear of a horizontal track and pulls through a pulley as the door closes. Crucially, the two sides are independent — nothing forces them to pull equally. That single fact explains most of the differences that follow, including why a door on extension springs is more prone to drifting out of level as the two age at slightly different rates.',
+        ],
+      },
+      {
+        h2: 'How each one fails, and why that difference is the important one',
+        body: [
+          'A torsion spring fails by snapping, usually with a bang loud enough to hear from inside the house, and the broken coil stays on the shaft where it was. The door then becomes extremely heavy, and an opener asked to lift it will try — which is how one failure becomes two. It is an alarming failure, but a contained one.',
+          'An extension spring under tension is a stretched steel line with nothing restraining it along its length. When one breaks, it can whip. This is precisely what safety cables exist to prevent: a steel cable threaded through the middle of each extension spring so that a failed spring is captured rather than released across the garage. If your door has extension springs with no cable running through them, that is the cheapest safety improvement available to you, any technician can add them, and it should be on the next invoice regardless of what else is being done.',
+          'Both failure modes leave the door in the same condition — unbalanced and unsafe to operate. In both cases the response is the same: leave the door closed and stop using the opener until someone has looked at it.',
+        ],
+      },
+      {
+        h2: 'Cycle life is the number that decides the real cost',
+        diagram: 'spring-life',
+        body: [
+          'Springs of both types are rated in cycles, where one cycle is a single open and close. A standard spring is rated at 10,000 cycles, which on a door used four times a day works out at roughly seven years. Use the door eight times a day and the identical spring becomes a three-and-a-half year part. The rating is a count, not a promise in years, and this is the single most misread number in the trade.',
+          'High-cycle torsion springs rated at 25,000 cycles or more use thicker wire on a larger diameter and add roughly $40–$80 to a fitted pair. On a door that serves as the household’s main entrance, that is the best-value upgrade available here: two to three times the service life for well under a third more money. Ask for the rating in writing, because a 10,000 and a 25,000-cycle spring are indistinguishable to a homeowner once they are mounted.',
+          'Extension springs are cheaper to buy and cheaper to fit, at $120–$300 the pair against $250–$550 for a torsion pair. That gap is the main reason extension systems persist on older single doors. It narrows considerably once you count call-outs rather than parts: shorter service life and independent, uneven wear mean more visits across the same span of years.',
+        ],
+      },
+      {
+        h2: 'Can you convert extension springs to torsion?',
+        diagram: 'winding-cone',
+        body: [
+          'Yes, and it is a common upgrade on older single doors. A conversion means fitting a torsion shaft, drums, new lift cables and the springs themselves, plus a mounting plate above the opening. Expect it to price above a straight torsion pair replacement, because of the extra hardware and the extra time.',
+          'It is worth considering when the door is heavy enough that even, linked pull genuinely matters, when the existing extension springs have no safety cables and the pulleys are worn anyway, or when you are already replacing cables and rollers so much of the labour is shared. It is not worth doing for its own sake on a light, lightly used single door whose hardware is sound.',
+          'Headroom is the constraint that usually decides it. A standard torsion assembly needs roughly twelve inches of clear space above the opening. Low-headroom kits exist and cost more, and this is a measurement a technician should take before quoting rather than a question you can settle from the ground.',
+        ],
+      },
+      {
+        h2: 'Why this page describes and does not instruct',
+        body: [
+          'Everything above exists so you can identify what you have, read a quote, and ask a question that gets a straight answer. None of it is a procedure, and that is deliberate rather than an oversight.',
+          'A wound torsion spring on a double door holds roughly 200–300 pounds of stored force, released through winding bars in a controlled sequence. An extension spring at rest in a closed door is a loaded line. Both stay loaded after a failure, and on a two-spring door the survivor is still fully wound after the first has gone. Against that, the labour saved by doing it yourself is around $100–$250. The injuries are routinely fractures of the hand and forearm.',
+          'The genuinely useful homeowner skill here is detection, not replacement. Twice a year, with the door closed, pull the release cord, lift the door by hand to waist height and let go. A balanced door stays where you put it. One that slides down or drifts up has a spring losing its rating — and that is the moment to call someone, not the moment to buy tools.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'How do I know if I have torsion or extension springs?',
+        a: 'Look above the door. A single horizontal steel shaft above the opening with springs wound around it is torsion. Two long springs running front-to-back along the horizontal tracks, one on each side, that visibly stretch as the door closes, are extension springs.',
+      },
+      {
+        q: 'Are extension springs dangerous?',
+        a: 'A stretched extension spring can whip when it breaks, because nothing restrains it along its length. Safety cables threaded through each spring capture a failed one. If your extension springs have no cables through them, have them added — they cost very little and any technician can fit them.',
+      },
+      {
+        q: 'Which lasts longer, torsion or extension springs?',
+        a: 'Torsion, in practice. Both are rated in cycles and a standard rating is 10,000, but torsion springs are mechanically linked through one shaft so they wear evenly, while independent extension springs age at slightly different rates and pull the door out of level as they do.',
+      },
+      {
+        q: 'Why do torsion springs cost more than extension springs?',
+        a: 'Heavier materials and more involved fitting. An extension pair runs $120–$300 installed against $250–$550 for a torsion pair. Torsion buys better balance, quieter operation and a more contained failure, which is why nearly every door built in the last thirty years uses it.',
+      },
+      {
+        q: 'Can I replace extension springs myself since they are not wound?',
+        a: 'No. An extension spring in a closed door is under full tension and stores energy in stretch rather than twist — different mechanism, same hazard. It is also anchored to a pulley and cable system that has to be reassembled correctly for the door to stay level.',
+      },
+      {
+        q: 'Should both springs be replaced at the same time?',
+        a: 'Yes, for either type. Both were fitted on the same day and have done the same number of cycles, so when one goes the other is usually close behind. Replacing the pair costs far less than paying a second call-out within the year.',
+      },
+    ],
+    related: ['garage-door-spring-replacement-cost', 'why-diy-spring-repair-is-dangerous', 'garage-door-repair-cost'],
+    glossary: ['torsion-spring', 'extension-spring', 'cycle-rating', 'winding-bar', 'lift-cable', 'door-balance'],
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  //  PILLAR 2 — maintenance
+  // ═══════════════════════════════════════════════════════════
+  {
+    slug: 'garage-door-maintenance',
+    pillar: true,
+    heroDiagram: 'balance-test',
+    title: 'Garage Door Maintenance: What and When',
+    h1: 'Garage Door Maintenance: What to Do, and How Often',
+    description:
+      'Garage door maintenance is four jobs and twenty minutes a year. What to lubricate, what to leave dry, what to test monthly, and what to pay someone for.',
+    keyword: 'garage door maintenance',
+    datePublished: '2026-08-27',
+    dateModified: '2026-08-27',
+    readTime: 8,
+    quickAnswer:
+      'Garage door maintenance is four jobs and about twenty minutes a year. Test the balance twice a year. Lubricate hinges, rollers and the spring coil twice a year with a garage-door lubricant. Check the photo-eyes and the auto-reverse monthly. Keep the tracks clean — tracks are wiped, never greased. Everything past that involves stored spring tension and belongs to a technician. A professional tune-up runs $75–$150.',
+    costTable: {
+      caption: 'Maintenance jobs and common wear parts, installed cost 2026',
+      rows: [
+        ['Garage-door lubricant, per can', '$8 – $15'],
+        ['Bottom seal or weatherstrip replacement', '$50 – $150'],
+        ['Professional tune-up visit', '$75 – $150'],
+        ['Roller replacement (set)', '$100 – $200'],
+        ['Track realignment or repair', '$125 – $300'],
+        ['Lift cable replacement (pair)', '$130 – $250'],
+      ],
+    },
+    sections: [
+      {
+        h2: 'The balance test, which predicts almost everything else',
+        body: [
+          'Twice a year, with the door fully closed, pull the emergency release cord to disconnect the opener. Lift the door by hand to about waist height and let go. A correctly balanced door stays exactly where you left it. If it slides down, or pulls itself upward, the springs are no longer carrying the door’s weight properly.',
+          'This one test tells you more than any other thing you can do. An unbalanced door transfers its weight onto the opener — a $300–$700 unit designed to overcome friction, not to lift a door — so a spring problem left alone reliably becomes an opener problem within months. It is also the earliest warning you will get that a spring is reaching the end of its cycle rating, well before it snaps.',
+          'While the door is disconnected, move it through its full travel by hand. It should run smoothly, without grinding, catching, or needing a shove at one particular point. A door that binds in one spot has a track, roller or hinge problem, and finding that while the door still works is far cheaper than finding it when the door jams half open.',
+        ],
+      },
+      {
+        h2: 'Lubrication: what to use, and what to leave dry',
+        body: [
+          'Twice a year, apply a garage-door-specific lubricant to the hinges, the roller stems and bearings, the torsion spring coil, and the end bearing plates. A lithium or silicone-based product sold for the purpose is what you want. The whole job takes about ten minutes and it is the single maintenance task that most extends the life of the moving parts.',
+          'Do not use WD-40 as the lubricant. It is a solvent and water displacer, not a lubricant — it will free a seized part beautifully and then leave it dry, which is worse than where you started. It has a legitimate place in cleaning a gummed-up roller, but something has to go on afterwards.',
+          'And do not grease the tracks. This is the mistake that sounds most like maintenance and does the most quiet harm. The tracks are a guide surface, not a bearing surface: the rollers are meant to roll along them, not slide through grease. Grease in a track collects grit and becomes a lapping compound that grinds the rollers away. Wipe the tracks out with a dry cloth. That is the entire job.',
+        ],
+      },
+      {
+        h2: 'The monthly two-minute safety check',
+        body: [
+          'Once a month, two tests take about a minute each. First, the photo-eyes: with the door closing, wave a broom handle through the beam near the floor. The door should stop and reverse immediately. Then confirm both lenses are clean and both indicator lights are steady rather than blinking.',
+          'Second, the auto-reverse on contact. Lay a flat length of timber, or a roll of kitchen towel, on the floor in the door’s path and close the door onto it. The door should touch, sense the resistance and reverse. If it presses down and keeps pressing, the force setting is too high — and raising force to solve a closing problem is exactly how this protection gets defeated.',
+          'Both of these are entrapment protections, and both have been federally required on openers made from 1993 onward. If your opener predates that and has no photo-eyes at all, it should be replaced rather than maintained, no matter how well the motor still runs.',
+        ],
+      },
+      {
+        h2: 'What wears out, and roughly when',
+        diagram: 'spring-life',
+        body: [
+          'Springs are the shortest-lived major component. A standard 10,000-cycle spring lasts roughly seven years at four openings a day and about half that at eight. Lift cables are steel under constant load and tend to reach the end of their life at a similar age, which is why they are usually replaced alongside springs — the labour overlaps almost entirely, and a cable pair costs $130–$250 on its own visit.',
+          'Rollers are the cheapest wear part and the one that most changes how a door sounds. Steel rollers with exposed bearings are noisy when new and get worse; nylon rollers are quieter and last longer. A set runs $100–$200 fitted, and having them done at the same visit as springs saves a separate call-out.',
+          'Hinges, brackets and the bottom fixture last a long time if they are lubricated, and they are the parts most likely to be quietly bent rather than obviously broken. Once a year, look for elongated screw holes and hairline cracks around the hinge knuckles, particularly the centre hinges on a double-width door where the load is highest.',
+        ],
+      },
+      {
+        h2: 'Seals, rust and the bottom of the door',
+        diagram: 'door-layers',
+        body: [
+          'The bottom seal fails soonest and matters most day to day. It keeps out water, leaves, draughts and rodents, and it perishes from ultraviolet light and repeated compression. Replacement runs $50–$150, and it is one of the few wear parts a capable homeowner can genuinely change, because it slides into a retainer with no stored energy involved anywhere in the job.',
+          'Check the perimeter weatherstripping on the jambs and header at the same time. On an insulated door with a decent R-value, a gap around the frame gives back a good part of what the insulation is doing — this is usually the cheapest energy fix available on the whole building envelope.',
+          'Rust is the slow one, and the one people notice too late. Look at the bottom two feet of a steel door, the bottom fixture, and anywhere water sits after rain. Touching up a chip before it spreads is a five-minute job. A rusted-through bottom section is a panel replacement at $250–$800, on the most visible elevation of most houses.',
+        ],
+      },
+      {
+        h2: 'What a paid tune-up should actually include',
+        body: [
+          'A professional tune-up runs $75–$150 and should cover: a balance check with the opener disconnected, spring tension adjustment, lubrication of every moving part, tightening of track fixings and hinge fasteners, roller inspection, cable inspection along their whole length, photo-eye alignment, and force and limit checks on the opener.',
+          'Ask what the visit includes before booking, and be a little wary of a tune-up priced well below that range. A heavily discounted service call has to recover its margin somewhere, and it usually does so in whatever the visit discovers. That is not automatically dishonest — but it is worth knowing which of the two things you have bought.',
+          'On frequency, the honest answer is that annually is plenty for a normally used residential door. Twice a year is right for a door that serves as the main entrance to the house, or one on a coastal, dusty or very cold site. A door opened twice a week does not need what a door opened eight times a day needs, and paying for the same schedule regardless is how maintenance stops being good value.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'How often should a garage door be serviced?',
+        a: 'Annually for a normally used residential door, and twice a year if it is the main entrance to the house or sits on a coastal, dusty or very cold site. The balance test and lubrication are twice-yearly jobs either way; the photo-eye and auto-reverse checks are monthly.',
+      },
+      {
+        q: 'What lubricant should I use on a garage door?',
+        a: 'A garage-door-specific lithium or silicone lubricant, on hinges, roller stems and bearings, the spring coil and the end bearing plates. Not WD-40 — that is a solvent and water displacer, so it frees a seized part and then leaves it dry.',
+      },
+      {
+        q: 'Should I grease the garage door tracks?',
+        a: 'No. Tracks are a guide surface, not a bearing surface — the rollers roll along them rather than sliding. Grease collects grit and turns into a lapping compound that wears the rollers out. Wipe the tracks with a dry cloth instead.',
+      },
+      {
+        q: 'How do I test if my garage door is balanced?',
+        a: 'With the door closed, pull the emergency release cord, lift the door by hand to waist height and let go. A balanced door stays put. If it slides down or drifts up, the springs need attention from a technician — that is not a homeowner adjustment.',
+      },
+      {
+        q: 'How much does a garage door tune-up cost?',
+        a: 'A professional tune-up runs $75–$150 and should include a balance check, spring tension adjustment, full lubrication, fixing and fastener tightening, roller and cable inspection, photo-eye alignment, and opener force and limit checks.',
+      },
+      {
+        q: 'What garage door maintenance can I safely do myself?',
+        a: 'Lubrication, wiping the tracks, cleaning and aligning the photo-eyes, replacing remote batteries, testing the balance, testing the auto-reverse, and replacing the bottom seal. Anything involving springs, lift cables or the inside of the opener is not homeowner work.',
+      },
+    ],
+    related: ['garage-door-repair-cost', 'why-diy-spring-repair-is-dangerous', 'garage-door-opener-wont-work'],
+    glossary: ['door-balance', 'cycle-rating', 'roller', 'track', 'weatherstrip', 'photo-eye-sensor'],
+  },
 ];
 
 // ── Lookups ─────────────────────────────────────────────────
@@ -543,15 +878,12 @@ export const PLANNED = [
   { slug: 'garage-door-sizes-guide', keyword: 'standard garage door sizes', parent: 'garage-door-installation-cost', batch: 3 },
   { slug: 'insulated-vs-non-insulated-garage-doors', keyword: 'insulated vs non insulated garage door', parent: 'garage-door-installation-cost', batch: 3 },
   { slug: 'garage-door-openers', keyword: 'best garage door opener', pillar: true, batch: 2 },
-  { slug: 'garage-door-opener-wont-work', keyword: 'garage door opener not working', parent: 'garage-door-openers', batch: 3 },
   { slug: 'smart-garage-door-openers', keyword: 'smart garage door opener', parent: 'garage-door-openers', batch: 3 },
   { slug: 'garage-door-materials-types', keyword: 'garage door materials', pillar: true, batch: 3 },
   { slug: 'steel-vs-wood-garage-doors', keyword: 'steel vs wood garage door', parent: 'garage-door-materials-types', batch: 3 },
   { slug: 'vinyl-vs-aluminum-garage-doors', keyword: 'vinyl vs aluminum garage door', parent: 'garage-door-materials-types', batch: 3 },
   { slug: 'garage-door-springs', keyword: 'garage door springs', pillar: true, batch: 3 },
-  { slug: 'torsion-vs-extension-springs', keyword: 'torsion vs extension springs', parent: 'garage-door-springs', batch: 3 },
   { slug: 'garage-door-spring-lifespan', keyword: 'how long do garage door springs last', parent: 'garage-door-springs', batch: 3 },
-  { slug: 'garage-door-maintenance', keyword: 'garage door maintenance', pillar: true, batch: 3 },
   { slug: 'garage-door-maintenance-checklist', keyword: 'garage door maintenance checklist', parent: 'garage-door-maintenance', batch: 3 },
   { slug: 'garage-door-wont-open-troubleshooting', keyword: 'garage door wont open', parent: 'garage-door-maintenance', batch: 3 },
   { slug: 'garage-door-off-track-repair-cost', keyword: 'garage door off track repair cost', parent: 'garage-door-repair-cost', batch: 2 },
