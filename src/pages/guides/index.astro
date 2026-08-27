@@ -19,20 +19,52 @@ const schemas = [
 ];
 ---
 <BaseLayout
-  title="Garage Door Cost Guides for 2026"
-  description="Free, in-house researched guides to garage door repair and replacement costs in 2026 — springs, openers, panels — plus how to hire a garage door company."
+  title="Garage Door Guides: Cost and Repair"
+  description="In-house researched garage door guides: what each repair costs in 2026, how to work out why a door or opener has stopped, and how to keep one working."
   canonical="/guides/"
   schemas={schemas}
 >
   <div class="wrap-narrow">
     <Breadcrumbs items={crumbs} />
 
+    {/* The h1 and this intro said "cost guides" and "what garage door work
+        actually costs" while half the list is now troubleshooting, maintenance
+        and safety. A hub that describes only a third of what it links to is
+        wrong for a reader and dilutes the page for the terms it should rank
+        on. Re-check this wording whenever a guide is added under a new
+        pillar. */}
     <span class="eyebrow">Guides</span>
-    <h1 style="margin:.5rem 0 .75rem;">Garage door cost guides</h1>
-    <p class="muted mb-3" style="max-width:60ch;">
-      What garage door work actually costs in 2026, researched in-house and written
-      to be read before you call anyone. Every figure is a national estimate, not a quote.
+    <h1 style="margin:.5rem 0 .75rem;">Garage door cost, repair and maintenance guides</h1>
+    <p class="mb-3" style="max-width:60ch;">
+      What the work costs, how to tell what has actually failed, and what keeps a
+      door out of trouble in the first place. All researched in-house and written to
+      be read before you call anyone. Every figure is a national 2026 estimate, not a quote.
     </p>
+
+    {/* Situation -> guide. Most people arrive here mid-problem rather than
+        browsing, and the pillar titles alone do not tell someone whose door
+        will not open which of eight pages is theirs. */}
+    <section class="highlight-box">
+      <h2 style="font-size:1.05rem;margin:0 0 .5rem;">Which guide do you need?</h2>
+      <ul class="guide-list">
+        <li>
+          <a href="/guides/garage-door-opener-wont-work/">The door or opener has stopped working</a>
+          <p>Start with the checks that cost nothing, in the order a technician runs them.</p>
+        </li>
+        <li>
+          <a href="/guides/garage-door-repair-cost/">You know what is broken and want the price</a>
+          <p>Every common repair with a typical installed range, and the point where replacing beats repairing.</p>
+        </li>
+        <li>
+          <a href="/guides/garage-door-maintenance/">You want to stop it breaking again</a>
+          <p>Four jobs and about twenty minutes a year, including the one that most extends component life.</p>
+        </li>
+        <li>
+          <a href="/guides/hiring-a-garage-door-company/">You are deciding who to call</a>
+          <p>What to ask before booking, and how to check a licence number yourself in about a minute.</p>
+        </li>
+      </ul>
+    </section>
 
     {pillars.map((p) => {
       const clusters = getClusters(p.slug);
@@ -43,9 +75,13 @@ const schemas = [
           </h2>
           <p style="margin:.4rem 0 .75rem;">{p.description}</p>
           {clusters.length > 0 && (
-            <ul class="link-list">
+            <ul class="guide-list">
               {clusters.map((c) => (
-                <li><a href={`/guides/${c.slug}/`}>{c.h1.replace(/:.*$/, '')}</a></li>
+                <li>
+                  <a href={`/guides/${c.slug}/`}>{c.h1.replace(/:.*$/, '')}</a>
+                  {' '}<span class="guide-meta">{c.readTime} min read</span>
+                  <p>{c.description}</p>
+                </li>
               ))}
             </ul>
           )}
