@@ -87,6 +87,12 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
         >
           <input type="hidden" name="access_key" value={SITE.web3FormsKey} />
           <input type="hidden" name="subject" value={`${SITE.name} listing request`} />
+          {/* Without this, Web3Forms sends the contractor to its own generic
+              success page on api.web3forms.com — off this site, unbranded, and
+              with no indication of what happens next. Must be absolute; built
+              from SITE.domain so it follows the canonical host rather than
+              being hardcoded. */}
+          <input type="hidden" name="redirect" value={`${SITE.domain}/get-listed/thanks/`} />
           {/* Honeypot — bots fill it, humans never see it. */}
           <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" />
 
@@ -98,6 +104,14 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
           </label>
           <label>Phone<br />
             <input type="tel" name="phone" required style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
+          </label>
+          {/* The form had no email field at all, while the privacy line below
+              it promised we would "reply to you" — the only way to answer a
+              submission was to ring the number. It is also the field Web3Forms
+              reads to set reply-to on the notification email, so without it a
+              reply goes nowhere useful. Named exactly "email" for that reason. */}
+          <label>Email<br />
+            <input type="email" name="email" required autocomplete="email" style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
           </label>
           <label>Website<br />
             <input type="url" name="website" style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />

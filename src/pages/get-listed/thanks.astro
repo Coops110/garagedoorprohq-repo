@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE, LEGAL } from '../../lib/site.js';
+
+// Where Web3Forms sends a contractor after a successful submission — see the
+// hidden `redirect` field on /get-listed/. Without this page that redirect
+// would land on a 404, and without the redirect the contractor would land on
+// api.web3forms.com's own generic success page, off this site entirely.
+//
+// noindex: it has no value in search, it only makes sense as the second half
+// of a submission, and an indexed thank-you page is a classic way to get a
+// thin, orphaned URL into the index. noindex also drops it from the sitemap.
+//
+// No <form> and nothing that can be resubmitted: a reload of this URL is inert.
+---
+<BaseLayout
+  title="Listing Request Received"
+  description="Your garage door listing request has been received. What happens next, and how long it usually takes."
+  canonical="/get-listed/thanks/"
+  noindex={true}
+>
+  <div class="wrap-narrow">
+    <span class="eyebrow">Get listed</span>
+    <h1 style="margin:.5rem 0 .75rem;">Thanks — we have your details</h1>
+
+    <div class="answer-box">
+      <p>
+        Your listing request has reached us. We read every one, and we will either add the
+        listing or reply telling you why not. Both outcomes get an answer.
+      </p>
+    </div>
+
+    <h2 class="mt-4" style="font-size:1.2rem;">What happens next</h2>
+    <p style="max-width:62ch;">
+      We check the details against the business data we already hold, and where you have
+      given a state licence number we check it against the state register. {SITE.name}
+      {' '}covers California, Florida and Arizona for licence checks, because those are the
+      only three states that license garage door work as its own trade.
+    </p>
+    <p style="max-width:62ch;" class="mt-2">
+      A city page needs at least three listings before it publishes. If yours is the first
+      in your city it is not lost — it is held and publishes automatically once the city
+      reaches that threshold.
+    </p>
+
+    <h2 class="mt-4" style="font-size:1.2rem;">If you need to change something</h2>
+    <p style="max-width:62ch;">
+      Email <a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a> with the
+      business name and what needs correcting. That is also the address to use to have a
+      listing removed — we do not require a reason.
+    </p>
+
+    <p class="claim-note mt-3">
+      While you are here: <a href="/guides/hiring-a-garage-door-company/">what homeowners
+      are told to ask you</a> before they book. It is the same page your prospective
+      customers read, and it is worth knowing what is on it.
+    </p>
+  </div>
+</BaseLayout>
