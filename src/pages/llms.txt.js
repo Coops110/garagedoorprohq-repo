@@ -58,7 +58,7 @@ ${cities.map((c) => `- [Garage door repair in ${c.city}, ${c.stateCode}](${base}
 
 - [About ${SITE.name}](${base}/about/): who runs the site and how it is funded
 - [Editorial guidelines](${base}/editorial-guidelines/): the quality bar a listing must clear, what a licence badge means, and why there are no ratings
-- [Get listed](${base}/get-listed/): free, no paid placement
+- [Get listed](${base}/get-listed/): free to list; paid promotion is labelled as advertising
 - [Contact](${base}/contact/)
 - [Privacy policy](${base}/privacy/)
 - [Terms of service](${base}/terms/)
