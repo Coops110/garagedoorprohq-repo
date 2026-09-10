@@ -1,1 +1,3017 @@
-[]
+[
+ {
+  "id": "85796ee4-1f1d-490a-a3d0-907dd387073b",
+  "name": "JS Doors N More",
+  "slug": "js-doors-n-more",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "21594486-2768-41ce-b170-93a3364700f2",
+  "name": "Doorscapes, Inc.",
+  "slug": "doorscapes-inc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f33676cf-c67e-45b6-8616-ddfc9f204e3b",
+  "name": "Himmel's Architectural Door & Hardware, LLC",
+  "slug": "himmel-s-architectural-door-hardware-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "09a10d5b-e97f-4057-aeeb-4409dafee176",
+  "name": "K-T-M Door Control Inc",
+  "slug": "k-t-m-door-control-inc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "012b4f21-73c1-4d7d-8a99-4b56408468a9",
+  "name": "Repair Garage Door Springs",
+  "slug": "repair-garage-door-springs",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "eeaf903a-90f0-4e4e-8da1-0c7ddc4ef55a",
+  "name": "Planet Garage Door",
+  "slug": "planet-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5b6eabfe-e2b3-4e5e-b1c8-b0aaacfae080",
+  "name": "RB Garage Doors",
+  "slug": "rb-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "fed4216c-ce69-4869-bf24-ebf8fca2febf",
+  "name": "saras garage doors",
+  "slug": "saras-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2f28c8dd-ba59-402c-8ce0-5d4832192c5e",
+  "name": "Garage Door Repair Alief TX",
+  "slug": "garage-door-repair-alief-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a8c9039c-84b0-438e-9eb3-3c5728beaa31",
+  "name": "Garage Doors Prices Houston TX",
+  "slug": "garage-doors-prices-houston-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "667d48cf-fd92-414b-bdfc-7ab1559a38a3",
+  "name": "Ontime Garage Doors",
+  "slug": "ontime-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3a33192a-2ca3-4231-9831-a7795bd1b92f",
+  "name": "Funbo Door Services and Welding Fabrication",
+  "slug": "funbo-door-services-and-welding-fabrication",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "0bde0dfd-2de7-4da7-bf6d-f0894d5a117c",
+  "name": "BBM Garage Door repair Houston",
+  "slug": "bbm-garage-door-repair-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "53317fb1-834a-4454-98b9-b47db6d2cb75",
+  "name": "Experts Doors",
+  "slug": "experts-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8eb1a492-1ef3-45cd-8673-c73c9b58e355",
+  "name": "ABC Doors",
+  "slug": "abc-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "31559751-803f-4b92-a21f-0ec206936886",
+  "name": "Garage Door Systems",
+  "slug": "garage-door-systems",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "da81d750-eea9-42e0-9890-2ba1213cf100",
+  "name": "ABC Garage Doors",
+  "slug": "abc-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "74aaf511-142e-4873-8a48-17ec1b22b7d7",
+  "name": "Overhead Door Company of Houston",
+  "slug": "overhead-door-company-of-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "53e696af-cb6b-4f5f-898c-b8a54821a2bf",
+  "name": "Pearland Industries",
+  "slug": "pearland-industries",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "918c87c1-d474-4ea8-a38a-ef3fbb1837e8",
+  "name": "Big Edd's Doors",
+  "slug": "big-edd-s-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "0b7410b3-6459-4cda-85e4-e4abbaedc1cc",
+  "name": "Garage Door Doctor Repair",
+  "slug": "garage-door-doctor-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c0bd343c-e111-4672-a383-71f84c5253b5",
+  "name": "Fix N Go Garage Door Repair Of Memorial",
+  "slug": "fix-n-go-garage-door-repair-of-memorial",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "428b24b7-04ee-44e8-9a0d-8ee9f453ecc4",
+  "name": "1st Choice Garage Doors",
+  "slug": "1st-choice-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f35583da-5bad-4051-a6f4-9e59522644e8",
+  "name": "Sky Lock & Doors Service",
+  "slug": "sky-lock-doors-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "833cf305-3e2b-46d8-8042-4d03e8464884",
+  "name": "Den Defenders Security Doors",
+  "slug": "den-defenders-security-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "50fddbb7-0fd1-45d6-a235-bb691a6d5c5c",
+  "name": "Garage Door Repair Experts",
+  "slug": "garage-door-repair-experts",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "036c2903-06e9-4624-a748-be6fa53fea3c",
+  "name": "M.G.A Garage Door",
+  "slug": "m-g-a-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "552cad1a-96a2-4fba-a434-849a03b16607",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5e9ec408-9eea-4da9-9fce-42e1a6989317",
+  "name": "overheadgaragehomedoors.",
+  "slug": "overheadgaragehomedoors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ffec9145-86b1-463d-b56c-51e5ef4d7140",
+  "name": "Diamond Tech Garage & Gate",
+  "slug": "diamond-tech-garage-gate",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "322064a3-700f-479b-9fdb-011388c089b9",
+  "name": "Garage Doors Opener Repairs",
+  "slug": "garage-doors-opener-repairs",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c554eb21-b9d5-49a5-856d-febeed562cfa",
+  "name": "Preferred Doors LLC",
+  "slug": "preferred-doors-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "91a42a16-2bc1-40e2-9d7c-1a04e819a21a",
+  "name": "Houston Garage Doors Repair",
+  "slug": "houston-garage-doors-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "76ecf439-0a8f-40c9-a57b-140c6e0bac3a",
+  "name": "Garage Door Repairs Near Me Houston TX",
+  "slug": "garage-door-repairs-near-me-houston-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "682ea16b-26c9-443e-b006-a3b12462e976",
+  "name": "Avana Windows & Doors",
+  "slug": "avana-windows-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "10cb1b5e-2c39-4e72-b25a-a3ca92e77b3e",
+  "name": "The Glass Guru",
+  "slug": "the-glass-guru",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3bd08240-c36f-4ed8-936c-96b14d12edea",
+  "name": "Fix A garage Door",
+  "slug": "fix-a-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3ab0ed74-5138-47fe-934e-10a08996bacb",
+  "name": "Vortex Doors - Houston",
+  "slug": "vortex-doors-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "15447374-3a78-4247-975e-f299083d2dcd",
+  "name": "Lunsford Door & Service, Inc.",
+  "slug": "lunsford-door-service-inc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3f00ca1e-bc3f-44c8-b576-9970cd5c61d8",
+  "name": "Metro Steel Windows & Doors",
+  "slug": "metro-steel-windows-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8e455b02-44be-4801-a090-89d7dc9791f1",
+  "name": "Apache Overhead Doors",
+  "slug": "apache-overhead-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7f50205b-5b45-4b25-a971-9fab2e6406b2",
+  "name": "Screenmobile of Katy-Sugarland",
+  "slug": "screenmobile-of-katy-sugarland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "88f4134f-cfef-419c-b166-a68eade4bd6a",
+  "name": "Primo Doors",
+  "slug": "primo-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "18428bf3-1e8e-4a5a-9511-c661feaf99b5",
+  "name": "Sears Garage Solutions",
+  "slug": "sears-garage-solutions",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "003af778-880c-425b-9dd0-d8bd5409b878",
+  "name": "Garageworks",
+  "slug": "garageworks",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "32ab4e78-7399-4748-8f50-8c561b856554",
+  "name": "Spring Valley Garage Door Repair TX",
+  "slug": "spring-valley-garage-door-repair-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a6964f7b-3fbe-48f8-ab1a-675a3cacb722",
+  "name": "Garage Door King Services",
+  "slug": "garage-door-king-services",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "6ea0bdf8-a9ac-49c1-9e8d-3c445c186ba3",
+  "name": "dock and door systems inc",
+  "slug": "dock-and-door-systems-inc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "17175efd-01aa-4308-bbcc-9cb7c3fec47f",
+  "name": "Super Pro Services",
+  "slug": "super-pro-services",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "23b9c0f6-a3af-48f4-9486-01f5b5b93f11",
+  "name": "Garage Door Houston",
+  "slug": "garage-door-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e0789b90-cbbf-46ee-b083-3621c0411c2d",
+  "name": "Ranger Garage Door Repair",
+  "slug": "ranger-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "cb927a68-8a87-4c8b-bc22-5ee15df16892",
+  "name": "Door and Dock Solutions",
+  "slug": "door-and-dock-solutions",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "39720c1b-5ca8-4dbb-bb67-74a4bbbef2f1",
+  "name": "GDS 24/7 Inc",
+  "slug": "gds-24-7-inc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a7632c8b-fbd1-452f-8ba1-d18cadc451ba",
+  "name": "Meyerland Windows",
+  "slug": "meyerland-windows",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "bd19244d-f51c-45e2-8c41-00d1d9c84437",
+  "name": "garagedoorsrepairtx.",
+  "slug": "garagedoorsrepairtx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "de1ebdd0-bc4f-4e3c-a8ce-970cadce7afa",
+  "name": "Garage Door Opener TX",
+  "slug": "garage-door-opener-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f9a0f6f0-3443-4edb-ae71-1a788e832660",
+  "name": "TX Garage Door Installation",
+  "slug": "tx-garage-door-installation",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4b970ef3-e238-4b51-8771-f7c31027a61d",
+  "name": "Garage Openers Installation",
+  "slug": "garage-openers-installation",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "048c983d-7966-427e-9a81-45f638afb99a",
+  "name": "Best Garage Opener TX",
+  "slug": "best-garage-opener-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a81a5972-683e-4027-a8d7-43432ce1d764",
+  "name": "Fix Garage Opening TX",
+  "slug": "fix-garage-opening-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5f6ee640-6f62-4412-8431-66918b3cc913",
+  "name": "Overhead Garage Door TX",
+  "slug": "overhead-garage-door-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "706c92c7-fc68-4754-8ef3-bf9a41d7fc9f",
+  "name": "Repair Garage Door TX",
+  "slug": "repair-garage-door-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "70a8d96d-f83e-43e6-b6d6-238f8c48e62c",
+  "name": "Armsco Doors",
+  "slug": "armsco-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ca56518f-ab7d-4965-9d3d-c2213e48917b",
+  "name": "FORJA DESIGNS LLC",
+  "slug": "forja-designs-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "90c49c81-cedc-48e5-8718-02698f7f06a9",
+  "name": "Gustavo Garage Doors",
+  "slug": "gustavo-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "67d9deab-1be3-4dc3-a908-76a20080333c",
+  "name": "Cornerstone Overhead Garage Doors",
+  "slug": "cornerstone-overhead-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "de68228e-5179-49f8-88a6-ac32edcf95ab",
+  "name": "Progressive Garage Doors",
+  "slug": "progressive-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b27fd31f-b6db-4714-9891-078832dfa4d0",
+  "name": "Tmax Roll ups",
+  "slug": "tmax-roll-ups",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "36943498-8eba-4b41-ac01-4534950938e4",
+  "name": "Houston TX Garage Doors Repair",
+  "slug": "houston-tx-garage-doors-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ef79fbd5-655d-4d89-9de1-1ed35167cc91",
+  "name": "Houston Garage Door Service",
+  "slug": "houston-garage-door-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "dde81736-a4b7-44fa-ac5c-ddf645867243",
+  "name": "Optima Iron Doors",
+  "slug": "optima-iron-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "db108bad-61b2-4803-918d-5b79e112ccc6",
+  "name": "Panoramic Doors",
+  "slug": "panoramic-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c85d80d0-86df-42b7-a045-8100902f8f24",
+  "name": "Custom Windows Of Texas",
+  "slug": "custom-windows-of-texas",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7d34f3e6-9ae1-472a-89f9-d7db10fa1fba",
+  "name": "Same Day Garage Door Service & Repair",
+  "slug": "same-day-garage-door-service-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ce64d896-2a0d-4a93-ad04-4a1ee3a0fc3e",
+  "name": "Amazing Exteriors",
+  "slug": "amazing-exteriors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8a1bffbf-181b-461a-9bc3-7061dfe02f6f",
+  "name": "Coastal Doors Inc",
+  "slug": "coastal-doors-inc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b0af2d21-a0dc-40e0-acbf-f1ff387afcf0",
+  "name": "Houston Window Experts",
+  "slug": "houston-window-experts",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "75c520fd-da36-43ac-8499-95d5ca3fe539",
+  "name": "Hollywood Automatic Door",
+  "slug": "hollywood-automatic-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "99bd4e5c-1572-4981-b540-06792d658861",
+  "name": "Garage Door Clear Lake City",
+  "slug": "garage-door-clear-lake-city",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c83a7c0f-1705-437d-be2b-7daf3a805625",
+  "name": "Garage Door Clear Lake TX",
+  "slug": "garage-door-clear-lake-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7e0514ef-9737-40b6-b376-1348b04d9ce2",
+  "name": "Garage Door Repair Clear Lake",
+  "slug": "garage-door-repair-clear-lake",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e76b3720-1701-4bf2-8421-b8e4a38d03f8",
+  "name": "fixgarageopenerhouston.",
+  "slug": "fixgarageopenerhouston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "790d7925-c01b-49cf-b5e2-d1aec6c29441",
+  "name": "Howard's Garages",
+  "slug": "howard-s-garages",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4d52c0a3-2794-4e6e-836b-268f63384453",
+  "name": "Discounted Garage Doors",
+  "slug": "discounted-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "61bceb9b-923f-4f76-a6aa-fb87396caf0a",
+  "name": "TXmax Garage Door Repair",
+  "slug": "txmax-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "dc9e8748-5621-4ed5-a008-16b4e45e6575",
+  "name": "Garage Door Installation Houston TX",
+  "slug": "garage-door-installation-houston-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "59aa47b6-b265-4994-8c4c-4a82cd19276e",
+  "name": "Overhead Door In Houston TX",
+  "slug": "overhead-door-in-houston-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b4619e60-ffd3-4c17-800a-a3d9a32e643f",
+  "name": "JQ Doors",
+  "slug": "jq-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "397c702f-4cf3-40b8-80a2-cea5f6ec7545",
+  "name": "Refinishing A Door",
+  "slug": "refinishing-a-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3639030a-7b43-47ba-9b8a-7bccab161471",
+  "name": "Garage Door Houston",
+  "slug": "garage-door-houston-2",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d9161d94-8607-47ab-a21d-d0059b7be669",
+  "name": "ASAP Garage Door Service",
+  "slug": "asap-garage-door-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b5036472-6c92-4361-9af9-29b79ab25f98",
+  "name": "EcoView Windows",
+  "slug": "ecoview-windows",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "48b3ccbc-3594-4a57-8a15-47c3d0dd37e2",
+  "name": "Garage Door Houston TX",
+  "slug": "garage-door-houston-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7e509ebf-d5a9-4eb3-aa78-e490370cc081",
+  "name": "garagedoorhouston.",
+  "slug": "garagedoorhouston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "789527e7-cb24-4423-a967-3f7ee57f4d63",
+  "name": "Overhead Door Houston TX",
+  "slug": "overhead-door-houston-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d4f83a08-5398-46c7-84c4-db02ff69003c",
+  "name": "Arm Garage Door Houston",
+  "slug": "arm-garage-door-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8a7253c1-d163-4be1-a078-0d442eb6437c",
+  "name": "Houston's Choice Overhead Garage Door Co.",
+  "slug": "houston-s-choice-overhead-garage-door-co",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c8ce3554-c432-4ae8-8398-f355d43526f1",
+  "name": "Houston Garage Repair Pro",
+  "slug": "houston-garage-repair-pro",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e8a63ae1-a33e-4162-ab13-a215191ef2a5",
+  "name": "alcogaragedoorhouston",
+  "slug": "alcogaragedoorhouston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e82f8ad9-d752-4cea-96bc-f1942bd7712d",
+  "name": "Houston Garage Door Repair",
+  "slug": "houston-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "504d2dbc-f11c-4451-811f-9019f3908758",
+  "name": "houstonoverheaddoor.",
+  "slug": "houstonoverheaddoor",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4323d56d-6898-487f-ad13-0b5cd63917af",
+  "name": "Repair Garage Houston",
+  "slug": "repair-garage-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f8c15602-c088-47e4-94ab-5d12960c2559",
+  "name": "garagerepairshoustontx.",
+  "slug": "garagerepairshoustontx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "1f7f4b9a-490d-40fc-b0e7-77260857b0d7",
+  "name": "GreenLite Services LLC",
+  "slug": "greenlite-services-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "dbf99b85-db0c-452d-87bf-7fe1fd37f12a",
+  "name": "Don's Garage Doors",
+  "slug": "don-s-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5ef5b9c5-588e-4704-8f60-2ab549121ba3",
+  "name": "911 Garage Door Service",
+  "slug": "911-garage-door-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ce8d8155-5412-436d-b54b-de43d98bc0e7",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair-2",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "67899530-3380-489f-89dd-3db4ecec884f",
+  "name": "Admiral Overhead Doors",
+  "slug": "admiral-overhead-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "db8f28f6-6daa-4287-98ed-392edf6a9134",
+  "name": "Precision Garage Door of Houston",
+  "slug": "precision-garage-door-of-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "59056283-7aa0-42e1-bfa0-8553f9172182",
+  "name": "Garage Door Doctor Repair",
+  "slug": "garage-door-doctor-repair-2",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8af0a6fb-4af2-4695-aa62-4d26fb50af70",
+  "name": "Overhead Door in Houston",
+  "slug": "overhead-door-in-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "bd7a2089-b648-4a7f-9432-c0f704eee001",
+  "name": "Restore Your Door",
+  "slug": "restore-your-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "09fdbb64-95dd-4844-9eb0-d0817a7c9ecb",
+  "name": "Dynamic Door & Specialty",
+  "slug": "dynamic-door-specialty",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "242c25da-adb8-4844-b9ad-feb3ae22baca",
+  "name": "All Kinds of Doors",
+  "slug": "all-kinds-of-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "bc84d903-87dd-4cab-adb1-50b6234d639c",
+  "name": "Johnson & Powell Doors and Hardware LLC",
+  "slug": "johnson-powell-doors-and-hardware-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a4a608b3-ffd7-4e05-88df-6b768a1be8e0",
+  "name": "Unlimited Garage Doors",
+  "slug": "unlimited-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3bfd5521-40d4-414f-a87a-eaea01ee4ae4",
+  "name": "Vazquez Access Garage Doors & Gates",
+  "slug": "vazquez-access-garage-doors-gates",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c7a7b88e-14c5-45e1-a2b4-8374fe34eee9",
+  "name": "LAFORCE",
+  "slug": "laforce",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5bc5d495-b888-41f5-aea7-0e7ead3a7b78",
+  "name": "My Shower Door. Net",
+  "slug": "my-shower-door-net",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "dc43fc81-9797-405a-b488-70df3bb4119d",
+  "name": "The Window Authority of Houston",
+  "slug": "the-window-authority-of-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e88f096a-2ce0-4ec4-ad94-e29b8c37c131",
+  "name": "Door Masters of Texas",
+  "slug": "door-masters-of-texas",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "96cae2f6-4744-48c0-b560-7a19fa3488e6",
+  "name": "Select Builders & Doors, LLC",
+  "slug": "select-builders-doors-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c5b16911-305c-4d25-929b-6d75e4b4a3bf",
+  "name": "My Garage And Gates",
+  "slug": "my-garage-and-gates",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5a415d5a-3e4d-4f34-a72b-7b75e6848f2c",
+  "name": "A & A Garage Doors",
+  "slug": "a-a-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2d27e145-be27-4161-b1b1-f75c45e76705",
+  "name": "Door Pro Systems",
+  "slug": "door-pro-systems",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "63601d97-5ff5-4c90-9c50-5a856a9c7732",
+  "name": "The Door Store",
+  "slug": "the-door-store",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ada3b00d-3ab0-4344-a6bc-6fa6c15c855c",
+  "name": "Laser Overhead Doors",
+  "slug": "laser-overhead-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "596dff09-e8d2-4ed0-90ae-1c30f7ea5807",
+  "name": "Genie Garage Door Repair",
+  "slug": "genie-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "cb71d094-a610-4240-8ff4-2443e02dc30a",
+  "name": "Safe Doors",
+  "slug": "safe-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ff894583-36b7-437f-bdc8-2ba03c7c73a6",
+  "name": "Blake Repair LLC",
+  "slug": "blake-repair-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7ab5d73a-ab88-42b5-96b2-88079260c1f1",
+  "name": "All Door Pros",
+  "slug": "all-door-pros",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c42a4149-2e6f-4e16-abda-6e5da0332861",
+  "name": "Garage Door Springs Houston TX",
+  "slug": "garage-door-springs-houston-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "247d513e-180f-44bf-b479-39daa68e54c3",
+  "name": "Mr. Glass & Mirror - Houston",
+  "slug": "mr-glass-mirror-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "306a2da7-9ca2-403c-be73-f4475fc8cf1b",
+  "name": "Houston Garage Door Repair TX",
+  "slug": "houston-garage-door-repair-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8082c38a-eeb7-49ca-8b45-2c5e826a10c3",
+  "name": "Overhead Express",
+  "slug": "overhead-express",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a4de4706-71c2-4fea-9cb5-23f1bb1c4ffb",
+  "name": "Discount Doors of Texas",
+  "slug": "discount-doors-of-texas",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e083f130-95f3-41e7-862e-e639ba359802",
+  "name": "Wayne Dalton Sales & Service of Houston",
+  "slug": "wayne-dalton-sales-service-of-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "00563776-52f8-427b-bca7-ffeaf0870890",
+  "name": "Garage Door Repair Kingwood",
+  "slug": "garage-door-repair-kingwood",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "cab7b3a2-31f4-4531-8d3b-7a7fb1f3beec",
+  "name": "Fix Garage Door Springs Houston TX",
+  "slug": "fix-garage-door-springs-houston-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "29840eec-d7ed-4fc6-a866-53c0f048c7dc",
+  "name": "League City Garage Door TX",
+  "slug": "league-city-garage-door-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8713206c-dc86-43ce-88e3-18b3815acb2f",
+  "name": "League City Garage Door Service",
+  "slug": "league-city-garage-door-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3a410871-1aeb-4cb5-94b2-4ab30164be2d",
+  "name": "Garage Door In League City",
+  "slug": "garage-door-in-league-city",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "904b8b86-c938-45a1-870b-4615b160cc89",
+  "name": "League City TX Garage Door Repair",
+  "slug": "league-city-tx-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "349b9332-b0ee-43b8-a96a-2d45e8ebc605",
+  "name": "Garage Door League City",
+  "slug": "garage-door-league-city",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "345a90ba-4754-4306-8ec7-d513dc7672b1",
+  "name": "Ben's Garage Door Repair",
+  "slug": "ben-s-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "be6129db-0b9f-4896-9828-4a699fbdb94d",
+  "name": "Garage Repairs League City",
+  "slug": "garage-repairs-league-city",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "69c7ff59-f383-4210-8d38-9d261903e199",
+  "name": "League City Garage Door Repair",
+  "slug": "league-city-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8c32510b-241c-44b0-b385-5360c4ac97f6",
+  "name": "Experts Exterior and Garage Door Repair Installation",
+  "slug": "experts-exterior-and-garage-door-repair-installation",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5756b6d7-3ec5-435c-b38b-3e7c40a47296",
+  "name": "Fix Broken Garage Door TX",
+  "slug": "fix-broken-garage-door-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e0279ef0-fc8f-4787-b9b8-65fe1833f01b",
+  "name": "VCM Garage Door Repair",
+  "slug": "vcm-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5ab73acb-9550-43ab-ab94-4984ae7961e5",
+  "name": "curreygaragedoorservice.com",
+  "slug": "curreygaragedoorservice-com",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d8fb3741-7f81-489c-9aec-48d8fa24080b",
+  "name": "Garage Door in Spring",
+  "slug": "garage-door-in-spring",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "0b461fc9-0bbc-429c-ae91-723fb803125f",
+  "name": "springtxgaragedoors.",
+  "slug": "springtxgaragedoors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8adee63b-91ce-4026-bd4a-1f4633af0a5a",
+  "name": "Garage Door Spring TX",
+  "slug": "garage-door-spring-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "534f7887-2a52-4b17-be69-efc5d2d64705",
+  "name": "Garage Door in Spring TX",
+  "slug": "garage-door-in-spring-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e2a78a02-dd05-421b-9be0-67beb268f023",
+  "name": "Garage Door Spring",
+  "slug": "garage-door-spring",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "17cd5c90-572f-4efc-9a63-95171ac8e536",
+  "name": "Garage Door Of Spring",
+  "slug": "garage-door-of-spring",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a0b6f246-8531-4c22-85a4-87681d20aa13",
+  "name": "Garage Door Spring TX",
+  "slug": "garage-door-spring-tx-2",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "372fee7f-27cf-4c6e-8fa5-8c2024e85a5b",
+  "name": "Garage Doors Spring",
+  "slug": "garage-doors-spring",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f676abcf-9445-4e9e-b1a5-4ae5a5a9b3cf",
+  "name": "OVERHEADS_D00R Spring",
+  "slug": "overheads-d00r-spring",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f82d1440-f4c3-4330-b810-07a17f09d7e1",
+  "name": "Keith's Garage Springs Replacement Spring TX",
+  "slug": "keith-s-garage-springs-replacement-spring-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "70ba656a-60ef-47ee-8a1b-ebb87b44840c",
+  "name": "Spring Garage Doors",
+  "slug": "spring-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "9a7d20ed-7226-4d02-b8f6-6095abf791fe",
+  "name": "Garage Door Spring TX",
+  "slug": "garage-door-spring-tx-3",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f7495ab5-5346-4486-b90c-7d4efb507530",
+  "name": "Fix Garage Doors Spring",
+  "slug": "fix-garage-doors-spring",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ac5a21f2-4ef8-4196-a7e6-22873991adbd",
+  "name": "Overhead Doors Spring TX",
+  "slug": "overhead-doors-spring-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e00d6587-2fcb-44ee-bbbc-5d0ced2fba01",
+  "name": "2Quick Garage Doors Woodlands",
+  "slug": "2quick-garage-doors-woodlands",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "dea42f6e-8283-4516-8c1b-8ea1785ecf43",
+  "name": "Repair Garage Springs.",
+  "slug": "repair-garage-springs",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "dc5fbb29-2ec2-420a-846b-8b2b0b61e459",
+  "name": "Doorworks in Spring",
+  "slug": "doorworks-in-spring",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f8a9b2ff-efb7-4504-97b8-aaa412341628",
+  "name": "Garage Door Manvel",
+  "slug": "garage-door-manvel",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5027ff5e-e29c-4553-a5e3-fcf6fd2658a6",
+  "name": "Manvel Garage Door Repairs",
+  "slug": "manvel-garage-door-repairs",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a88a91af-0a67-44e4-831d-b2b8082fe888",
+  "name": "Garage Door Repair Manvel TX",
+  "slug": "garage-door-repair-manvel-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "249ff933-cb7f-46e4-bc6b-7673d8951be5",
+  "name": "Garage Doors Richmond TX",
+  "slug": "garage-doors-richmond-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4a45396d-3a73-4563-8e22-397d3af1ae77",
+  "name": "garagedoorrosenberg",
+  "slug": "garagedoorrosenberg",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f30b92d5-1ba7-49ff-a05b-fa3da3399932",
+  "name": "Lewis Windows & Doors",
+  "slug": "lewis-windows-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "018dd74c-238a-404e-b8cb-c884d4e54ef8",
+  "name": "Fix Garage Door Richmond",
+  "slug": "fix-garage-door-richmond",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c5193410-021f-43ba-8169-96acb531a35d",
+  "name": "The Richmond Garage Door",
+  "slug": "the-richmond-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c3bf1e14-8898-4440-a2ac-3755d7fd9311",
+  "name": "First Call Garage Doors",
+  "slug": "first-call-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "180ebd17-d2fe-4d87-8802-2e2dd9097b96",
+  "name": "Overhead Door Solutions",
+  "slug": "overhead-door-solutions",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4ef6d0a9-6fd1-46b8-b182-5cc782e035e4",
+  "name": "Richmond Garage Door Repair",
+  "slug": "richmond-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f3fa7f53-dc67-4e40-bc4b-da195d15c690",
+  "name": "Aladdin Garage Fixer Sugar Land TX",
+  "slug": "aladdin-garage-fixer-sugar-land-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4ea283ce-be3e-4e32-bfb3-e71b1886adb3",
+  "name": "Sugar Land Garage Doors",
+  "slug": "sugar-land-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d0f48130-3865-4cc2-a359-58a580732483",
+  "name": "Garage Door Repair Near Me",
+  "slug": "garage-door-repair-near-me",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "46523e48-3c3c-4b6a-9e3e-1fef6d1af525",
+  "name": "Ingenious Garage Door Services",
+  "slug": "ingenious-garage-door-services",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "81fe8476-26bc-4cba-b8b6-3d063bdabf93",
+  "name": "Garage Doors Direct",
+  "slug": "garage-doors-direct",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "edf739b3-f871-4021-9451-eaee7657142d",
+  "name": "Sugar Land Garage Door Service",
+  "slug": "sugar-land-garage-door-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "9a004ea4-e4b5-448a-b858-0100891d7148",
+  "name": "Garage Door Sugarland",
+  "slug": "garage-door-sugarland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "77b288a9-564a-402f-9ecb-b8da77a549dd",
+  "name": "Sugar Land Garage Door Repair",
+  "slug": "sugar-land-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ef3f8212-104d-4950-ac4b-a3af83df444e",
+  "name": "Garage Repair Sugar Land",
+  "slug": "garage-repair-sugar-land",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "24371838-b82d-4dd3-85b3-acea645388b7",
+  "name": "The Sugar Land Garage Door",
+  "slug": "the-sugar-land-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "84cba0cd-baba-48db-b6e0-263b893d2b0b",
+  "name": "Repair Garage Door Sugar Land TX",
+  "slug": "repair-garage-door-sugar-land-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "97a6d241-bbba-4ab0-bfdf-293431c63ead",
+  "name": "Garage Door Repair Missouri City TX",
+  "slug": "garage-door-repair-missouri-city-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3932a2b2-429c-4718-bb8b-c9c3f84370f1",
+  "name": "Garage Doors In Missouri City TX",
+  "slug": "garage-doors-in-missouri-city-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d894a91f-0de8-4cce-a4b2-a32b39c03455",
+  "name": "Overhead Door Missouri City",
+  "slug": "overhead-door-missouri-city",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b544df4a-634b-48bc-8bc5-661082c01f80",
+  "name": "Garage Door in Missouri City TX",
+  "slug": "garage-door-in-missouri-city-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "8785456b-dc10-45ec-9f0b-9ae38dfa2786",
+  "name": "Missouri City Garage Door TX",
+  "slug": "missouri-city-garage-door-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ff383970-35e3-47e1-b6ee-68f94490c903",
+  "name": "Power Garage Doors Repair",
+  "slug": "power-garage-doors-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "812f36d2-df9d-4f92-afa8-f25b91f34411",
+  "name": "Garage Repair PearLand TX",
+  "slug": "garage-repair-pearland-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d7013b26-aa52-412f-a646-f0933e0f4e9f",
+  "name": "txgaragedoorrepairpearland",
+  "slug": "txgaragedoorrepairpearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "682ac7ce-8261-4c3f-a898-4e47efaeb88f",
+  "name": "Garage Door And Springs",
+  "slug": "garage-door-and-springs",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3479db85-7337-430f-9c60-b44371cb000a",
+  "name": "Butterfly Garage Repair",
+  "slug": "butterfly-garage-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d3636ccd-b929-433c-984a-74547d79d725",
+  "name": "Garage Door Repair Pearland",
+  "slug": "garage-door-repair-pearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "119a4833-29d7-4e22-b35b-7bf09f054440",
+  "name": "Precision Garage Door of Pearland",
+  "slug": "precision-garage-door-of-pearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "30253b6c-b27e-41a5-b67b-0abcc6044011",
+  "name": "Garage Doors Pearland Texas",
+  "slug": "garage-doors-pearland-texas",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c88d4c1f-d594-4431-b73d-61137e5c0edc",
+  "name": "Fix Garage Door Pearland",
+  "slug": "fix-garage-door-pearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "59fd7b23-a2f2-44e6-97ea-e91ae9cb0d96",
+  "name": "Emergency Garage Service Pearland TX",
+  "slug": "emergency-garage-service-pearland-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c929d4a7-422c-4c5b-be3f-4c382814a7df",
+  "name": "ASAP Garage Door Service of Pearland",
+  "slug": "asap-garage-door-service-of-pearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d09ec08b-3edc-434b-b369-91eefb2efc6a",
+  "name": "Magic Garage Doors",
+  "slug": "magic-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "1c802bde-26c9-47cb-984b-e54a7acc0d63",
+  "name": "1st Overhead Doors",
+  "slug": "1st-overhead-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7743f899-1add-4db3-ab38-255ad762f9c5",
+  "name": "AAA Garage Door Repair",
+  "slug": "aaa-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "685314a1-c455-4af8-a90c-22ccd46a2c3b",
+  "name": "Garage Door Doctor Repair",
+  "slug": "garage-door-doctor-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3a3899c5-451e-4fc5-b3ba-69d338e49e5e",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c5d0e587-1ea1-4546-baff-a4684a6f18fc",
+  "name": "overheaddoorspearland",
+  "slug": "overheaddoorspearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "66613db2-1d99-4a63-a79f-434b9f5a8141",
+  "name": "Springs Garage Door Repair",
+  "slug": "springs-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4f6e1716-a6e6-4223-9c40-ecf85bf0f930",
+  "name": "Complete Garage Doors",
+  "slug": "complete-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5652bcfc-e31c-4d36-b1af-39e92878efbb",
+  "name": "Pearland Garage Door Repair",
+  "slug": "pearland-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4c471e80-61e7-4d20-85bb-2d2de25a9fb4",
+  "name": "Pearland Garage Doors",
+  "slug": "pearland-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ac30c77e-3884-444d-b098-15899fc6297d",
+  "name": "MR Garage Door Repair",
+  "slug": "mr-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "fa24974e-10fb-4c82-980e-6130be60ba60",
+  "name": "Garage Door Service Pearland",
+  "slug": "garage-door-service-pearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "0f8a8198-ad27-46f6-a251-3b9285ea5953",
+  "name": "United Garage Door Service",
+  "slug": "united-garage-door-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "89c2973a-17c4-47eb-b268-d6805cccf6e4",
+  "name": "Overhead Door Pearland",
+  "slug": "overhead-door-pearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2a2371a6-99e4-47a8-b7d0-951c065a8959",
+  "name": "Garage Door Cinco Ranch",
+  "slug": "garage-door-cinco-ranch",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "07589bd1-ffb7-4b26-beda-f55274afe394",
+  "name": "OGD Overhead Garage Door",
+  "slug": "ogd-overhead-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "1ede883b-d77d-4af0-a9c2-44db1f6d770b",
+  "name": "AMC Garage Door Katy Texas",
+  "slug": "amc-garage-door-katy-texas",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "229825b5-a699-4c87-8e64-d46f0434bb4c",
+  "name": "Garage Door Opener Repair",
+  "slug": "garage-door-opener-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2caafe15-5f3f-46cf-b2a7-ae62774764ae",
+  "name": "Garage Door Repair in Katy",
+  "slug": "garage-door-repair-in-katy",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "0c091842-cd53-4c45-84e1-20cd13f721ab",
+  "name": "Garage Repairs katy",
+  "slug": "garage-repairs-katy",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "dc99420e-8397-453f-a497-e6d7f9a50828",
+  "name": "Apollo Garage Fixer",
+  "slug": "apollo-garage-fixer",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "1e5d7171-7e76-44a6-909e-2fa448557c2d",
+  "name": "Wide Reach Garage & Gate",
+  "slug": "wide-reach-garage-gate",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "139ad920-39a1-4eab-9969-010ff457e3b9",
+  "name": "Garage Door Doctor of Katy",
+  "slug": "garage-door-doctor-of-katy",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3908507c-2892-45e9-b15f-60ea2a6f9b39",
+  "name": "Katy Door Clearance Center",
+  "slug": "katy-door-clearance-center",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "9f758f3b-33b5-4f96-be42-87ef57c5431e",
+  "name": "Prime Plus Overhead Repair",
+  "slug": "prime-plus-overhead-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "cd3895c4-0d40-40aa-8514-520dfac5175f",
+  "name": "Lopez Garage Door",
+  "slug": "lopez-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "73525723-f37c-4338-8d5b-b66f983451fc",
+  "name": "Total Door Systems",
+  "slug": "total-door-systems",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "47d7df9f-e3e7-4fa2-bba9-b2a22fea347c",
+  "name": "Garage Doors Katy TX",
+  "slug": "garage-doors-katy-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e0a10af2-2a8a-426a-b38a-de9626da2830",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "331050a9-5b7f-43d6-a8e6-40dc4d999f9f",
+  "name": "Garage Door Repair Katy TX",
+  "slug": "garage-door-repair-katy-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "92fcf3ac-de5e-4faf-b705-ed31759565bb",
+  "name": "Ab garage door services llc",
+  "slug": "ab-garage-door-services-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "deeba9fa-9906-41e6-b84b-e0da4f180fbf",
+  "name": "America Overhead Doors LLC",
+  "slug": "america-overhead-doors-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "5cb1d508-8ebb-4ba3-a309-0cd244b76b8e",
+  "name": "Magnolia Nails & Lash in Katy, TX 77494",
+  "slug": "magnolia-nails-lash-in-katy-tx-77494",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d62367a4-3acc-4de1-a4df-06a7cef5196b",
+  "name": "Prime Garage Door Repair",
+  "slug": "prime-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "eaa015a8-eb11-42b9-a8a0-2416b26f15d6",
+  "name": "Garage Door Alvin",
+  "slug": "garage-door-alvin",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ddf84abe-5273-4980-a47a-fcba9731497f",
+  "name": "Garage Door Repair Alvin TX",
+  "slug": "garage-door-repair-alvin-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d19b6927-9687-4aae-acc0-9e87ae6b1258",
+  "name": "First Alvin Overhead Doors",
+  "slug": "first-alvin-overhead-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "53069dce-c4dc-439b-bcbd-a52466a869a6",
+  "name": "Garage Door Dickinson",
+  "slug": "garage-door-dickinson",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a55530a5-618b-484f-adf0-827f3132b3aa",
+  "name": "Hall's Door Company",
+  "slug": "hall-s-door-company",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "18c8d6bc-ae2d-4ef5-8c3d-f73dcafd923c",
+  "name": "Richards Affordable Automotive",
+  "slug": "richards-affordable-automotive",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "16d99403-0480-4432-9531-2a5b524886fe",
+  "name": "Garage Door in Friendswood TX",
+  "slug": "garage-door-in-friendswood-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c35f7ef2-5936-4d74-af73-ae00396d87d3",
+  "name": "Overhead Door Friendswood",
+  "slug": "overhead-door-friendswood",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b1213054-a32b-4113-a5f5-4bef53ad9ef0",
+  "name": "Garage Door Repair Friendswood",
+  "slug": "garage-door-repair-friendswood",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "10c442e3-a57d-452c-8c66-66faa1453265",
+  "name": "Garage Door Friendswood TX",
+  "slug": "garage-door-friendswood-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "358d16d2-9160-465c-ae3f-1c8da8f55172",
+  "name": "Window Zone Houston",
+  "slug": "window-zone-houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "eecc27d5-27d4-4eec-9dee-f07d756bf869",
+  "name": "Keith's Garage Doors",
+  "slug": "keith-s-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f0e8dd79-a7c0-4083-9fb0-32dc53516cb9",
+  "name": "Overhead Door Company of Southeast Texas™",
+  "slug": "overhead-door-company-of-southeast-texas",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4bc38880-624c-4e58-b6b7-629006b7df27",
+  "name": "Garage Door Kemah TX",
+  "slug": "garage-door-kemah-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "bfcd2c5f-3aed-4c4d-91fa-3db02cfad8c2",
+  "name": "Garage Door Repair in Kemah TX",
+  "slug": "garage-door-repair-in-kemah-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "695f46a0-c539-4d7d-af39-d1f58aecb65b",
+  "name": "Pasadena Garage Doors",
+  "slug": "pasadena-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "85e869ab-605e-4712-941c-a9ffc87c6378",
+  "name": "Garage Door Repair Pasadena TX",
+  "slug": "garage-door-repair-pasadena-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "0422b13b-1d90-4b0d-9463-234bba66d23e",
+  "name": "Door Refinishing RX",
+  "slug": "door-refinishing-rx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "9b39d62f-65e6-45d3-bb0d-ba6fd28dad30",
+  "name": "Smitty's Garage",
+  "slug": "smitty-s-garage",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "eb81478b-f54f-4913-a885-426908f2cdf1",
+  "name": "Commercial Door Service",
+  "slug": "commercial-door-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "6809ca2e-1274-418e-a0bf-a43d279262dd",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "89047e8e-4f8e-46d9-8986-3b698e9e07a8",
+  "name": "Libra Garage Springs Pasadena, TX",
+  "slug": "libra-garage-springs-pasadena-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "83b20642-4fcb-4e25-93c6-65efb1c88008",
+  "name": "Fix Garage Door Pasadena",
+  "slug": "fix-garage-door-pasadena",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d2e1ed8c-6436-44a8-991b-bf2593325871",
+  "name": "Garage Door Repair Pasadena",
+  "slug": "garage-door-repair-pasadena",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "21c8ca37-682b-42a9-92d8-c9f5ec4b2bb6",
+  "name": "Advanced Window Products",
+  "slug": "advanced-window-products",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "092ca33c-fc81-41c0-8cbf-034a495ff4b3",
+  "name": "Rick's Front Door Refinishing",
+  "slug": "rick-s-front-door-refinishing",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b3b090fb-5755-4acf-87f6-c6202faec556",
+  "name": "Pasadena Garage Door Repair",
+  "slug": "pasadena-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "4e793122-ed40-4e71-8631-8cd03bfb8e24",
+  "name": "Garage Repair Pasadena TX",
+  "slug": "garage-repair-pasadena-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "801035c0-962f-415c-ba31-6101d5da3afa",
+  "name": "Garage Door Repair Deer Park TX",
+  "slug": "garage-door-repair-deer-park-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b0f2f333-8f34-457f-b551-b1a835cbc859",
+  "name": "Garage Door Repair Deer Park",
+  "slug": "garage-door-repair-deer-park",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "28da0fed-dfc5-4152-862f-9666695546ae",
+  "name": "Garage Door Deer Park",
+  "slug": "garage-door-deer-park",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "9584e258-e8a0-4ed0-9df5-8e8f3f641436",
+  "name": "Garage Door Deer Park TX",
+  "slug": "garage-door-deer-park-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "bbf6edd0-8ffe-4d99-83e4-13f6a38ade94",
+  "name": "Garage Door Repair La Porte  TX",
+  "slug": "garage-door-repair-la-porte-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a4d65f9f-a7b0-4a12-9cf1-f10cc9de259a",
+  "name": "Garage Doors Of La Porte",
+  "slug": "garage-doors-of-la-porte",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "65bfabba-0c22-4cf7-927d-3a56efbf1a10",
+  "name": "La Porte Garage Door Repair",
+  "slug": "la-porte-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "107e1178-9986-4b65-901e-92371e6fc326",
+  "name": "Crown Garage Doors",
+  "slug": "crown-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c9ab35ec-12d3-43d0-aa34-d91045754274",
+  "name": "Garage Door La Porte",
+  "slug": "garage-door-la-porte",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "9764e9d4-0883-4f95-8336-50ab655a7a43",
+  "name": "Garage Door Channelview",
+  "slug": "garage-door-channelview",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "dbf09da0-3165-4920-b787-e86184229ef1",
+  "name": "Channelview Garage Door Repair",
+  "slug": "channelview-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e0570be6-6878-407d-8f74-999c7aed1567",
+  "name": "Qualified Garage Door Repair",
+  "slug": "qualified-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3bcd47fb-5d52-4825-aa62-0b25c7ab64a5",
+  "name": "Channelview Garage Doors",
+  "slug": "channelview-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2bcef9e3-cd5b-4617-8922-4ae740d0bd05",
+  "name": "Garage Door Repair Baytown TX",
+  "slug": "garage-door-repair-baytown-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e7e21547-20ff-4d1a-b044-6367e8b3c849",
+  "name": "Baytown Garage Doors",
+  "slug": "baytown-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f3432051-b8c4-4cbc-b385-78bfe420d20b",
+  "name": "Doors That Work, inc.",
+  "slug": "doors-that-work-inc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "697380c3-85d9-4a83-9dfe-1cdfceb2d52d",
+  "name": "Hodges Overhead Door Co.",
+  "slug": "hodges-overhead-door-co",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a373941f-24b8-41b5-81f3-8edd80fe87dc",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "cbb20ae5-39dd-4e16-b8a0-85ac0bbe9e8e",
+  "name": "Garage Door Baytown",
+  "slug": "garage-door-baytown",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a99483ba-a6e1-4270-9b02-511e72a923fd",
+  "name": "Henderson Garage Door Services, LLC",
+  "slug": "henderson-garage-door-services-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "606bf200-1963-4bff-910c-59fcb0395f5b",
+  "name": "Premier Garage Doors",
+  "slug": "premier-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "17b8cd17-d552-4588-ad03-254258f93893",
+  "name": "Garage Door In Cypress",
+  "slug": "garage-door-in-cypress",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2fd172b6-3556-4bd1-b8eb-41a39feabba2",
+  "name": "Garage Door Wizard",
+  "slug": "garage-door-wizard",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2ced7885-4bb0-43f6-96c8-0f0a1f744945",
+  "name": "Cypress Garage Door Repair Gurus",
+  "slug": "cypress-garage-door-repair-gurus",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "29a9e7c3-9dc0-4bfc-ab04-25db50c7d61c",
+  "name": "Garage Repair Cypress",
+  "slug": "garage-repair-cypress",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "686d5e45-655c-42fc-9f40-ce87545ea26d",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "86eded90-d849-49d4-86a2-fe257cada344",
+  "name": "A-1 Cypress Garage Door Repair",
+  "slug": "a-1-cypress-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e6ce489d-6091-42a6-8a02-08c6caaad1f0",
+  "name": "German garage doors",
+  "slug": "german-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "99245dc3-974f-418e-85e7-16d78e621968",
+  "name": "Garage Doors Cypress TX",
+  "slug": "garage-doors-cypress-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7a90c820-4786-439f-a45e-99783db0be96",
+  "name": "Overhead Door Cypress",
+  "slug": "overhead-door-cypress",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "bf167438-de9f-421f-b3cf-caad9d6099df",
+  "name": "Crosby Garage Door Repair",
+  "slug": "crosby-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "37864986-dd5f-4fca-bf60-4a89f2d3df42",
+  "name": "Prolift Garage Doors of Humble",
+  "slug": "prolift-garage-doors-of-humble",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "587d2485-15a0-4c76-b14f-8183e02b34c2",
+  "name": "Biddle's Pristine Windows & Doors",
+  "slug": "biddle-s-pristine-windows-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "cb5931da-ec02-4478-b992-7b2488728ece",
+  "name": "humblegaragedoortx",
+  "slug": "humblegaragedoortx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "9a80f8ba-01ee-40c8-ade1-cc05e5e6474b",
+  "name": "Fix Garage Door Humble",
+  "slug": "fix-garage-door-humble",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "b4a18158-5db9-46d6-a015-b53ff51058d5",
+  "name": "Commercial Doorways LLC",
+  "slug": "commercial-doorways-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d3b04ac5-7290-4b4f-a668-ceefeeadc5c5",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "05de6343-eb96-467c-92a5-80e62896b3aa",
+  "name": "Garage Door Repair Humble TX",
+  "slug": "garage-door-repair-humble-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2675623e-cc0d-4ac5-ae4a-73f6ed2a8cc1",
+  "name": "Agape Garage Doors LLC",
+  "slug": "agape-garage-doors-llc",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "63074de1-5a1d-4066-a999-fa6d343ada9b",
+  "name": "ASAP Garage Door Service of Humble",
+  "slug": "asap-garage-door-service-of-humble",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "441bc6e9-cf56-4250-9c47-474b6eaa629c",
+  "name": "Humble Garage Door",
+  "slug": "humble-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2aec362c-1e94-4bf7-920b-a16e7eb79aa3",
+  "name": "Garage Door Humble TX",
+  "slug": "garage-door-humble-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "255d7688-2777-4a7d-acbe-f130c56bbfae",
+  "name": "Garage Door Restore",
+  "slug": "garage-door-restore",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "fcaae772-7f18-4e3e-b023-1f31511caea7",
+  "name": "Humble Garage Doors Repair",
+  "slug": "humble-garage-doors-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f6c05b18-a0d1-48b0-97db-9aa08963a3b9",
+  "name": "Garage Doors Humble TX",
+  "slug": "garage-doors-humble-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "ec54cf68-dbc0-4b95-aa87-c45df2f8bc49",
+  "name": "Garage Door Humble",
+  "slug": "garage-door-humble",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "1fffe9f5-9992-4611-bd6f-2a9b79d86609",
+  "name": "Edwards Precision Garage Door Repair",
+  "slug": "edwards-precision-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "2c3ca91e-dcff-43c2-b243-eef5bf2fe94a",
+  "name": "Access Garage Doors",
+  "slug": "access-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c0d7df97-f02c-4ba4-9e74-12099d281381",
+  "name": "Garage Doors Kingwood",
+  "slug": "garage-doors-kingwood",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c8081346-d31e-402b-90e6-422a96022911",
+  "name": "Veles Garage Door Service",
+  "slug": "veles-garage-door-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "976843eb-3427-4453-a237-7666876928ca",
+  "name": "Garage Doors Repair Tomball",
+  "slug": "garage-doors-repair-tomball",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "55928c4a-7aaa-4c78-91d6-37cad54d3c63",
+  "name": "Garage Door Tomball TX",
+  "slug": "garage-door-tomball-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "db206aa6-531d-4dd5-88c5-3458b51d69ff",
+  "name": "Garage Door Repair Tomball TX",
+  "slug": "garage-door-repair-tomball-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "534e08d6-d199-4732-b1fc-e5a5c1011429",
+  "name": "Garage Door The Woodlands",
+  "slug": "garage-door-the-woodlands",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "1acd11f4-c561-458a-b3f0-c97ba1001dfe",
+  "name": "Garage Door Doctor Repair & Service",
+  "slug": "garage-door-doctor-repair-service",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "a7261a20-a37b-4dd6-b60c-7faf046d4d68",
+  "name": "OGD Overhead Garage Door",
+  "slug": "ogd-overhead-garage-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "3d0122c3-05b5-4e67-ad11-c6db049ab6e1",
+  "name": "The Woodlands Garage Door TX",
+  "slug": "the-woodlands-garage-door-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "0e724c5a-091f-4401-b3d6-7168f7e6b643",
+  "name": "Garage Door Repair Woodlands",
+  "slug": "garage-door-repair-woodlands",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "e032cf81-3ce6-4f30-9b7a-b10e5752be63",
+  "name": "Pro Master Garage Doors",
+  "slug": "pro-master-garage-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7567a171-ab5e-4f6d-b2ec-9903c3299601",
+  "name": "The Woodlands Overhead Doors",
+  "slug": "the-woodlands-overhead-doors",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "7590f063-c015-4919-bfc8-d24671b220e4",
+  "name": "Garage Door Repair The Woodlands TX",
+  "slug": "garage-door-repair-the-woodlands-tx",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "f46be49a-adfc-4af4-8d4e-2847179746fa",
+  "name": "Garage Door Opener Installation",
+  "slug": "garage-door-opener-installation",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "fe053e84-1b76-4047-b34f-aa8bd8b4a90c",
+  "name": "Garage Doors Repair The Woodlands",
+  "slug": "garage-doors-repair-the-woodlands",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "fae8c7aa-cf5e-470a-a1dc-f5697e3772b4",
+  "name": "Veteran Garage Door Repair",
+  "slug": "veteran-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d38f19ae-6828-41b5-b684-1453d489e202",
+  "name": "New Caney Garage Door Repair",
+  "slug": "new-caney-garage-door-repair",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "c3dfa659-1b80-40fe-8439-fd3d7245a68f",
+  "name": "Honest Overhead Door",
+  "slug": "honest-overhead-door",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "fe3f1ce6-e815-4913-8a28-869c5083b61e",
+  "name": "New Caney Garage Door Repair",
+  "slug": "new-caney-garage-door-repair-2",
+  "state": "Texas",
+  "stateCode": "TX",
+  "removedOn": "2026-09-10",
+  "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ }
+]
