@@ -85,7 +85,13 @@ export const CONSENT_STORAGE_KEY = 'garagedoorprohq_consent_v1';
 // 'all' shows the banner everywhere and gives non-EU visitors an opt-out
 // too, increasingly expected under US state privacy laws. 'eu' limits it to
 // the regions above. Consent Mode defaults stay correct either way.
-export const CONSENT_BANNER_SCOPE = 'all';
+//
+// Set to 'eu' 2026-09-11 — Chris's call: a GDPR-style banner is alien to
+// visitors outside the regions that actually require opt-in consent, and
+// Consent Mode's own server-side region resolution (see SEO.astro) already
+// grants analytics by default everywhere outside CONSENT_REQUIRED_REGIONS,
+// so nothing is lost for those visitors by not prompting them at all.
+export const CONSENT_BANNER_SCOPE = 'eu';
 
 // ── Legal identity (privacy policy + terms) ─────────────────
 // These appear verbatim on /privacy/ and /terms/, which name the operator
