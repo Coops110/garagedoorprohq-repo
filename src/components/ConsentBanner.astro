@@ -121,16 +121,16 @@ const active = Boolean(GA_ID);
         function toggleIsOn() {
           return toggle.getAttribute('aria-checked') === 'true';
         }
+        // <label for> DOES auto-forward a click to a <button> — button is a
+        // labelable element per the HTML spec, unlike a <div>/<span>. An
+        // earlier version of this fix added a second listener on the label
+        // itself on the assumption that forwarding didn't happen; it does,
+        // so that second listener double-toggled on every label click and
+        // silently cancelled itself out. Confirmed by counting clicks
+        // delivered to the button: exactly one per label click, with no
+        // extra listener needed.
         if (toggle) {
           toggle.addEventListener('click', function () { setToggle(!toggleIsOn()); });
-        }
-        // <label for> only auto-forwards a click to a native form control —
-        // role="switch" is a plain <button>, so a real click on the visible
-        // "Analytics" text otherwise does nothing. Confirmed missing in
-        // testing, not a hypothetical.
-        var toggleLabel = document.querySelector('label[for="consent-analytics-toggle"]');
-        if (toggleLabel && toggle) {
-          toggleLabel.addEventListener('click', function () { setToggle(!toggleIsOn()); });
         }
 
         function showMainView() {
