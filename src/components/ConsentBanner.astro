@@ -7,13 +7,15 @@
 //  accepts — coarse traffic numbers without a cookie, full data after.
 //
 //  Legal properties baked into the markup:
-//   • Decline is exactly as prominent as Accept. A reject buried behind a
-//     submenu is a common enforcement finding, so both buttons share one
-//     footprint and differ only in fill.
-//   • Nothing is pre-ticked, and scrolling is not treated as consent.
-//   • Consent is withdrawable — the footer button reopens this banner.
-//   • Declining actually deletes the GA cookies rather than only telling
-//     Google to stop using them.
+//   • "Manage settings" is exactly as prominent as "Accept all" — a reject
+//     path buried behind a submenu is a common enforcement finding, so both
+//     buttons share one footprint and differ only in fill.
+//   • The Analytics toggle inside settings defaults OFF. Nothing is
+//     pre-ticked, and scrolling is not treated as consent.
+//   • Consent is withdrawable — the footer button reopens this banner,
+//     straight into the settings view, showing whatever was last saved.
+//   • Saving with Analytics off actually deletes the GA cookies rather than
+//     only telling Google to stop using them.
 // ─────────────────────────────────────────────────────────────
 import { GA_ID, CONSENT_STORAGE_KEY, CONSENT_BANNER_SCOPE, SITE } from '../lib/site.js';
 
@@ -32,21 +34,69 @@ const active = Boolean(GA_ID);
       hidden
     >
       <div class="consent-inner">
-        <div class="consent-copy">
-          <h2 id="consent-title">Cookies on {SITE.name}</h2>
-          <p id="consent-body">
-            We use analytics cookies to see which guides people find useful, so we can
-            improve them. They are optional — decline and the site works exactly the
-            same. We do not sell your data. See our <a href="/privacy/">privacy policy</a>.
-          </p>
+        <div class="consent-view consent-view-main" id="consent-view-main">
+          <div class="consent-copy">
+            <h2 id="consent-title">Cookies on {SITE.name}</h2>
+            <p id="consent-body">
+              A few essential items keep this site working correctly — those are
+              always on. Everything else is optional analytics, so we can see which
+              guides people find useful. We do not sell your data. See our{' '}
+              <a href="/privacy/">privacy policy</a>.
+            </p>
+          </div>
+          <div class="consent-actions">
+            <button type="button" id="consent-open-settings" class="consent-btn consent-btn-ghost" aria-expanded="false" aria-controls="consent-view-settings">
+              Manage settings
+            </button>
+            <button type="button" id="consent-accept" class="consent-btn consent-btn-solid">
+              Accept all
+            </button>
+          </div>
         </div>
-        <div class="consent-actions">
-          <button type="button" id="consent-reject" class="consent-btn consent-btn-ghost">
-            Decline
-          </button>
-          <button type="button" id="consent-accept" class="consent-btn consent-btn-solid">
-            Accept
-          </button>
+
+        <div class="consent-view consent-view-settings" id="consent-view-settings" hidden>
+          <div class="consent-settings-body">
+            <h2 id="consent-settings-title">Cookie settings</h2>
+            <div class="consent-categories">
+              <div class="consent-category">
+                <div class="consent-category-head">
+                  <span class="consent-category-name">Essential</span>
+                  <span class="consent-category-lock">Always on</span>
+                </div>
+                <p class="consent-category-desc">
+                  We've selected these to ensure the site works correctly. They can't be
+                  switched off.
+                </p>
+              </div>
+              <div class="consent-category">
+                <div class="consent-category-head">
+                  <label class="consent-category-name" for="consent-analytics-toggle">Analytics</label>
+                  <button
+                    type="button"
+                    role="switch"
+                    id="consent-analytics-toggle"
+                    class="consent-switch"
+                    aria-checked="false"
+                    aria-label="Analytics"
+                  >
+                    <span class="consent-switch-thumb"></span>
+                  </button>
+                </div>
+                <p class="consent-category-desc">
+                  Helps us see which guides people find useful. Optional — off by
+                  default, and the site works exactly the same either way.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="consent-actions">
+            <button type="button" id="consent-back" class="consent-btn consent-btn-ghost">
+              Back
+            </button>
+            <button type="button" id="consent-save" class="consent-btn consent-btn-solid">
+              Save my choices
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -56,9 +106,56 @@ const active = Boolean(GA_ID);
         var banner = document.getElementById('consent-banner');
         if (!banner) return;
 
+        var mainView = document.getElementById('consent-view-main');
+        var settingsView = document.getElementById('consent-view-settings');
         var acceptBtn = document.getElementById('consent-accept');
-        var rejectBtn = document.getElementById('consent-reject');
+        var openSettingsBtn = document.getElementById('consent-open-settings');
+        var backBtn = document.getElementById('consent-back');
+        var saveBtn = document.getElementById('consent-save');
+        var toggle = document.getElementById('consent-analytics-toggle');
         var lastFocused = null;
+
+        function setToggle(on) {
+          toggle.setAttribute('aria-checked', on ? 'true' : 'false');
+        }
+        function toggleIsOn() {
+          return toggle.getAttribute('aria-checked') === 'true';
+        }
+        if (toggle) {
+          toggle.addEventListener('click', function () { setToggle(!toggleIsOn()); });
+        }
+        // <label for> only auto-forwards a click to a native form control —
+        // role="switch" is a plain <button>, so a real click on the visible
+        // "Analytics" text otherwise does nothing. Confirmed missing in
+        // testing, not a hypothetical.
+        var toggleLabel = document.querySelector('label[for="consent-analytics-toggle"]');
+        if (toggleLabel && toggle) {
+          toggleLabel.addEventListener('click', function () { setToggle(!toggleIsOn()); });
+        }
+
+        function showMainView() {
+          settingsView.hidden = true;
+          mainView.hidden = false;
+          if (openSettingsBtn) openSettingsBtn.setAttribute('aria-expanded', 'false');
+          // The dialog's accessible name/description must track whichever
+          // view is actually on screen, not stay pinned to the main view's
+          // text once settings opens.
+          banner.setAttribute('aria-labelledby', 'consent-title');
+          banner.setAttribute('aria-describedby', 'consent-body');
+        }
+
+        // The Analytics toggle always reflects the last saved choice (or the
+        // off-by-default state for a first-time visitor) when settings opens,
+        // never whatever was left over from a prior, uncommitted click.
+        function showSettingsView() {
+          var saved = read();
+          setToggle(!!(saved && saved.choice === 'accepted'));
+          mainView.hidden = true;
+          settingsView.hidden = false;
+          if (openSettingsBtn) openSettingsBtn.setAttribute('aria-expanded', 'true');
+          banner.setAttribute('aria-labelledby', 'consent-settings-title');
+          banner.removeAttribute('aria-describedby');
+        }
 
         function read() {
           try {
@@ -120,9 +217,10 @@ const active = Boolean(GA_ID);
           if (state === 'denied') clearAnalyticsCookies();
         }
 
-        function show() {
+        function show(view) {
           lastFocused = document.activeElement;
           banner.hidden = false;
+          if (view === 'settings') showSettingsView(); else showMainView();
           // focus() moved INSIDE the rAF callback. Outside it, this function
           // unhid the banner — invalidating layout — and then immediately asked
           // the browser where the button was, which forces a synchronous layout
@@ -133,11 +231,12 @@ const active = Boolean(GA_ID);
           //
           // Inside the callback the browser has already recalculated layout for
           // the frame, so focus() reads a fresh box instead of forcing one. The
-          // behaviour is unchanged — focus still lands on Accept when the banner
-          // appears, one frame later, which is imperceptible.
+          // behaviour is unchanged — focus still lands on the primary control for
+          // whichever view just opened, one frame later, which is imperceptible.
           requestAnimationFrame(function () {
             banner.classList.add('is-visible');
-            if (acceptBtn) acceptBtn.focus();
+            var focusTarget = view === 'settings' ? backBtn : acceptBtn;
+            if (focusTarget) focusTarget.focus();
           });
         }
 
@@ -160,16 +259,32 @@ const active = Boolean(GA_ID);
         }
 
         if (acceptBtn) acceptBtn.addEventListener('click', function () { choose('accepted'); });
-        if (rejectBtn) rejectBtn.addEventListener('click', function () { choose('declined'); });
+        if (saveBtn) saveBtn.addEventListener('click', function () { choose(toggleIsOn() ? 'accepted' : 'declined'); });
 
-        // Esc dismisses without consenting — same effect as Decline for this
-        // visit, but deliberately not saved, so we ask again next time.
+        // Mid-session view switches — the banner is already visible here, so
+        // an immediate focus() carries none of the forced-reflow cost show()
+        // works around above; it's only un-hiding a freshly-laid-out banner
+        // from scratch that needs the rAF deferral.
+        if (openSettingsBtn) openSettingsBtn.addEventListener('click', function () {
+          showSettingsView();
+          if (backBtn) backBtn.focus();
+        });
+        if (backBtn) backBtn.addEventListener('click', function () {
+          showMainView();
+          if (acceptBtn) acceptBtn.focus();
+        });
+
+        // Esc dismisses without consenting — same effect as leaving Analytics
+        // off for this visit, but deliberately not saved, so we ask again
+        // next time.
         banner.addEventListener('keydown', function (e) {
           if (e.key === 'Escape') { apply('declined'); hide(); }
         });
 
-        // Right to withdraw consent — wired to the footer button.
-        window.garageDoorProHQOpenConsent = function () { show(); };
+        // Right to withdraw consent — wired to the footer button, straight
+        // into the settings view since that button is literally labelled
+        // "Cookie settings".
+        window.garageDoorProHQOpenConsent = function () { show('settings'); };
 
         if (!read() && probablyNeedsBanner()) show();
       })();
@@ -194,11 +309,16 @@ const active = Boolean(GA_ID);
   .consent-inner {
     max-width: var(--wrap); margin: 0 auto;
     padding: 1rem var(--gut) 1.15rem;
-    display: flex; flex-direction: column; gap: 0.9rem;
   }
 
-  .consent-copy { min-width: 0; }
-  .consent-copy h2 {
+  /* Each view (main prompt, settings panel) owns the column/row layout that
+     used to live on .consent-inner directly — only one view is ever visible
+     at a time, so .consent-inner itself stays a plain wrapper. */
+  .consent-view { display: flex; flex-direction: column; gap: 0.9rem; }
+  .consent-view[hidden] { display: none; }
+
+  .consent-copy, .consent-settings-body { min-width: 0; }
+  .consent-copy h2, .consent-settings-body h2 {
     font-family: Inter, sans-serif; font-size: 0.95rem; font-weight: 700;
     margin: 0 0 0.3rem; color: #fff; letter-spacing: 0;
   }
@@ -209,8 +329,50 @@ const active = Boolean(GA_ID);
   .consent-copy a { color: #fff; text-decoration: underline; }
   .consent-copy a:hover { color: var(--amber); }
 
-  /* Identical footprint on both buttons — declining must be no harder
-     than accepting. Only the fill differs. */
+  /* The two categories inside the settings panel. Essential shows a fixed
+     "Always on" label instead of a control — there is nothing to toggle,
+     and a disabled-looking switch reads as broken rather than locked. */
+  .consent-categories { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.6rem; }
+  .consent-category {
+    padding: 0.7rem 0.85rem; border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .consent-category-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+  .consent-category-name { font-size: 0.88rem; font-weight: 600; color: #fff; cursor: default; }
+  label.consent-category-name { cursor: pointer; }
+  .consent-category-lock {
+    font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6); flex: 0 0 auto;
+  }
+  .consent-category-desc {
+    margin: 0.35rem 0 0; font-size: 0.8rem; line-height: 1.45;
+    color: rgba(255, 255, 255, 0.7); max-width: 62ch;
+  }
+
+  /* A real button with role="switch", not a checkbox — this repo's inputs
+     don't carry a switch style, and a native checkbox reads as "tick a box
+     to allow a form field" rather than "flip analytics on," which is the
+     wrong mental model for a consent control. */
+  .consent-switch {
+    flex: 0 0 auto; width: 2.5rem; height: 1.5rem; padding: 0.15rem;
+    border-radius: 999px; border: 1.5px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.12); cursor: pointer;
+    display: flex; align-items: center; justify-content: flex-start;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .consent-switch[aria-checked="true"] {
+    background: var(--signal-dark); border-color: var(--signal-dark);
+    justify-content: flex-end;
+  }
+  .consent-switch-thumb {
+    width: 1rem; height: 1rem; border-radius: 50%; background: #fff;
+    transition: transform 0.15s ease;
+  }
+  .consent-switch:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+  /* Identical footprint on both buttons in a given view — the reject-capable
+     path (Manage settings, or Save with Analytics left off) must be no
+     harder to reach or to read than the accept path. Only the fill differs. */
   .consent-actions { display: flex; gap: 0.5rem; }
   .consent-btn {
     font: inherit; font-weight: 600; font-size: 0.9rem;
@@ -225,8 +387,10 @@ const active = Boolean(GA_ID);
   .consent-btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
 
   @media (min-width: 48em) {
-    .consent-inner { flex-direction: row; align-items: center; gap: 1.75rem; padding: 1.15rem var(--gut); }
-    .consent-copy { flex: 1 1 auto; }
+    .consent-inner { padding: 1.15rem var(--gut); }
+    .consent-view { flex-direction: row; align-items: center; gap: 1.75rem; }
+    .consent-copy, .consent-settings-body { flex: 1 1 auto; }
+    .consent-categories { margin-top: 0.5rem; }
     .consent-actions { flex: 0 0 auto; gap: 0.6rem; }
     .consent-btn { flex: 0 0 auto; min-width: 7.5rem; padding: 0.65rem 1.5rem; }
   }
