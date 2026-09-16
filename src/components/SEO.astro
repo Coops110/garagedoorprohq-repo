@@ -29,6 +29,18 @@ const ogPath = image || OG_FALLBACK;
 const ogImage = ogPath.startsWith('http') ? ogPath : base + ogPath;
 const ogImageAlt = imageAlt
   || `${SITE.name} — garage door cost guides and a directory of local companies`;
+
+// JSON.stringify does not escape "<", so a business name/address containing
+// "</script><script>" (this data comes from Overture/OSM, unauthenticated
+// and externally editable, see src/lib/schema.js) would break out of the
+// JSON-LD tag and execute as live HTML for every visitor. U+2028/U+2029 are
+// valid JSON but invalid unescaped JS, so those are escaped too.
+function safeJsonLd(obj) {
+  return JSON.stringify(obj)
+    .replace(/</g, String.raw`\u003c`)
+    .replace(/\u2028/g, String.raw`\u2028`)
+    .replace(/\u2029/g, String.raw`\u2029`);
+}
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -80,7 +92,7 @@ const ogImageAlt = imageAlt
 
 <!-- JSON-LD structured data -->
 {schemas.map((s) => (
-  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  <script type="application/ld+json" set:html={safeJsonLd(s)} />
 ))}
 
 <!-- Google AdSense (loads only once a publisher ID is set) -->
