@@ -100,14 +100,13 @@ export const CONSENT_BANNER_SCOPE = 'eu';
 export const LEGAL = {
   entityType: 'sole-trader',
   legalName: 'GarageDoorProHQ',
-  address: '***REMOVED***',
+  address: 'Unit 173637, PO Box 7169, Poole, BH15 9EL, United Kingdom',
   // Derived from SITE.email so the address in the privacy policy can never
   // drift from the one published elsewhere. Must be a monitored mailbox:
   // there is a one-month deadline to answer data subject requests.
   contactEmail: SITE.email,
-  // Operator is based in ***REMOVED***, so Thai law governs the terms. UK/EEA
-  // data protection duties still apply to UK/EEA visitors regardless.
-  governingLaw: '***REMOVED***',
+  // Business and tax residency are UK-based, so UK law governs the terms.
+  governingLaw: 'United Kingdom',
   lastUpdated: '11 August 2026',
   founderName: 'Chris',
   founderRole: 'Founder & editor',
