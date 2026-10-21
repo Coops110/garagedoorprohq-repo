@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "check:pages": "node scripts/check-pages.mjs",
-    "prebuild": "node scripts/check-pages.mjs && node scripts/check-content.mjs",
+    "prebuild": "node scripts/check-pages.mjs && node scripts/check-content.mjs && node scripts/validate-data-consistency.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

@@ -3013,5 +3013,428 @@
   "stateCode": "TX",
   "removedOn": "2026-09-10",
   "reason": "Out-of-scope state data leak — site only claims CA/FL/AZ coverage (CLAIMS.licenceStates in site.js); Texas records were mixed in accidentally and were live on the site, diluting topical focus outside the site's stated markets."
+ },
+ {
+  "id": "d41451bb-bc04-44a3-a874-613d555ac0cf",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "4814d2eb-ccf9-4a96-9202-69375ece051d",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-2",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "357d8740-cf91-448d-b150-e090dfb6f300",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-3",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "31cd9b9a-cd0c-4743-8de1-5569860888d6",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-4",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "5f0a485b-3502-49e9-8c44-d53779e1b678",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-5",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "1c8a6569-ea55-43c9-80f6-5de14f68af0a",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-6",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "6f70e3d0-298d-4f16-aae1-74871a9aff90",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-7",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "f980dd66-b71c-4699-bd78-9c6bb8629a00",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-8",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "d2ed792b-b060-4040-abd9-4d3f49410522",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-9",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "bf359417-88ab-4767-9d8f-293a30cd2628",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-10",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "5e1f7d98-5b45-4129-bdf3-faa2bdaa96e8",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-11",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "ef04cd0b-428d-41bc-9482-acbf3730f166",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-12",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "e06234be-de95-4841-a751-2f8e0bf7a7fb",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-13",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "fc668afc-121f-4884-9067-6fb292923e89",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-14",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "30a17f63-aaa3-4eb8-8e8d-e213ffc9490d",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-15",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "9ed3961e-55d1-470c-97a9-b94c9e830171",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-16",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "fd552578-7a83-4c34-b0c4-aff73d8fc278",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-17",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "cd30f452-ce2e-442d-b5ae-ea04eb78c469",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-18",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "b6392498-6a77-4a99-a488-388c225805c3",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-19",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "e08194d2-115b-492e-a9dd-2e40edbda64f",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-20",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "b47bee58-3a46-4dc5-bae3-a8c23326d60a",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-21",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "b32c1200-8620-4aa0-b9f0-c05034e2b0f3",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-22",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "1b2754f3-1686-4fa1-9e2a-53234004dda0",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-23",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "dcac0fd8-756d-4a80-b4dc-996d5a146742",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-24",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "d03d385a-9a54-44c2-9618-e50e74f23e5a",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-25",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "af9b7a80-8058-4980-b5ca-d8c233dbf76f",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-26",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "37231006-f2b9-400c-a1da-bfd528bdcaa4",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-27",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "43cd3396-c3a4-43a5-8713-1a2300993d96",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "7502cbae-134f-4988-89f6-1edc8d5cbec0",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "9a1bdda1-1e84-4bf5-8cef-6798ac3734ce",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-2",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "3dd2c58c-da1b-4b09-bea6-7b814d46c151",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "7ea81022-b38b-4527-84c2-cc04b8047566",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-2",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "a5eb059c-31be-4e1c-9094-a418fe7e7e40",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "d8658f46-7b42-4510-b8c0-5ced20f5313f",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "fbfafe25-2a23-435e-81f6-97b26f9b42a8",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "90f00d4f-fb8b-4aeb-a037-b56d49c72549",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "99445148-3577-443a-bd3b-35abf621636b",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles-2",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "2aac9001-fa30-4ed7-a5c0-2e2117653ef5",
+  "name": "Garage Door Los Angeles",
+  "slug": "garage-door-los-angeles",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: 38 listings literally named \"Garage Door Los Angeles\" (41% of the LA city page), 37/38 toll-free numbers, each with its own distinct toll-free number (call-tracking-per-listing pattern), no license data, no real business behind them. Flagged as the single Critical finding in the 2026-10-16 Claude SEO audit; redirected to the city page rather than left as a 404."
+ },
+ {
+  "id": "943cbdee-8d46-4c1c-936d-53f4e4581ad2",
+  "name": "Local Garage Door Repair",
+  "slug": "local-garage-door-repair",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: generic name, scattered fake street addresses across Anaheim/Orange/Placentia, no license data, all 6 listings under this name link to the same underlying site (garagedoorrepairsusa.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same fake-local-presence pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
+ },
+ {
+  "id": "4a4a27d9-704a-4ec9-9cc3-85d3447ee31e",
+  "name": "local garage door repair",
+  "slug": "local-garage-door-repair-2",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: generic name, scattered fake street addresses across Anaheim/Orange/Placentia, no license data, all 6 listings under this name link to the same underlying site (garagedoorrepairsusa.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same fake-local-presence pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
+ },
+ {
+  "id": "b684ba66-4998-449f-8115-7ce5a8b90a06",
+  "name": "local garage door repair",
+  "slug": "local-garage-door-repair-3",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: generic name, scattered fake street addresses across Anaheim/Orange/Placentia, no license data, all 6 listings under this name link to the same underlying site (garagedoorrepairsusa.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same fake-local-presence pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
+ },
+ {
+  "id": "e623b5b6-4d3e-408d-9d0d-530d3b409b8b",
+  "name": "Local Garage Door Repair",
+  "slug": "local-garage-door-repair",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: generic name, scattered fake street addresses across Anaheim/Orange/Placentia, no license data, all 6 listings under this name link to the same underlying site (garagedoorrepairsusa.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same fake-local-presence pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
+ },
+ {
+  "id": "d29bf9b3-ffd6-462a-b68e-f14dad4c1c6e",
+  "name": "local garage door repair",
+  "slug": "local-garage-door-repair",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: generic name, scattered fake street addresses across Anaheim/Orange/Placentia, no license data, all 6 listings under this name link to the same underlying site (garagedoorrepairsusa.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same fake-local-presence pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
+ },
+ {
+  "id": "c0add7d3-7e86-47e6-852f-b172a328641c",
+  "name": "local garage door repair",
+  "slug": "local-garage-door-repair-2",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: generic name, scattered fake street addresses across Anaheim/Orange/Placentia, no license data, all 6 listings under this name link to the same underlying site (garagedoorrepairsusa.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same fake-local-presence pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
+ },
+ {
+  "id": "b8e1e1dd-95d8-45eb-8d3c-3cd32cbbc39e",
+  "name": "Garage Door Santa Monica",
+  "slug": "garage-door-santa-monica",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: name is the city-name pattern (\"Garage Door\" + city), no license data, 2 of 3 listings under this name link to the same underlying site (garagedoorngates.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
+ },
+ {
+  "id": "15d14bcd-1e3a-4264-b37f-ba5bf7a4bf19",
+  "name": "Garage Door Santa Monica",
+  "slug": "garage-door-santa-monica-2",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: name is the city-name pattern (\"Garage Door\" + city), no license data, 2 of 3 listings under this name link to the same underlying site (garagedoorngates.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
+ },
+ {
+  "id": "2953dcf0-0701-4ccb-85a2-112591a6b31c",
+  "name": "Garage Door Santa Monica",
+  "slug": "garage-door-santa-monica-3",
+  "state": "California",
+  "stateCode": "CA",
+  "removedOn": "2026-10-21",
+  "reason": "Lead-generation spam: name is the city-name pattern (\"Garage Door\" + city), no license data, 2 of 3 listings under this name link to the same underlying site (garagedoorngates.com). Found independently by validate-data-consistency.mjs while investigating the 2026-10-16 audit's Critical #1 (same pattern as the 38 already-removed \"Garage Door Los Angeles\" listings)."
  }
 ]
