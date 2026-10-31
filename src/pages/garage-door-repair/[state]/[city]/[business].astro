@@ -268,13 +268,64 @@ const mapEmbed = b.lat != null && b.lng != null
         {mapEmbed && (
           <section class="section-sm">
             <h2 style="font-size:1.25rem;">Location</h2>
-            <iframe
-              src={mapEmbed}
-              title={`Map showing the location of ${b.name} in ${b.city}, ${b.stateCode}`}
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              style="width:100%;height:300px;border:1px solid var(--line);border-radius:var(--radius);"
-            ></iframe>
+            {/* CLICK TO LOAD. The embedded Google map cost about 420 KB and
+                14 scripts on every listing page and drove total blocking
+                time to 570ms — the single worst performance item on the
+                site, on a page most visitors reach to find a phone number
+                rather than a map. loading="lazy" did not help: these pages
+                are short enough that the map is usually in or near the
+                viewport on arrival.
+
+                Progressive enhancement, same approach as the comparison
+                table: with JavaScript off this is a real link that opens
+                the map on Google. With JavaScript on, the click swaps in
+                the iframe in place. Nothing is fetched from Google until a
+                visitor asks for it, so the default page makes no
+                third-party request at all.
+
+                The placeholder reserves the same 300px the iframe occupies,
+                so the swap shifts nothing. CLS on these pages is 0 and this
+                keeps it there. */}
+            <a
+              class="map-stub"
+              href={`https://maps.google.com/maps?q=${b.lat},${b.lng}&z=14`}
+              data-map-src={mapEmbed}
+              rel="noopener"
+              target="_blank"
+            >
+              <span class="map-stub-icon">
+                {/* aria-hidden belongs on the <svg>, not the wrapping span:
+                    check-seo.py audits the svg element itself, and the
+                    adjacent text already says "Show map", so announcing the
+                    pin again would be noise. */}
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </span>
+              <span class="map-stub-text">
+                <strong>Show map</strong>
+                <span class="muted" style="font-size:.82rem;">
+                  {b.street ? `${b.street}, ` : ''}{b.city}, {b.stateCode}
+                </span>
+              </span>
+            </a>
+            <script is:inline>
+              document.querySelectorAll('.map-stub').forEach(function (stub) {
+                stub.addEventListener('click', function (e) {
+                  var src = stub.getAttribute('data-map-src');
+                  if (!src) return;            // no embed URL: let the link work
+                  e.preventDefault();
+                  var f = document.createElement('iframe');
+                  f.src = src;
+                  f.title = stub.querySelector('.map-stub-text strong').textContent;
+                  f.loading = 'lazy';
+                  f.referrerPolicy = 'no-referrer-when-downgrade';
+                  f.className = 'map-frame';
+                  stub.replaceWith(f);
+                });
+              });
+            </script>
             <p class="muted mt-1" style="font-size:.8rem;">
               Coordinates from {attribution.source}. The pin is the recorded business
               location, which for a mobile service company may be an office rather
