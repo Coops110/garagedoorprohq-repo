@@ -5,7 +5,7 @@ import BizCard from '../../../../components/BizCard.astro';
 import AdSlot from '../../../../components/AdSlot.astro';
 import { SITE, CLAIMS } from '../../../../lib/site.js';
 import {
-  getAllBusinesses, getBusiness, getBusinessesByCity, telHref, formatPhone, siteFactsFor,
+  getAllBusinesses, getBusiness, getBusinessesByCity, nearbyInCity, telHref, formatPhone, siteFactsFor,
 } from '../../../../lib/data.js';
 import { licenceInfo } from '../../../../lib/licensing.js';
 import { getGuide } from '../../../../lib/guides.js';
@@ -21,9 +21,7 @@ export function getStaticPaths() {
 
 const { state, city, business } = Astro.params;
 const b = getBusiness(state, city, business);
-const nearby = getBusinessesByCity(state, city)
-  .filter((x) => x.slug !== b.slug)
-  .slice(0, 3);
+const nearby = nearbyInCity(b, 3);
 
 const lic = licenceInfo(b.stateCode);
 const facts = siteFactsFor(b);

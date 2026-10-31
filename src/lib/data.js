@@ -30,6 +30,31 @@ export function getBusinessesByCity(stateSlug, citySlug) {
     .sort(sortForDisplay);
 }
 
+// Other companies in the same city, as a ROTATING WINDOW rather than the
+// top of the list.
+//
+// The listing pages used to take .slice(0, 3) off getBusinessesByCity(),
+// which returns a deterministic sortForDisplay order — so every one of
+// Houston's 139 listing pages showed the same three businesses. Those three
+// collected 138 inbound links each and the other 135 collected none, which
+// is most of why 482 of 780 listings sat on exactly one inbound link, from
+// their city page alone.
+//
+// Taking the n entries that FOLLOW this listing in that same order, wrapping
+// at the end, gives every listing exactly n inbound links from its siblings
+// and leaves none stranded. Deterministic, so builds stay reproducible —
+// no randomness, no build-time drift.
+export function nearbyInCity(business, n = 3) {
+  const all = getBusinessesByCity(business.stateSlug, business.citySlug);
+  const i = all.findIndex((x) => x.slug === business.slug);
+  if (i < 0 || all.length < 2) return [];
+  const out = [];
+  for (let k = 1; k <= Math.min(n, all.length - 1); k += 1) {
+    out.push(all[(i + k) % all.length]);
+  }
+  return out;
+}
+
 export function getBusinessesByState(stateSlug) {
   return businesses.filter((b) => b.stateSlug === stateSlug).sort(sortForDisplay);
 }
