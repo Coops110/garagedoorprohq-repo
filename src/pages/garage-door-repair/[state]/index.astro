@@ -67,7 +67,15 @@ const schemas = [
     <Breadcrumbs items={crumbs} />
 
     <span class="eyebrow">{s.state}</span>
-    <h1 style="margin:.5rem 0 .75rem;">Garage door companies in {s.state}</h1>
+    {/* Was "Garage door companies in {State}" while the <title> said
+        "Garage Door Repair in {State}: By City" — the two most prominent
+        strings on the page disagreeing about what it is. Aligned on the
+        title's wording rather than the other way round: the August GSC
+        export shows "garage door repair {city}" carrying far more
+        impressions than the "companies" phrasing, and the title is the
+        version already competing for it. The city pages do not have this
+        problem — their title and h1 already agree. */}
+    <h1 style="margin:.5rem 0 .75rem;">Garage door repair in {s.state}, by city</h1>
     <p class="muted mb-3">
       {formatCount(s.count)} {s.count === 1 ? 'listing' : 'listings'} across
       {' '}{s.cityCount} {s.cityCount === 1 ? 'city' : 'cities'}

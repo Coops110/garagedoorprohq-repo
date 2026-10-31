@@ -159,6 +159,67 @@ for (const t of glossary) {
 // ── report ─────────────────────────────────────────────────
 for (const w of warnings) console.warn(`  ! ${w}`);
 
+// ── 7: spring-life figures must agree, and match the arithmetic ─────
+// Rule 5 catches a dollar range that disagrees between guides. It does not
+// catch a YEAR figure, and on 2026-10-31 two passages said a 10,000-cycle
+// spring lasts "seven to ten years" while three others said seven, and one
+// said "three to five" against "three and a half" — found by reading, which
+// is exactly what this file exists to stop being necessary.
+//
+// The figure is not an opinion that can reasonably differ between pages. It
+// is division: cycles / openings per day / 365. So this checks the
+// arithmetic, not merely that the pages agree with each other — two pages
+// can agree and both be wrong.
+const WORD_NUM = {
+  one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8,
+  nine: 9, ten: 10, 'three and a half': 3.5, 'three-and-a-half': 3.5,
+};
+const numOf = (s) => WORD_NUM[s.toLowerCase().trim()] ?? Number(s.replace(/,/g, ''));
+
+const prose = (g) => [
+  g.quickAnswer,
+  ...(g.sections || []).flatMap((s) => s.body),
+  ...(g.faqs || []).flatMap((f) => f.a),
+].filter(Boolean).join(' ');
+
+// Both word orders appear in the real copy, and a first draft only handled
+// one of them — it passed cleanly while "lasts roughly ten years on a door
+// used four times a day" sat in the file, because that sentence states the
+// years BEFORE the rate. Caught by deliberately reintroducing the original
+// bug and watching the check not fire, which is the only way to know a
+// check works.
+const NUM = 'three and a half|three-and-a-half|one|two|three|four|five|six|seven|eight|nine|ten|[\\d.]+';
+const RATE = '(?:openings?|times?)\\s+a\\s+day';
+const CLAIMS = [
+  // "...10,000 cycles ... four openings a day ... seven years"
+  new RegExp(`([\\d,]{4,})[\\s-]?cycle[s]?[^.]*?\\b(${NUM})\\b\\s+${RATE}[^.]*?\\b(${NUM})\\b[\\s-]?year`, 'gi'),
+  // "...10,000-cycle ... seven years ... four times a day"  (years first)
+  new RegExp(`([\\d,]{4,})[\\s-]?cycle[s]?[^.]*?\\b(${NUM})\\b[\\s-]?year[^.]*?\\b(${NUM})\\b\\s+${RATE}`, 'gi'),
+];
+
+for (const g of [...guides, ...glossary.map((t) => ({ slug: t.slug, quickAnswer: t.short, sections: [{ body: t.body || [] }] }))]) {
+  const text = prose(g);
+  for (const [i, re] of CLAIMS.entries()) {
+   for (const m of text.matchAll(re)) {
+    // Pattern 2 states the years before the rate, so the capture groups
+    // arrive swapped.
+    const [, cyclesRaw, a, b] = m;
+    const [perDayRaw, yearsRaw] = i === 0 ? [a, b] : [b, a];
+    const cycles = numOf(cyclesRaw);
+    const perDay = numOf(perDayRaw);
+    const stated = numOf(yearsRaw);
+    if (!cycles || !perDay || !stated) continue;
+    const actual = cycles / perDay / 365;
+    // Half a year of slack: "roughly seven" for 6.85 is fine, "ten" is not.
+    if (Math.abs(actual - stated) > 0.5) {
+      problems.push(
+        `guide "${g.slug}" says ${cyclesRaw} cycles at ${perDayRaw} a day lasts ${yearsRaw} years, but ${cyclesRaw} / ${perDayRaw} / 365 = ${actual.toFixed(1)}. Fix the figure, not the check.`
+      );
+    }
+   }
+  }
+}
+
 if (problems.length) {
   console.error('\n✗ Content check failed:\n');
   for (const p of problems) console.error(`  • ${p}`);
