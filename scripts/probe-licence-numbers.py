@@ -59,6 +59,9 @@ def arg(name, default=None):
 
 STATE = (arg('state', 'CA') or 'CA').upper()
 LIMIT = int(arg('limit', '25'))
+ALL = any(a == '--all' for a in sys.argv[1:])
+TIMEOUT = int(arg('timeout', '8'))
+PAUSE = float(arg('pause', '0.25'))
 
 # CSLB numbers are 6-8 digits. Anchored to a licence word so a phone number,
 # ZIP or year cannot be mistaken for one — a bare \d{6,8} on a contractor's
@@ -70,7 +73,8 @@ LIC_PATTERNS = [
 ]
 
 
-def fetch(url, timeout=20):
+def fetch(url, timeout=None):
+    timeout = timeout or TIMEOUT
     req = urllib.request.Request(url, headers={'User-Agent': UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         raw = r.read(600_000)
@@ -156,26 +160,39 @@ def main():
     businesses = json.load(open('src/data/businesses.json', encoding='utf-8'))
     by_key = {(b['name'], b['city']): b for b in businesses}
 
-    reg_path = Path('data-work/licences') / f'{STATE.lower()}.json'
-    if not reg_path.exists():
-        sys.exit(f'  {reg_path} not found — run fetch-licences.py first')
-    register = json.load(open(reg_path, encoding='utf-8'))
+    reg_dir = Path('data-work/licences')
+    reg_files = sorted(reg_dir.glob('*.json')) if ALL else [reg_dir / f'{STATE.lower()}.json']
+    register = []
+    for f in reg_files:
+        if f.exists():
+            register += json.load(open(f, encoding='utf-8'))
+    if not register:
+        sys.exit(f'  no register data in {reg_dir} — run fetch-licences.py first')
     by_number = {}
     for r in register:
         n = re.sub(r'\D', '', str(r.get('licence') or ''))
         if n:
             by_number.setdefault(n, r)
 
-    targets = []
-    for row in rejected:
-        if row.get('state') != STATE:
-            continue
-        biz = by_key.get((row.get('name'), row.get('city')))
-        if biz and biz.get('website'):
-            targets.append(biz)
-
-    print(f'  {STATE}: {len(targets)} unmatched listings have a website; probing {min(LIMIT, len(targets))}')
-    print(f'  register holds {len(by_number)} distinct licence numbers\n')
+    if ALL:
+        # Every listing with a website, not just the ones the name matcher
+        # failed on. The licence half only applies where a register exists
+        # (CA and FL today), but the enrichment half applies everywhere --
+        # Texas is 304 of the 688 sites and licenses no garage door trade at
+        # all, so a Texas listing can never carry a badge and can still carry
+        # the services and brands its own site declares.
+        targets = [b for b in businesses if (b.get('website') or '').strip()]
+        print(f'  ALL states: {len(targets)} listings have a website; probing {min(LIMIT, len(targets))}')
+    else:
+        targets = []
+        for row in rejected:
+            if row.get('state') != STATE:
+                continue
+            biz = by_key.get((row.get('name'), row.get('city')))
+            if biz and biz.get('website'):
+                targets.append(biz)
+        print(f'  {STATE}: {len(targets)} unmatched listings have a website; probing {min(LIMIT, len(targets))}')
+    print(f'  registers hold {len(by_number)} distinct licence numbers\n')
 
     results = []
     enriched = []
@@ -190,7 +207,7 @@ def main():
         except Exception as e:                      # noqa: BLE001 - any failure is "skip"
             unreachable += 1
             print(f'  {i:>3}. {b["name"][:34]:<36} unreachable ({type(e).__name__})')
-            time.sleep(0.4)
+            time.sleep(PAUSE)
             continue
 
         text = plain_text(html)
@@ -224,7 +241,7 @@ def main():
                 'cityAgrees': same_city, 'zipAgrees': same_zip,
                 'corroborated': ok,
             })
-        time.sleep(0.4)
+        time.sleep(PAUSE)
 
     out = Path('data-work/licence-probe.json')
     out.write_text(json.dumps(results, indent=1), encoding='utf-8')
