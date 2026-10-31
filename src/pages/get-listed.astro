@@ -49,16 +49,16 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
         <li><strong>Phone number</strong> — required. We do not publish a listing nobody can ring.</li>
         <li><strong>Website</strong>, if you have one</li>
         <li><strong>What you actually do</strong> — residential repair, installation, openers, commercial, or some mix</li>
-        <li><strong>State licence number</strong> if you are in {licenceStates}, so we can verify it</li>
+        <li><strong>State license number</strong> if you are in {licenceStates}, so we can verify it</li>
       </ul>
 
       <h2>What happens next</h2>
       <p>
         We check the business is real and currently trading, and that garage door work is
         genuinely what it does — this is not a general contractor directory. If you are in a
-        state that licenses the trade and you give us a licence number, we look it up on the
+        state that licenses the trade and you give us a license number, we look it up on the
         state register. If it matches an active record, the listing gets a
-        {' '}<strong>✓ State licence verified</strong> badge and shows the date we checked.
+        {' '}<strong>✓ State license verified</strong> badge and shows the date we checked.
       </p>
       <p>
         That badge means one thing only: the number matched the register on that date. It is
@@ -116,8 +116,8 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
           <label>Website<br />
             <input type="url" name="website" style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
           </label>
-          <label>State licence number, if you have one<br />
-            <input type="text" name="licence" style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
+          <label>State license number, if you have one<br />
+            <input type="text" name="license" style="width:100%;min-height:var(--tap);padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;" />
           </label>
           <label>What you do<br />
             <textarea name="services" rows="4" style="width:100%;padding:.6rem .75rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;"></textarea>

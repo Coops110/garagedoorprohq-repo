@@ -9,7 +9,7 @@ import { telHref } from '../lib/data.js';
 //
 //  What the card shows instead is what we can actually stand behind:
 //  where the business is, what the source says it does, whether a state
-//  licence was verified, and a phone number that works.
+//  license was verified, and a phone number that works.
 // ─────────────────────────────────────────────────────────────
 const { biz } = Astro.props;
 const url = `/garage-door-repair/${biz.stateSlug}/${biz.citySlug}/${biz.slug}/`;
@@ -26,7 +26,7 @@ const tel = telHref(biz.phone);
     </div>
     {biz.licenceNumber && (
       <div class="biz-badges">
-        <span class="badge badge-licence" title="Licence number matched to an active record on the state register">
+        <span class="badge badge-license" title="Licence number matched to an active record on the state register">
           ✓ Licence verified
         </span>
       </div>

@@ -82,7 +82,7 @@ export function businessSchema(b, url) {
   if (b.services?.length) {
     schema.knowsAbout = b.services;
   }
-  // A licence is a real, externally checkable credential, so it belongs in
+  // A license is a real, externally checkable credential, so it belongs in
   // the structured data where a rating does not.
   if (b.licenceNumber) {
     schema.hasCredential = {

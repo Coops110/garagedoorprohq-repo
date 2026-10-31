@@ -122,7 +122,7 @@ export const CLAIMS = {
   // States where the trade itself is licensed and a badge is possible.
   licenceStates: ['CA', 'FL', 'AZ'],
   licenceMeaning:
-    'We check licence numbers against the state register; we do not inspect workmanship.',
+    'We check license numbers against the state register; we do not inspect workmanship.',
   listingMeaning:
     'Listings are compiled from public and openly licensed business data. A listing is not a recommendation.',
   hoursMeaning:
@@ -137,11 +137,11 @@ export const CLAIMS = {
   // would leave the ninth contradicting the terms.
   //
   // The line this wording holds: what is sold is ATTENTION, clearly labelled.
-  // What is never sold is the editorial layer — the cost figures, the licence
+  // What is never sold is the editorial layer — the cost figures, the license
   // badges, or what a listing says about a business. Selling a labelled ad
   // position is ordinary publishing; selling an unlabelled one, or selling a
   // badge, is not, and the second kind is what the disclosure commitment here
   // exists to keep out.
   placementMeaning:
-    'Listing itself is free. We may sell advertising and sponsored positions, and anything paid for is labelled as advertising. Paying never changes what a listing says, whether it carries a licence badge, or any figure in our guides.',
+    'Listing itself is free. We may sell advertising and sponsored positions, and anything paid for is labelled as advertising. Paying never changes what a listing says, whether it carries a license badge, or any figure in our guides.',
 };

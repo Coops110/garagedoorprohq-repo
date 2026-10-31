@@ -60,7 +60,7 @@ const mapEmbed = b.lat != null && b.lng != null
     clamp(b.name, 58),
   )}
   description={fitDescription(
-    `${b.name} is a garage door company in ${b.city}, ${b.stateCode}. Contact details, service categories${b.licenceNumber ? ' and licence verification' : ''} and local repair costs.`,
+    `${b.name} is a garage door company in ${b.city}, ${b.stateCode}. Contact details, service categories${b.licenceNumber ? ' and license verification' : ''} and local repair costs.`,
     `${b.name} — garage door company in ${b.city}, ${b.stateCode}. Phone number, services and what local garage door repairs typically cost.`,
     `Garage door company in ${b.city}, ${b.stateCode}. Phone number, service categories and what local garage door repair and installation typically costs.`,
   )}
@@ -76,7 +76,7 @@ const mapEmbed = b.lat != null && b.lng != null
     <div class="biz-layout">
       <div>
         <div style="display:flex;gap:.4rem;margin-bottom:.6rem;flex-wrap:wrap;">
-          {b.licenceNumber && <span class="badge badge-licence">✓ State licence verified</span>}
+          {b.licenceNumber && <span class="badge badge-license">✓ State license verified</span>}
           {b.services?.[0] && <span class="badge badge-cat">{b.services[0]}</span>}
         </div>
 
@@ -89,7 +89,7 @@ const mapEmbed = b.lat != null && b.lng != null
           /* Everything asserted here is a fact from the register, plus the date
              we read it. The expiry and classification are shown because they are
              the two things that decide whether the badge still means anything
-             tomorrow — a licence number alone invites the reader to assume more
+             tomorrow — a license number alone invites the reader to assume more
              than we checked. */
           <div class="claim-note">
             <p style="margin:0 0 .5rem;">
@@ -112,7 +112,7 @@ const mapEmbed = b.lat != null && b.lng != null
         ) : (
           <p class="claim-note">
             {lic
-              ? `We have not matched a ${lic.authorityShort} licence number to this business. That is not a finding against the company — it may hold a licence under a different registered name. Ask them for the number and check it yourself on the ${lic.authorityShort} register.`
+              ? `We have not matched a ${lic.authorityShort} license number to this business. That is not a finding against the company — it may hold a license under a different registered name. Ask them for the number and check it yourself on the ${lic.authorityShort} register.`
               : `${b.state} does not license garage door installation as a separate trade, so there is no state garage door register to check. Ask for a certificate of general liability insurance instead.`}
           </p>
         )}
@@ -139,8 +139,8 @@ const mapEmbed = b.lat != null && b.lng != null
           </p>
           <p>
             {lic
-              ? `Garage door work is a licensed trade in ${b.state} — the ${lic.authority} issues ${lic.classification}. That makes the licence number the one credential you can verify yourself in about a minute, and it is worth doing before any work starts.`
-              : `Garage door work is not licensed as a separate trade in ${b.state}, so ask for proof of general liability insurance rather than a licence number, and check whether ${b.city} requires a permit for your job.`}
+              ? `Garage door work is a licensed trade in ${b.state} — the ${lic.authority} issues ${lic.classification}. That makes the license number the one credential you can verify yourself in about a minute, and it is worth doing before any work starts.`
+              : `Garage door work is not licensed as a separate trade in ${b.state}, so ask for proof of general liability insurance rather than a license number, and check whether ${b.city} requires a permit for your job.`}
           </p>
           <p>
             Before you call, it helps to know the going rate. Our

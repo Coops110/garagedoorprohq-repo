@@ -45,7 +45,7 @@ const costRows = (repair?.costTable?.rows || []).filter(([job]) =>
 const faqs = [
   {
     q: `How many garage door companies are there in ${c.city}, ${c.stateCode}?`,
-    a: `${SITE.name} lists ${c.count} garage door ${c.count === 1 ? 'company' : 'companies'} in ${c.city}, ${c.stateCode}${lic && c.licensedCount ? `, of which ${c.licensedCount === c.count ? 'all' : c.licensedCount} have a licence number matched to an active record on the ${lic.authorityShort} register` : ''}. ${CLAIMS.listingMeaning}`,
+    a: `${SITE.name} lists ${c.count} garage door ${c.count === 1 ? 'company' : 'companies'} in ${c.city}, ${c.stateCode}${lic && c.licensedCount ? `, of which ${c.licensedCount === c.count ? 'all' : c.licensedCount} have a license number matched to an active record on the ${lic.authorityShort} register` : ''}. ${CLAIMS.listingMeaning}`,
   },
   {
     q: `How much does garage door repair cost in ${c.city}?`,
@@ -54,14 +54,14 @@ const faqs = [
   {
     q: lic
       ? `Are garage door companies in ${c.city} licensed?`
-      : `Do garage door companies in ${c.city} need a licence?`,
+      : `Do garage door companies in ${c.city} need a license?`,
     a: lic
-      ? `${c.state} licenses the trade through the ${lic.authority} under ${lic.classification}. Ask any company for its licence number and check it on the ${lic.authorityShort} register yourself — it takes about a minute. ${CLAIMS.licenceMeaning}`
+      ? `${c.state} licenses the trade through the ${lic.authority} under ${lic.classification}. Ask any company for its license number and check it on the ${lic.authorityShort} register yourself — it takes about a minute. ${CLAIMS.licenceMeaning}`
       : `${c.state} does not license garage door installation as a separate trade, so there is no state garage door register to check. Ask for a certificate of general liability insurance instead, and check whether your city requires a permit for the work.`,
   },
   {
     q: `Which garage door company in ${c.city} should I call first?`,
-    a: `We do not rank contractors by quality, and any position that has been paid for is labelled as advertising, so treat this list as a starting point rather than a recommendation. Call two or three, ask each for the price split into parts and labour, and ask for the spring cycle rating in writing.`,
+    a: `We do not rank contractors by quality, and any position that has been paid for is labelled as advertising, so treat this list as a starting point rather than a recommendation. Call two or three, ask each for the price split into parts and labor, and ask for the spring cycle rating in writing.`,
   },
 ];
 
@@ -78,7 +78,7 @@ const schemas = [
     `Garage Doors in ${c.city}, ${c.stateCode}`,
   )}
   description={fitDescription(
-    `${c.count} garage door companies in ${c.city}, ${c.stateCode} with phone numbers and service categories${lic ? `, plus how to check a ${lic.authorityShort} licence yourself` : ''}.`,
+    `${c.count} garage door companies in ${c.city}, ${c.stateCode} with phone numbers and service categories${lic ? `, plus how to check a ${lic.authorityShort} license yourself` : ''}.`,
     `${c.count} garage door repair and installation companies in ${c.city}, ${c.stateCode}, with phone numbers, service categories and local cost guidance.`,
   )}
   canonical={cityUrl}
@@ -94,7 +94,7 @@ const schemas = [
     <p class="muted mb-3">
       {formatCount(c.count)} {c.count === 1 ? 'listing' : 'listings'}
       {c.withAddress ? ` · ${c.withAddress} with a street address` : ''}
-      {lic && c.licensedCount ? ` · ${c.licensedCount} licence-verified` : ''}
+      {lic && c.licensedCount ? ` · ${c.licensedCount} license-verified` : ''}
     </p>
 
     <p class="claim-note">
@@ -156,13 +156,19 @@ const schemas = [
         silence and stops the absence reading as a failed check. */}
     <section class="section-sm">
       <h2 style="font-size:1.3rem;">
-        {lic ? `Check a ${c.city} contractor's licence yourself` : `Licensing and insurance in ${c.state}`}
+        {/* "Check a Orlando contractor" shipped on every city whose name
+            starts with a vowel sound -- Orlando, Anaheim, Ontario, Apopka.
+            Templated into an h2, so it was wrong on the most visible line of
+            the page. Written out as "in {City}" rather than picking a/an:
+            a/an by first letter still gets Ontario right and hour wrong, and
+            the phrasing reads better than either article anyway. */}
+        {lic ? `Check a contractor's license in ${c.city} yourself` : `Licensing and insurance in ${c.state}`}
       </h2>
       {lic ? (
         <>
           <p class="mt-2">
             {c.state} is one of three states that license garage door work specifically.
-            Any company quoting you should give you its licence number on request, and
+            Any company quoting you should give you its license number on request, and
             you can confirm it on the {lic.authority} register without any expertise:
           </p>
           <div class="highlight-box">

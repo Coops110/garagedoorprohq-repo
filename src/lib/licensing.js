@@ -3,7 +3,7 @@
 //  place where over-claiming would be a false representation.
 //
 //  Garage door work is licensed as a distinct trade in exactly three
-//  states. Everywhere else it falls under a general contractor licence, is
+//  states. Everywhere else it falls under a general contractor license, is
 //  licensed at city or county level, or is not licensed at all. That is a
 //  fact about regulation, not a gap in our research, and pages in the other
 //  47 states must say so rather than implying a check we cannot make.
@@ -22,13 +22,13 @@ export const LICENCE_STATES = {
     authorityShort: 'CSLB',
     classification: 'C-61/D-28 Doors, Gates and Activating Devices',
     searchUrl: 'https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx',
-    searchLabel: 'CSLB licence check',
+    searchLabel: 'CSLB license check',
     // What a homeowner should confirm once they are on the register.
     verifySteps: [
-      'Enter the licence number the company gave you, or search by business name.',
+      'Enter the license number the company gave you, or search by business name.',
       'Check the status reads “Active” — not expired, suspended or inactive.',
       'Check the classification includes C-61/D-28, which is the one that covers garage doors and operators.',
-      'Check the business name on the licence matches the company quoting you. A licence held by a different entity is the most common discrepancy.',
+      'Check the business name on the license matches the company quoting you. A license held by a different entity is the most common discrepancy.',
       'Check the workers’ compensation and bond entries, both shown on the same record.',
     ],
   },
@@ -38,11 +38,11 @@ export const LICENCE_STATES = {
     authorityShort: 'DBPR',
     classification: 'Garage Door Installation Specialty Contractor',
     searchUrl: 'https://www.myfloridalicense.com/wl11.asp',
-    searchLabel: 'DBPR licence search',
+    searchLabel: 'DBPR license search',
     verifySteps: [
-      'Search by licence number or business name on the DBPR licensee search.',
-      'Check the licence status is current rather than null, delinquent or expired.',
-      'Check the licence type is a garage door or specialty contractor category covering this work.',
+      'Search by license number or business name on the DBPR licensee search.',
+      'Check the license status is current rather than null, delinquent or expired.',
+      'Check the license type is a garage door or specialty contractor category covering this work.',
       'Check the licensee name matches the company quoting you.',
       'Note that some Florida garage door work is also permitted at county level — ask which county permit applies to your job.',
     ],
@@ -55,10 +55,10 @@ export const LICENCE_STATES = {
     searchUrl: 'https://roc.az.gov/contractor-search',
     searchLabel: 'AZ ROC contractor search',
     verifySteps: [
-      'Search the ROC contractor database by licence number or business name.',
-      'Check the licence status is Active.',
+      'Search the ROC contractor database by license number or business name.',
+      'Check the license status is Active.',
       'Check the classification list includes ROC-283, or a general residential class that covers the work.',
-      'Check the licence holder name matches the company quoting you.',
+      'Check the license holder name matches the company quoting you.',
       'Check the complaint history shown on the same record.',
     ],
   },
@@ -72,12 +72,12 @@ export function licensesTrade(stateCode) {
   return Object.hasOwn(LICENCE_STATES, stateCode);
 }
 
-// What a page should tell a visitor in a state with no trade licence. This
+// What a page should tell a visitor in a state with no trade license. This
 // is the honest version of the "no badge here" story, and it is genuinely
 // actionable — insurance is checkable everywhere.
 export function noLicenceGuidance(stateName) {
   return [
-    `${stateName} does not license garage door installation as a separate trade. Depending on the job, the work may fall under a general contractor licence, a city or county registration, or no licence requirement at all — so there is no state register for us to check a garage door licence number against, and no listing on this site shows a verified licence badge in ${stateName}.`,
+    `${stateName} does not license garage door installation as a separate trade. Depending on the job, the work may fall under a general contractor license, a city or county registration, or no license requirement at all — so there is no state register for us to check a garage door license number against, and no listing on this site shows a verified license badge in ${stateName}.`,
     `That makes insurance the credential worth asking for. Request a certificate of general liability insurance, plus workers’ compensation if more than one person will be on site, and ask for the insurer name and policy number rather than a yes or no. A company that genuinely carries cover can produce the certificate the same day.`,
     `It is also worth asking your city or county building department whether a permit is required for the work, particularly for a full door replacement — the answer varies between neighbouring jurisdictions.`,
   ];

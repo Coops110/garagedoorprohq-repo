@@ -40,7 +40,7 @@ export function getBusiness(stateSlug, citySlug, slug) {
 }
 
 // Display order, NOT a quality ranking. Precedence:
-//   1. a verified state licence (CA/FL/AZ only — a real external check)
+//   1. a verified state license (CA/FL/AZ only — a real external check)
 //   2. completeness of the listing: a street address and website make the
 //      page more useful to the visitor than a name and phone alone
 //   3. Overture's record confidence
@@ -98,7 +98,7 @@ export function getState(stateSlug) {
 }
 
 // States where the trade itself is licensed, so a listing there can carry a
-// verified-licence badge. Used to decide whether a page should explain the
+// verified-license badge. Used to decide whether a page should explain the
 // badge or explain its absence — both are better than silence.
 export function stateLicensesTrade(stateCode) {
   return ['CA', 'FL', 'AZ'].includes(stateCode);

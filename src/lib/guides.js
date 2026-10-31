@@ -56,7 +56,7 @@ export const guides = [
       {
         h2: 'What moves the price',
         body: [
-          'Four things decide a garage door repair bill: which part failed, whether the door is single or double width, how quickly you need someone there, and local labour rates. The part itself is often the smaller half of the invoice. A torsion spring is a $40–$90 component; most of what you pay is the twenty minutes of skilled, genuinely dangerous work needed to fit it safely.',
+          'Four things decide a garage door repair bill: which part failed, whether the door is single or double width, how quickly you need someone there, and local labor rates. The part itself is often the smaller half of the invoice. A torsion spring is a $40–$90 component; most of what you pay is the twenty minutes of skilled, genuinely dangerous work needed to fit it safely.',
           'Double-width doors cost more across almost every job. They are heavier, so they use heavier springs and cables, and a single panel spans further and costs more to replace. Assume the upper end of every range below for a 16-foot door.',
           'Timing matters more than most people expect. An after-hours or same-day emergency call typically adds $50–$150, and some companies charge a flat weekend premium. If the door is closed and the car is not trapped behind it, waiting until a normal weekday slot is the cheapest decision available to you.',
         ],
@@ -65,8 +65,8 @@ export const guides = [
         h2: 'Springs: the most common failure, and the most expensive small job',
         diagram: 'torsion-system',
         body: [
-          'Torsion springs are wound steel bars mounted above the door that carry almost all of its weight. They are rated in cycles — one open and one close is a cycle — and a standard 10,000-cycle spring lasts roughly seven to ten years on a door used four times a day. When one breaks it usually goes with a bang loud enough to be heard indoors, and the door then feels impossibly heavy or will not lift at all.',
-          'Replacing one torsion spring runs $180–$350 installed. Replacing the pair runs $250–$550, and it is almost always the better buy: the second spring has done identical work for identical years, the labour is already on site, and paying the call-out twice inside a year is the expensive outcome.',
+          'Torsion springs are wound steel bars mounted above the door that carry almost all of its weight. They are rated in cycles — one open and one close is a cycle — and a standard 10,000-cycle spring lasts roughly seven years on a door used four times a day. When one breaks it usually goes with a bang loud enough to be heard indoors, and the door then feels impossibly heavy or will not lift at all.',
+          'Replacing one torsion spring runs $180–$350 installed. Replacing the pair runs $250–$550, and it is almost always the better buy: the second spring has done identical work for identical years, the labor is already on site, and paying the call-out twice inside a year is the expensive outcome.',
           'This is the one job on this page where the DIY saving is not worth considering. A wound torsion spring stores enough energy to break bones, and the winding bars have to be handled correctly to release it. We have a separate page on exactly why, and it is deliberately not a tutorial.',
         ],
       },
@@ -96,10 +96,10 @@ export const guides = [
       {
         h2: 'How to avoid overpaying',
         body: [
-          'Ask for the price in parts and labour separately. It is the single fastest way to see whether a quote is high on the component, high on the hours, or fair.',
+          'Ask for the price in parts and labor separately. It is the single fastest way to see whether a quote is high on the component, high on the hours, or fair.',
           'Get the cycle rating in writing when springs are quoted. A 10,000-cycle spring and a 25,000-cycle spring look identical in the van and differ by roughly $40–$80 a pair fitted, but the high-cycle spring lasts two to three times longer. On a door you open six times a day it is the clearest value upgrade in the trade.',
           'Confirm whether the diagnostic fee is credited against the repair. Most companies credit it; the ones that do not should tell you before they drive out, and a company that will not answer that on the phone has told you something useful.',
-          'Where the state licenses the trade — California, Florida and Arizona are the three that license garage door work specifically — ask for the licence number and check it yourself on the state register. It takes about a minute, and it is the one credential a homeowner can verify without expertise.',
+          'Where the state licenses the trade — California, Florida and Arizona are the three that license garage door work specifically — ask for the license number and check it yourself on the state register. It takes about a minute, and it is the one credential a homeowner can verify without expertise.',
         ],
       },
     ],
@@ -110,7 +110,7 @@ export const guides = [
       },
       {
         q: 'Why is garage door spring replacement so expensive for such a small part?',
-        a: 'The spring itself is a $40–$90 part. You are paying for the labour to fit it, and that labour is skilled and genuinely hazardous — a wound torsion spring holds enough stored energy to cause serious injury if it is released incorrectly.',
+        a: 'The spring itself is a $40–$90 part. You are paying for the labor to fit it, and that labor is skilled and genuinely hazardous — a wound torsion spring holds enough stored energy to cause serious injury if it is released incorrectly.',
       },
       {
         q: 'Should I replace one garage door spring or both?',
@@ -149,7 +149,7 @@ export const guides = [
     dateModified: '2026-08-11',
     readTime: 7,
     quickAnswer:
-      'Replacing one torsion spring costs $180–$350 installed in 2026; the pair costs $250–$550. Extension springs are cheaper at $120–$300 a pair. High-cycle springs add $40–$80 to a pair and last two to three times as long. The spring is a $40–$90 part — most of the bill is skilled, hazardous labour.',
+      'Replacing one torsion spring costs $180–$350 installed in 2026; the pair costs $250–$550. Extension springs are cheaper at $120–$300 a pair. High-cycle springs add $40–$80 to a pair and last two to three times as long. The spring is a $40–$90 part — most of the bill is skilled, hazardous labor.',
     costTable: {
       caption: 'Garage door spring replacement, typical installed cost 2026',
       rows: [
@@ -173,7 +173,7 @@ export const guides = [
       {
         h2: 'Why the pair costs barely more than one',
         body: [
-          'The labour and the call-out are the bulk of the invoice, and both are already paid for once the technician is on the ladder. The second spring is mostly the part cost, which is why one spring at $180–$350 becomes a pair at $250–$550 rather than double.',
+          'The labor and the call-out are the bulk of the invoice, and both are already paid for once the technician is on the ladder. The second spring is mostly the part cost, which is why one spring at $180–$350 becomes a pair at $250–$550 rather than double.',
           'The reason to do it is not the discount, it is the cycle count. Both springs were fitted on the same day and have done the same number of openings, so when one goes the other is typically within months of the same fate. Replacing one means booking the same job twice inside a year and paying the call-out twice.',
         ],
       },
@@ -206,11 +206,18 @@ export const guides = [
       },
       {
         q: 'How long do garage door springs last?',
-        a: 'A standard 10,000-cycle spring lasts about seven to ten years at four openings a day, or nearer three to five at eight a day. High-cycle springs rated 25,000 cycles last two to three times as long for $40–$80 more on a fitted pair.',
+        // Said "seven to ten years ... three to five" while three other
+        // passages said seven years and three and a half. The arithmetic is
+        // fixed and belongs to the cycle rating, not to a range: 10,000
+        // cycles / 4 openings a day / 365 = 6.8 years, and halving the
+        // openings halves the life. Figures agree site-wide is a rule here,
+        // and check-content.mjs enforces it for dollar ranges but not for
+        // years -- so this one had to be caught by reading.
+        a: 'A standard 10,000-cycle spring lasts roughly seven years at four openings a day, or about three and a half at eight a day. High-cycle springs rated 25,000 cycles last two to three times as long for $40–$80 more on a fitted pair.',
       },
       {
         q: 'Can I replace a garage door spring myself?',
-        a: 'You should not. A wound torsion spring stores enough energy to cause serious injury or death if released incorrectly, and the winding bars have to be handled in a specific sequence. The saving is roughly $100–$250 of labour against that risk.',
+        a: 'You should not. A wound torsion spring stores enough energy to cause serious injury or death if released incorrectly, and the winding bars have to be handled in a specific sequence. The saving is roughly $100–$250 of labor against that risk.',
       },
       {
         q: 'How do I know if my garage door spring is broken?',
@@ -348,7 +355,7 @@ export const guides = [
     // "can I replace a garage door spring myself" is a decision, not a
     // method.
     quickAnswer:
-      'No. A wound torsion spring on a standard double garage door holds roughly 200–300 pounds of stored force, released through winding bars that will swing violently if mishandled. The saving over a professional replacement is about $100–$250 of labour. This page does not explain how to do it, on purpose.',
+      'No. A wound torsion spring on a standard double garage door holds roughly 200–300 pounds of stored force, released through winding bars that will swing violently if mishandled. The saving over a professional replacement is about $100–$250 of labor. This page does not explain how to do it, on purpose.',
     sections: [
       {
         h2: 'What the stored energy actually is',
@@ -362,7 +369,7 @@ export const guides = [
       {
         h2: 'What you would actually save',
         body: [
-          'A torsion spring is a $40–$90 part. A professional pair replacement costs $250–$550 fitted. Buying the springs and fitting them yourself saves roughly $100–$250 in labour — assuming you already own correctly sized winding bars, vice grips and a wind-up chart for your door, and assuming you get the wind count right first time.',
+          'A torsion spring is a $40–$90 part. A professional pair replacement costs $250–$550 fitted. Buying the springs and fitting them yourself saves roughly $100–$250 in labor — assuming you already own correctly sized winding bars, vice grips and a wind-up chart for your door, and assuming you get the wind count right first time.',
           'Get the wind count wrong and the door is unbalanced, which transfers load onto the opener and shortens the life of a $300–$700 unit. Order the wrong wire size, inside diameter or length — four measurements, all easy to get wrong from a photograph — and the door is out of service until the right part arrives.',
         ],
       },
@@ -371,7 +378,7 @@ export const guides = [
         body: [
           'Leave the door closed and stop using the opener. With a spring gone, the opener is attempting to lift the full weight of the door on its own, which is how one failure becomes two.',
           'If the door is open and a vehicle is under it, do not lower it by hand. Clamp the track below the bottom roller with locking pliers on both sides so it cannot travel, move the car out, and leave the door where it is until a technician arrives.',
-          'Then get two quotes for a pair replacement rather than one spring, and ask for the cycle rating in writing. Where the state licenses the trade — California, Florida and Arizona — ask for the licence number and check it on the state register yourself.',
+          'Then get two quotes for a pair replacement rather than one spring, and ask for the cycle rating in writing. Where the state licenses the trade — California, Florida and Arizona — ask for the license number and check it on the state register yourself.',
         ],
       },
       {
@@ -386,7 +393,7 @@ export const guides = [
     faqs: [
       {
         q: 'Can I replace a garage door spring myself?',
-        a: 'You should not. A wound torsion spring holds 200–300 pounds of stored force on a typical double door, released through winding bars that cause serious hand, arm and head injuries when mishandled. The saving is about $100–$250 of labour.',
+        a: 'You should not. A wound torsion spring holds 200–300 pounds of stored force on a typical double door, released through winding bars that cause serious hand, arm and head injuries when mishandled. The saving is about $100–$250 of labor.',
       },
       {
         q: 'Is a broken garage door spring still dangerous?',
@@ -414,28 +421,28 @@ export const guides = [
     title: 'How to Hire a Garage Door Company',
     h1: 'How to Hire a Garage Door Company: A Homeowner’s Checklist',
     description:
-      'What to ask a garage door company before you book, which states license the trade, and how to check a contractor licence number yourself.',
+      'What to ask a garage door company before you book, which states license the trade, and how to check a contractor license number yourself.',
     keyword: 'how to hire a garage door company',
     datePublished: '2026-08-11',
     dateModified: '2026-08-11',
     readTime: 8,
     quickAnswer:
-      'Ask for the price split into parts and labour, the spring cycle rating in writing, whether the diagnostic fee is credited, and proof of liability insurance. In California, Florida and Arizona the trade is licensed at state level and you can check a licence number yourself in about a minute. Most other states license only general contractors, or nothing at all.',
+      'Ask for the price split into parts and labor, the spring cycle rating in writing, whether the diagnostic fee is credited, and proof of liability insurance. In California, Florida and Arizona the trade is licensed at state level and you can check a license number yourself in about a minute. Most other states license only general contractors, or nothing at all.',
     sections: [
       {
         h2: 'Only three states license this trade specifically',
         body: [
           'Unlike HVAC or electrical work, garage door installation is not a licensed trade in most of the United States. Three states license it specifically: California, through the Contractors State License Board as a C-61/D-28 limited specialty classification; Florida, through the Department of Business and Professional Regulation as a Garage Door Installation Specialty Contractor; and Arizona, through the Registrar of Contractors under classification ROC-283.',
-          'Everywhere else, the work either falls under a general contractor licence, is licensed only at city or county level, or is not licensed at all. That is not a loophole a contractor is exploiting — it is simply how the trade is regulated, and it means "licensed" is a much weaker signal in most of the country than homeowners assume.',
-          'The practical consequence: in the 47 states without a trade licence, verify insurance rather than licensure, and treat a company’s answers about parts, ratings and warranties as your real screening tool.',
+          'Everywhere else, the work either falls under a general contractor license, is licensed only at city or county level, or is not licensed at all. That is not a loophole a contractor is exploiting — it is simply how the trade is regulated, and it means "licensed" is a much weaker signal in most of the country than homeowners assume.',
+          'The practical consequence: in the 47 states without a trade license, verify insurance rather than licensure, and treat a company’s answers about parts, ratings and warranties as your real screening tool.',
         ],
       },
       {
-        h2: 'How to check a licence yourself',
+        h2: 'How to check a license yourself',
         body: [
-          'In all three licensing states the register is public, free and searchable by licence number or business name. Search the number the company gives you, and check three things: that the status reads active, that the classification actually covers garage door work, and that the name on the licence matches the company quoting you. A licence belonging to a different entity is the most common discrepancy.',
+          'In all three licensing states the register is public, free and searchable by license number or business name. Search the number the company gives you, and check three things: that the status reads active, that the classification actually covers garage door work, and that the name on the license matches the company quoting you. A license belonging to a different entity is the most common discrepancy.',
           'Ask for the number before the visit, not after. A company that will not give it over the phone in a state that requires one has answered a different and more useful question.',
-          'Where a listing on this site shows a verified licence, it means we matched the business to an active record on that state’s register. We check licence numbers against the state register; we do not inspect workmanship, and a listing is never a recommendation.',
+          'Where a listing on this site shows a verified license, it means we matched the business to an active record on that state’s register. We check license numbers against the state register; we do not inspect workmanship, and a listing is never a recommendation.',
         ],
       },
       {
@@ -448,10 +455,10 @@ export const guides = [
       {
         h2: 'The four questions that reveal a quote',
         body: [
-          'Ask for parts and labour separately. A fair spring job is a modest part and skilled labour; a quote that will not separate the two is hiding which half is inflated.',
+          'Ask for parts and labor separately. A fair spring job is a modest part and skilled labor; a quote that will not separate the two is hiding which half is inflated.',
           'Ask for the spring cycle rating in writing. A 10,000-cycle and a 25,000-cycle spring are indistinguishable once fitted and differ by $40–$80 on a pair. Being quoted the cheap spring at the high-cycle price is the most common way to be overcharged in this trade.',
           'Ask whether the diagnostic fee is credited against the work. Most companies credit it; the ones that do not should say so before driving out.',
-          'Ask what the warranty covers and for how long — separately for the part and the labour. "One year" often means one year on the part and ninety days on the fitting.',
+          'Ask what the warranty covers and for how long — separately for the part and the labor. "One year" often means one year on the part and ninety days on the fitting.',
         ],
       },
       {
@@ -466,16 +473,16 @@ export const guides = [
     ],
     faqs: [
       {
-        q: 'Do garage door installers need a licence?',
-        a: 'Only in California (CSLB C-61/D-28), Florida (DBPR Garage Door Installation Specialty Contractor) and Arizona (ROC-283) is the trade licensed specifically at state level. Elsewhere it falls under a general contractor licence, is licensed locally, or is not licensed at all.',
+        q: 'Do garage door installers need a license?',
+        a: 'Only in California (CSLB C-61/D-28), Florida (DBPR Garage Door Installation Specialty Contractor) and Arizona (ROC-283) is the trade licensed specifically at state level. Elsewhere it falls under a general contractor license, is licensed locally, or is not licensed at all.',
       },
       {
         q: 'How do I check if a garage door company is licensed?',
-        a: 'In California, Florida and Arizona, search the state register by licence number or business name. Check that the status is active, the classification covers garage door work, and the name on the licence matches the company quoting you.',
+        a: 'In California, Florida and Arizona, search the state register by license number or business name. Check that the status is active, the classification covers garage door work, and the name on the license matches the company quoting you.',
       },
       {
         q: 'What should I ask a garage door company before hiring them?',
-        a: 'The price split into parts and labour, the spring cycle rating in writing, whether the diagnostic fee is credited against the repair, the warranty terms for part and labour separately, and a certificate of liability insurance.',
+        a: 'The price split into parts and labor, the spring cycle rating in writing, whether the diagnostic fee is credited against the repair, the warranty terms for part and labor separately, and a certificate of liability insurance.',
       },
       {
         q: 'How many quotes should I get for garage door work?',
@@ -562,7 +569,7 @@ export const guides = [
         body: [
           'The line is easy to state: anything you can see and reach from the floor is fair game. Anything involving the springs, the lift cables, or the inside of the motor head is not.',
           'The springs above the door hold enough stored energy to cause serious injury, and they stay loaded whether the door is open, closed or already broken. The logic board inside the opener is mains-connected. Neither is a reasonable place to learn, and neither failure is common enough to be worth the risk of finding out.',
-          'A diagnostic visit runs $75–$150 and is normally credited against the repair if you go ahead, so calling someone once the free checks are exhausted often costs nothing extra. Where the state licenses the trade — California, Florida and Arizona license garage door work specifically — ask for the licence number and check it on the state register yourself. It takes about a minute.',
+          'A diagnostic visit runs $75–$150 and is normally credited against the repair if you go ahead, so calling someone once the free checks are exhausted often costs nothing extra. Where the state licenses the trade — California, Florida and Arizona license garage door work specifically — ask for the license number and check it on the state register yourself. It takes about a minute.',
         ],
       },
     ],
@@ -672,7 +679,7 @@ export const guides = [
         diagram: 'winding-cone',
         body: [
           'Yes, and it is a common upgrade on older single doors. A conversion means fitting a torsion shaft, drums, new lift cables and the springs themselves, plus a mounting plate above the opening. Expect it to price above a straight torsion pair replacement, because of the extra hardware and the extra time.',
-          'It is worth considering when the door is heavy enough that even, linked pull genuinely matters, when the existing extension springs have no safety cables and the pulleys are worn anyway, or when you are already replacing cables and rollers so much of the labour is shared. It is not worth doing for its own sake on a light, lightly used single door whose hardware is sound.',
+          'It is worth considering when the door is heavy enough that even, linked pull genuinely matters, when the existing extension springs have no safety cables and the pulleys are worn anyway, or when you are already replacing cables and rollers so much of the labor is shared. It is not worth doing for its own sake on a light, lightly used single door whose hardware is sound.',
           'Headroom is the constraint that usually decides it. A standard torsion assembly needs roughly twelve inches of clear space above the opening. Low-headroom kits exist and cost more, and this is a measurement a technician should take before quoting rather than a question you can settle from the ground.',
         ],
       },
@@ -680,7 +687,7 @@ export const guides = [
         h2: 'Why this page describes and does not instruct',
         body: [
           'Everything above exists so you can identify what you have, read a quote, and ask a question that gets a straight answer. None of it is a procedure, and that is deliberate rather than an oversight.',
-          'A wound torsion spring on a double door holds roughly 200–300 pounds of stored force, released through winding bars in a controlled sequence. An extension spring at rest in a closed door is a loaded line. Both stay loaded after a failure, and on a two-spring door the survivor is still fully wound after the first has gone. Against that, the labour saved by doing it yourself is around $100–$250. The injuries are routinely fractures of the hand and forearm.',
+          'A wound torsion spring on a double door holds roughly 200–300 pounds of stored force, released through winding bars in a controlled sequence. An extension spring at rest in a closed door is a loaded line. Both stay loaded after a failure, and on a two-spring door the survivor is still fully wound after the first has gone. Against that, the labor saved by doing it yourself is around $100–$250. The injuries are routinely fractures of the hand and forearm.',
           'The genuinely useful homeowner skill here is detection, not replacement. Twice a year, with the door closed, pull the release cord, lift the door by hand to waist height and let go. A balanced door stays where you put it. One that slides down or drifts up has a spring losing its rating — and that is the moment to call someone, not the moment to buy tools.',
         ],
       },
@@ -772,7 +779,7 @@ export const guides = [
         h2: 'What wears out, and roughly when',
         diagram: 'spring-life',
         body: [
-          'Springs are the shortest-lived major component. A standard 10,000-cycle spring lasts roughly seven years at four openings a day and about half that at eight. Lift cables are steel under constant load and tend to reach the end of their life at a similar age, which is why they are usually replaced alongside springs — the labour overlaps almost entirely, and a cable pair costs $130–$250 on its own visit.',
+          'Springs are the shortest-lived major component. A standard 10,000-cycle spring lasts roughly seven years at four openings a day and about half that at eight. Lift cables are steel under constant load and tend to reach the end of their life at a similar age, which is why they are usually replaced alongside springs — the labor overlaps almost entirely, and a cable pair costs $130–$250 on its own visit.',
           'Rollers are the cheapest wear part and the one that most changes how a door sounds. Steel rollers with exposed bearings are noisy when new and get worse; nylon rollers are quieter and last longer. A set runs $100–$200 fitted, and having them done at the same visit as springs saves a separate call-out.',
           'Hinges, brackets and the bottom fixture last a long time if they are lubricated, and they are the parts most likely to be quietly bent rather than obviously broken. Once a year, look for elongated screw holes and hairline cracks around the hinge knuckles, particularly the centre hinges on a double-width door where the load is highest.',
         ],

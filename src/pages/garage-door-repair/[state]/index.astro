@@ -28,17 +28,17 @@ const crumbs = [
 const faqs = [
   {
     q: `How many garage door companies are listed in ${s.state}?`,
-    a: `${CLAIMS.listingMeaning.replace(/\.$/, '')} — we list ${s.count} garage door ${s.count === 1 ? 'company' : 'companies'} across ${s.cityCount} ${s.cityCount === 1 ? 'city' : 'cities'} in ${s.state}${lic ? `, of which ${s.licensedCount} have a licence number matched to an active record on the ${lic.authorityShort} register` : ''}.`,
+    a: `${CLAIMS.listingMeaning.replace(/\.$/, '')} — we list ${s.count} garage door ${s.count === 1 ? 'company' : 'companies'} across ${s.cityCount} ${s.cityCount === 1 ? 'city' : 'cities'} in ${s.state}${lic ? `, of which ${s.licensedCount} have a license number matched to an active record on the ${lic.authorityShort} register` : ''}.`,
   },
   {
-    q: `Do garage door installers need a licence in ${s.state}?`,
+    q: `Do garage door installers need a license in ${s.state}?`,
     a: lic
-      ? `Yes. ${s.state} licenses the trade through the ${lic.authority} under ${lic.classification}. You can check any licence number yourself on the state register in about a minute.`
-      : `Not as a separate trade. ${s.state} has no garage-door-specific state licence, so the work falls under a general contractor licence, a local registration, or no licence at all depending on the job. Ask for proof of liability insurance instead.`,
+      ? `Yes. ${s.state} licenses the trade through the ${lic.authority} under ${lic.classification}. You can check any license number yourself on the state register in about a minute.`
+      : `Not as a separate trade. ${s.state} has no garage-door-specific state license, so the work falls under a general contractor license, a local registration, or no license at all depending on the job. Ask for proof of liability insurance instead.`,
   },
   {
     q: `How much does garage door repair cost in ${s.state}?`,
-    a: `Most garage door repairs run $150–$400 nationally, with springs at $250–$550 for a pair and a new opener at $300–$700 installed. Local labour rates move the figure. See our garage door repair cost guide for the full breakdown by job.`,
+    a: `Most garage door repairs run $150–$400 nationally, with springs at $250–$550 for a pair and a new opener at $300–$700 installed. Local labor rates move the figure. See our garage door repair cost guide for the full breakdown by job.`,
   },
 ];
 
@@ -55,7 +55,7 @@ const schemas = [
     `${s.state} Garage Door Companies`,
   )}
   description={fitDescription(
-    `${s.count} garage door companies across ${s.cityCount} ${s.cityCount === 1 ? 'city' : 'cities'} in ${s.state}. Contact details, service categories${lic ? ` and ${lic.authorityShort} licence checks` : ''}.`,
+    `${s.count} garage door companies across ${s.cityCount} ${s.cityCount === 1 ? 'city' : 'cities'} in ${s.state}. Contact details, service categories${lic ? ` and ${lic.authorityShort} license checks` : ''}.`,
     `Garage door repair and installation companies across ${s.cityCount} cities in ${s.state}, with phone numbers, service categories and local cost guidance.`,
   )}
   canonical={url}
@@ -71,7 +71,7 @@ const schemas = [
     <p class="muted mb-3">
       {formatCount(s.count)} {s.count === 1 ? 'listing' : 'listings'} across
       {' '}{s.cityCount} {s.cityCount === 1 ? 'city' : 'cities'}
-      {lic && s.licensedCount > 0 ? ` · ${s.licensedCount} licence-verified` : ''}
+      {lic && s.licensedCount > 0 ? ` · ${s.licensedCount} license-verified` : ''}
     </p>
 
     <p class="claim-note">
@@ -109,10 +109,10 @@ const schemas = [
           <p class="mt-2">
             {s.state} is one of only three states that license garage door work as a
             distinct trade. The {lic.authority} issues {lic.classification}, and the
-            register is public, free and searchable by licence number or business name.
+            register is public, free and searchable by license number or business name.
           </p>
           <div class="highlight-box">
-            <h3>Verify a licence yourself, in about a minute</h3>
+            <h3>Verify a license yourself, in about a minute</h3>
             <ol style="margin:.6rem 0 0 1.2rem;">
               {lic.verifySteps.map((step) => <li style="margin-bottom:.4rem;">{step}</li>)}
             </ol>

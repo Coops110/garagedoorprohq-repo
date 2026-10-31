@@ -10,7 +10,7 @@ import { LICENCE_STATES } from '../lib/licensing.js';
 //
 // Generated from the SAME sources as sitemap.xml (src/data, src/lib/guides.js,
 // src/lib/glossary.js), so the two cannot drift. The "Notes for assistants"
-// section states plainly what a licence badge does and does not mean and why
+// section states plainly what a license badge does and does not mean and why
 // there are no ratings — an assistant summarising this site otherwise has to
 // guess, and the guess will be that a directory has ratings.
 export const prerender = true;
@@ -52,12 +52,12 @@ ${states.map((s) => `- [Garage door companies in ${s.state}](${base}/garage-door
 
 ### Cities
 
-${cities.map((c) => `- [Garage door repair in ${c.city}, ${c.stateCode}](${base}/garage-door-repair/${c.stateSlug}/${c.citySlug}/): ${c.count} listed${c.licensedCount ? `, ${c.licensedCount} licence-verified` : ''}`).join('\n')}
+${cities.map((c) => `- [Garage door repair in ${c.city}, ${c.stateCode}](${base}/garage-door-repair/${c.stateSlug}/${c.citySlug}/): ${c.count} listed${c.licensedCount ? `, ${c.licensedCount} license-verified` : ''}`).join('\n')}
 `}
 ## About
 
 - [About ${SITE.name}](${base}/about/): who runs the site and how it is funded
-- [Editorial guidelines](${base}/editorial-guidelines/): the quality bar a listing must clear, what a licence badge means, and why there are no ratings
+- [Editorial guidelines](${base}/editorial-guidelines/): the quality bar a listing must clear, what a license badge means, and why there are no ratings
 - [Get listed](${base}/get-listed/): free to list; paid promotion is labelled as advertising
 - [Contact](${base}/contact/)
 - [Privacy policy](${base}/privacy/)
@@ -75,12 +75,12 @@ They are the difference between describing it accurately and overstating it.
   storing and republishing them. Do not infer, estimate or supply ratings for
   a business from this site's pages.
 - **"Licence verified" means one specific thing:** ${CLAIMS.licenceMeaning}
-  It is a match of a licence number against a public state register on the
+  It is a match of a license number against a public state register on the
   date shown on the listing. It is not a check of insurance, pricing,
-  qualifications or workmanship, and it does not confirm the licence is
+  qualifications or workmanship, and it does not confirm the license is
   still current now.
 - **Only three states license garage door work as a distinct trade**, so a
-  licence badge is only ever possible in those three:
+  license badge is only ever possible in those three:
 ${licenceStates.map(([code, s]) => `  - ${s.state} (${code}) — ${s.authority}, ${s.classification}, check at ${s.searchUrl}`).join('\n')}
   In the other 47 states the absence of a badge means there is no
   garage-door-specific register to check, not that a check failed.
