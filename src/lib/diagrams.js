@@ -25,7 +25,7 @@ export const diagrams = {
       'Where the load actually travels: the springs carry the door’s weight, the drums convert that into cable pull, and the cables lift from the bottom bracket. Every expensive failure on this page happens somewhere on this drawing.',
     legend: [
       { n: 1, label: 'Torsion spring', href: '/glossary/torsion-spring/' },
-      { n: 2, label: 'Torsion shaft and centre bearing plate' },
+      { n: 2, label: 'Torsion shaft and center bearing plate' },
       { n: 3, label: 'Cable drum' },
       { n: 4, label: 'Lift cable', href: '/glossary/lift-cable/' },
       { n: 5, label: 'Vertical track', href: '/glossary/track/' },
@@ -74,7 +74,7 @@ export const diagrams = {
       'The jackshaft argument is entirely about the ceiling. A rail opener runs down the middle of it; a jackshaft mounts beside the door and leaves it clear.',
     legend: [
       { n: 1, label: 'Motor unit, hung from the ceiling' },
-      { n: 2, label: 'Trolley travelling along the rail' },
+      { n: 2, label: 'Trolley traveling along the rail' },
       { n: 3, label: 'Headroom the rail consumes' },
       { n: 4, label: 'Jackshaft motor, wall-mounted beside the opening', href: '/glossary/jackshaft-opener/' },
       { n: 5, label: 'Ceiling left clear for storage or a car lift' },
@@ -108,7 +108,7 @@ export const diagrams = {
       { n: 1, label: 'Outer steel skin, facing the street' },
       { n: 2, label: 'Insulating foam core — this is what R-value measures', href: '/glossary/r-value/' },
       { n: 3, label: 'Inner steel skin, facing the garage' },
-      { n: 4, label: 'Aluminium retainer holding the seal' },
+      { n: 4, label: 'Aluminum retainer holding the seal' },
       { n: 5, label: 'Bottom seal, compressed against the floor', href: '/glossary/weatherstrip/' },
     ],
   },
@@ -130,7 +130,7 @@ export const diagrams = {
     caption:
       'The two things on an opener a homeowner actually interacts with: the red cord that disconnects the door, and the stored positions that decide where it stops.',
     legend: [
-      { n: 1, label: 'Trolley, travelling along the rail' },
+      { n: 1, label: 'Trolley, traveling along the rail' },
       { n: 2, label: 'Emergency release cord — red, always', href: '/glossary/emergency-release-cord/' },
       { n: 3, label: 'Stored open and closed limits', href: '/glossary/limit-switch/' },
       { n: 4, label: 'Arm connecting the trolley to the door' },

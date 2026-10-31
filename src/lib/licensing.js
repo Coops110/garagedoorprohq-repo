@@ -79,6 +79,6 @@ export function noLicenceGuidance(stateName) {
   return [
     `${stateName} does not license garage door installation as a separate trade. Depending on the job, the work may fall under a general contractor license, a city or county registration, or no license requirement at all — so there is no state register for us to check a garage door license number against, and no listing on this site shows a verified license badge in ${stateName}.`,
     `That makes insurance the credential worth asking for. Request a certificate of general liability insurance, plus workers’ compensation if more than one person will be on site, and ask for the insurer name and policy number rather than a yes or no. A company that genuinely carries cover can produce the certificate the same day.`,
-    `It is also worth asking your city or county building department whether a permit is required for the work, particularly for a full door replacement — the answer varies between neighbouring jurisdictions.`,
+    `It is also worth asking your city or county building department whether a permit is required for the work, particularly for a full door replacement — the answer varies between neighboring jurisdictions.`,
   ];
 }

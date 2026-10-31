@@ -10,7 +10,7 @@
 //   3. Figures must not contradict each other. The cost tables below share
 //      rows on purpose — the spring row in the repair-cost pillar is the
 //      same range the spring guide headlines. Change one, change both, or
-//      the site argues with itself on a neighbouring page.
+//      the site argues with itself on a neighboring page.
 //
 //  Only finished guides go in `guides`. Planned ones live in `PLANNED` at
 //  the bottom: they get no route, no sitemap entry and no thin placeholder
@@ -65,8 +65,8 @@ export const guides = [
         h2: 'Springs: the most common failure, and the most expensive small job',
         diagram: 'torsion-system',
         body: [
-          'Torsion springs are wound steel bars mounted above the door that carry almost all of its weight. They are rated in cycles — one open and one close is a cycle — and a standard 10,000-cycle spring lasts roughly seven years on a door used four times a day. When one breaks it usually goes with a bang loud enough to be heard indoors, and the door then feels impossibly heavy or will not lift at all.',
-          'Replacing one torsion spring runs $180–$350 installed. Replacing the pair runs $250–$550, and it is almost always the better buy: the second spring has done identical work for identical years, the labor is already on site, and paying the call-out twice inside a year is the expensive outcome.',
+          'A torsion spring is a tight helical coil of spring steel wound around a steel shaft above the door, and it carries almost all of the door’s weight. They are rated in cycles — one open and one close is a cycle — and a standard 10,000-cycle spring lasts roughly seven years on a door used four times a day. When one breaks it usually goes with a bang loud enough to be heard indoors, and the door then feels impossibly heavy or will not lift at all.',
+          'Replacing one torsion spring runs $180–$350 installed. Replacing the pair runs $250–$550, and it is almost always the better buy: the second spring has done identical work for identical years, the labor is already on site, and paying the service call twice inside a year is the expensive outcome.',
           'This is the one job on this page where the DIY saving is not worth considering. A wound torsion spring stores enough energy to break bones, and the winding bars have to be handled correctly to release it. We have a separate page on exactly why, and it is deliberately not a tutorial.',
         ],
       },
@@ -83,7 +83,7 @@ export const guides = [
         body: [
           'Lift cables fray and snap, usually one before the other, and a snapped cable lets one side of the door drop. Replacing the pair runs $130–$250. Like springs, they are replaced in pairs because they have worn identically.',
           'Rollers are the small wheels that run in the vertical track. Worn nylon or seized steel rollers make the door loud and jerky, and a set runs $100–$200. It is a cheap job that transforms how the door sounds.',
-          'A door off its track is the failure that looks most alarming and is often not the most expensive. Resetting it runs $150–$300. What matters is finding out why it came off — a bent track, a broken roller or a cable that let go. Paying to reset a door without fixing the cause buys you the same call-out again in a month.',
+          'A door off its track is the failure that looks most alarming and is often not the most expensive. Resetting it runs $150–$300. What matters is finding out why it came off — a bent track, a broken roller or a cable that let go. Paying to reset a door without fixing the cause buys you the same service call again in a month.',
         ],
       },
       {
@@ -114,7 +114,7 @@ export const guides = [
       },
       {
         q: 'Should I replace one garage door spring or both?',
-        a: 'Both. The second spring has done the same number of cycles over the same years, so it is close behind the first. The pair costs $250–$550 against $180–$350 for one, and replacing both avoids paying a second call-out within a year.',
+        a: 'Both. The second spring has done the same number of cycles over the same years, so it is close behind the first. The pair costs $250–$550 against $180–$350 for one, and replacing both avoids paying a second service call within a year.',
       },
       {
         q: 'Is it cheaper to repair or replace a garage door?',
@@ -173,8 +173,8 @@ export const guides = [
       {
         h2: 'Why the pair costs barely more than one',
         body: [
-          'The labor and the call-out are the bulk of the invoice, and both are already paid for once the technician is on the ladder. The second spring is mostly the part cost, which is why one spring at $180–$350 becomes a pair at $250–$550 rather than double.',
-          'The reason to do it is not the discount, it is the cycle count. Both springs were fitted on the same day and have done the same number of openings, so when one goes the other is typically within months of the same fate. Replacing one means booking the same job twice inside a year and paying the call-out twice.',
+          'The labor and the service call are the bulk of the invoice, and both are already paid for once the technician is on the ladder. The second spring is mostly the part cost, which is why one spring at $180–$350 becomes a pair at $250–$550 rather than double.',
+          'The reason to do it is not the discount, it is the cycle count. Both springs were fitted on the same day and have done the same number of openings, so when one goes the other is typically within months of the same fate. Replacing one means booking the same job twice inside a year and paying the service call twice.',
         ],
       },
       {
@@ -202,7 +202,7 @@ export const guides = [
     faqs: [
       {
         q: 'How much does it cost to replace a garage door spring?',
-        a: 'One torsion spring costs $180–$350 fitted in 2026, and the pair costs $250–$550. Extension springs are cheaper at $120–$300 for the pair. A double-width door sits at the top of those ranges.',
+        a: 'One torsion spring costs $180–$350 fitted in 2026, and the pair costs $250–$550. Extension springs are cheaper at $120–$300 for the pair. A double-width torsion pair runs $350–$600, above the single-door range rather than at the top of it.',
       },
       {
         q: 'How long do garage door springs last?',
@@ -225,7 +225,7 @@ export const guides = [
       },
       {
         q: 'Do I need to replace both garage door springs?',
-        a: 'It is strongly advised. Both springs have completed the same number of cycles, so the second is usually close behind the first. The pair costs $250–$550 against $180–$350 for one, and it avoids a second call-out fee within the year.',
+        a: 'It is strongly advised. Both springs have completed the same number of cycles, so the second is usually close behind the first. The pair costs $250–$550 against $180–$350 for one, and it avoids a second service call fee within the year.',
       },
     ],
     related: ['garage-door-repair-cost', 'why-diy-spring-repair-is-dangerous', 'garage-door-opener-repair-cost', 'torsion-vs-extension-springs'],
@@ -269,7 +269,7 @@ export const guides = [
         h2: 'Check the cheap things first',
         diagram: 'photo-eye',
         body: [
-          'Two faults account for a large share of call-outs and neither needs a technician. If the door closes a few inches then reverses and the opener light flashes, the photo-eye sensors near the floor are misaligned or blocked — a cobweb, a leaf, a bike wheel, or a bracket knocked out of line. They should face each other with a steady indicator light. Wipe both lenses and nudge one until the light is solid.',
+          'Two faults account for a large share of service calls and neither needs a technician. If the door closes a few inches then reverses and the opener light flashes, the photo-eye sensors near the floor are misaligned or blocked — a cobweb, a leaf, a bike wheel, or a bracket knocked out of line. They should face each other with a steady indicator light. Wipe both lenses and nudge one until the light is solid.',
           'If nothing responds to the remote but the wall button works, it is the remote — a battery or, at worst, a $40–$120 replacement. If nothing responds to anything and there is no light, check the outlet and the breaker before booking anyone.',
           'Beyond that, stop. The next tier of faults involves stored spring tension and mains-connected boards, and a technician’s diagnostic fee of $75–$150 is normally credited against the repair anyway.',
         ],
@@ -296,7 +296,7 @@ export const guides = [
         body: [
           'Chain drives are the cheapest at $300–$550 installed and the loudest. On a detached garage, the noise is irrelevant and the saving is real.',
           'Belt drives run $400–$700 installed and are markedly quieter, which is the whole argument if there is a bedroom above or beside the garage. Direct-drive and wall-mount jackshaft units sit at or above the top of that range; a jackshaft mounts beside the door rather than on the ceiling, which is the answer for a garage with a low ceiling or overhead storage.',
-          'All current openers include rolling-code remotes and Wi-Fi is now near-standard rather than a premium feature. Battery backup is worth specifying deliberately: without it, a power cut means lifting a heavy door by hand, and in some states it is now a code requirement on new residential installs.',
+          'All current openers include rolling-code remotes and Wi-Fi is now near-standard rather than a premium feature. Battery backup is worth specifying deliberately: without it, a power cut means lifting a heavy door by hand, and in California it is a legal requirement on any residential opener sold or installed in the state on new residential installs.',
         ],
       },
       {
@@ -355,7 +355,7 @@ export const guides = [
     // "can I replace a garage door spring myself" is a decision, not a
     // method.
     quickAnswer:
-      'No. A wound torsion spring on a standard double garage door holds roughly 200–300 pounds of stored force, released through winding bars that will swing violently if mishandled. The saving over a professional replacement is about $100–$250 of labor. This page does not explain how to do it, on purpose.',
+      'No. A wound torsion spring on a standard double garage door holds roughly 150–300 pounds of stored force, released through winding bars that will swing violently if mishandled. The saving over a professional replacement is about $100–$250 of labor. This page does not explain how to do it, on purpose.',
     sections: [
       {
         h2: 'What the stored energy actually is',
@@ -370,7 +370,7 @@ export const guides = [
         h2: 'What you would actually save',
         body: [
           'A torsion spring is a $40–$90 part. A professional pair replacement costs $250–$550 fitted. Buying the springs and fitting them yourself saves roughly $100–$250 in labor — assuming you already own correctly sized winding bars, vice grips and a wind-up chart for your door, and assuming you get the wind count right first time.',
-          'Get the wind count wrong and the door is unbalanced, which transfers load onto the opener and shortens the life of a $300–$700 unit. Order the wrong wire size, inside diameter or length — four measurements, all easy to get wrong from a photograph — and the door is out of service until the right part arrives.',
+          'Get the wind count wrong and the door is unbalanced, which transfers load onto the opener and shortens the life of a $300–$700 unit. Order the wrong wire size, inside diameter, length or wind direction — four measurements, all easy to get wrong from a photograph — and the door is out of service until the right part arrives.',
         ],
       },
       {
@@ -393,7 +393,7 @@ export const guides = [
     faqs: [
       {
         q: 'Can I replace a garage door spring myself?',
-        a: 'You should not. A wound torsion spring holds 200–300 pounds of stored force on a typical double door, released through winding bars that cause serious hand, arm and head injuries when mishandled. The saving is about $100–$250 of labor.',
+        a: 'You should not. A wound torsion spring holds 150–300 pounds of stored force on a typical double door, released through winding bars that cause serious hand, arm and head injuries when mishandled. The saving is about $100–$250 of labor.',
       },
       {
         q: 'Is a broken garage door spring still dangerous?',
@@ -430,7 +430,7 @@ export const guides = [
       'Ask for the price split into parts and labor, the spring cycle rating in writing, whether the diagnostic fee is credited, and proof of liability insurance. In California, Florida and Arizona the trade is licensed at state level and you can check a license number yourself in about a minute. Most other states license only general contractors, or nothing at all.',
     sections: [
       {
-        h2: 'Only three states license this trade specifically',
+        h2: 'Three states license this trade specifically',
         body: [
           'Unlike HVAC or electrical work, garage door installation is not a licensed trade in most of the United States. Three states license it specifically: California, through the Contractors State License Board as a C-61/D-28 limited specialty classification; Florida, through the Department of Business and Professional Regulation as a Garage Door Installation Specialty Contractor; and Arizona, through the Registrar of Contractors under classification ROC-283.',
           'Everywhere else, the work either falls under a general contractor license, is licensed only at city or county level, or is not licensed at all. That is not a loophole a contractor is exploiting — it is simply how the trade is regulated, and it means "licensed" is a much weaker signal in most of the country than homeowners assume.',
@@ -520,7 +520,7 @@ export const guides = [
     // owns those figures and restating them in a second table is how two
     // pages start disagreeing.
     quickAnswer:
-      'Three checks cost nothing and cover most opener call-outs: mains power at the outlet, the photo-eye sensors near the floor, and the emergency release cord. Work through them in that order. If the door starts to close then reverses with the opener light flashing, it is the photo-eyes. If the motor runs but nothing moves, the release cord has been pulled. Beyond those, a diagnostic visit runs $75–$150 and is normally credited against the repair.',
+      'Three checks cost nothing and cover most opener service calls: mains power at the outlet, the photo-eye sensors near the floor, and the emergency release cord. Work through them in that order. If the door starts to close then reverses with the opener light flashing, it is the photo-eyes. If the motor runs but nothing moves, the release cord has been pulled. Beyond those, a diagnostic visit runs $75–$150 and is normally credited against the repair.',
     sections: [
       {
         h2: 'The three checks that cost nothing',
@@ -646,7 +646,7 @@ export const guides = [
         body: [
           'Open the door fully and look up. A single steel shaft running horizontally across the wall directly above the opening, with one or two tightly wound springs threaded onto it, is a torsion system. Two long springs running front-to-back along the horizontal tracks instead, one each side, visibly stretching as the door closes, are extension springs.',
           'The two are unmistakable once you know what you are looking at, and the difference matters more than most homeowners expect. It changes the replacement price, it changes how the door fails, and it changes what a competent quote should include.',
-          'A small number of doors — usually wide, heavy, or fitted where there is no headroom above the opening — use a jackshaft arrangement, with the torsion assembly mounted to one side of the door rather than centred above it. That is still a torsion system for pricing and safety purposes.',
+          'A small number of doors — usually wide, heavy, or fitted where there is no headroom above the opening — use a jackshaft arrangement, with the torsion assembly mounted to one side of the door rather than centered above it. That is still a torsion system for pricing and safety purposes.',
         ],
       },
       {
@@ -671,7 +671,7 @@ export const guides = [
         body: [
           'Springs of both types are rated in cycles, where one cycle is a single open and close. A standard spring is rated at 10,000 cycles, which on a door used four times a day works out at roughly seven years. Use the door eight times a day and the identical spring becomes a three-and-a-half year part. The rating is a count, not a promise in years, and this is the single most misread number in the trade.',
           'High-cycle torsion springs rated at 25,000 cycles or more use thicker wire on a larger diameter and add roughly $40–$80 to a fitted pair. On a door that serves as the household’s main entrance, that is the best-value upgrade available here: two to three times the service life for well under a third more money. Ask for the rating in writing, because a 10,000 and a 25,000-cycle spring are indistinguishable to a homeowner once they are mounted.',
-          'Extension springs are cheaper to buy and cheaper to fit, at $120–$300 the pair against $250–$550 for a torsion pair. That gap is the main reason extension systems persist on older single doors. It narrows considerably once you count call-outs rather than parts: shorter service life and independent, uneven wear mean more visits across the same span of years.',
+          'Extension springs are cheaper to buy and cheaper to fit, at $120–$300 the pair against $250–$550 for a torsion pair. That gap is the main reason extension systems persist on older single doors. It narrows considerably once you count service calls rather than parts: shorter service life and independent, uneven wear mean more visits across the same span of years.',
         ],
       },
       {
@@ -687,7 +687,7 @@ export const guides = [
         h2: 'Why this page describes and does not instruct',
         body: [
           'Everything above exists so you can identify what you have, read a quote, and ask a question that gets a straight answer. None of it is a procedure, and that is deliberate rather than an oversight.',
-          'A wound torsion spring on a double door holds roughly 200–300 pounds of stored force, released through winding bars in a controlled sequence. An extension spring at rest in a closed door is a loaded line. Both stay loaded after a failure, and on a two-spring door the survivor is still fully wound after the first has gone. Against that, the labor saved by doing it yourself is around $100–$250. The injuries are routinely fractures of the hand and forearm.',
+          'A wound torsion spring on a double door holds roughly 150–300 pounds of stored force, released through winding bars in a controlled sequence. An extension spring at rest in a closed door is a loaded line. Both stay loaded after a failure, and on a two-spring door the survivor is still fully wound after the first has gone. Against that, the labor saved by doing it yourself is around $100–$250. The injuries are routinely fractures of the hand and forearm.',
           'The genuinely useful homeowner skill here is detection, not replacement. Twice a year, with the door closed, pull the release cord, lift the door by hand to waist height and let go. A balanced door stays where you put it. One that slides down or drifts up has a spring losing its rating — and that is the moment to call someone, not the moment to buy tools.',
         ],
       },
@@ -715,7 +715,7 @@ export const guides = [
       },
       {
         q: 'Should both springs be replaced at the same time?',
-        a: 'Yes, for either type. Both were fitted on the same day and have done the same number of cycles, so when one goes the other is usually close behind. Replacing the pair costs far less than paying a second call-out within the year.',
+        a: 'Yes, for either type. Both were fitted on the same day and have done the same number of cycles, so when one goes the other is usually close behind. Replacing the pair costs far less than paying a second service call within the year.',
       },
     ],
     related: ['garage-door-spring-replacement-cost', 'why-diy-spring-repair-is-dangerous', 'garage-door-repair-cost'],
@@ -780,8 +780,8 @@ export const guides = [
         diagram: 'spring-life',
         body: [
           'Springs are the shortest-lived major component. A standard 10,000-cycle spring lasts roughly seven years at four openings a day and about half that at eight. Lift cables are steel under constant load and tend to reach the end of their life at a similar age, which is why they are usually replaced alongside springs — the labor overlaps almost entirely, and a cable pair costs $130–$250 on its own visit.',
-          'Rollers are the cheapest wear part and the one that most changes how a door sounds. Steel rollers with exposed bearings are noisy when new and get worse; nylon rollers are quieter and last longer. A set runs $100–$200 fitted, and having them done at the same visit as springs saves a separate call-out.',
-          'Hinges, brackets and the bottom fixture last a long time if they are lubricated, and they are the parts most likely to be quietly bent rather than obviously broken. Once a year, look for elongated screw holes and hairline cracks around the hinge knuckles, particularly the centre hinges on a double-width door where the load is highest.',
+          'Rollers are the cheapest wear part and the one that most changes how a door sounds. Steel rollers with exposed bearings are noisy when new and get worse; nylon rollers are quieter and last longer. A set runs $100–$200 fitted, and having them done at the same visit as springs saves a separate service call.',
+          'Hinges, brackets and the bottom fixture last a long time if they are lubricated, and they are the parts most likely to be quietly bent rather than obviously broken. Once a year, look for elongated screw holes and hairline cracks around the hinge knuckles, particularly the center hinges on a double-width door where the load is highest.',
         ],
       },
       {

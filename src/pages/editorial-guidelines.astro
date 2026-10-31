@@ -24,7 +24,7 @@ const states = Object.values(LICENCE_STATES);
     <article style="margin-top:1rem;">
       <h1 style="margin:1rem 0 .5rem;">Editorial guidelines</h1>
       <p class="muted" style="margin:0 0 2rem;font-size:.85rem;">
-        Last updated: {LEGAL.lastUpdated}
+        Last updated: {LEGAL.updated.editorialGuidelines}
       </p>
 
       <div class="prose">
@@ -48,10 +48,11 @@ const states = Object.values(LICENCE_STATES);
         <p>
           What can be bought is attention: advertising, and positions marked as sponsored.
           Where a position has been paid for it carries a label saying so, every time,
-          because an unlabelled paid position is the thing that makes a directory
-          untrustworthy rather than merely commercial. This site has running costs and is
-          funded by advertising and affiliate arrangements; we would rather say that
-          plainly than imply it runs on goodwill.
+          because an unlabeled paid position is the thing that makes a directory
+          untrustworthy rather than merely commercial. This site has running costs and no
+          revenue yet; the intended model is advertising and sponsored positions, and in
+          future affiliate arrangements. We would rather say that plainly than imply it
+          runs on goodwill — or imply an income it does not have.
         </p>
         <p>
           Listing is free, and <a href="/get-listed/">anyone can ask to be added</a>.
@@ -92,7 +93,7 @@ const states = Object.values(LICENCE_STATES);
         <h2>The quality bar a listing must clear</h2>
         <p>A record is only published if all of the following are true:</p>
         <ul>
-          <li><strong>Identified by category, not by name.</strong> The business is categorised as a garage door service in the source data. A business matched only because its name contains "garage door" is quarantined for human review, never auto-published — a name search alone returns storage companies, car washes, a gas station and, in one case, a condominium.</li>
+          <li><strong>Identified by category, not by name.</strong> The business is categorized as a garage door service in the source data. A business matched only because its name contains "garage door" is quarantined for human review, never auto-published — a name search alone returns storage companies, car washes, a gas station and, in one case, a condominium.</li>
           <li><strong>Currently operating.</strong> The source marks the business as open. Closed records are dropped.</li>
           <li><strong>Contactable.</strong> A phone number is present. A listing nobody can ring does not do the one job it exists to do.</li>
           <li><strong>Locatable.</strong> A city is present, taken from the record's own address rather than inferred from a map bounding box.</li>
@@ -107,7 +108,7 @@ const states = Object.values(LICENCE_STATES);
 
         <h2>What a license badge means</h2>
         <p>
-          Garage door work is licensed as a distinct trade in exactly three states:
+          Three states license garage door work as a distinct trade, each through its own register:
         </p>
         <ul>
           {states.map((s) => (

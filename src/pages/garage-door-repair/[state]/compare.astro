@@ -79,7 +79,7 @@ const schemas = [
       <button type="button" class="cmp-sort" data-col="1" data-type="num" aria-pressed="true">Listings</button>
       <button type="button" class="cmp-sort" data-col="2" data-type="num">With address</button>
       <button type="button" class="cmp-sort" data-col="3" data-type="num">With website</button>
-      {lic && <button type="button" class="cmp-sort" data-col="4" data-type="num">Licence-verified</button>}
+      {lic && <button type="button" class="cmp-sort" data-col="4" data-type="num">License-verified</button>}
     </div>
 
     <div class="table-scroll">
@@ -91,7 +91,7 @@ const schemas = [
             <th scope="col" style="text-align:right;">Listings</th>
             <th scope="col" style="text-align:right;">With address</th>
             <th scope="col" style="text-align:right;">With website</th>
-            {lic && <th scope="col" style="text-align:right;">Licence-verified</th>}
+            {lic && <th scope="col" style="text-align:right;">License-verified</th>}
           </tr>
         </thead>
         <tbody>
@@ -139,9 +139,8 @@ const schemas = [
       </p>
       {lic && (
         <p>
-          <strong>Licence-verified</strong> counts listings whose license number we matched
-          to an active record on the {lic.authority} register. {s.state} is one of only
-          three states that licenses garage door work as a distinct trade, so this column
+          <strong>License-verified</strong> counts listings whose license number we matched
+          to an active record on the {lic.authority} register. {s.state} is one of three states that license garage door work as a distinct trade, so this column
           exists here and does not exist on most other state pages. A zero does not mean
           the companies are unlicensed — it means we have not matched a number yet, often
           because the license is held under a different registered name.

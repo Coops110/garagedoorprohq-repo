@@ -106,7 +106,7 @@ const mapEmbed = b.lat != null && b.lng != null
              than we checked. */
           <div class="claim-note">
             <p style="margin:0 0 .5rem;">
-              <strong>Licence #{b.licenceNumber}</strong> — matched to
+              <strong>License #{b.licenceNumber}</strong> — matched to
               {' '}{b.licenceStatus ? `an ${b.licenceStatus.toLowerCase()} record` : 'an active record'} on the
               {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authority}</a>
               {' '}register{b.licenceCheckedOn ? ` when we last checked on ${b.licenceCheckedOn}` : ''}.
@@ -148,7 +148,7 @@ const mapEmbed = b.lat != null && b.lng != null
 
             The heading carries the provenance. "What X says about itself" is
             not a stylistic choice — a reader must be able to tell this from
-            the licence badge at a glance, because the badge means a number
+            the license badge at a glance, because the badge means a number
             was checked against a state register and this means nobody checked
             anything. Burying that in a footnote would quietly borrow the
             badge's credibility for marketing copy. */}
@@ -203,7 +203,7 @@ const mapEmbed = b.lat != null && b.lng != null
             <strong>{b.name}</strong> is listed as a garage door business in
             {' '}{b.city}, {b.stateCode}
             {b.services?.length > 1
-              ? `, categorised in our source data as ${b.services.slice(0, 3).join(', ').toLowerCase()}`
+              ? `, categorized in our source data as ${b.services.slice(0, 3).join(', ').toLowerCase()}`
               : ''}.
             {' '}{CLAIMS.listingMeaning} We have not visited this business, inspected
             its work, or spoken to its customers.

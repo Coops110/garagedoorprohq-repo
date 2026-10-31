@@ -107,8 +107,27 @@ export const LEGAL = {
   contactEmail: SITE.email,
   // Business and tax residency are UK-based, so UK law governs the terms.
   governingLaw: 'United Kingdom',
-  lastUpdated: '11 August 2026',
-  founderName: 'Chris',
+  // Per page, not one shared date. A single `lastUpdated` was wrong the moment
+  // /how-we-price/ shipped: that page was written on 2026-10-31 and displayed
+  // "11 August 2026", a false freshness signal on the one page whose job is to
+  // explain how the site arrives at its figures. A shared date is also
+  // self-defeating — editing any one page silently backdates or forward-dates
+  // the other three.
+  //
+  // US format, because the Rules set US spelling (2026-10-31) and "11 August
+  // 2026" reads as foreign on a US-facing site. Dates here are the day the
+  // page's CONTENT last changed, never the build date: a date that moves on
+  // every deploy tells a reader nothing.
+  updated: {
+    terms: 'August 11, 2026',
+    privacy: 'October 31, 2026',              // funding and location wording corrected
+    editorialGuidelines: 'October 31, 2026',  // funding wording corrected
+    howWePrice: 'October 31, 2026',           // written this day
+  },
+  // Full name. /how-we-price/ already said "Chris Cooper" while About said
+  // "Chris", and a byline that changes between pages is exactly the signal
+  // that makes an about-the-author claim worth less than no claim.
+  founderName: 'Chris Cooper',
   founderRole: 'Founder & editor',
 };
 
@@ -136,17 +155,17 @@ export const CLAIMS = {
   // revenue model in nine places at once, and changing it in eight of them
   // would leave the ninth contradicting the terms.
   //
-  // The line this wording holds: what is sold is ATTENTION, clearly labelled.
+  // The line this wording holds: what is sold is ATTENTION, clearly labeled.
   // What is never sold is the editorial layer — the cost figures, the license
-  // badges, or what a listing says about a business. Selling a labelled ad
-  // position is ordinary publishing; selling an unlabelled one, or selling a
+  // badges, or what a listing says about a business. Selling a labeled ad
+  // position is ordinary publishing; selling an unlabeled one, or selling a
   // badge, is not, and the second kind is what the disclosure commitment here
   // exists to keep out.
   // Self-declared facts read from a business's own website. Lives here for
   // the same reason licenceMeaning does: it will appear on 481 listing pages
   // and must say the same thing on every one of them.
   //
-  // The distinction it has to carry is the whole point. A licence badge means
+  // The distinction it has to carry is the whole point. A license badge means
   // we checked a number against a state register. This means the opposite —
   // nobody checked anything, the business said it about itself. Both are
   // useful; conflating them would make the badge worthless. The heading above
@@ -156,5 +175,21 @@ export const CLAIMS = {
     'Taken from the company’s own website. These are its claims about itself, not things we verified — we have not visited this business, inspected its work, or spoken to its customers.',
 
   placementMeaning:
-    'Listing itself is free. We may sell advertising and sponsored positions, and anything paid for is labelled as advertising. Paying never changes what a listing says, whether it carries a license badge, or any figure in our guides.',
+    'Listing itself is free. We may sell advertising and sponsored positions, and anything paid for is labeled as advertising. Paying never changes what a listing says, whether it carries a license badge, or any figure in our guides.',
+
+  // One canonical answer to "how is this funded?", because three pages were
+  // giving three answers. /about/ said the site is funded by "Advertising, and
+  // in future affiliate arrangements" and that "there is no mechanism for a
+  // business to pay us for placement"; /privacy/ said "At the date of this
+  // policy we do not display advertising"; and /terms/ said "We may also sell
+  // sponsored positions directly". The privacy line was the accurate one — the
+  // site has no revenue at all — so /about/ was claiming income it does not
+  // have AND denying a model Chris had already decided to keep open.
+  //
+  // A directory's funding disclosure is the page a sceptical reader checks
+  // before trusting the listings, so three versions of it is worse than none.
+  // Future tense throughout, and it states the absence of revenue plainly
+  // rather than implying ads are already running.
+  fundingMeaning:
+    'The site has no revenue yet. The intended model is advertising and sponsored positions, and in future affiliate arrangements. Anything paid for is labeled as advertising, and paying never changes what a listing says, whether it carries a license badge, or any figure in our guides.',
 };

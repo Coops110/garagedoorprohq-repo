@@ -29,7 +29,7 @@ const active = Boolean(GA_ID);
       class="consent-banner"
       role="dialog"
       aria-modal="false"
-      aria-labelledby="consent-title"
+      aria-labeledby="consent-title"
       aria-describedby="consent-body"
       hidden
     >
@@ -140,7 +140,7 @@ const active = Boolean(GA_ID);
           // The dialog's accessible name/description must track whichever
           // view is actually on screen, not stay pinned to the main view's
           // text once settings opens.
-          banner.setAttribute('aria-labelledby', 'consent-title');
+          banner.setAttribute('aria-labeledby', 'consent-title');
           banner.setAttribute('aria-describedby', 'consent-body');
         }
 
@@ -153,7 +153,7 @@ const active = Boolean(GA_ID);
           mainView.hidden = true;
           settingsView.hidden = false;
           if (openSettingsBtn) openSettingsBtn.setAttribute('aria-expanded', 'true');
-          banner.setAttribute('aria-labelledby', 'consent-settings-title');
+          banner.setAttribute('aria-labeledby', 'consent-settings-title');
           banner.removeAttribute('aria-describedby');
         }
 
@@ -231,7 +231,7 @@ const active = Boolean(GA_ID);
           //
           // Inside the callback the browser has already recalculated layout for
           // the frame, so focus() reads a fresh box instead of forcing one. The
-          // behaviour is unchanged — focus still lands on the primary control for
+          // behavior is unchanged — focus still lands on the primary control for
           // whichever view just opened, one frame later, which is imperceptible.
           requestAnimationFrame(function () {
             banner.classList.add('is-visible');
@@ -282,7 +282,7 @@ const active = Boolean(GA_ID);
         });
 
         // Right to withdraw consent — wired to the footer button, straight
-        // into the settings view since that button is literally labelled
+        // into the settings view since that button is literally labeled
         // "Cookie settings".
         window.garageDoorProHQOpenConsent = function () { show('settings'); };
 

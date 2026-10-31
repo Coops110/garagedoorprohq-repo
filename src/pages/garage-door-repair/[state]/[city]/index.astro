@@ -36,7 +36,7 @@ const crumbs = [
 
 // Cost context pulled from our own guides, so a city page can never quote a
 // figure the guide contradicts. AirProHQ's lesson: numbers that disagree
-// across neighbouring pages are the fastest way to lose a reader's trust,
+// across neighboring pages are the fastest way to lose a reader's trust,
 // and the only reliable fix is one source of truth.
 const repair = getGuide('garage-door-repair-cost');
 const costRows = (repair?.costTable?.rows || []).filter(([job]) =>
@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: `Which garage door company in ${c.city} should I call first?`,
-    a: `We do not rank contractors by quality, and any position that has been paid for is labelled as advertising, so treat this list as a starting point rather than a recommendation. Call two or three, ask each for the price split into parts and labor, and ask for the spring cycle rating in writing.`,
+    a: `We do not rank contractors by quality, and any position that has been paid for is labeled as advertising, so treat this list as a starting point rather than a recommendation. Call two or three, ask each for the price split into parts and labor, and ask for the spring cycle rating in writing.`,
   },
 ];
 
@@ -133,7 +133,7 @@ const schemas = [
       <p class="mt-2">
         These are national 2026 estimates from our own
         {' '}<a href="/guides/garage-door-repair-cost/">garage door repair cost guide</a>,
-        not quotes from the companies above. Labour rates in {c.city} move the
+        not quotes from the companies above. Labor rates in {c.city} move the
         figure up or down, and a double-width door sits at the top of every range.
       </p>
       <div class="table-scroll">
@@ -151,7 +151,7 @@ const schemas = [
       </div>
     </section>
 
-    {/* Licence section. In a licensing state this is a walkthrough; in the
+    {/* License section. In a licensing state this is a walkthrough; in the
         other 47 it explains why there is no badge, which is more useful than
         silence and stops the absence reading as a failed check. */}
     <section class="section-sm">
@@ -167,7 +167,7 @@ const schemas = [
       {lic ? (
         <>
           <p class="mt-2">
-            {c.state} is one of three states that license garage door work specifically.
+            {c.state} is one of three states that license garage door work as its own classification.
             Any company quoting you should give you its license number on request, and
             you can confirm it on the {lic.authority} register without any expertise:
           </p>

@@ -58,7 +58,7 @@ ${cities.map((c) => `- [Garage door repair in ${c.city}, ${c.stateCode}](${base}
 
 - [About ${SITE.name}](${base}/about/): who runs the site and how it is funded
 - [Editorial guidelines](${base}/editorial-guidelines/): the quality bar a listing must clear, what a license badge means, and why there are no ratings
-- [Get listed](${base}/get-listed/): free to list; paid promotion is labelled as advertising
+- [Get listed](${base}/get-listed/): free to list; paid promotion is labeled as advertising
 - [Contact](${base}/contact/)
 - [Privacy policy](${base}/privacy/)
 - [Terms of service](${base}/terms/)
@@ -74,12 +74,12 @@ They are the difference between describing it accurately and overstating it.
   Apache 2.0) contains none of them. Datasets that do contain them prohibit
   storing and republishing them. Do not infer, estimate or supply ratings for
   a business from this site's pages.
-- **"Licence verified" means one specific thing:** ${CLAIMS.licenceMeaning}
+- **"License verified" means one specific thing:** ${CLAIMS.licenceMeaning}
   It is a match of a license number against a public state register on the
   date shown on the listing. It is not a check of insurance, pricing,
   qualifications or workmanship, and it does not confirm the license is
   still current now.
-- **Only three states license garage door work as a distinct trade**, so a
+- **Three states license garage door work as a distinct trade**, so a
   license badge is only ever possible in those three:
 ${licenceStates.map(([code, s]) => `  - ${s.state} (${code}) — ${s.authority}, ${s.classification}, check at ${s.searchUrl}`).join('\n')}
   In the other 47 states the absence of a badge means there is no

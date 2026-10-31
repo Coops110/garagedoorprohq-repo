@@ -24,7 +24,7 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
       title and description over budget — caught by check-seo.py rather than
       shipped. */}
   title="Get Your Garage Door Business Listed"
-  description={`Add your garage door company to ${SITE.name} for free. What we need to publish an accurate listing, and how paid promotion is labelled.`}
+  description={`Add your garage door company to ${SITE.name} for free. What we need to publish an accurate listing, and how paid promotion is labeled.`}
   canonical="/get-listed/"
   schemas={schemas}
 >
@@ -73,7 +73,18 @@ const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', 
 
       <h2>What we will not do</h2>
       <ul>
-        <li>Sell you placement, ranking, a badge, or removal of a competitor</li>
+        {/* This said "Sell you placement, ranking, a badge, or removal of a
+            competitor" while /terms/ said "We may also sell sponsored positions
+            directly". Both were live. Split into the thing we genuinely will
+            not sell and the thing we will, because a promise a reader can
+            disprove on another page of the same site costs more trust than the
+            sponsorship earns. */}
+        <li>Sell you a license badge, a place in the editorial ranking, or a competitor's removal</li>
+        <li>
+          Let a paid position pass as an editorial one. Advertising and sponsored positions
+          may be sold, and anything paid for is labeled as advertising where it appears —
+          the list underneath is ordered the same way whether anyone has paid or not
+        </li>
         <li>Publish review scores or star ratings — we do not have a source we are allowed to republish</li>
         <li>Publish a "24/7" claim as verified opening hours. If you advertise round-the-clock service on your own site, the wording will be "advertises 24/7".</li>
         <li>Charge you anything, ever, for the listing</li>

@@ -6,7 +6,7 @@ const { id = 'dg-trolley' } = Astro.props;
 ---
 <svg
   viewBox="0 0 560 260" width="560" height="260" role="img"
-  aria-labelledby={`${id}-title`} aria-describedby={`${id}-desc`}
+  aria-labeledby={`${id}-title`} aria-describedby={`${id}-desc`}
   xmlns="http://www.w3.org/2000/svg"
 >
   <title id={`${id}-title`}>
@@ -46,7 +46,7 @@ const { id = 'dg-trolley' } = Astro.props;
   <line x1="317" y1="82" x2="317" y2="150" stroke="#C81E1E" stroke-width="3.5" />
   <ellipse cx="317" cy="160" rx="9" ry="13" fill="#C81E1E" />
 
-  {/* limit positions: where the opener stops travelling */}
+  {/* limit positions: where the opener stops traveling */}
   <g stroke="var(--amber)" stroke-width="3" stroke-dasharray="7 5">
     <line x1="140" y1="96" x2="140" y2="128" />
     <line x1="488" y1="96" x2="488" y2="128" />

@@ -63,7 +63,7 @@ export function getBusinessesByState(stateSlug) {
 // and reached through their own accessor. Deliberately NOT merged onto the
 // business record: a template that can write `b.services` without thinking
 // cannot tell a sourced fact from a company's own marketing, and the whole
-// value of the licence badge rests on that line staying visible. Returns null
+// value of the license badge rests on that line staying visible. Returns null
 // rather than an empty object so a caller must handle "nothing claimed".
 export function siteFactsFor(business) {
   const f = business && siteFacts[business.id];
@@ -222,7 +222,7 @@ export function e164Phone(phone) {
 
 export function formatPhone(phone) {
   const d = US_DIGITS(phone);
-  // Anything that is not a recognisable US 10-digit number is returned
+  // Anything that is not a recognizable US 10-digit number is returned
   // untouched rather than mangled into a wrong-looking format.
   if (!d) return phone || '';
   return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;

@@ -7,7 +7,7 @@
 // step, which is the exact failure this site avoids everywhere else by reading
 // figures from the guide that owns them.
 //
-// Marker centres must sit inside [22, 618] x [22, 278] so a radius-21 circle
+// Marker centers must sit inside [22, 618] x [22, 278] so a radius-21 circle
 // is not clipped by the 640x300 viewBox. scripts/check-seo.py enforces this
 // against the built HTML.
 //

@@ -15,7 +15,7 @@ const descId = `${id}-desc`;
   width="640"
   height="400"
   role="img"
-  aria-labelledby={titleId}
+  aria-labeledby={titleId}
   aria-describedby={descId}
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -31,7 +31,7 @@ const descId = `${id}-desc`;
   <rect x="0" y="0" width="640" height="400" fill="var(--paper)" />
   <rect x="40" y="86" width="560" height="284" fill="var(--card)" stroke="var(--line)" stroke-width="2" />
 
-  <!-- Header wall above the opening. Deliberately unlabelled: a text label here
+  <!-- Header wall above the opening. Deliberately unlabeled: a text label here
        rendered at about 7px on a phone AND collided with callouts 1 and 3.
        Anything worth naming goes in the HTML legend, which is the entire point
        of the callout system — see the note in Figure.astro. -->
@@ -40,7 +40,7 @@ const descId = `${id}-desc`;
   <!-- torsion shaft -->
   <line x1="60" y1="104" x2="580" y2="104" stroke="var(--ink)" stroke-width="7" stroke-linecap="round" />
 
-  <!-- centre bearing plate -->
+  <!-- center bearing plate -->
   <rect x="306" y="92" width="28" height="24" rx="3" fill="var(--ink)" />
 
   <!-- left spring: coils drawn as a run of ellipses along the shaft -->
@@ -140,7 +140,7 @@ const descId = `${id}-desc`;
       <circle cx="614" cy="331" r="21" fill="var(--amber)" />
       <text x="614" y="331" fill="#fff">6</text>
     </g>
-    {/* Points at a real bottom bracket. The leader previously ran to the centre
+    {/* Points at a real bottom bracket. The leader previously ran to the center
         of the floor, implying the bracket sits somewhere it does not. */}
     <g>
       <line x1="90" y1="354" x2="172" y2="374" stroke="var(--ink-soft)" stroke-width="1.5" />

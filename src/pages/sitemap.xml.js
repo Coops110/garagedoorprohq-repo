@@ -66,7 +66,7 @@ export async function GET() {
   // date we hold: the Overture release the listings were staged from. Using
   // the build date instead would stamp every page as modified on every
   // deploy, which is a lie a crawler learns to distrust. A listing whose
-  // licence was checked later than the release carries that date instead,
+  // license was checked later than the release carries that date instead,
   // because a verified badge genuinely is a change to that page.
   const dataDate = (attribution.release || '').slice(0, 10) || buildDate;
   const listingDate = (b) =>
