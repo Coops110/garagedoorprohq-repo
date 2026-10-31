@@ -27,6 +27,20 @@ const nearby = getBusinessesByCity(state, city)
 
 const lic = licenceInfo(b.stateCode);
 const facts = siteFactsFor(b);
+// Guides matched to what this company advertises. Only fires where the
+// business actually claims the service, so a listing with no self-declared
+// facts simply gets the two generic links above and nothing invented.
+const GUIDE_FOR_SERVICE = [
+  ['spring repair', 'torsion-vs-extension-springs', 'torsion vs extension springs'],
+  ['opener repair', 'garage-door-opener-wont-work', 'why an opener stops working'],
+  ['cable repair', 'why-diy-spring-repair-is-dangerous', 'why cable and spring work is not a DIY job'],
+];
+const claimed = new Set(facts?.services || []);
+const relatedGuides = GUIDE_FOR_SERVICE
+  .filter(([service]) => claimed.has(service))
+  .map(([, slug, label]) => ({ slug, label }))
+  .slice(0, 2);
+
 const base = SITE.domain.replace(/\/$/, '');
 const path = `/garage-door-repair/${state}/${city}/${business}/`;
 const tel = telHref(b.phone);
@@ -208,6 +222,32 @@ const mapEmbed = b.lat != null && b.lng != null
             {' '}<a href="/guides/hiring-a-garage-door-company/">hiring checklist</a>
             {' '}covers the four questions that reveal whether a quote is fair.
           </p>
+          {/* Every listing page linked the same two guides, 780 times. The
+              effect was not neutral: /guides/garage-door-repair-cost/ and
+              /guides/hiring-a-garage-door-company/ ended on 887 and 880
+              inbound links while garage-door-maintenance had 5,
+              torsion-vs-extension-springs 7 and garage-door-opener-wont-work
+              9 — three guides published this week sitting as near-orphans
+              behind two that are also in the sitewide nav.
+
+              These extra links are chosen by what the company SAYS IT DOES,
+              not rotated to spread equity around. A business advertising
+              spring repair gets the springs guide because that is the useful
+              page for someone reading about them; the link distribution
+              improving is a consequence of relevance, not the reason for it.
+              A page built to move PageRank rather than to help a reader is
+              the thing the audit's helpful-content findings are about. */}
+          {relatedGuides.length > 0 && (
+            <p>
+              {b.name} lists {relatedGuides.length > 1 ? 'work covered by these guides' : 'work covered by this guide'}:
+              {' '}{relatedGuides.map((g, i) => (
+                <>
+                  {i > 0 && (i === relatedGuides.length - 1 ? ' and ' : ', ')}
+                  <a href={`/guides/${g.slug}/`}>{g.label}</a>
+                </>
+              ))}.
+            </p>
+          )}
         </section>
 
         <section class="section-sm">

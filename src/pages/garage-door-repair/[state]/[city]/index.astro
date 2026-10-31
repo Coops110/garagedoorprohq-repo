@@ -199,11 +199,22 @@ const schemas = [
 
     <section class="section-sm">
       <h2 style="font-size:1.3rem;">Before you call around</h2>
-      <p class="mt-2 mb-2">Know the fair price first.</p>
+      <p class="mt-2 mb-2">Know the fair price first — or work out what has actually failed.</p>
+      {/* Three cost guides and nothing else, on all 84 city pages. The two
+          troubleshooting guides and the maintenance pillar were reachable
+          only from the guides hub, which is how they ended on 9, 7 and 5
+          inbound links against 887 for the repair-cost pillar.
+
+          They belong here on their own merit, not to even out a link graph:
+          someone on a city page is deciding who to call, and "what has
+          actually failed" and "how to stop it failing again" are the two
+          questions either side of that decision. */}
       <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
         <a href="/guides/garage-door-repair-cost/" class="btn btn-ink">Repair cost guide</a>
+        <a href="/guides/garage-door-opener-wont-work/" class="btn btn-ghost">Opener not working?</a>
         <a href="/guides/garage-door-spring-replacement-cost/" class="btn btn-ghost">Spring costs</a>
         <a href="/guides/garage-door-opener-repair-cost/" class="btn btn-ghost">Opener costs</a>
+        <a href="/guides/garage-door-maintenance/" class="btn btn-ghost">Maintenance</a>
       </div>
       <p class="mt-3">
         <a href={`/garage-door-repair/${state}/`}>← All {c.state} cities</a>
