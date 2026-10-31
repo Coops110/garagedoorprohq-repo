@@ -5,7 +5,7 @@ import BizCard from '../../../../components/BizCard.astro';
 import AdSlot from '../../../../components/AdSlot.astro';
 import { SITE, CLAIMS } from '../../../../lib/site.js';
 import {
-  getAllBusinesses, getBusiness, getBusinessesByCity, telHref, formatPhone,
+  getAllBusinesses, getBusiness, getBusinessesByCity, telHref, formatPhone, siteFactsFor,
 } from '../../../../lib/data.js';
 import { licenceInfo } from '../../../../lib/licensing.js';
 import { getGuide } from '../../../../lib/guides.js';
@@ -26,6 +26,7 @@ const nearby = getBusinessesByCity(state, city)
   .slice(0, 3);
 
 const lic = licenceInfo(b.stateCode);
+const facts = siteFactsFor(b);
 const base = SITE.domain.replace(/\/$/, '');
 const path = `/garage-door-repair/${state}/${city}/${business}/`;
 const tel = telHref(b.phone);
@@ -125,6 +126,64 @@ const mapEmbed = b.lat != null && b.lng != null
             </a>
           )}
         </div>
+
+        {/* THE ONLY GENUINELY PER-BUSINESS SECTION ON THIS PAGE, which is why
+            it sits above the templated prose rather than below it. The
+            2026-10-21 audit's finding was that these pages are 291-430 words
+            at about 95% boilerplate and that two of them differed only by a
+            street address. Everything below this block is written from a
+            template; this is the part that is actually about this company.
+
+            The heading carries the provenance. "What X says about itself" is
+            not a stylistic choice — a reader must be able to tell this from
+            the licence badge at a glance, because the badge means a number
+            was checked against a state register and this means nobody checked
+            anything. Burying that in a footnote would quietly borrow the
+            badge's credibility for marketing copy. */}
+        {facts && (
+          <section class="section-sm">
+            <h2 style="font-size:1.25rem;">What {b.name} says about itself</h2>
+            <p class="claim-note">
+              {CLAIMS.siteFactsMeaning} Read on {facts.capturedOn}.
+            </p>
+            <dl class="fact-list">
+              {facts.services?.length > 0 && (
+                <>
+                  <dt>Services it lists</dt>
+                  <dd>{facts.services.join(', ')}</dd>
+                </>
+              )}
+              {facts.brands?.length > 0 && (
+                <>
+                  <dt>Opener brands it names</dt>
+                  <dd>{facts.brands.join(', ')}</dd>
+                </>
+              )}
+              {facts.since && (
+                <>
+                  <dt>Says it has traded since</dt>
+                  <dd>{facts.since} ({new Date().getFullYear() - facts.since} years)</dd>
+                </>
+              )}
+              {(facts.familyOwned || facts.claimsBondedInsured) && (
+                <>
+                  <dt>Also describes itself as</dt>
+                  <dd>
+                    {[
+                      facts.familyOwned && 'family-owned',
+                      facts.claimsBondedInsured && 'bonded and insured',
+                    ].filter(Boolean).join(', ')}
+                  </dd>
+                </>
+              )}
+            </dl>
+            <p class="muted" style="font-size:.85rem;margin-top:.6rem;">
+              {lic
+                ? `A company can say it is insured; only the license number above can be checked against the ${lic.authority} register.`
+                : `Garage door work is not licensed as a separate trade in ${b.state}, so ask for proof of insurance in writing rather than taking a website’s word for it.`}
+            </p>
+          </section>
+        )}
 
         <section class="prose">
           <h2>About this listing</h2>

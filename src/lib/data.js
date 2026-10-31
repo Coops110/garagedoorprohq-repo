@@ -1,5 +1,6 @@
 import businesses from '../data/businesses.json';
 import cities from '../data/cities.json';
+import siteFacts from '../data/site-facts.json';
 
 // ─────────────────────────────────────────────────────────────
 //  WHAT IS DELIBERATELY ABSENT HERE
@@ -31,6 +32,17 @@ export function getBusinessesByCity(stateSlug, citySlug) {
 
 export function getBusinessesByState(stateSlug) {
   return businesses.filter((b) => b.stateSlug === stateSlug).sort(sortForDisplay);
+}
+
+// Self-declared claims from a business's own website, kept in their own file
+// and reached through their own accessor. Deliberately NOT merged onto the
+// business record: a template that can write `b.services` without thinking
+// cannot tell a sourced fact from a company's own marketing, and the whole
+// value of the licence badge rests on that line staying visible. Returns null
+// rather than an empty object so a caller must handle "nothing claimed".
+export function siteFactsFor(business) {
+  const f = business && siteFacts[business.id];
+  return f && Object.keys(f).length > 1 ? f : null;
 }
 
 export function getBusiness(stateSlug, citySlug, slug) {

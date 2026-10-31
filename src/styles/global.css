@@ -441,6 +441,22 @@ img { max-width: 100%; height: auto; display: block; }
 .guide-list p { color: var(--ink-soft); font-size: .92rem; margin: .2rem 0 0; }
 .guide-meta { color: var(--muted); font-size: .8rem; }
 
+/* Self-declared facts on a listing page. A <dl> rather than a table or a
+   bullet list: each row is genuinely a term and its value, and a dl reads
+   correctly to a screen reader without inventing column headers for a
+   two-column table that is not tabular data.
+   Stacked at 375px, two columns only once there is room — the label is the
+   half carrying the provenance ("Services it LISTS"), so it must never be
+   the half that wraps into something unreadable. */
+.fact-list { display: grid; gap: .55rem 1rem; margin: .9rem 0 0; }
+.fact-list dt { color: var(--muted); font-size: .82rem; }
+.fact-list dd { margin: 0 0 .2rem; color: var(--ink); }
+@media (min-width: 560px) {
+  .fact-list { grid-template-columns: minmax(10rem, auto) 1fr; align-items: baseline; }
+  .fact-list dt { text-align: right; }
+  .fact-list dd { margin-bottom: 0; }
+}
+
 /* ── COMPARISON TABLE (sortable, progressive enhancement) ── */
 /* The table is complete and readable with JavaScript off. The sort
    buttons are injected by script and only appear if the script runs, so

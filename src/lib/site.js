@@ -142,6 +142,19 @@ export const CLAIMS = {
   // position is ordinary publishing; selling an unlabelled one, or selling a
   // badge, is not, and the second kind is what the disclosure commitment here
   // exists to keep out.
+  // Self-declared facts read from a business's own website. Lives here for
+  // the same reason licenceMeaning does: it will appear on 481 listing pages
+  // and must say the same thing on every one of them.
+  //
+  // The distinction it has to carry is the whole point. A licence badge means
+  // we checked a number against a state register. This means the opposite —
+  // nobody checked anything, the business said it about itself. Both are
+  // useful; conflating them would make the badge worthless. The heading above
+  // this block says "says about itself" for the same reason: provenance in the
+  // heading, not buried in a footnote nobody reads.
+  siteFactsMeaning:
+    'Taken from the company’s own website. These are its claims about itself, not things we verified — we have not visited this business, inspected its work, or spoken to its customers.',
+
   placementMeaning:
     'Listing itself is free. We may sell advertising and sponsored positions, and anything paid for is labelled as advertising. Paying never changes what a listing says, whether it carries a license badge, or any figure in our guides.',
 };
