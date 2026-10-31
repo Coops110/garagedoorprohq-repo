@@ -6,6 +6,13 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "--port", "4327"],
       "port": 4327
+    },
+    {
+      "comment": "Serves the built dist/. Needed because SEO.astro gates the GA and Consent Mode block behind import.meta.env.PROD, so none of the consent behaviour exists in an `astro dev` session and cannot be tested there.",
+      "name": "garagedoorhq-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview", "--", "--port", "4328"],
+      "port": 4328
     }
   ]
 }

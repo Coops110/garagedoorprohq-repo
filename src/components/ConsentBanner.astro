@@ -83,8 +83,20 @@ const active = Boolean(GA_ID);
                   </button>
                 </div>
                 <p class="consent-category-desc">
-                  Helps us see which guides people find useful. Optional — off by
-                  default, and the site works exactly the same either way.
+                  {/* Was "Optional — off by default". That was only true in the
+                      opt-in regions; everywhere else Consent Mode grants
+                      analytics until the visitor says otherwise, so the old
+                      line told most readers the opposite of what was happening.
+                      The toggle above now shows the real state, and this line
+                      no longer asserts a default it does not control. */}
+                  Helps us see which guides people find useful. Always optional, and the
+                  site works exactly the same either way — the switch above shows whether
+                  it is on for you right now.
+                </p>
+                <p class="consent-category-desc" id="consent-gpc-note" hidden>
+                  <strong>Opt-out request honored.</strong> Your browser is sending a
+                  Global Privacy Control signal, so analytics is off and we have not
+                  loaded it. You do not need to do anything else.
                 </p>
               </div>
             </div>
@@ -144,12 +156,39 @@ const active = Boolean(GA_ID);
           banner.setAttribute('aria-describedby', 'consent-body');
         }
 
-        // The Analytics toggle always reflects the last saved choice (or the
-        // off-by-default state for a first-time visitor) when settings opens,
-        // never whatever was left over from a prior, uncommitted click.
-        function showSettingsView() {
+        // Is analytics actually running right now, for this visitor?
+        //
+        // This used to be read as "did they press Accept", which was wrong for
+        // most of the site's audience. Outside the opt-in regions Consent Mode
+        // defaults analytics to GRANTED, so a first-time US visitor -- the
+        // bulk of the traffic -- had analytics running while this panel showed
+        // the toggle off. The 2026-10-31 audit caught it. A privacy control
+        // that misstates what is running is worse than no control: the person
+        // who opens it is precisely the person who cares.
+        //
+        // Order matters. GPC beats everything, then an explicit saved choice,
+        // then the regional default.
+        function analyticsIsOn() {
+          if (window.garageDoorProHQGPC === true) return false;
           var saved = read();
-          setToggle(!!(saved && saved.choice === 'accepted'));
+          if (saved && saved.choice) return saved.choice === 'accepted';
+          return !probablyNeedsBanner();
+        }
+
+        // The Analytics toggle reflects the real current state when settings
+        // opens, never whatever was left over from a prior uncommitted click.
+        function showSettingsView() {
+          setToggle(analyticsIsOn());
+
+          // California's regulations, in force from January 1 2026, require a
+          // business that detects an opt-out preference signal to confirm
+          // visibly that it was honored -- processing it silently is not
+          // enough. This is that confirmation, and it is shown to everyone
+          // sending the signal rather than only to visitors we guess are
+          // Californian.
+          var gpcNote = document.getElementById('consent-gpc-note');
+          if (gpcNote) gpcNote.hidden = window.garageDoorProHQGPC !== true;
+          if (toggle) toggle.disabled = window.garageDoorProHQGPC === true;
           mainView.hidden = true;
           settingsView.hidden = false;
           if (openSettingsBtn) openSettingsBtn.setAttribute('aria-expanded', 'true');

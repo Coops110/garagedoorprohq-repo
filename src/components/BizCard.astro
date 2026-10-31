@@ -63,8 +63,13 @@ const tags = selfDeclared ? facts.services : (biz.services || []);
   )}
 
   <div class="biz-foot">
+    {/* The number is kept atomic (.nowrap). In a narrow city-card column the
+        button text wrapped at the number's own hyphen and rendered as
+        "Call (281) 741- / 5443", which reads as a broken or truncated phone
+        number on the one control the whole card exists to produce. With
+        nowrap the line breaks after "Call" instead, if it breaks at all. */}
     {tel
-      ? <a href={tel} class="btn btn-signal">Call {formatPhone(biz.phone)}</a>
+      ? <a href={tel} class="btn btn-signal">Call <span class="nowrap">{formatPhone(biz.phone)}</span></a>
       : <a href={url} class="btn btn-signal">See details</a>}
     <a href={url} class="btn btn-ghost">Profile</a>
   </div>

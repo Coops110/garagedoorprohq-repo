@@ -116,7 +116,12 @@ export function businessSchema(b, url) {
   if (b.postalCode) address.postalCode = b.postalCode;
   schema.address = address;
 
-  if (b.website) schema.sameAs = [b.website];
+  // No sameAs here. It used to be [b.website], which is the same value already
+  // set as schema.url a few lines up -- sameAs is for OTHER authoritative
+  // profiles of the same entity (a social page, a Wikipedia article), so
+  // repeating the homepage asserts nothing and just makes the graph noisier.
+  // The 2026-10-31 audit flagged it; there is no second profile to put here,
+  // for the same reason the Organization has no sameAs (Rules: "Social: none").
   if (b.lat != null && b.lng != null) {
     schema.geo = { '@type': 'GeoCoordinates', latitude: b.lat, longitude: b.lng };
   }
@@ -185,13 +190,22 @@ export function faqSchema(faqs) {
 }
 
 // ── Article (guides) ────────────────────────────────────────
-export function articleSchema({ title, description, url, datePublished, dateModified }) {
+export function articleSchema({ title, description, url, datePublished, dateModified, image }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: title,
     description,
     url: abs(url),
+    // mainEntityOfPage ties the Article to the page it is ON, rather than
+    // leaving a free-floating Article node that could be read as syndicated
+    // from somewhere else. Both were missing — the 2026-10-31 audit's Schema
+    // finding.
+    mainEntityOfPage: { '@type': 'WebPage', '@id': abs(url) },
+    // The guide's own OG image. Google's Article documentation treats image as
+    // a recommended property, and the site already generates one per guide, so
+    // this was a field left empty rather than data we do not have.
+    ...(image ? { image: [abs(image)] } : {}),
     datePublished,
     dateModified: dateModified || datePublished,
     // By @id, not a restated anonymous Organization. Every guide was emitting

@@ -107,6 +107,9 @@ const schemas = [
     url,
     datePublished: g.datePublished,
     dateModified: g.dateModified,
+    // Same path the <meta property="og:image"> below uses, so the structured
+    // data and the social card can never point at different files.
+    image: `/og/guides/${g.slug}.png`,
   }),
   ...(g.faqs?.length ? [faqSchema(g.faqs)] : []),
 ];

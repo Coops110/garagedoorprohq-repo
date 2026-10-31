@@ -132,6 +132,36 @@ function safeJsonLd(obj) {
       window.dataLayer = window.dataLayer || [];
       window.gtag = function gtag(){ window.dataLayer.push(arguments); };
 
+      // 0. Global Privacy Control, honored everywhere and ahead of everything
+      //    else. GPC is a browser-level "do not sell or share" signal, and
+      //    roughly a dozen US states now require a business to act on it --
+      //    California, Colorado, Connecticut, Delaware, Minnesota, Montana,
+      //    Nebraska, New Hampshire, New Jersey, Oregon and Texas among them.
+      //    Colorado's AG has published binding technical specifications for
+      //    it, and the largest CCPA settlement to date (Healthline, $1.55m,
+      //    July 2025) turned partly on a failure to honor these signals.
+      //
+      //    This matters here precisely BECAUSE the banner is EU/UK-only. US
+      //    state law is an opt-OUT regime, so a consent banner is not what it
+      //    asks for -- it asks that a visitor who has already opted out at the
+      //    browser level is not tracked. Without this the site had no opt-out
+      //    mechanism at all for the audience that makes up most of its
+      //    traffic. A denied default here cannot be overridden by the grants
+      //    below, because this runs first and sets the saved-choice path to
+      //    skip.
+      var gpc = false;
+      try { gpc = navigator.globalPrivacyControl === true; } catch (e) { gpc = false; }
+      window.garageDoorProHQGPC = gpc;
+
+      if (gpc) {
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+        });
+      }
+
       // 1. Consent-required regions: deny until the visitor chooses.
       //    wait_for_update holds tags briefly so a fast click still counts.
       gtag('consent', 'default', {
@@ -145,17 +175,30 @@ function safeJsonLd(obj) {
 
       // 2. Everywhere else: granted. A more specific region always wins
       //    over this, regardless of command order.
-      gtag('consent', 'default', {
-        ad_storage: 'granted',
-        ad_user_data: 'granted',
-        ad_personalization: 'granted',
-        analytics_storage: 'granted',
-      });
+      //
+      //    Skipped entirely under GPC. Both this and the GPC block above are
+      //    region-less defaults, so without the guard the later command would
+      //    simply overwrite the earlier one and the opt-out signal would be
+      //    silently discarded -- the exact failure the Healthline settlement
+      //    was about.
+      if (!gpc) {
+        gtag('consent', 'default', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted',
+        });
+      }
 
       // 3. Re-apply a previously saved choice on repeat visits.
+      //
+      //    A stored 'accepted' is NOT re-applied under GPC. The stored choice
+      //    may predate the visitor turning the signal on, and the browser
+      //    signal is the more recent statement of intent, so it wins. A
+      //    stored 'declined' still applies either way -- it agrees with GPC.
       try {
         var saved = JSON.parse(localStorage.getItem(CONSENT_STORAGE_KEY) || 'null');
-        if (saved && saved.choice) {
+        if (saved && saved.choice && !(gpc && saved.choice === 'accepted')) {
           var state = saved.choice === 'accepted' ? 'granted' : 'denied';
           gtag('consent', 'update', {
             ad_storage: state,

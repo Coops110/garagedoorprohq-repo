@@ -235,6 +235,11 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-steel:hover { background: var(--steel-dark); color: #fff; }
 .btn-block { width: 100%; }
 
+/* Keeps a phone number from breaking at its own hyphen inside a button. A
+   wrapped "(281) 741- / 5443" reads as a broken number on the single control
+   a listing card exists to produce. */
+.nowrap { white-space: nowrap; }
+
 /* ── EYEBROW ─────────────────────────────────────────────── */
 .eyebrow {
   display: inline-flex; align-items: center; gap: .45rem;

@@ -26,7 +26,15 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "object-src 'none'; base-uri 'none'; frame-ancestors 'self'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://api.web3forms.com; frame-src https://maps.google.com https://www.google.com; form-action 'self' https://api.web3forms.com; manifest-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), idle-detection=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=()"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://garagedoorprohq.com"
         }
       ]
     },

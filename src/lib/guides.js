@@ -33,7 +33,7 @@ export const guides = [
       'What garage door repair costs in 2026 by job — springs, openers, cables and panels — plus when repair stops making sense and replacement wins.',
     keyword: 'garage door repair cost',
     datePublished: '2026-08-11',
-    dateModified: '2026-08-11',
+    dateModified: '2026-10-31',
     readTime: 9,
     quickAnswer:
       'Most garage door repairs cost $150 to $400 in 2026, with a national average near $260. A snapped torsion spring runs $180–$350 for one or $250–$550 for the pair; opener repairs run $100–$300; a single replacement panel runs $250–$800. Expect a $75–$150 diagnostic fee, usually credited against the work if you go ahead.',
@@ -147,7 +147,7 @@ export const guides = [
       'Garage door spring replacement costs $180–$350 for one torsion spring or $250–$550 for the pair in 2026, and why both is the cheaper choice.',
     keyword: 'garage door spring replacement cost',
     datePublished: '2026-08-11',
-    dateModified: '2026-08-11',
+    dateModified: '2026-10-31',
     readTime: 7,
     quickAnswer:
       'Replacing one torsion spring costs $180–$350 installed in 2026; the pair costs $250–$550. Extension springs are cheaper at $120–$300 a pair. High-cycle springs add $40–$80 to a pair and last two to three times as long. The spring is a $40–$90 part — most of the bill is skilled, hazardous labor.',
@@ -247,7 +247,7 @@ export const guides = [
       'Garage door opener repair costs $100–$300 in 2026; a new opener installed runs $300–$700. Which faults are worth fixing and which are terminal.',
     keyword: 'garage door opener repair cost',
     datePublished: '2026-08-11',
-    dateModified: '2026-08-11',
+    dateModified: '2026-10-31',
     readTime: 7,
     quickAnswer:
       'Most garage door opener repairs cost $100–$300 in 2026. Sensor realignment is $85–$200, a drive gear or capacitor $120–$300, a logic board $150–$400. A replacement opener installed runs $300–$700. If the repair exceeds half the replacement cost and the unit is over ten years old, replace it.',
@@ -350,7 +350,7 @@ export const guides = [
       'A wound garage door torsion spring stores enough energy to cause serious injury. What the real risk is, and what the DIY saving actually amounts to.',
     keyword: 'diy garage door spring repair danger',
     datePublished: '2026-08-11',
-    dateModified: '2026-08-11',
+    dateModified: '2026-10-31',
     readTime: 5,
     // This page exists to talk someone out of the job. It contains no
     // procedure, no tool list and no sequence — a partial instruction here
@@ -428,7 +428,7 @@ export const guides = [
       'What to ask a garage door company before you book, which states license the trade, and how to check a contractor license number yourself.',
     keyword: 'how to hire a garage door company',
     datePublished: '2026-08-11',
-    dateModified: '2026-08-11',
+    dateModified: '2026-10-31',
     readTime: 8,
     quickAnswer:
       'Ask for the price split into parts and labor, the spring cycle rating in writing, whether the diagnostic fee is credited, and proof of liability insurance. In California, Florida and Arizona the trade is licensed at state level and you can check a license number yourself in about a minute. Most other states license only general contractors, or nothing at all.',
@@ -516,7 +516,7 @@ export const guides = [
       'Garage door opener not working? The free checks in the order a technician runs them, what each symptom actually means, and the point where you should stop.',
     keyword: 'garage door opener not working',
     datePublished: '2026-08-27',
-    dateModified: '2026-08-27',
+    dateModified: '2026-10-31',
     readTime: 7,
     // Structured by SYMPTOM, not by part. Someone searching this has a door
     // that will not move and no idea which component owns the problem — a
@@ -622,7 +622,7 @@ export const guides = [
       'How to tell torsion and extension garage door springs apart, what each costs to replace, how each one fails, and why safety cables are not optional.',
     keyword: 'torsion vs extension springs',
     datePublished: '2026-08-27',
-    dateModified: '2026-08-27',
+    dateModified: '2026-10-31',
     readTime: 7,
     // ⚠️ THIS PAGE DESCRIBES, IT DOES NOT INSTRUCT. Same rule as
     // why-diy-spring-repair-is-dangerous: no procedure, no tool list, no
@@ -741,7 +741,7 @@ export const guides = [
       'Garage door maintenance is four jobs and twenty minutes a year. What to lubricate, what to leave dry, what to test monthly, and what to pay someone for.',
     keyword: 'garage door maintenance',
     datePublished: '2026-08-27',
-    dateModified: '2026-08-27',
+    dateModified: '2026-10-31',
     readTime: 8,
     quickAnswer:
       'Garage door maintenance is four jobs and about twenty minutes a year. Test the balance twice a year. Lubricate hinges, rollers and the spring coil twice a year with a garage-door lubricant. Check the photo-eyes and the auto-reverse monthly. Keep the tracks clean — tracks are wiped, never greased. Everything past that involves stored spring tension and belongs to a technician. A professional tune-up runs $75–$150.',
