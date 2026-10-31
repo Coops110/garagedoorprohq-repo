@@ -18,10 +18,10 @@
   "state": "Arizona",
   "stateCode": "AZ",
   "stateSlug": "arizona",
-  "count": 55,
+  "count": 54,
   "licensedCount": 0,
-  "withWebsite": 50,
-  "withAddress": 55,
+  "withWebsite": 49,
+  "withAddress": 54,
   "lat": 33.423527,
   "lng": -112.036751
  },
@@ -31,10 +31,10 @@
   "state": "California",
   "stateCode": "CA",
   "stateSlug": "california",
-  "count": 39,
+  "count": 38,
   "licensedCount": 2,
-  "withWebsite": 32,
-  "withAddress": 39,
+  "withWebsite": 31,
+  "withAddress": 38,
   "lat": 34.178093,
   "lng": -118.462326
  },
@@ -44,25 +44,12 @@
   "state": "Florida",
   "stateCode": "FL",
   "stateSlug": "florida",
-  "count": 36,
+  "count": 33,
   "licensedCount": 0,
-  "withWebsite": 34,
-  "withAddress": 36,
+  "withWebsite": 31,
+  "withAddress": 33,
   "lat": 28.401995,
   "lng": -81.535843
- },
- {
-  "city": "Mesa",
-  "citySlug": "mesa",
-  "state": "Arizona",
-  "stateCode": "AZ",
-  "stateSlug": "arizona",
-  "count": 24,
-  "licensedCount": 0,
-  "withWebsite": 23,
-  "withAddress": 24,
-  "lat": 33.445148,
-  "lng": -111.731606
  },
  {
   "city": "Pearland",
@@ -78,17 +65,17 @@
   "lng": -95.32723
  },
  {
-  "city": "Anaheim",
-  "citySlug": "anaheim",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 22,
-  "licensedCount": 3,
-  "withWebsite": 19,
-  "withAddress": 22,
-  "lat": 33.856289,
-  "lng": -117.873703
+  "city": "Mesa",
+  "citySlug": "mesa",
+  "state": "Arizona",
+  "stateCode": "AZ",
+  "stateSlug": "arizona",
+  "count": 23,
+  "licensedCount": 0,
+  "withWebsite": 22,
+  "withAddress": 23,
+  "lat": 33.445148,
+  "lng": -111.731606
  },
  {
   "city": "Spring",
@@ -102,6 +89,19 @@
   "withAddress": 21,
   "lat": 30.09666,
   "lng": -95.45483
+ },
+ {
+  "city": "Anaheim",
+  "citySlug": "anaheim",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 20,
+  "licensedCount": 3,
+  "withWebsite": 17,
+  "withAddress": 20,
+  "lat": 33.856289,
+  "lng": -117.873703
  },
  {
   "city": "Scottsdale",
@@ -312,19 +312,6 @@
   "lng": -118.185669
  },
  {
-  "city": "Ontario",
-  "citySlug": "ontario",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 8,
-  "licensedCount": 1,
-  "withWebsite": 7,
-  "withAddress": 8,
-  "lat": 34.058804,
-  "lng": -117.670334
- },
- {
   "city": "Richmond",
   "citySlug": "richmond",
   "state": "Texas",
@@ -377,30 +364,17 @@
   "lng": -94.98294
  },
  {
-  "city": "Pasadena",
-  "citySlug": "pasadena",
+  "city": "Ontario",
+  "citySlug": "ontario",
   "state": "California",
   "stateCode": "CA",
   "stateSlug": "california",
   "count": 7,
-  "licensedCount": 0,
-  "withWebsite": 7,
+  "licensedCount": 1,
+  "withWebsite": 6,
   "withAddress": 7,
-  "lat": 34.169857,
-  "lng": -118.155014
- },
- {
-  "city": "Alhambra",
-  "citySlug": "alhambra",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 6,
-  "licensedCount": 0,
-  "withWebsite": 5,
-  "withAddress": 6,
-  "lat": 34.077141,
-  "lng": -118.144943
+  "lat": 34.058804,
+  "lng": -117.670334
  },
  {
   "city": "Friendswood",
@@ -455,6 +429,19 @@
   "lng": -117.893715
  },
  {
+  "city": "Pasadena",
+  "citySlug": "pasadena",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 6,
+  "licensedCount": 0,
+  "withWebsite": 6,
+  "withAddress": 6,
+  "lat": 34.169857,
+  "lng": -118.155014
+ },
+ {
   "city": "Surprise",
   "citySlug": "surprise",
   "state": "Arizona",
@@ -479,19 +466,6 @@
   "withAddress": 5,
   "lat": 28.670454,
   "lng": -81.52256
- },
- {
-  "city": "Burbank",
-  "citySlug": "burbank",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 5,
-  "licensedCount": 0,
-  "withWebsite": 5,
-  "withAddress": 5,
-  "lat": 34.192852,
-  "lng": -118.32679
  },
  {
   "city": "Garden Grove",
@@ -533,19 +507,6 @@
   "lng": -118.377922
  },
  {
-  "city": "Pomona",
-  "citySlug": "pomona",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 5,
-  "licensedCount": 0,
-  "withWebsite": 4,
-  "withAddress": 5,
-  "lat": 34.047707,
-  "lng": -117.803436
- },
- {
   "city": "Redondo Beach",
   "citySlug": "redondo-beach",
   "state": "California",
@@ -572,30 +533,17 @@
   "lng": -118.478683
  },
  {
-  "city": "Tustin",
-  "citySlug": "tustin",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 5,
-  "licensedCount": 0,
-  "withWebsite": 4,
-  "withAddress": 5,
-  "lat": 33.715343,
-  "lng": -117.810196
- },
- {
-  "city": "Agoura Hills",
-  "citySlug": "agoura-hills",
+  "city": "Alhambra",
+  "citySlug": "alhambra",
   "state": "California",
   "stateCode": "CA",
   "stateSlug": "california",
   "count": 4,
-  "licensedCount": 1,
-  "withWebsite": 4,
+  "licensedCount": 0,
+  "withWebsite": 3,
   "withAddress": 4,
-  "lat": 34.14193,
-  "lng": -118.737038
+  "lat": 34.077141,
+  "lng": -118.144943
  },
  {
   "city": "Alvin",
@@ -624,19 +572,6 @@
   "lng": -118.13401
  },
  {
-  "city": "Beverly Hills",
-  "citySlug": "beverly-hills",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 4,
-  "licensedCount": 0,
-  "withWebsite": 4,
-  "withAddress": 4,
-  "lat": 34.062202,
-  "lng": -118.398994
- },
- {
   "city": "Canoga Park",
   "citySlug": "canoga-park",
   "state": "California",
@@ -661,19 +596,6 @@
   "withAddress": 4,
   "lat": 29.7865,
   "lng": -95.13976
- },
- {
-  "city": "Chatsworth",
-  "citySlug": "chatsworth",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 4,
-  "licensedCount": 0,
-  "withWebsite": 4,
-  "withAddress": 4,
-  "lat": 34.245396,
-  "lng": -118.591293
  },
  {
   "city": "Chino",
@@ -754,30 +676,17 @@
   "lng": -118.103279
  },
  {
-  "city": "Placentia",
-  "citySlug": "placentia",
-  "state": "California",
-  "stateCode": "CA",
-  "stateSlug": "california",
-  "count": 4,
-  "licensedCount": 2,
-  "withWebsite": 4,
-  "withAddress": 4,
-  "lat": 33.863625,
-  "lng": -117.86805
- },
- {
-  "city": "Sherman Oaks",
-  "citySlug": "sherman-oaks",
+  "city": "Pomona",
+  "citySlug": "pomona",
   "state": "California",
   "stateCode": "CA",
   "stateSlug": "california",
   "count": 4,
   "licensedCount": 0,
-  "withWebsite": 4,
+  "withWebsite": 3,
   "withAddress": 4,
-  "lat": 34.154434,
-  "lng": -118.471695
+  "lat": 34.047707,
+  "lng": -117.803436
  },
  {
   "city": "Tomball",
@@ -793,17 +702,30 @@
   "lng": -95.60325
  },
  {
-  "city": "Upland",
-  "citySlug": "upland",
+  "city": "Tustin",
+  "citySlug": "tustin",
   "state": "California",
   "stateCode": "CA",
   "stateSlug": "california",
   "count": 4,
   "licensedCount": 0,
-  "withWebsite": 4,
+  "withWebsite": 3,
   "withAddress": 4,
-  "lat": 34.106941,
-  "lng": -117.653694
+  "lat": 33.715343,
+  "lng": -117.810196
+ },
+ {
+  "city": "Agoura Hills",
+  "citySlug": "agoura-hills",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 3,
+  "licensedCount": 1,
+  "withWebsite": 3,
+  "withAddress": 3,
+  "lat": 34.14193,
+  "lng": -118.737038
  },
  {
   "city": "Arcadia",
@@ -819,8 +741,8 @@
   "lng": -118.008873
  },
  {
-  "city": "Calabasas",
-  "citySlug": "calabasas",
+  "city": "Beverly Hills",
+  "citySlug": "beverly-hills",
   "state": "California",
   "stateCode": "CA",
   "stateSlug": "california",
@@ -828,8 +750,21 @@
   "licensedCount": 0,
   "withWebsite": 3,
   "withAddress": 3,
-  "lat": 34.152981,
-  "lng": -118.648537
+  "lat": 34.062202,
+  "lng": -118.398994
+ },
+ {
+  "city": "Burbank",
+  "citySlug": "burbank",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 3,
+  "withAddress": 3,
+  "lat": 34.192852,
+  "lng": -118.32679
  },
  {
   "city": "Carson",
@@ -843,6 +778,19 @@
   "withAddress": 3,
   "lat": 33.829018,
   "lng": -118.26458
+ },
+ {
+  "city": "Chatsworth",
+  "citySlug": "chatsworth",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 3,
+  "withAddress": 3,
+  "lat": 34.245396,
+  "lng": -118.591293
  },
  {
   "city": "Crosby",
@@ -910,19 +858,6 @@
   "lng": -117.859924
  },
  {
-  "city": "Goodyear",
-  "citySlug": "goodyear",
-  "state": "Arizona",
-  "stateCode": "AZ",
-  "stateSlug": "arizona",
-  "count": 3,
-  "licensedCount": 0,
-  "withWebsite": 3,
-  "withAddress": 3,
-  "lat": 33.498131,
-  "lng": -112.454704
- },
- {
   "city": "Kemah",
   "citySlug": "kemah",
   "state": "Texas",
@@ -960,6 +895,19 @@
   "withAddress": 3,
   "lat": 29.47793,
   "lng": -95.37177
+ },
+ {
+  "city": "Placentia",
+  "citySlug": "placentia",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 3,
+  "licensedCount": 2,
+  "withWebsite": 3,
+  "withAddress": 3,
+  "lat": 33.863625,
+  "lng": -117.86805
  },
  {
   "city": "Queen Creek",
@@ -1001,6 +949,32 @@
   "lng": -118.089081
  },
  {
+  "city": "Sherman Oaks",
+  "citySlug": "sherman-oaks",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 3,
+  "withAddress": 3,
+  "lat": 34.154434,
+  "lng": -118.471695
+ },
+ {
+  "city": "Upland",
+  "citySlug": "upland",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 3,
+  "withAddress": 3,
+  "lat": 34.106941,
+  "lng": -117.653694
+ },
+ {
   "city": "West Hills",
   "citySlug": "west-hills",
   "state": "California",
@@ -1025,6 +999,19 @@
   "withAddress": 3,
   "lat": 28.602236,
   "lng": -81.364326
+ },
+ {
+  "city": "Calabasas",
+  "citySlug": "calabasas",
+  "state": "California",
+  "stateCode": "CA",
+  "stateSlug": "california",
+  "count": 2,
+  "licensedCount": 0,
+  "withWebsite": 2,
+  "withAddress": 2,
+  "lat": 34.152981,
+  "lng": -118.648537
  },
  {
   "city": "Encino",
@@ -1090,5 +1077,18 @@
   "withAddress": 2,
   "lat": 34.191219,
   "lng": -118.594193
+ },
+ {
+  "city": "Goodyear",
+  "citySlug": "goodyear",
+  "state": "Arizona",
+  "stateCode": "AZ",
+  "stateSlug": "arizona",
+  "count": 1,
+  "licensedCount": 0,
+  "withWebsite": 1,
+  "withAddress": 1,
+  "lat": 33.498131,
+  "lng": -112.454704
  }
 ]
