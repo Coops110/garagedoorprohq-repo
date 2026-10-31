@@ -1,5 +1,5 @@
 ---
-import { telHref, formatPhone } from '../lib/data.js';
+import { telHref, formatPhone, siteFactsFor } from '../lib/data.js';
 
 // ─────────────────────────────────────────────────────────────
 //  There is no star rating on this card, and there must not be one.
@@ -14,6 +14,23 @@ import { telHref, formatPhone } from '../lib/data.js';
 const { biz } = Astro.props;
 const url = `/garage-door-repair/${biz.stateSlug}/${biz.citySlug}/${biz.slug}/`;
 const tel = telHref(biz.phone);
+
+// The card used to tag every business with its Overture source category, and
+// 402 of 780 listings carry the identical one — "Garage door service". On a
+// city page that is 60-odd cards wearing the same label, which is a straight
+//-faced illustration of the audit's "about 70% boilerplate" finding.
+//
+// Where a company's own website lists what it actually does, show that
+// instead: 105 distinct service combinations across 448 listings, against a
+// top Overture category covering more than half the directory.
+//
+// The two are NEVER mixed in one row. They are different kinds of statement —
+// one is a third-party dataset's category, the other is the company's own
+// claim — and a reader who cannot tell which they are looking at is being
+// misled by the layout. `selfDeclared` drives both the content and the label.
+const facts = siteFactsFor(biz);
+const selfDeclared = facts?.services?.length > 0;
+const tags = selfDeclared ? facts.services : (biz.services || []);
 ---
 <article class="biz-card">
   <div class="biz-card-head">
@@ -33,9 +50,15 @@ const tel = telHref(biz.phone);
     )}
   </div>
 
-  {biz.services?.length > 0 && (
+  {tags.length > 0 && (
     <div class="biz-tags">
-      {biz.services.slice(0, 3).map((t) => <span class="biz-tag">{t}</span>)}
+      {selfDeclared && (
+        <span
+          class="biz-tag-label"
+          title="Listed on the company's own website. Not verified by us."
+        >Lists</span>
+      )}
+      {tags.slice(0, 3).map((t) => <span class="biz-tag">{t}</span>)}
     </div>
   )}
 

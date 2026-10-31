@@ -275,6 +275,15 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--paper); border: 1px solid var(--line); color: var(--ink-soft);
   font-size: .72rem; padding: .18rem .5rem; border-radius: 999px;
 }
+/* Marks the tags beside it as the company's own claim rather than a source
+   category. Deliberately NOT pill-shaped: it has to read as a label for the
+   row, not as another tag in it — if it looked like a tag, a reader would
+   scan "Lists" as a service the business offers. No border, no background,
+   --muted rather than --ink-soft. */
+.biz-tag-label {
+  color: var(--muted); font-size: .68rem; letter-spacing: .04em;
+  text-transform: uppercase; align-self: center; margin-right: .1rem;
+}
 /* Phone: stacked full-width actions. Two 44px buttons side by side at
    375px leaves each about 150px wide, which is fine — but the call button
    is the one that matters, so it goes first and takes the accent colour. */
