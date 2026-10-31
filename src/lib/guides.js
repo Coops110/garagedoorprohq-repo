@@ -24,6 +24,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-repair-cost',
+    sources: ['cslb', 'dbpr', 'azroc'],
     pillar: true,
     heroDiagram: 'cost-map',
     title: 'Garage Door Repair Cost in 2026: By Job',
@@ -237,6 +238,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-opener-repair-cost',
+    sources: ['cfr1211', 'sb969'],
     pillar: false,
     parent: 'garage-door-repair-cost',
     title: 'Garage Door Opener Repair Cost 2026',
@@ -339,6 +341,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'why-diy-spring-repair-is-dangerous',
+    sources: ['cslb', 'dbpr', 'azroc'],
     pillar: false,
     parent: 'garage-door-repair-cost',
     title: 'Why DIY Garage Door Spring Repair Is Risky',
@@ -417,6 +420,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'hiring-a-garage-door-company',
+    sources: ['cslb', 'dbpr', 'azroc'],
     pillar: true,
     title: 'How to Hire a Garage Door Company',
     h1: 'How to Hire a Garage Door Company: A Homeowner’s Checklist',
@@ -502,6 +506,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-opener-wont-work',
+    sources: ['cfr1211', 'cslb', 'dbpr', 'azroc'],
     pillar: false,
     parent: 'garage-door-repair-cost',
     heroDiagram: 'photo-eye',
@@ -727,6 +732,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-maintenance',
+    sources: ['cfr1211'],
     pillar: true,
     heroDiagram: 'balance-test',
     title: 'Garage Door Maintenance: What and When',

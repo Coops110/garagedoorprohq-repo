@@ -106,6 +106,36 @@ const walk = (dir) => {
 };
 walk(DIST);
 
+// ── Words that must NOT be Americanized ─────────────────────────────
+// `aria-labelledby` is spelled the British way by the HTML spec, and it is an
+// attribute NAME, not prose. The sweep that introduced this check Americanized
+// it to `aria-labeledby` in 16 places -- an attribute no browser or screen
+// reader recognises, silently removing the accessible name from 12 diagram
+// components and the consent dialog.
+//
+// check-seo.py caught it, which is the only reason it is not in production.
+// Encoded here so the next person running a spelling pass cannot repeat it:
+// an over-eager fix is as much a defect as the thing it fixed.
+const MUST_NOT_CHANGE = [
+  [/aria-labeledby/g, 'aria-labelledby (the HTML spec spells it with two Ls -- this attribute is broken)'],
+  [/aria-describedBy|aria-labelledBy/g, 'all-lowercase attribute name'],
+];
+
+const spec = [];
+for (const f of files) {
+  const text = readFileSync(f, 'utf8');
+  for (const [rx, want] of MUST_NOT_CHANGE) {
+    const n = [...text.matchAll(rx)].length;
+    if (n) spec.push(`${f.slice(DIST.length + 1)}: ${n}x -- should be ${want}`);
+  }
+}
+if (spec.length) {
+  console.error(`\n  FAIL: ${spec.length} file(s) with a broken HTML/ARIA attribute name:\n`);
+  for (const s of spec.slice(0, 10)) console.error(`    ${s}`);
+  console.error('\n  These are spec-defined attribute names, not prose. Do not Americanize them.');
+  process.exit(1);
+}
+
 const hits = new Map(); // "word -> us" => { count, pages:Set, sample }
 for (const f of files) {
   const text = readFileSync(f, 'utf8');

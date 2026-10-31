@@ -43,6 +43,16 @@ ${glossary.length} garage door terms defined as DefinedTerm pages.
 
 ${glossary.map((t) => `- [${t.term}](${base}/glossary/${t.slug}/): ${t.short}`).join('\n')}
 
+## Hubs
+
+The index pages, listed explicitly because an assistant crawling only the leaf
+pages never sees how they are organized.
+
+- [Directory](${base}/garage-door-repair/): every state and city covered, and what a listing does and does not assert
+- [Cost guides](${base}/guides/): all ${guides.length} guides with their scope
+- [Glossary](${base}/glossary/): ${glossary.length} terms, each a DefinedTerm page
+${states.filter((s) => s.count >= 3).map((s) => `- [Compare ${s.state} companies](${base}/garage-door-repair/${s.stateSlug}/compare/): sortable table of all ${s.count} ${s.state} listings`).join('\n')}
+
 ## Directory
 ${states.length === 0 ? `
 No listings are published yet. The directory is being rolled out metro by
@@ -57,6 +67,7 @@ ${cities.map((c) => `- [Garage door repair in ${c.city}, ${c.stateCode}](${base}
 ## About
 
 - [About ${SITE.name}](${base}/about/): who runs the site and how it is funded
+- [How we price](${base}/how-we-price/): the method behind every figure in the cost guides, and why there is no metro-level price
 - [Editorial guidelines](${base}/editorial-guidelines/): the quality bar a listing must clear, what a license badge means, and why there are no ratings
 - [Get listed](${base}/get-listed/): free to list; paid promotion is labeled as advertising
 - [Contact](${base}/contact/)

@@ -48,8 +48,17 @@ const faqs = [
     a: `${SITE.name} lists ${c.count} garage door ${c.count === 1 ? 'company' : 'companies'} in ${c.city}, ${c.stateCode}${lic && c.licensedCount ? `, of which ${c.licensedCount === c.count ? 'all' : c.licensedCount} have a license number matched to an active record on the ${lic.authorityShort} register` : ''}. ${CLAIMS.listingMeaning}`,
   },
   {
+    // National estimates, said to be national. This read "Most repairs in
+    // {City} fall in the $150–$400 range" on all 84 city pages, which
+    // contradicted /how-we-price/ -- that page states plainly that we do not
+    // publish a metro-level price, because we have no data that would support
+    // one. The same array feeds the FAQPage schema, so the old wording was
+    // also telling Google we hold local pricing for 84 cities that we do not.
+    //
+    // The honest version is more useful anyway: it gives the figure, says what
+    // it is, and names the thing that actually moves it locally.
     q: `How much does garage door repair cost in ${c.city}?`,
-    a: `Most repairs in ${c.city} fall in the $150–$400 range. A torsion spring pair runs $250–$550, an opener repair $100–$300, and a replacement opener $300–$700 installed. Expect a $75–$150 diagnostic fee, usually credited against the work.`,
+    a: `We do not publish a ${c.city}-specific price, because we have no data that would support one. Our 2026 national estimates: most repairs land in the $150–$400 range, a torsion spring pair runs $250–$550, an opener repair $100–$300, and a replacement opener $300–$700 installed. Expect a $75–$150 diagnostic fee, usually credited against the work. Local labor rates and a double-width door both push the figure toward the top of each range.`,
   },
   {
     q: lic
@@ -73,12 +82,26 @@ const schemas = [
 ---
 <BaseLayout
   title={fitTitle(
-    `${c.count} Garage Door Companies in ${c.city}, ${c.stateCode}`,
+    // Leads with the query. The old form was "{N} Garage Door Companies in
+    // {City}, {ST}", which pushed "garage door repair" out of the title on all
+    // 84 city pages -- the 2026-10-31 audit's SXO finding, and the query these
+    // pages actually compete for.
+    //
+    // A ": {N} Companies" variant was tried first and is deliberately NOT
+    // here: with " | GarageDoorProHQ" appended it exceeded 60 characters for
+    // every one of the 88 cities, so fitTitle fell through to this form every
+    // time. A variant that never renders is worse than no variant -- it reads
+    // like the count is in the title when it is not. The count is in the meta
+    // description and in the H1 subtitle, which is where it is useful.
+    //
+    // Dropping it also retires "1 Garage Door Companies in Goodyear, AZ",
+    // which shipped on every city that fell to a single listing: the subtitle
+    // pluralized and the title did not.
     `Garage Door Repair in ${c.city}, ${c.stateCode}`,
     `Garage Doors in ${c.city}, ${c.stateCode}`,
   )}
   description={fitDescription(
-    `${c.count} garage door companies in ${c.city}, ${c.stateCode} with phone numbers and service categories${lic ? `, plus how to check a ${lic.authorityShort} license yourself` : ''}.`,
+    `${c.count} garage door companies in ${c.city}, ${c.stateCode} with phone numbers and service categories${lic ? `, plus how to check ${lic.article} ${lic.authorityShort} license yourself` : ''}.`,
     `${c.count} garage door repair and installation companies in ${c.city}, ${c.stateCode}, with phone numbers, service categories and local cost guidance.`,
   )}
   canonical={cityUrl}
@@ -90,7 +113,7 @@ const schemas = [
     <Breadcrumbs items={crumbs} />
 
     <span class="eyebrow">{c.city}, {c.stateCode}</span>
-    <h1 style="margin:.5rem 0 .5rem;">Garage door companies in {c.city}, {c.stateCode}</h1>
+    <h1 style="margin:.5rem 0 .5rem;">Garage door repair in {c.city}, {c.stateCode}</h1>
     <p class="muted mb-3">
       {formatCount(c.count)} {c.count === 1 ? 'listing' : 'listings'}
       {c.withAddress ? ` · ${c.withAddress} with a street address` : ''}

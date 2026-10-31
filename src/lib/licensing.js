@@ -20,6 +20,7 @@ export const LICENCE_STATES = {
     state: 'California',
     authority: 'California Contractors State License Board (CSLB)',
     authorityShort: 'CSLB',
+    article: 'a',    // "a CSLB license" — spoken "see-ess-ell-bee"
     classification: 'C-61/D-28 Doors, Gates and Activating Devices',
     searchUrl: 'https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx',
     searchLabel: 'CSLB license check',
@@ -36,6 +37,7 @@ export const LICENCE_STATES = {
     state: 'Florida',
     authority: 'Florida Department of Business and Professional Regulation (DBPR)',
     authorityShort: 'DBPR',
+    article: 'a',    // "a DBPR license" — spoken "dee-bee-pee-arr"
     classification: 'Garage Door Installation Specialty Contractor',
     searchUrl: 'https://www.myfloridalicense.com/wl11.asp',
     searchLabel: 'DBPR license search',
@@ -51,6 +53,7 @@ export const LICENCE_STATES = {
     state: 'Arizona',
     authority: 'Arizona Registrar of Contractors (ROC)',
     authorityShort: 'AZ ROC',
+    article: 'an',   // "an AZ ROC license" — spoken "ay-zee rock"
     classification: 'ROC-283 Garage Doors, Gates and Similar Devices',
     searchUrl: 'https://roc.az.gov/contractor-search',
     searchLabel: 'AZ ROC contractor search',

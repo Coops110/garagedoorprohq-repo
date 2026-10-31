@@ -12,6 +12,7 @@ import {
 import { fitTitle, fitDescription } from '../../lib/seo.js';
 import { getDiagram } from '../../lib/diagrams.js';
 import { costCallouts } from '../../lib/costmap.js';
+import { sourcesFor } from '../../lib/sources.js';
 import Figure from '../../components/Figure.astro';
 import TorsionSystem from '../../components/diagrams/TorsionSystem.astro';
 import SpringTypes from '../../components/diagrams/SpringTypes.astro';
@@ -88,6 +89,9 @@ const siblings = parent
   ? getClusters(parent.slug).filter((s) => s.slug !== g.slug)
   : [];
 const related = (g.related || []).map(getGuide).filter(Boolean);
+// Throws on an unknown id rather than rendering an empty Sources block, which
+// would read as "we looked for a source and found none".
+const guideSources = sourcesFor(g.sources || []);
 const terms = getTerms(g.glossary || []);
 
 // Pillars link out to the highest-listing city pages — real depth into the
@@ -212,6 +216,29 @@ const modified = new Date(g.dateModified || g.datePublished)
               <p>{f.a}</p>
             </div>
           ))}
+        </section>
+      )}
+
+      {/* Sources. Placed after the FAQs and before the internal link lists,
+          so it closes the substance of the page rather than sitting among
+          navigation. A reader who wants to check a regulatory claim should not
+          have to scroll past three link lists to find the statute. */}
+      {guideSources.length > 0 && (
+        <section>
+          <h2>Sources</h2>
+          <p class="muted" style="margin-top:.5rem;">
+            Where a claim on this page rests on a rule or a register rather than on our
+            own pricing work, this is the thing we read. Figures in the cost table are
+            our own estimates — see <a href="/how-we-price/">how we price</a>.
+          </p>
+          <ul class="link-list" style="margin-top:.75rem;">
+            {guideSources.map((s) => (
+              <li>
+                <a href={s.url} rel="nofollow noopener" target="_blank">{s.label}</a>
+                {' — '}<span class="muted">{s.publisher}. {s.note} Checked {s.checked}.</span>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
