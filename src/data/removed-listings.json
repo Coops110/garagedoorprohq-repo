@@ -1,5 +1,38 @@
 [
   {
+    "source": "/garage-door-repair/arizona/chandler/eagle-screen-awning/",
+    "destination": "/garage-door-repair/arizona/chandler/",
+    "id": "43e9bd65-6efa-4645-983a-0a0945a5c6e8",
+    "name": "Eagle Screen & Awning",
+    "slug": "eagle-screen-awning",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/gilbert/american-vision-windows/",
+    "destination": "/garage-door-repair/arizona/gilbert/",
+    "id": "9c3cda36-7791-48a6-911c-797e9223ac57",
+    "name": "American Vision Windows",
+    "slug": "american-vision-windows",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/glendale/aq-glass-arizona-shower-doors-phoenix/",
+    "destination": "/garage-door-repair/arizona/glendale/",
+    "id": "3b24bfc7-324d-47e6-98f5-da39cd6109a2",
+    "name": "AQ Glass Arizona Shower Doors- Phoenix",
+    "slug": "aq-glass-arizona-shower-doors-phoenix",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/arizona/goodyear/garage-door-repair/",
     "destination": "/garage-door-repair/arizona/goodyear/",
     "id": "8991be0c-7e50-4ab7-bc98-9dc391f500bc",
@@ -22,6 +55,17 @@
     "reason": "Lead-generation spam: 14 listings on one website under 12 different business names, including the bare query strings \"garage door repair\" and \"best rated garage door repair\", which are not business names. One operator presented as a dozen local firms."
   },
   {
+    "source": "/garage-door-repair/arizona/mesa/cougar-windows-doors/",
+    "destination": "/garage-door-repair/arizona/mesa/",
+    "id": "5de9c3dc-c8aa-4014-9fc5-9d7485617439",
+    "name": "Cougar Windows & Doors",
+    "slug": "cougar-windows-doors",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/arizona/mesa/quality-garage-door-repair/",
     "destination": "/garage-door-repair/arizona/mesa/",
     "id": "88a89416-35bf-4fbd-91dc-0b27d8818281",
@@ -33,6 +77,72 @@
     "reason": "Lead-generation spam: 14 listings on one website under 12 different business names, including the bare query strings \"garage door repair\" and \"best rated garage door repair\", which are not business names. One operator presented as a dozen local firms."
   },
   {
+    "source": "/garage-door-repair/arizona/mesa/wheeler-glass/",
+    "destination": "/garage-door-repair/arizona/mesa/",
+    "id": "0e6b17ef-2547-4864-bf28-41a45e0545c7",
+    "name": "Wheeler Glass",
+    "slug": "wheeler-glass",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/mesa/windowz-4-less-of-arizona/",
+    "destination": "/garage-door-repair/arizona/mesa/",
+    "id": "e1e41ee3-4b94-4d51-8250-e6631a54cc43",
+    "name": "Windowz 4 Less of Arizona",
+    "slug": "windowz-4-less-of-arizona",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/peoria/pima-door-supply/",
+    "destination": "/garage-door-repair/arizona/peoria/",
+    "id": "a7850f79-8345-4154-917f-a537e7a818b9",
+    "name": "Pima Door & Supply",
+    "slug": "pima-door-supply",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"home_improvement_store\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/phoenix/a-pro-windows-doors/",
+    "destination": "/garage-door-repair/arizona/phoenix/",
+    "id": "2ad5fae1-44c3-4829-b7fa-94a55df9ddb9",
+    "name": "A Pro Windows & Doors",
+    "slug": "a-pro-windows-doors",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/phoenix/action-industries/",
+    "destination": "/garage-door-repair/arizona/phoenix/",
+    "id": "9fd80e7f-4fff-42ff-b8a6-dbf18a399f2b",
+    "name": "Action Industries",
+    "slug": "action-industries",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"online_shop\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/phoenix/desert-king-windows/",
+    "destination": "/garage-door-repair/arizona/phoenix/",
+    "id": "f3fd1a73-ad6b-4536-b2bb-9bc9b22786b0",
+    "name": "Desert King Windows",
+    "slug": "desert-king-windows",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/arizona/phoenix/garage-door-experts-team/",
     "destination": "/garage-door-repair/arizona/phoenix/",
     "id": "8064742d-5160-43ea-a9b8-f370ebd0558a",
@@ -42,6 +152,105 @@
     "stateCode": "AZ",
     "removedOn": "2026-10-31",
     "reason": "Lead-generation spam: 14 listings on one website under 12 different business names, including the bare query strings \"garage door repair\" and \"best rated garage door repair\", which are not business names. One operator presented as a dozen local firms."
+  },
+  {
+    "source": "/garage-door-repair/arizona/phoenix/gcs-glass-mirror/",
+    "destination": "/garage-door-repair/arizona/phoenix/",
+    "id": "e5dbcff7-05ef-47af-8ae4-25ecd5cc1c8c",
+    "name": "GCS Glass & Mirror",
+    "slug": "gcs-glass-mirror",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/phoenix/precision-fit-door-and-window-inc/",
+    "destination": "/garage-door-repair/arizona/phoenix/",
+    "id": "f44ead56-975f-4f15-a075-1eeb62b7e8e8",
+    "name": "Precision Fit Door and Window Inc.",
+    "slug": "precision-fit-door-and-window-inc",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/phoenix/prostar-doors/",
+    "destination": "/garage-door-repair/arizona/phoenix/",
+    "id": "2985f1f3-44d5-45cc-8b29-fde28d6f2f78",
+    "name": "Prostar Doors",
+    "slug": "prostar-doors",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"windows_installation\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/phoenix/soco-door-and-window-services-llc/",
+    "destination": "/garage-door-repair/arizona/phoenix/",
+    "id": "c9f2dd73-918f-4eed-904f-2fe8e80a39d2",
+    "name": "Soco Door and Window Services LLC",
+    "slug": "soco-door-and-window-services-llc",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/queen-creek/wright-choice-glassworks-llc/",
+    "destination": "/garage-door-repair/arizona/queen-creek/",
+    "id": "a28a45c3-f03c-41e7-90c0-dfb209234b6e",
+    "name": "Wright - Choice Glassworks LLC",
+    "slug": "wright-choice-glassworks-llc",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/scottsdale/a-cut-above-glass/",
+    "destination": "/garage-door-repair/arizona/scottsdale/",
+    "id": "29755009-f3d9-496b-a0a1-f88202841822",
+    "name": "A Cut Above Glass",
+    "slug": "a-cut-above-glass",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/scottsdale/arcadia-window-door/",
+    "destination": "/garage-door-repair/arizona/scottsdale/",
+    "id": "686dc8c4-69d7-4480-88f7-1cce39b07c15",
+    "name": "Arcadia Window & Door",
+    "slug": "arcadia-window-door",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/scottsdale/the-glass-guru/",
+    "destination": "/garage-door-repair/arizona/scottsdale/",
+    "id": "f117534f-85fa-4dcf-9a36-dcee43037f29",
+    "name": "The Glass Guru",
+    "slug": "the-glass-guru",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/arizona/tempe/renewal-by-andersen-window-replacement/",
+    "destination": "/garage-door-repair/arizona/tempe/",
+    "id": "1a050c95-4fa9-49ed-933d-e4958fa756e2",
+    "name": "Renewal by Andersen Window Replacement",
+    "slug": "renewal-by-andersen-window-replacement",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/agoura-hills/aces-garage-door-repair-agoura-hills/",
@@ -64,6 +273,17 @@
     "stateCode": "CA",
     "removedOn": "2026-10-31",
     "reason": "Lead-generation spam: 4 listings on one website under two unrelated brands (\"Aces\" and \"AE\"), each with its own toll-free number — the call-tracking-per-listing pattern, not a real multi-location business."
+  },
+  {
+    "source": "/garage-door-repair/california/alhambra/b-b-lock-and-security/",
+    "destination": "/garage-door-repair/california/alhambra/",
+    "id": "c02e4008-8e6c-4bcd-a5d6-dc39e7913ab0",
+    "name": "B&B Lock and Security",
+    "slug": "b-b-lock-and-security",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"key_and_locksmith\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/alhambra/garage-door-repair-san-marino/",
@@ -99,6 +319,17 @@
     "reason": "Lead-generation spam: 7 listings on one website under 7 different business names (\"Mike's Garage Door Repair Anaheim\" alongside \"Local Garage Door Repair Calabasas\"). The site itself states services are \"available in ALL cities and states\" and runs a single toll-free number, while being listed here as seven separate local businesses."
   },
   {
+    "source": "/garage-door-repair/california/anaheim/powermaster-door-gate-operators/",
+    "destination": "/garage-door-repair/california/anaheim/",
+    "id": "9005ba5f-5585-4eb7-9567-5dc2cf090620",
+    "name": "Powermaster Door & Gate Operators",
+    "slug": "powermaster-door-gate-operators",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"industrial_equipment\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/california/anaheim/superior-garage-door-services/",
     "destination": "/garage-door-repair/california/anaheim/",
     "id": "b11f30a5-2e14-4cd2-8202-794988b5e43d",
@@ -108,6 +339,39 @@
     "stateCode": "CA",
     "removedOn": "2026-10-31",
     "reason": "Lead-generation spam: 14 listings on one website under 12 different business names, including the bare query strings \"garage door repair\" and \"best rated garage door repair\", which are not business names. One operator presented as a dozen local firms."
+  },
+  {
+    "source": "/garage-door-repair/california/bellflower/courtesy-glass-mirror/",
+    "destination": "/garage-door-repair/california/bellflower/",
+    "id": "fe4e2df4-5e0f-46a7-b751-cbd3072be2a8",
+    "name": "Courtesy Glass & Mirror",
+    "slug": "courtesy-glass-mirror",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/bellflower/la-orange-glass-door/",
+    "destination": "/garage-door-repair/california/bellflower/",
+    "id": "81af791c-6e31-4109-88bc-f02b16371029",
+    "name": "LA/Orange Glass & Door",
+    "slug": "la-orange-glass-door",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/bellflower/rich-door-and-window/",
+    "destination": "/garage-door-repair/california/bellflower/",
+    "id": "0344ab6c-a4fd-4204-bde5-66aee674161c",
+    "name": "Rich Door and Window",
+    "slug": "rich-door-and-window",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"windows_installation\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/beverly-hills/local-garage-door-repair-beverly-hills/",
@@ -154,6 +418,17 @@
     "reason": "Lead-generation spam: 7 listings on one website under 7 different business names (\"Mike's Garage Door Repair Anaheim\" alongside \"Local Garage Door Repair Calabasas\"). The site itself states services are \"available in ALL cities and states\" and runs a single toll-free number, while being listed here as seven separate local businesses."
   },
   {
+    "source": "/garage-door-repair/california/canoga-park/frontier-windows-doors/",
+    "destination": "/garage-door-repair/california/canoga-park/",
+    "id": "06f2ca3e-e87a-4a04-a385-f88e74ce6e09",
+    "name": "Frontier Windows & Doors",
+    "slug": "frontier-windows-doors",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/california/chatsworth/ae-garage-door-repair-chatsworth/",
     "destination": "/garage-door-repair/california/chatsworth/",
     "id": "d8b0dcfe-29f2-49fc-82f3-ccd3947d6840",
@@ -165,6 +440,28 @@
     "reason": "Lead-generation spam: 4 listings on one website under two unrelated brands (\"Aces\" and \"AE\"), each with its own toll-free number — the call-tracking-per-listing pattern, not a real multi-location business."
   },
   {
+    "source": "/garage-door-repair/california/chatsworth/door-window-center/",
+    "destination": "/garage-door-repair/california/chatsworth/",
+    "id": "9f8772e8-5c1a-4ead-9009-8f670ce52e90",
+    "name": "Door & Window Center",
+    "slug": "door-window-center",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/chatsworth/fine-windows-and-doors-inc/",
+    "destination": "/garage-door-repair/california/chatsworth/",
+    "id": "230d2e89-ef32-42bd-b4a6-0b5a25ae6936",
+    "name": "Fine Windows and Doors, Inc.",
+    "slug": "fine-windows-and-doors-inc",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/california/chatsworth/garage-door-los-angeles/",
     "destination": "/garage-door-repair/california/chatsworth/",
     "id": "fbfafe25-2a23-435e-81f6-97b26f9b42a8",
@@ -174,6 +471,17 @@
     "stateCode": "CA",
     "removedOn": "2026-10-21",
     "reason": "Lead-generation spam, removed in the 2026-10-21 batch of 47 (commit 57581a4). That batch edited businesses.json directly and predates this log, so the URL served a bare 404 until this row was backfilled on 2026-10-31."
+  },
+  {
+    "source": "/garage-door-repair/california/covina/window-world-of-los-angeles/",
+    "destination": "/garage-door-repair/california/covina/",
+    "id": "6f69779e-50fe-4113-874c-d94c08cc3c0a",
+    "name": "Window World of Los Angeles",
+    "slug": "window-world-of-los-angeles",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/encino/garage-door-los-angeles-2/",
@@ -196,6 +504,61 @@
     "stateCode": "CA",
     "removedOn": "2026-10-21",
     "reason": "Lead-generation spam, removed in the 2026-10-21 batch of 47 (commit 57581a4). That batch edited businesses.json directly and predates this log, so the URL served a bare 404 until this row was backfilled on 2026-10-31."
+  },
+  {
+    "source": "/garage-door-repair/california/huntington-beach/golden-locks-inc/",
+    "destination": "/garage-door-repair/california/huntington-beach/",
+    "id": "e76beb2b-7bea-4ea6-882b-c4f16aa4bf0c",
+    "name": "Golden Locks, Inc.",
+    "slug": "golden-locks-inc",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"online_shop\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/huntington-beach/pacific-screen-doors/",
+    "destination": "/garage-door-repair/california/huntington-beach/",
+    "id": "c8cb349b-16ce-412f-986a-54ebd9d84308",
+    "name": "Pacific Screen Doors",
+    "slug": "pacific-screen-doors",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/long-beach/g-r-door-and-glass/",
+    "destination": "/garage-door-repair/california/long-beach/",
+    "id": "378befb8-6bbd-4dbb-84da-5eb22e7731f4",
+    "name": "G&R Door and Glass",
+    "slug": "g-r-door-and-glass",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/long-beach/pep-ca/",
+    "destination": "/garage-door-repair/california/long-beach/",
+    "id": "085108e7-ca4d-4a34-8f5c-2a1621b54315",
+    "name": "PEP CA",
+    "slug": "pep-ca",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"wholesale_store\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/los-angeles/a-m-b-glass-corp/",
+    "destination": "/garage-door-repair/california/los-angeles/",
+    "id": "c8783b10-3c31-42d4-8bf8-cf1be611a709",
+    "name": "A M B Glass CORP",
+    "slug": "a-m-b-glass-corp",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-10/",
@@ -506,6 +869,28 @@
     "reason": "Lead-generation spam: 14 listings on one website under 12 different business names, including the bare query strings \"garage door repair\" and \"best rated garage door repair\", which are not business names. One operator presented as a dozen local firms."
   },
   {
+    "source": "/garage-door-repair/california/los-angeles/starlite-screen-glass-inc/",
+    "destination": "/garage-door-repair/california/los-angeles/",
+    "id": "8510b607-01f3-4e46-9f9d-f507255948bf",
+    "name": "Starlite Screen & Glass, Inc.",
+    "slug": "starlite-screen-glass-inc",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/north-hollywood/american-deluxe-windows-and-doors/",
+    "destination": "/garage-door-repair/california/north-hollywood/",
+    "id": "fc784c40-3917-4646-96ae-78b36aa21983",
+    "name": "American Deluxe Windows and Doors",
+    "slug": "american-deluxe-windows-and-doors",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/california/northridge/garage-door-los-angeles/",
     "destination": "/garage-door-repair/california/northridge/",
     "id": "43cd3396-c3a4-43a5-8713-1a2300993d96",
@@ -526,6 +911,39 @@
     "stateCode": "CA",
     "removedOn": "2026-10-31",
     "reason": "Lead-generation spam: 14 listings on one website under 12 different business names, including the bare query strings \"garage door repair\" and \"best rated garage door repair\", which are not business names. One operator presented as a dozen local firms."
+  },
+  {
+    "source": "/garage-door-repair/california/ontario/day-nite-doors/",
+    "destination": "/garage-door-repair/california/ontario/",
+    "id": "7eabc4af-b4a1-4fb1-8764-fe58041d973c",
+    "name": "Day & Nite Doors",
+    "slug": "day-nite-doors",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"industrial_equipment\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/ontario/design-windows-doors-inc/",
+    "destination": "/garage-door-repair/california/ontario/",
+    "id": "f6af7625-bbf8-4e57-a5aa-a7292f3e25c4",
+    "name": "Design Windows & Doors Inc",
+    "slug": "design-windows-doors-inc",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/ontario/raylex-window-door/",
+    "destination": "/garage-door-repair/california/ontario/",
+    "id": "c1b6b057-2150-404a-b6d1-01012be6785a",
+    "name": "RayLex Window & Door",
+    "slug": "raylex-window-door",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/orange/local-garage-door-repair-2/",
@@ -561,6 +979,28 @@
     "reason": "Lead-generation spam, removed in the 2026-10-21 batch of 47 (commit 57581a4). That batch edited businesses.json directly and predates this log, so the URL served a bare 404 until this row was backfilled on 2026-10-31."
   },
   {
+    "source": "/garage-door-repair/california/pasadena/pasadena-screens/",
+    "destination": "/garage-door-repair/california/pasadena/",
+    "id": "71232ffb-45a2-491a-80cd-e3b3360bd9f7",
+    "name": "Pasadena Screens",
+    "slug": "pasadena-screens",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/pasadena/pella-windows-and-doors-of-pasadena/",
+    "destination": "/garage-door-repair/california/pasadena/",
+    "id": "6b586b6b-579e-4253-bc60-91c4e4df378f",
+    "name": "Pella Windows and Doors of Pasadena",
+    "slug": "pella-windows-and-doors-of-pasadena",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/california/pasadena/real-garage-door-repair-pasadena/",
     "destination": "/garage-door-repair/california/pasadena/",
     "id": "9023d384-4aa0-4587-b071-e4b45fa6ca98",
@@ -570,6 +1010,28 @@
     "stateCode": "CA",
     "removedOn": "2026-10-31",
     "reason": "Lead-generation spam: 7 listings on one website under 7 different business names (\"Mike's Garage Door Repair Anaheim\" alongside \"Local Garage Door Repair Calabasas\"). The site itself states services are \"available in ALL cities and states\" and runs a single toll-free number, while being listed here as seven separate local businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/pasadena/sunset-glass/",
+    "destination": "/garage-door-repair/california/pasadena/",
+    "id": "01f4ae19-72c7-48eb-830f-db84ed07cfc9",
+    "name": "Sunset Glass",
+    "slug": "sunset-glass",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/placentia/door-systems/",
+    "destination": "/garage-door-repair/california/placentia/",
+    "id": "86d9e8b9-8281-416d-90a3-db01f0ecb011",
+    "name": "Door Systems",
+    "slug": "door-systems",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"fire_protection_service\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/placentia/local-garage-door-pros/",
@@ -660,6 +1122,39 @@
     "reason": "Lead-generation spam, removed in the 2026-10-21 batch of 47 (commit 57581a4). That batch edited businesses.json directly and predates this log, so the URL served a bare 404 until this row was backfilled on 2026-10-31."
   },
   {
+    "source": "/garage-door-repair/california/rancho-cucamonga/d-p-door-company/",
+    "destination": "/garage-door-repair/california/rancho-cucamonga/",
+    "id": "c5c45e08-a5b2-477c-9aea-29783db1ee0d",
+    "name": "D P Door Company",
+    "slug": "d-p-door-company",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"windows_installation\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/redondo-beach/south-bay-door-window/",
+    "destination": "/garage-door-repair/california/redondo-beach/",
+    "id": "074a0c2a-e109-48b8-859a-8e0a0e8ae69c",
+    "name": "South Bay Door & Window",
+    "slug": "south-bay-door-window",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"windows_installation\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/santa-ana/pella-windows-and-doors-of-santa-ana/",
+    "destination": "/garage-door-repair/california/santa-ana/",
+    "id": "f55a51dc-8f88-4ae4-a1ec-bc281cd5a0e5",
+    "name": "Pella Windows and Doors of Santa Ana",
+    "slug": "pella-windows-and-doors-of-santa-ana",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/california/santa-monica/garage-door-santa-monica-2/",
     "destination": "/garage-door-repair/california/santa-monica/",
     "id": "15d14bcd-1e3a-4264-b37f-ba5bf7a4bf19",
@@ -715,6 +1210,17 @@
     "reason": "Lead-generation spam, removed in the 2026-10-21 batch of 47 (commit 57581a4). That batch edited businesses.json directly and predates this log, so the URL served a bare 404 until this row was backfilled on 2026-10-31."
   },
   {
+    "source": "/garage-door-repair/california/sherman-oaks/knr-sliding-glass-doors/",
+    "destination": "/garage-door-repair/california/sherman-oaks/",
+    "id": "24a2006a-994d-4f30-9283-f46c31a880c9",
+    "name": "KNR Sliding & Glass Doors",
+    "slug": "knr-sliding-glass-doors",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/california/sherman-oaks/local-garage-door-repair-sherman-oaks/",
     "destination": "/garage-door-repair/california/sherman-oaks/",
     "id": "71e2dd31-b707-45f2-be32-f61894831d60",
@@ -724,6 +1230,17 @@
     "stateCode": "CA",
     "removedOn": "2026-10-31",
     "reason": "Lead-generation spam: 7 listings on one website under 7 different business names (\"Mike's Garage Door Repair Anaheim\" alongside \"Local Garage Door Repair Calabasas\"). The site itself states services are \"available in ALL cities and states\" and runs a single toll-free number, while being listed here as seven separate local businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/simi-valley/community-glass-mirror/",
+    "destination": "/garage-door-repair/california/simi-valley/",
+    "id": "042dcfcc-d1e5-43a9-875c-1fca02b8dee9",
+    "name": "Community Glass & Mirror",
+    "slug": "community-glass-mirror",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/tarzana/garage-door-los-angeles-2/",
@@ -781,6 +1298,39 @@
     "reason": "Lead-generation spam, removed in the 2026-10-21 batch of 47 (commit 57581a4). That batch edited businesses.json directly and predates this log, so the URL served a bare 404 until this row was backfilled on 2026-10-31."
   },
   {
+    "source": "/garage-door-repair/california/torrance/cornerstone-windows-patio-doors/",
+    "destination": "/garage-door-repair/california/torrance/",
+    "id": "88894cff-5ac7-4948-82a0-fa61f11b2f7f",
+    "name": "Cornerstone Windows & Patio Doors",
+    "slug": "cornerstone-windows-patio-doors",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/torrance/james-price-windows-doors-inc/",
+    "destination": "/garage-door-repair/california/torrance/",
+    "id": "52810e65-fd25-4b9f-bdbe-90c29eb1766d",
+    "name": "James Price Windows & Doors, Inc",
+    "slug": "james-price-windows-doors-inc",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/california/torrance/the-glass-guru/",
+    "destination": "/garage-door-repair/california/torrance/",
+    "id": "547be546-22c4-44d8-83ea-86699474d2c2",
+    "name": "The Glass Guru",
+    "slug": "the-glass-guru",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/california/tustin/reliable-garage-door-repair/",
     "destination": "/garage-door-repair/california/tustin/",
     "id": "ebb9860a-4c4c-4266-ada4-ac2489b39e15",
@@ -801,6 +1351,17 @@
     "stateCode": "CA",
     "removedOn": "2026-10-31",
     "reason": "Lead-generation spam: 14 listings on one website under 12 different business names, including the bare query strings \"garage door repair\" and \"best rated garage door repair\", which are not business names. One operator presented as a dozen local firms."
+  },
+  {
+    "source": "/garage-door-repair/california/van-nuys/american-reliable-windows-doors/",
+    "destination": "/garage-door-repair/california/van-nuys/",
+    "id": "04f1ce20-1a66-45cc-bd3e-a9bba7b78a6b",
+    "name": "American Reliable Windows & Doors",
+    "slug": "american-reliable-windows-doors",
+    "state": "California",
+    "stateCode": "CA",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
     "source": "/garage-door-repair/california/van-nuys/garage-door-los-angeles/",
@@ -913,6 +1474,61 @@
     "reason": "Lead-generation spam, removed in the 2026-10-21 batch of 47 (commit 57581a4). That batch edited businesses.json directly and predates this log, so the URL served a bare 404 until this row was backfilled on 2026-10-31."
   },
   {
+    "source": "/garage-door-repair/florida/apopka/gymdoors-florida/",
+    "destination": "/garage-door-repair/florida/apopka/",
+    "id": "7dee46de-edf6-46a9-980a-1ca1d854a033",
+    "name": "Gymdoors Florida",
+    "slug": "gymdoors-florida",
+    "state": "Florida",
+    "stateCode": "FL",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"business_manufacturing_and_supply\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/florida/longwood/dixie-shower-doors/",
+    "destination": "/garage-door-repair/florida/longwood/",
+    "id": "a85fa26c-1520-4003-b34b-cf1fd5f7f332",
+    "name": "Dixie Shower Doors",
+    "slug": "dixie-shower-doors",
+    "state": "Florida",
+    "stateCode": "FL",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/florida/longwood/out-back-screen-repairs-llc/",
+    "destination": "/garage-door-repair/florida/longwood/",
+    "id": "532032b6-b643-4515-90fb-ab257dfe13b4",
+    "name": "Out Back Screen Repairs LLC",
+    "slug": "out-back-screen-repairs-llc",
+    "state": "Florida",
+    "stateCode": "FL",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/florida/orlando/castle-windows/",
+    "destination": "/garage-door-repair/florida/orlando/",
+    "id": "24365f08-712f-4a05-a710-1c94cada3976",
+    "name": "Castle Windows",
+    "slug": "castle-windows",
+    "state": "Florida",
+    "stateCode": "FL",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/florida/orlando/derby-door-window/",
+    "destination": "/garage-door-repair/florida/orlando/",
+    "id": "7aeee4b5-b53e-4172-8bf3-c02e386d6e9a",
+    "name": "Derby Door & Window",
+    "slug": "derby-door-window",
+    "state": "Florida",
+    "stateCode": "FL",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"windows_installation\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
     "source": "/garage-door-repair/florida/orlando/empire-garage-door-repair/",
     "destination": "/garage-door-repair/florida/orlando/",
     "id": "44a167df-0705-4d84-a986-315419830daa",
@@ -944,5 +1560,258 @@
     "stateCode": "FL",
     "removedOn": "2026-10-31",
     "reason": "Lead-generation spam: 14 listings on one website under 12 different business names, including the bare query strings \"garage door repair\" and \"best rated garage door repair\", which are not business names. One operator presented as a dozen local firms."
+  },
+  {
+    "source": "/garage-door-repair/florida/orlando/orlando-shower-doors-by-alexandra-glass-designs/",
+    "destination": "/garage-door-repair/florida/orlando/",
+    "id": "5e0c8d35-91b8-411a-8869-cc32039c531c",
+    "name": "Orlando Shower Doors By Alexandra Glass Designs",
+    "slug": "orlando-shower-doors-by-alexandra-glass-designs",
+    "state": "Florida",
+    "stateCode": "FL",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/florida/winter-park/my-shower-door/",
+    "destination": "/garage-door-repair/florida/winter-park/",
+    "id": "52656f9f-17cb-405e-8589-eff98ce81193",
+    "name": "My Shower Door",
+    "slug": "my-shower-door",
+    "state": "Florida",
+    "stateCode": "FL",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/crosby/biddle-s-pristine-windows-doors/",
+    "destination": "/garage-door-repair/texas/crosby/",
+    "id": "587d2485-15a0-4c76-b14f-8183e02b34c2",
+    "name": "Biddle's Pristine Windows & Doors",
+    "slug": "biddle-s-pristine-windows-doors",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/dickinson/richards-affordable-automotive/",
+    "destination": "/garage-door-repair/texas/dickinson/",
+    "id": "18c8d6bc-ae2d-4ef5-8c3d-f73dcafd923c",
+    "name": "Richards Affordable Automotive",
+    "slug": "richards-affordable-automotive",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"automotive_repair\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/friendswood/window-zone-houston/",
+    "destination": "/garage-door-repair/texas/friendswood/",
+    "id": "358d16d2-9160-465c-ae3f-1c8da8f55172",
+    "name": "Window Zone Houston",
+    "slug": "window-zone-houston",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/avana-windows-doors/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "682ea16b-26c9-443e-b006-a3b12462e976",
+    "name": "Avana Windows & Doors",
+    "slug": "avana-windows-doors",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/custom-windows-of-texas/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "c85d80d0-86df-42b7-a045-8100902f8f24",
+    "name": "Custom Windows Of Texas",
+    "slug": "custom-windows-of-texas",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/door-and-dock-solutions/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "cb927a68-8a87-4c8b-bc22-5ee15df16892",
+    "name": "Door and Dock Solutions",
+    "slug": "door-and-dock-solutions",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"truck_dealer\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/ecoview-windows/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "b5036472-6c92-4361-9af9-29b79ab25f98",
+    "name": "EcoView Windows",
+    "slug": "ecoview-windows",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/greenlite-services-llc/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "1f7f4b9a-490d-40fc-b0e7-77260857b0d7",
+    "name": "GreenLite Services LLC",
+    "slug": "greenlite-services-llc",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"glass_and_mirror_sales_service\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/houston-window-experts/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "b0af2d21-a0dc-40e0-acbf-f1ff387afcf0",
+    "name": "Houston Window Experts",
+    "slug": "houston-window-experts",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/metro-steel-windows-doors/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "3f00ca1e-bc3f-44c8-b576-9970cd5c61d8",
+    "name": "Metro Steel Windows & Doors",
+    "slug": "metro-steel-windows-doors",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/meyerland-windows/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "a7632c8b-fbd1-452f-8ba1-d18cadc451ba",
+    "name": "Meyerland Windows",
+    "slug": "meyerland-windows",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/mr-glass-mirror-houston/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "247d513e-180f-44bf-b479-39daa68e54c3",
+    "name": "Mr. Glass & Mirror - Houston",
+    "slug": "mr-glass-mirror-houston",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/my-shower-door-net/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "5bc5d495-b888-41f5-aea7-0e7ead3a7b78",
+    "name": "My Shower Door. Net",
+    "slug": "my-shower-door-net",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/restore-your-door/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "bd7a2089-b648-4a7f-9432-c0f704eee001",
+    "name": "Restore Your Door",
+    "slug": "restore-your-door",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"damage_restoration\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/screenmobile-of-katy-sugarland/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "7f50205b-5b45-4b25-a971-9fab2e6406b2",
+    "name": "Screenmobile of Katy-Sugarland",
+    "slug": "screenmobile-of-katy-sugarland",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/sky-lock-doors-service/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "f35583da-5bad-4051-a6f4-9e59522644e8",
+    "name": "Sky Lock & Doors Service",
+    "slug": "sky-lock-doors-service",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"key_and_locksmith\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/the-glass-guru/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "10cb1b5e-2c39-4e72-b25a-a3ca92e77b3e",
+    "name": "The Glass Guru",
+    "slug": "the-glass-guru",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/houston/the-window-authority-of-houston/",
+    "destination": "/garage-door-repair/texas/houston/",
+    "id": "dc43fc81-9797-405a-b488-70df3bb4119d",
+    "name": "The Window Authority of Houston",
+    "slug": "the-window-authority-of-houston",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/katy/magnolia-nails-lash-in-katy-tx-77494/",
+    "destination": "/garage-door-repair/texas/katy/",
+    "id": "5cb1d508-8ebb-4ba3-a309-0cd244b76b8e",
+    "name": "Magnolia Nails & Lash in Katy, TX 77494",
+    "slug": "magnolia-nails-lash-in-katy-tx-77494",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: source category \"beauty_salon\" is not a garage door trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/pasadena/advanced-window-products/",
+    "destination": "/garage-door-repair/texas/pasadena/",
+    "id": "21c8ca37-682b-42a9-92d8-c9f5ec4b2bb6",
+    "name": "Advanced Window Products",
+    "slug": "advanced-window-products",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
+  },
+  {
+    "source": "/garage-door-repair/texas/richmond/lewis-windows-doors/",
+    "destination": "/garage-door-repair/texas/richmond/",
+    "id": "f30b92d5-1ba7-49ff-a05b-fa3da3399932",
+    "name": "Lewis Windows & Doors",
+    "slug": "lewis-windows-doors",
+    "state": "Texas",
+    "stateCode": "TX",
+    "removedOn": "2026-10-31",
+    "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   }
 ]

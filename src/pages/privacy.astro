@@ -208,17 +208,40 @@ const recipients = [
 
         <h2>International transfers</h2>
         <p>
-          We operate from ***REMOVED*** and our service providers are based in the United
-          States, so if you are in the UK or European Economic Area your data is
-          transferred outside that area. Where it is, we rely on appropriate safeguards
+          {/* This used to name a country the operator happens to live in,
+              which the 2026-10-31 audit read as contradicting the UK address
+              in the contact details. Removed on Chris's instruction: the
+              business is a UK sole trader paying UK tax, and the operator's
+              personal location is not a fact about the business, has no
+              bearing on this policy, and does not belong in a public repo.
+
+              The transfer disclosure itself stays and is the part that
+              actually matters to a UK or EEA reader: the processors
+              (analytics, forms, hosting) are US-based, so that is where
+              their data goes. */}
+          {SITE.name} is a UK sole trader, reachable at the postal address in the
+          contact details above. Our service providers are based in the United States,
+          so if you are in the UK or European Economic Area your data is transferred
+          outside that area. Where it is, we rely on appropriate safeguards
           including the UK International Data Transfer Addendum and the European
           Commission's Standard Contractual Clauses. Some providers are also certified
           under the EU–US Data Privacy Framework.
         </p>
         <p>
-          This website is aimed at homeowners in the United States. We nonetheless apply
-          the standards in this policy — consent before analytics cookies, and the rights
-          below — to all visitors, wherever you are.
+          {/* Was "we apply the standards in this policy — consent before
+              analytics cookies ... to all visitors, wherever you are". That
+              was not true and a privacy policy is the worst place for a
+              comfortable inaccuracy: outside the regions that require prior
+              opt-in, analytics starts on. This says what actually happens and
+              what the reader can do about it. */}
+          This website is aimed at homeowners in the United States. Where the law
+          requires your consent before analytics cookies are set — the UK, the EEA and
+          Switzerland — we ask first and set nothing until you agree. Everywhere else
+          analytics starts on, and you can turn it off at any time from
+          <button type="button" class="linklike" onclick="window.garageDoorProHQOpenConsent && window.garageDoorProHQOpenConsent()">cookie settings</button>.
+          If your browser sends a Global Privacy Control signal we honor it everywhere,
+          without you having to ask. The rights below apply to all visitors, wherever
+          you are.
         </p>
 
         <h2>How long we keep it</h2>

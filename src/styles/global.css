@@ -350,6 +350,19 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .consent-reopen:hover { color: rgba(255,255,255,.9); }
 
+/* A button that has to sit inside a sentence of body copy -- the "cookie
+   settings" control in the privacy policy. It opens the consent panel, so it
+   is genuinely a button and not a link, but styling it as one would break the
+   paragraph. Takes the same inline-link exemption from --tap that body links
+   take: forcing a 44px box on it would blow out the line height of the
+   paragraph it sits in. Underlined, not colour-distinguished, like every
+   other inline link here. */
+.linklike {
+  background: none; border: 0; padding: 0; font: inherit; color: inherit;
+  text-decoration: underline; cursor: pointer;
+}
+.linklike:hover { color: var(--signal-dark); }
+
 /* ── BREADCRUMBS ─────────────────────────────────────────── */
 /* Breadcrumb links get the full 44px target like every other control. The
    container's own padding is reduced to compensate, so the trail occupies
