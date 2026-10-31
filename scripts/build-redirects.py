@@ -130,15 +130,31 @@ rules.append({
 
 
 def add(source, destination):
-    # The destination keeps its trailing slash. astro.config.mjs sets
-    # trailingSlash: 'always', so the slashed form is the canonical URL and the
-    # one in the sitemap and in every internal link. Emitting the slash-less
-    # form still works — Vercel resolves it in one hop — but it lands a crawler
-    # on a URL that immediately declares a different canonical. One redirect
-    # straight to the canonical URL is the version with nothing left to
-    # reconcile.
+    # BOTH sides keep the trailing slash, and the source side is the part that
+    # was wrong until 2026-10-31.
+    #
+    # This function used to emit a slash-less source on the reasoning that
+    # "Vercel resolves it in one hop". It does not. Vercel normalises the
+    # trailing slash BEFORE it evaluates the `redirects` array, so a request for
+    # /garage-door-repair-cost was 308'd to /garage-door-repair-cost/ and then
+    # matched against a table whose every source lacked the slash. Nothing
+    # matched, and it fell through to a 404. The slashed form — the one Google
+    # actually has indexed, because trailingSlash: 'always' means every URL in
+    # the sitemap and every internal link ends in one — matched no rule either.
+    #
+    # So all 772 redirects 404'd, in both forms, from the day the table was
+    # first generated. Measured on the live site, not inferred: every one of
+    # /garage-door-repair-cost, /garage-door-repair-cost-guide,
+    # /garage-door-repair-cost-2026 and the removed-listing slugs ended on a
+    # 404. Verified again after this change.
+    #
+    # Emitting only the slashed source is enough to cover both forms, because
+    # the normalisation that caused the bug now works for us: /foo becomes /foo/
+    # and then matches. That costs the slash-less form a second hop, which is
+    # the correct trade — the slashed form is the canonical one and the one with
+    # the links, and it gets the single hop.
     rules.append({
-        'source': '/' + source.strip('/'),
+        'source': '/' + source.strip('/') + '/',
         'destination': '/' + destination.strip('/') + '/',
         'permanent': True,
     })

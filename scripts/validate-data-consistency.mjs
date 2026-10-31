@@ -193,6 +193,27 @@ for (const [key, rules] of [['headers', vercelCfg.headers], ['redirects', vercel
     }
   }
 }
+// Second guard, same file, same day, same lesson: a redirect source that does
+// not end in a slash on a trailingSlash: true site never fires. Vercel
+// normalises the slash BEFORE evaluating redirects, so /foo is 308'd to /foo/
+// and then matched against a table that only holds /foo — nothing matches and
+// it 404s. All 772 redirects were dead this way from the day the table was
+// generated, and a 404 is indistinguishable from a page that was simply never
+// there, so nothing flagged it.
+//
+// The one legitimate exception is a host-canonicalisation rule, which must match
+// every path including the slashed ones and so has to be the `/(.*)` regex.
+if (vercelCfg.trailingSlash === true) {
+  const unslashed = (vercelCfg.redirects || []).filter(
+    (r) => !r.source.endsWith('/') && !r.has?.some((h) => h.type === 'host')
+  );
+  if (unslashed.length) {
+    fail(`${unslashed.length} redirect source(s) do not end in "/" while vercel.json sets trailingSlash: true — these can never match, because the slash is normalised on before redirects are evaluated. They will 404 silently:\n      ${unslashed.slice(0, 4).map((r) => `${r.source} -> ${r.destination}`).join('\n      ')}`);
+  } else {
+    ok(`every path redirect source ends in "/" , matching trailingSlash: true`);
+  }
+}
+
 if (badSources.length) {
   fail(`${badSources.length} invalid vercel.json route pattern(s) — Vercel will reject the deployment with no build and no error in \`vercel ls\`:\n      ${badSources.slice(0, 4).join('\n      ')}`);
 } else {
