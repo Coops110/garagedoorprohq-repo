@@ -10,6 +10,7 @@ data-work/
 .DS_Store
 *.log
 .env
+.env.local
 .env.production
 
 # Vercel CLI project link (contains project + org IDs)

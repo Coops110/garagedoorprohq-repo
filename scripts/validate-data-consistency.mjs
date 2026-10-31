@@ -161,6 +161,44 @@ if (diverse.length) {
   ok(`no unreviewed many-identities-one-host clusters`);
 }
 
+// ── vercel.json route patterns ──────────────────────────────────────
+// Added 2026-10-31 after this cost eight commits of silent non-deployment.
+//
+// A headers rule was committed with source
+//   /(favicon\.ico|favicon\.svg|apple-touch-icon\.png|logo\.(png|svg))
+// which is valid regex and INVALID as a Vercel source. Vercel parses these
+// with path-to-regexp, where an unnamed group may only be the catch-all
+// `(.*)`; an alternation needs to hang off a named parameter,
+// `/:file(a|b)`. Vercel rejected the whole deployment at config-validation
+// time -- before any build, so no deployment record appeared in `vercel ls`
+// and nothing surfaced as an error anywhere. Every push for the next eight
+// commits looked like it worked and changed nothing on the live site. It
+// was only found because the live sitemap still had changefreq in it.
+//
+// A failure with no error message is the worst kind, so it fails here now,
+// locally, before the commit.
+const vercelCfg = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+const UNNAMED_GROUP = /(^|[^:\w])\(([^)]*)\)/g;
+const badSources = [];
+for (const [key, rules] of [['headers', vercelCfg.headers], ['redirects', vercelCfg.redirects]]) {
+  for (const r of rules || []) {
+    const src = r.source || '';
+    if (!src.startsWith('/')) { badSources.push(`${key}: "${src}" does not start with /`); continue; }
+    for (const m of src.matchAll(UNNAMED_GROUP)) {
+      // `(.*)` is the one unnamed group Vercel accepts. Anything else in an
+      // unnamed group — an alternation especially — is rejected.
+      if (m[2] !== '.*') {
+        badSources.push(`${key}: "${src}" has unnamed group "(${m[2]})" — use a named parameter, e.g. /:file(${m[2]})`);
+      }
+    }
+  }
+}
+if (badSources.length) {
+  fail(`${badSources.length} invalid vercel.json route pattern(s) — Vercel will reject the deployment with no build and no error in \`vercel ls\`:\n      ${badSources.slice(0, 4).join('\n      ')}`);
+} else {
+  ok(`all ${(vercelCfg.headers || []).length + (vercelCfg.redirects || []).length} vercel.json route patterns are valid`);
+}
+
 if (failed) {
   console.error('\nData consistency check failed -- see FAIL lines above.');
   process.exit(1);
