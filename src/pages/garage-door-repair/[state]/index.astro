@@ -3,7 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { SITE, CLAIMS } from '../../../lib/site.js';
 import {
-  getAllStates, getState, getCitiesByState, formatCount,
+  getAllStates, getState, getCitiesByState, formatCount, stateFactsSummary,
 } from '../../../lib/data.js';
 import { licenceInfo, noLicenceGuidance } from '../../../lib/licensing.js';
 import { breadcrumbSchema, itemListSchema, faqSchema } from '../../../lib/schema.js';
@@ -17,6 +17,7 @@ const { state } = Astro.params;
 const s = getState(state);
 const cities = getCitiesByState(state);
 const lic = licenceInfo(s.stateCode);
+const facts = stateFactsSummary(s.stateCode);
 
 const url = `/garage-door-repair/${state}/`;
 const crumbs = [
@@ -135,6 +136,51 @@ const schemas = [
         noLicenceGuidance(s.state).map((p) => <p class="mt-2">{p}</p>)
       )}
     </section>
+
+    {/* State hubs were 121-194 words of prose and said nothing that was not
+        equally true of every other state — Arizona 276 words, Florida 251,
+        which is the audit's "state hubs are thin" finding. This is the part
+        that genuinely differs between them: LiftMaster leads in Arizona and
+        California, Overhead Door in Florida and Texas, and the median
+        founding year spans 1998 to 2006.
+
+        Aggregated from what the companies publish about themselves, so the
+        sample size is stated rather than implied — a reader can see it covers
+        101 of 157 Arizona listings and weigh it accordingly. */}
+    {facts && (
+      <section class="section-sm">
+        <h2 style="font-size:1.3rem;">What {s.state} companies say they do</h2>
+        <p class="claim-note">
+          Aggregated from the websites of {formatCount(facts.sampled)} of the
+          {' '}{formatCount(facts.ofTotal)} companies listed here. These are their own
+          claims, not checks we made.
+        </p>
+        <ul class="mt-2">
+          {facts.services.length > 0 && (
+            <li>
+              Most commonly advertised:
+              {' '}{facts.services.map(([name, n]) => `${name} (${n})`).join(', ')}.
+            </li>
+          )}
+          {facts.brands.length > 0 && (
+            <li>
+              Opener brands named most often:
+              {' '}{facts.brands.map(([name, n]) => `${name} (${n})`).join(', ')}.
+            </li>
+          )}
+          {facts.medianSince && (
+            <li>
+              Of the {facts.sinceCount} that state a founding year, the median is
+              {' '}{facts.medianSince}. Some quote the founding date of a brand they
+              carry rather than their own, so treat it as a rough picture.
+            </li>
+          )}
+          {facts.familyOwned > 0 && (
+            <li>{facts.familyOwned} describe themselves as family-owned.</li>
+          )}
+        </ul>
+      </section>
+    )}
 
     <section class="section-sm">
       <h2 style="font-size:1.3rem;">Before you call around</h2>

@@ -45,6 +45,45 @@ export function siteFactsFor(business) {
   return f && Object.keys(f).length > 1 ? f : null;
 }
 
+// What the companies in one state say about themselves, in aggregate. The
+// state hubs were 121-194 words of prose each and said nothing that was not
+// true of every other state; this is the part that genuinely differs —
+// LiftMaster leads in Arizona and California, Overhead Door in Florida and
+// Texas, and the median founding year spans 1998 to 2006.
+//
+// Returns null below a floor, because an "aggregate" over four companies is
+// an anecdote wearing a percentage. Nothing is rendered rather than
+// something misleading.
+//
+// `since` deliberately reports a median and never the oldest year. The oldest
+// values in the data are 1921 and 1937, and 1921 is when Overhead Door
+// Corporation was founded — a dealer writing "since 1921" is very likely
+// quoting the brand's history, not its own. A median absorbs that; a
+// headline "trading since 1921" would repeat someone else's marketing as a
+// fact about a local business.
+export function stateFactsSummary(stateCode, { min = 12 } = {}) {
+  const inState = businesses.filter((b) => b.stateCode === stateCode);
+  const rows = inState.map((b) => siteFacts[b.id]).filter(Boolean);
+  if (rows.length < min) return null;
+
+  const tally = (key) => {
+    const c = new Map();
+    for (const r of rows) for (const v of r[key] || []) c.set(v, (c.get(v) || 0) + 1);
+    return [...c.entries()].sort((a, b) => b[1] - a[1]);
+  };
+  const years = rows.map((r) => r.since).filter(Boolean).sort((a, b) => a - b);
+
+  return {
+    sampled: rows.length,
+    ofTotal: inState.length,
+    services: tally('services').slice(0, 4),
+    brands: tally('brands').slice(0, 3),
+    medianSince: years.length >= 8 ? years[Math.floor(years.length / 2)] : null,
+    sinceCount: years.length,
+    familyOwned: rows.filter((r) => r.familyOwned).length,
+  };
+}
+
 export function getBusiness(stateSlug, citySlug, slug) {
   return businesses.find(
     (b) => b.stateSlug === stateSlug && b.citySlug === citySlug && b.slug === slug
