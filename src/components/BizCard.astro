@@ -1,5 +1,5 @@
 ---
-import { telHref } from '../lib/data.js';
+import { telHref, formatPhone } from '../lib/data.js';
 
 // ─────────────────────────────────────────────────────────────
 //  There is no star rating on this card, and there must not be one.
@@ -41,7 +41,7 @@ const tel = telHref(biz.phone);
 
   <div class="biz-foot">
     {tel
-      ? <a href={tel} class="btn btn-signal">Call {biz.phone}</a>
+      ? <a href={tel} class="btn btn-signal">Call {formatPhone(biz.phone)}</a>
       : <a href={url} class="btn btn-signal">See details</a>}
     <a href={url} class="btn btn-ghost">Profile</a>
   </div>

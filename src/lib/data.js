@@ -122,9 +122,40 @@ export function formatCount(n) {
   return (n || 0).toLocaleString('en-US');
 }
 
-// tel: needs digits only; the display string keeps Overture's formatting.
+// Three jobs, three functions, because Overture stores these inconsistently:
+// 430 bare 10-digit strings, 216 already E.164, 134 formatted some other way.
+// Letting that reach the page meant a reader saw "3104845992" on one card and
+// "(602) 920-5100" on the next, and a parser saw a 10-digit string with no
+// country.
+//
+//   e164Phone   -> +13104845992   machine-readable: schema, tel:
+//   formatPhone -> (310) 484-5992 human-readable: anything on the page
+//   telHref     -> tel:+13104845992
+
+const US_DIGITS = (phone) => {
+  const d = String(phone || '').replace(/\D/g, '');
+  if (d.length === 10) return d;                       // bare 10-digit
+  if (d.length === 11 && d.startsWith('1')) return d.slice(1);
+  return null;                                         // not a US number
+};
+
+export function e164Phone(phone) {
+  const d = US_DIGITS(phone);
+  return d ? `+1${d}` : null;
+}
+
+export function formatPhone(phone) {
+  const d = US_DIGITS(phone);
+  // Anything that is not a recognisable US 10-digit number is returned
+  // untouched rather than mangled into a wrong-looking format.
+  if (!d) return phone || '';
+  return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+}
+
 export function telHref(phone) {
   if (!phone) return null;
+  const e = e164Phone(phone);
+  if (e) return `tel:${e}`;
   const digits = String(phone).replace(/[^\d+]/g, '');
   return digits ? `tel:${digits}` : null;
 }

@@ -5,7 +5,7 @@ import BizCard from '../../../../components/BizCard.astro';
 import AdSlot from '../../../../components/AdSlot.astro';
 import { SITE, CLAIMS } from '../../../../lib/site.js';
 import {
-  getAllBusinesses, getBusiness, getBusinessesByCity, telHref,
+  getAllBusinesses, getBusiness, getBusinessesByCity, telHref, formatPhone,
 } from '../../../../lib/data.js';
 import { licenceInfo } from '../../../../lib/licensing.js';
 import { getGuide } from '../../../../lib/guides.js';
@@ -118,7 +118,7 @@ const mapEmbed = b.lat != null && b.lng != null
         )}
 
         <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem;">
-          {tel && <a href={tel} class="btn btn-signal">Call {b.phone}</a>}
+          {tel && <a href={tel} class="btn btn-signal">Call {formatPhone(b.phone)}</a>}
           {b.website && (
             <a href={b.website} class="btn btn-ghost" rel="nofollow noopener" target="_blank">
               Visit website

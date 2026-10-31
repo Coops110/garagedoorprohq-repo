@@ -1,4 +1,5 @@
 import { SITE } from './site.js';
+import { e164Phone } from './data.js';
 
 const base = SITE.domain.replace(/\/$/, '');
 
@@ -91,14 +92,22 @@ export function breadcrumbSchema(items) {
 // one sends someone to a voicemail at 2am.
 export function businessSchema(b, url) {
   const schema = {
-    '@context': 'https://schema.org',
     // HomeAndConstructionBusiness is the closest standard type; schema.org
     // has no GarageDoorBusiness the way it has HVACBusiness.
     '@type': 'HomeAndConstructionBusiness',
+    '@id': url + '#business',
     name: b.name,
-    url,
   };
-  if (b.phone) schema.telephone = b.phone;
+  // `url` is the BUSINESS's own site, not this directory page. It pointed
+  // here for all 419 listings that have a website, which told every consumer
+  // that garagedoorprohq.com/.../acme-doors/ is Acme Doors' official URL. It
+  // is not — it is a page ABOUT them, which is what the WebPage wrapper at
+  // the bottom of this function now says. Omitted entirely when a business
+  // has no site of its own, rather than falling back to ours.
+  if (b.website) schema.url = b.website;
+  // E.164 in the markup regardless of how the source stored it. 430 of these
+  // were bare 10-digit strings, which is ambiguous to a parser about country.
+  if (b.phone) schema.telephone = e164Phone(b.phone) || b.phone;
 
   const address = { '@type': 'PostalAddress', addressCountry: 'US' };
   if (b.street) address.streetAddress = b.street;
@@ -124,7 +133,22 @@ export function businessSchema(b, url) {
       recognizedBy: { '@type': 'GovernmentOrganization', name: b.licenceAuthority },
     };
   }
-  return schema;
+
+  // The page is a WebPage ABOUT the business, not the business itself. That
+  // distinction is the whole point of the fix: this URL belongs to us, the
+  // business's own URL belongs to them, and `about` is what connects the
+  // two without either claiming to be the other. isPartOf and publisher tie
+  // the page back into the one site-wide entity graph.
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': url,
+    url,
+    name: `${b.name} — ${b.city}, ${b.stateCode}`,
+    about: schema,
+    isPartOf: { '@id': SITE_ID },
+    publisher: { '@id': ORG_ID },
+  };
 }
 
 // ── ItemList (city / state directory pages) ────────────────
