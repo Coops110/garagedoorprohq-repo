@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, LEGAL, CLAIMS } from '../lib/site.js';
+import { LICENCE_STATES } from '../lib/licensing.js';
+import { guides } from '../lib/guides.js';
+import attribution from '../data/overture-attribution.json';
+
+// The 2026-10-21 audit's E-E-A-T finding was that claims like "$260 national
+// average" carry no citation and no stated method, on content that is
+// YMYL-adjacent. Chris's answer, 2026-10-31, was the right one: rather than
+// inventing a credential, say where the numbers come from and let a reader
+// check the reasoning.
+//
+// So this page states the method, including the parts that are weaker than a
+// reader might assume. A methodology page that only lists strengths is
+// marketing. The sections on what the figures are NOT, and on the 47 states
+// with no register to check, are the ones that make the rest believable.
+//
+// DELIBERATELY NOT CITED: specific DASMA technical data sheets. DASMA is real
+// and publishes numbered TDS documents, but the ones covering spring cycle
+// life were not read before writing this, and citing a document by number to
+// borrow its authority is exactly the failure this page exists to correct.
+// If those sheets are read later, cite them then.
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'How we price these jobs', url: '/how-we-price/' },
+];
+const states = Object.values(LICENCE_STATES);
+const dated = guides
+  .map((g) => g.dateModified || g.datePublished)
+  .filter(Boolean)
+  .sort();
+const oldest = dated[0];
+const newest = dated[dated.length - 1];
+---
+<BaseLayout
+  title="How We Work Out These Prices"
+  description="Where the cost figures on this site come from, how the ranges are set, what they are not, and how to check them against a quote you have been given."
+  canonical="/how-we-price/"
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article style="margin-top:1rem;">
+      <h1 style="margin:1rem 0 .5rem;">How we work out these prices</h1>
+      <p class="muted" style="margin:0 0 2rem;font-size:.85rem;">
+        Last updated: {LEGAL.lastUpdated}
+      </p>
+
+      <div class="answer-box">
+        <p>
+          Every cost on this site is a <strong>national range for 2026, researched by us</strong>.
+          It is not taken from a published price index, a trade body's figures, or any
+          licensed dataset — there is no such source for US garage door work that we could
+          republish. Knowing that is the point of this page: you should be able to see how
+          firm a number is before you lean on it.
+        </p>
+      </div>
+
+      <div class="prose">
+        <h2>What the figures are</h2>
+        <p>
+          Ranges, not quotes. A range is honest about something a single number hides: the
+          same job costs differently in Houston and in Santa Monica, on a single door and a
+          double, at 9am on a Tuesday and at 9pm on a Sunday. Where one of those factors
+          moves the price predictably, the guide says so next to the number rather than
+          averaging it away.
+        </p>
+        <p>
+          They are national. We do not publish a metro-level price, because we do not have
+          metro-level data we could stand behind, and inventing one city's figure by
+          nudging a national average would be a worse answer dressed as a better one.
+        </p>
+
+        <h2>Where a number comes from</h2>
+        <p>
+          Three different things sit behind the figures on this site, and they are not
+          equally strong. It is worth knowing which you are reading.
+        </p>
+        <p>
+          <strong>Arithmetic.</strong> Some figures are not estimates at all. A spring rated
+          at 10,000 cycles, on a door opened four times a day, lasts 10,000 ÷ 4 ÷ 365 ≈ 6.8
+          years — so the guides say roughly seven, and about three and a half at eight
+          openings a day. There is no judgement in that, and a build check now fails if any
+          page states a cycle life that does not match the division.
+        </p>
+        <p>
+          <strong>Component cost plus labour.</strong> Where a part has a knowable price, the
+          range is built from it. A torsion spring is a $40–$90 component; the rest of a
+          $180–$350 replacement is skilled, genuinely hazardous labour and the call-out. We
+          say which half is which, because that is the split that tells you whether a quote
+          is high on parts, high on hours, or fair.
+        </p>
+        <p>
+          <strong>Observed market rates.</strong> The rest is our own research into what the
+          work is actually quoted at across the US in 2026. This is the softest input, and
+          the honest description of it is that it is ours — not a citation we can hand you.
+          Where we are least certain, the range is wider rather than falsely precise.
+        </p>
+
+        <h2>What these figures are not</h2>
+        <ul>
+          <li><strong>Not a quote.</strong> Nobody on this site has seen your door. A real quote can sit outside our range for good reasons.</li>
+          <li><strong>Not a price we negotiated.</strong> We have no commercial arrangement with any company listed, and no contractor sees these pages before they publish.</li>
+          <li><strong>Not sourced from the listings.</strong> The figures are written in the cost guides and read from there by every city and business page. They are not derived from the businesses in the directory.</li>
+          <li><strong>Not a judgement on any company.</strong> A business quoting above our range is not overcharging. It may be more experienced, more insured, or faster.</li>
+        </ul>
+
+        <h2>How they are kept consistent</h2>
+        <p>
+          A figure lives in exactly one place — the guide that owns it — and every other page
+          reads it from there rather than restating it. That is enforced rather than
+          remembered: the build fails if the same job carries two different ranges anywhere
+          on the site, and it fails if a stated cycle life disagrees with the arithmetic. A
+          site that argues with itself about a price has told you its numbers are decorative.
+        </p>
+        <p>
+          Every guide carries a visible last-updated date. The current set was last touched
+          between {oldest} and {newest}. When a figure changes, everywhere quoting it changes
+          in the same edit.
+        </p>
+
+        <h2>What we check, and what we cannot</h2>
+        <p>
+          {CLAIMS.licenceMeaning} In {states.map((s) => s.state).join(', ')} that check is
+          possible because those states license the trade and publish a register. In the
+          other 47 there is no register to check, so a missing badge there means nothing was
+          checkable — not that something failed.
+        </p>
+        <p>
+          Where a listing shows what a company offers, that is read from the company's own
+          website. {CLAIMS.siteFactsMeaning}
+        </p>
+        <p>
+          The business records themselves come from {attribution.source}, under the
+          {' '}{attribution.license}. {CLAIMS.listingMeaning}
+        </p>
+
+        <h2>Who writes this</h2>
+        <p>
+          {SITE.name} is written and edited by Chris Cooper, who researches and publishes
+          these figures. He is not a garage door technician, and this site does not inspect
+          anyone's work. That is exactly why the pages lean on things you can check for
+          yourself — a license number against a state register, a price split into parts and
+          labour, a cycle rating in writing — rather than on an opinion you would have to
+          take on trust.
+        </p>
+        <p>
+          It is also why there are no repair instructions for springs or cables anywhere on
+          this site, at any search volume. A partial instruction for a job that stores enough
+          energy to break bones is more dangerous than no instruction at all.
+        </p>
+
+        <h2>If a figure looks wrong</h2>
+        <p>
+          Tell us and we will check it:
+          {' '}<a href={`mailto:${LEGAL.contactEmail}`}>{LEGAL.contactEmail}</a>. A quote you
+          have been given that sits well outside one of our ranges is useful evidence, and
+          corrections are published rather than quietly applied. The
+          {' '}<a href="/editorial-guidelines/">editorial guidelines</a> cover how the rest of
+          the directory is built.
+        </p>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

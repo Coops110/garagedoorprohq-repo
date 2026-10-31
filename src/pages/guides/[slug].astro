@@ -157,6 +157,16 @@ const modified = new Date(g.dateModified || g.datePublished)
           </table>
         </div>
       )}
+      {/* Directly under the table, not in the footer. The 2026-10-21 audit's
+          E-E-A-T finding was that figures like these carry no stated method,
+          and a method nobody can find from the number it explains is no
+          better than none. */}
+      {g.costTable && (
+        <p class="muted" style="font-size:.85rem;margin-top:-.4rem;">
+          <a href="/how-we-price/">How we work these figures out</a> — what they are
+          based on, and what they are not.
+        </p>
+      )}
 
       {HeroSvg && (
         <Figure caption={hero.caption} legend={heroLegend}>
