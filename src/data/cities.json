@@ -1,5 +1,18 @@
 [
  {
+  "city": "Houston",
+  "citySlug": "houston",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 139,
+  "licensedCount": 0,
+  "withWebsite": 126,
+  "withAddress": 139,
+  "lat": 29.7879,
+  "lng": -95.46069
+ },
+ {
   "city": "Phoenix",
   "citySlug": "phoenix",
   "state": "Arizona",
@@ -52,6 +65,19 @@
   "lng": -111.731606
  },
  {
+  "city": "Pearland",
+  "citySlug": "pearland",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 24,
+  "licensedCount": 0,
+  "withWebsite": 22,
+  "withAddress": 24,
+  "lat": 29.55743,
+  "lng": -95.32723
+ },
+ {
   "city": "Anaheim",
   "citySlug": "anaheim",
   "state": "California",
@@ -65,6 +91,19 @@
   "lng": -117.873703
  },
  {
+  "city": "Spring",
+  "citySlug": "spring",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 21,
+  "licensedCount": 0,
+  "withWebsite": 20,
+  "withAddress": 21,
+  "lat": 30.09666,
+  "lng": -95.45483
+ },
+ {
   "city": "Scottsdale",
   "citySlug": "scottsdale",
   "state": "Arizona",
@@ -76,6 +115,19 @@
   "withAddress": 20,
   "lat": 33.501038,
   "lng": -111.912827
+ },
+ {
+  "city": "Katy",
+  "citySlug": "katy",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 19,
+  "licensedCount": 0,
+  "withWebsite": 19,
+  "withAddress": 19,
+  "lat": 29.78595,
+  "lng": -95.77242
  },
  {
   "city": "Santa Ana",
@@ -104,6 +156,32 @@
   "lng": -111.952751
  },
  {
+  "city": "Humble",
+  "citySlug": "humble",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 13,
+  "licensedCount": 0,
+  "withWebsite": 12,
+  "withAddress": 13,
+  "lat": 29.99192,
+  "lng": -95.25292
+ },
+ {
+  "city": "Pasadena",
+  "citySlug": "pasadena",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 13,
+  "licensedCount": 0,
+  "withWebsite": 13,
+  "withAddress": 13,
+  "lat": 29.66945,
+  "lng": -95.17036
+ },
+ {
   "city": "Peoria",
   "citySlug": "peoria",
   "state": "Arizona",
@@ -115,6 +193,45 @@
   "withAddress": 12,
   "lat": 33.762726,
   "lng": -112.331398
+ },
+ {
+  "city": "Sugar Land",
+  "citySlug": "sugar-land",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 11,
+  "licensedCount": 0,
+  "withWebsite": 8,
+  "withAddress": 11,
+  "lat": 29.62716,
+  "lng": -95.63651
+ },
+ {
+  "city": "Cypress",
+  "citySlug": "cypress",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 10,
+  "licensedCount": 0,
+  "withWebsite": 9,
+  "withAddress": 10,
+  "lat": 29.96042,
+  "lng": -95.69179
+ },
+ {
+  "city": "The Woodlands",
+  "citySlug": "the-woodlands",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 10,
+  "licensedCount": 0,
+  "withWebsite": 10,
+  "withAddress": 10,
+  "lat": 30.16006,
+  "lng": -95.47174
  },
  {
   "city": "Torrance",
@@ -169,6 +286,19 @@
   "lng": -118.040314
  },
  {
+  "city": "League City",
+  "citySlug": "league-city",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 8,
+  "licensedCount": 0,
+  "withWebsite": 8,
+  "withAddress": 8,
+  "lat": 29.50214,
+  "lng": -95.09605
+ },
+ {
   "city": "Long Beach",
   "citySlug": "long-beach",
   "state": "California",
@@ -193,6 +323,19 @@
   "withAddress": 8,
   "lat": 34.058804,
   "lng": -117.670334
+ },
+ {
+  "city": "Richmond",
+  "citySlug": "richmond",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 8,
+  "licensedCount": 0,
+  "withWebsite": 8,
+  "withAddress": 8,
+  "lat": 29.63595,
+  "lng": -95.74191
  },
  {
   "city": "Simi Valley",
@@ -221,6 +364,19 @@
   "lng": -118.476219
  },
  {
+  "city": "Baytown",
+  "citySlug": "baytown",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 7,
+  "licensedCount": 0,
+  "withWebsite": 7,
+  "withAddress": 7,
+  "lat": 29.76357,
+  "lng": -94.98294
+ },
+ {
   "city": "Pasadena",
   "citySlug": "pasadena",
   "state": "California",
@@ -247,6 +403,19 @@
   "lng": -118.144943
  },
  {
+  "city": "Friendswood",
+  "citySlug": "friendswood",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 6,
+  "licensedCount": 0,
+  "withWebsite": 4,
+  "withAddress": 6,
+  "lat": 29.52961,
+  "lng": -95.19017
+ },
+ {
   "city": "Glendale",
   "citySlug": "glendale",
   "state": "Arizona",
@@ -258,6 +427,19 @@
   "withAddress": 6,
   "lat": 33.518108,
   "lng": -112.236847
+ },
+ {
+  "city": "Missouri City",
+  "citySlug": "missouri-city",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 6,
+  "licensedCount": 0,
+  "withWebsite": 5,
+  "withAddress": 6,
+  "lat": 29.59476,
+  "lng": -95.53803
  },
  {
   "city": "Orange",
@@ -323,6 +505,19 @@
   "withAddress": 5,
   "lat": 33.782341,
   "lng": -118.02565
+ },
+ {
+  "city": "La Porte",
+  "citySlug": "la-porte",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 5,
+  "licensedCount": 0,
+  "withWebsite": 4,
+  "withAddress": 5,
+  "lat": 29.66038,
+  "lng": -95.06682
  },
  {
   "city": "North Hollywood",
@@ -403,6 +598,19 @@
   "lng": -118.737038
  },
  {
+  "city": "Alvin",
+  "citySlug": "alvin",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 4,
+  "licensedCount": 0,
+  "withWebsite": 4,
+  "withAddress": 4,
+  "lat": 29.41677,
+  "lng": -95.24724
+ },
+ {
   "city": "Bellflower",
   "citySlug": "bellflower",
   "state": "California",
@@ -440,6 +648,19 @@
   "withAddress": 4,
   "lat": 34.200855,
   "lng": -118.598686
+ },
+ {
+  "city": "Channelview",
+  "citySlug": "channelview",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 4,
+  "licensedCount": 0,
+  "withWebsite": 3,
+  "withAddress": 4,
+  "lat": 29.7865,
+  "lng": -95.13976
  },
  {
   "city": "Chatsworth",
@@ -481,6 +702,19 @@
   "lng": -117.910416
  },
  {
+  "city": "Deer Park",
+  "citySlug": "deer-park",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 4,
+  "licensedCount": 0,
+  "withWebsite": 4,
+  "withAddress": 4,
+  "lat": 29.67895,
+  "lng": -95.12009
+ },
+ {
   "city": "Longwood",
   "citySlug": "longwood",
   "state": "Florida",
@@ -492,6 +726,19 @@
   "withAddress": 4,
   "lat": 28.726538,
   "lng": -81.382744
+ },
+ {
+  "city": "New Caney",
+  "citySlug": "new-caney",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 4,
+  "licensedCount": 0,
+  "withWebsite": 4,
+  "withAddress": 4,
+  "lat": 30.1576,
+  "lng": -95.21225
  },
  {
   "city": "Pico Rivera",
@@ -531,6 +778,19 @@
   "withAddress": 4,
   "lat": 34.154434,
   "lng": -118.471695
+ },
+ {
+  "city": "Tomball",
+  "citySlug": "tomball",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 4,
+  "licensedCount": 0,
+  "withWebsite": 4,
+  "withAddress": 4,
+  "lat": 30.10416,
+  "lng": -95.60325
  },
  {
   "city": "Upland",
@@ -585,6 +845,32 @@
   "lng": -118.26458
  },
  {
+  "city": "Crosby",
+  "citySlug": "crosby",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 2,
+  "withAddress": 3,
+  "lat": 29.92124,
+  "lng": -95.07188
+ },
+ {
+  "city": "Dickinson",
+  "citySlug": "dickinson",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 3,
+  "withAddress": 3,
+  "lat": 29.46114,
+  "lng": -95.05627
+ },
+ {
   "city": "Fullerton",
   "citySlug": "fullerton",
   "state": "California",
@@ -635,6 +921,45 @@
   "withAddress": 3,
   "lat": 33.498131,
   "lng": -112.454704
+ },
+ {
+  "city": "Kemah",
+  "citySlug": "kemah",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 3,
+  "withAddress": 3,
+  "lat": 29.53406,
+  "lng": -95.03002
+ },
+ {
+  "city": "Kingwood",
+  "citySlug": "kingwood",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 1,
+  "withAddress": 3,
+  "lat": 30.05525,
+  "lng": -95.23672
+ },
+ {
+  "city": "Manvel",
+  "citySlug": "manvel",
+  "state": "Texas",
+  "stateCode": "TX",
+  "stateSlug": "texas",
+  "count": 3,
+  "licensedCount": 0,
+  "withWebsite": 2,
+  "withAddress": 3,
+  "lat": 29.47793,
+  "lng": -95.37177
  },
  {
   "city": "Queen Creek",

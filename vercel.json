@@ -2317,21 +2317,6 @@
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/los-angeles",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/los-angeles",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/california/los-angeles",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
       "source": "/garage-door-repair/phoenix",
       "destination": "/garage-door-repair/arizona/phoenix/",
       "permanent": true
@@ -2344,6 +2329,21 @@
     {
       "source": "/arizona/phoenix",
       "destination": "/garage-door-repair/arizona/phoenix/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/los-angeles",
+      "destination": "/garage-door-repair/california/los-angeles/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/los-angeles",
+      "destination": "/garage-door-repair/california/los-angeles/",
+      "permanent": true
+    },
+    {
+      "source": "/california/los-angeles",
+      "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
@@ -2602,36 +2602,6 @@
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/orange",
-      "destination": "/garage-door-repair/california/orange/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/orange",
-      "destination": "/garage-door-repair/california/orange/",
-      "permanent": true
-    },
-    {
-      "source": "/california/orange",
-      "destination": "/garage-door-repair/california/orange/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/van-nuys",
-      "destination": "/garage-door-repair/california/van-nuys/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/van-nuys",
-      "destination": "/garage-door-repair/california/van-nuys/",
-      "permanent": true
-    },
-    {
-      "source": "/california/van-nuys",
-      "destination": "/garage-door-repair/california/van-nuys/",
-      "permanent": true
-    },
-    {
       "source": "/garage-door-repair/chandler",
       "destination": "/garage-door-repair/arizona/chandler/",
       "permanent": true
@@ -2722,21 +2692,6 @@
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/santa-monica",
-      "destination": "/garage-door-repair/california/santa-monica/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/santa-monica",
-      "destination": "/garage-door-repair/california/santa-monica/",
-      "permanent": true
-    },
-    {
-      "source": "/california/santa-monica",
-      "destination": "/garage-door-repair/california/santa-monica/",
-      "permanent": true
-    },
-    {
       "source": "/garage-door-repair/simi-valley",
       "destination": "/garage-door-repair/california/simi-valley/",
       "permanent": true
@@ -2749,6 +2704,21 @@
     {
       "source": "/california/simi-valley",
       "destination": "/garage-door-repair/california/simi-valley/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/van-nuys",
+      "destination": "/garage-door-repair/california/van-nuys/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/van-nuys",
+      "destination": "/garage-door-repair/california/van-nuys/",
+      "permanent": true
+    },
+    {
+      "source": "/california/van-nuys",
+      "destination": "/garage-door-repair/california/van-nuys/",
       "permanent": true
     },
     {
@@ -2837,33 +2807,18 @@
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/placentia",
-      "destination": "/garage-door-repair/california/placentia/",
+      "source": "/garage-door-repair/orange",
+      "destination": "/garage-door-repair/california/orange/",
       "permanent": true
     },
     {
-      "source": "/garage-doors/california/placentia",
-      "destination": "/garage-door-repair/california/placentia/",
+      "source": "/garage-doors/california/orange",
+      "destination": "/garage-door-repair/california/orange/",
       "permanent": true
     },
     {
-      "source": "/california/placentia",
-      "destination": "/garage-door-repair/california/placentia/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/sherman-oaks",
-      "destination": "/garage-door-repair/california/sherman-oaks/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/sherman-oaks",
-      "destination": "/garage-door-repair/california/sherman-oaks/",
-      "permanent": true
-    },
-    {
-      "source": "/california/sherman-oaks",
-      "destination": "/garage-door-repair/california/sherman-oaks/",
+      "source": "/california/orange",
+      "destination": "/garage-door-repair/california/orange/",
       "permanent": true
     },
     {
@@ -2909,21 +2864,6 @@
     {
       "source": "/california/burbank",
       "destination": "/garage-door-repair/california/burbank/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/chatsworth",
-      "destination": "/garage-door-repair/california/chatsworth/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/chatsworth",
-      "destination": "/garage-door-repair/california/chatsworth/",
-      "permanent": true
-    },
-    {
-      "source": "/california/chatsworth",
-      "destination": "/garage-door-repair/california/chatsworth/",
       "permanent": true
     },
     {
@@ -2999,6 +2939,21 @@
     {
       "source": "/california/redondo-beach",
       "destination": "/garage-door-repair/california/redondo-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/santa-monica",
+      "destination": "/garage-door-repair/california/santa-monica/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/santa-monica",
+      "destination": "/garage-door-repair/california/santa-monica/",
+      "permanent": true
+    },
+    {
+      "source": "/california/santa-monica",
+      "destination": "/garage-door-repair/california/santa-monica/",
       "permanent": true
     },
     {
@@ -3107,6 +3062,21 @@
       "permanent": true
     },
     {
+      "source": "/garage-door-repair/chatsworth",
+      "destination": "/garage-door-repair/california/chatsworth/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/chatsworth",
+      "destination": "/garage-door-repair/california/chatsworth/",
+      "permanent": true
+    },
+    {
+      "source": "/california/chatsworth",
+      "destination": "/garage-door-repair/california/chatsworth/",
+      "permanent": true
+    },
+    {
       "source": "/garage-door-repair/chino",
       "destination": "/garage-door-repair/california/chino/",
       "permanent": true
@@ -3149,21 +3119,6 @@
     {
       "source": "/texas/deer-park",
       "destination": "/garage-door-repair/texas/deer-park/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/encino",
-      "destination": "/garage-door-repair/california/encino/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/encino",
-      "destination": "/garage-door-repair/california/encino/",
-      "permanent": true
-    },
-    {
-      "source": "/california/encino",
-      "destination": "/garage-door-repair/california/encino/",
       "permanent": true
     },
     {
@@ -3212,18 +3167,33 @@
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/tarzana",
-      "destination": "/garage-door-repair/california/tarzana/",
+      "source": "/garage-door-repair/placentia",
+      "destination": "/garage-door-repair/california/placentia/",
       "permanent": true
     },
     {
-      "source": "/garage-doors/california/tarzana",
-      "destination": "/garage-door-repair/california/tarzana/",
+      "source": "/garage-doors/california/placentia",
+      "destination": "/garage-door-repair/california/placentia/",
       "permanent": true
     },
     {
-      "source": "/california/tarzana",
-      "destination": "/garage-door-repair/california/tarzana/",
+      "source": "/california/placentia",
+      "destination": "/garage-door-repair/california/placentia/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/sherman-oaks",
+      "destination": "/garage-door-repair/california/sherman-oaks/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/sherman-oaks",
+      "destination": "/garage-door-repair/california/sherman-oaks/",
+      "permanent": true
+    },
+    {
+      "source": "/california/sherman-oaks",
+      "destination": "/garage-door-repair/california/sherman-oaks/",
       "permanent": true
     },
     {
@@ -3432,36 +3402,6 @@
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/northridge",
-      "destination": "/garage-door-repair/california/northridge/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/northridge",
-      "destination": "/garage-door-repair/california/northridge/",
-      "permanent": true
-    },
-    {
-      "source": "/california/northridge",
-      "destination": "/garage-door-repair/california/northridge/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/porter-ranch",
-      "destination": "/garage-door-repair/california/porter-ranch/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-doors/california/porter-ranch",
-      "destination": "/garage-door-repair/california/porter-ranch/",
-      "permanent": true
-    },
-    {
-      "source": "/california/porter-ranch",
-      "destination": "/garage-door-repair/california/porter-ranch/",
-      "permanent": true
-    },
-    {
       "source": "/garage-door-repair/queen-creek",
       "destination": "/garage-door-repair/arizona/queen-creek/",
       "permanent": true
@@ -3534,6 +3474,66 @@
     {
       "source": "/florida/winter-park",
       "destination": "/garage-door-repair/florida/winter-park/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/encino",
+      "destination": "/garage-door-repair/california/encino/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/encino",
+      "destination": "/garage-door-repair/california/encino/",
+      "permanent": true
+    },
+    {
+      "source": "/california/encino",
+      "destination": "/garage-door-repair/california/encino/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/northridge",
+      "destination": "/garage-door-repair/california/northridge/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/northridge",
+      "destination": "/garage-door-repair/california/northridge/",
+      "permanent": true
+    },
+    {
+      "source": "/california/northridge",
+      "destination": "/garage-door-repair/california/northridge/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/porter-ranch",
+      "destination": "/garage-door-repair/california/porter-ranch/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/porter-ranch",
+      "destination": "/garage-door-repair/california/porter-ranch/",
+      "permanent": true
+    },
+    {
+      "source": "/california/porter-ranch",
+      "destination": "/garage-door-repair/california/porter-ranch/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/tarzana",
+      "destination": "/garage-door-repair/california/tarzana/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-doors/california/tarzana",
+      "destination": "/garage-door-repair/california/tarzana/",
+      "permanent": true
+    },
+    {
+      "source": "/california/tarzana",
+      "destination": "/garage-door-repair/california/tarzana/",
       "permanent": true
     },
     {
@@ -3617,237 +3617,167 @@
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles/",
+      "source": "/garage-door-repair/california/van-nuys/garage-door-los-angeles",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-2/",
+      "source": "/garage-door-repair/california/tarzana/garage-door-los-angeles-2",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-3/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-3",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-4/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-4",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-5/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-5",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-6/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-6",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-7/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-7",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-8/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-8",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-9/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-9",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-10/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-10",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-11/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-11",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-12/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-12",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-13/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-13",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-14/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-14",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-15/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-15",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-16/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-16",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-17/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-17",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-18/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-18",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-19/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-19",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-20/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-20",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-21/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-21",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-22/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-22",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-23/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-23",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-24/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-24",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-25/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-25",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-26/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-26",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-27/",
+      "source": "/garage-door-repair/california/los-angeles/garage-door-los-angeles-27",
       "destination": "/garage-door-repair/california/los-angeles/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/northridge/garage-door-los-angeles/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/encino/garage-door-los-angeles/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/encino/garage-door-los-angeles-2/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/sherman-oaks/garage-door-los-angeles/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/sherman-oaks/garage-door-los-angeles-2/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/woodland-hills/garage-door-los-angeles/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/porter-ranch/garage-door-los-angeles/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/chatsworth/garage-door-los-angeles/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/tarzana/garage-door-los-angeles/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/tarzana/garage-door-los-angeles-2/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/van-nuys/garage-door-los-angeles/",
-      "destination": "/garage-door-repair/california/los-angeles/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/anaheim/local-garage-door-repair/",
-      "destination": "/garage-door-repair/california/anaheim/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/orange/local-garage-door-repair-2/",
-      "destination": "/garage-door-repair/california/orange/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/orange/local-garage-door-repair-3/",
-      "destination": "/garage-door-repair/california/orange/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/orange/local-garage-door-repair/",
-      "destination": "/garage-door-repair/california/orange/",
-      "permanent": true
-    },
-    {
-      "source": "/garage-door-repair/california/placentia/local-garage-door-repair/",
+      "source": "/garage-door-repair/california/placentia/local-garage-door-repair",
       "destination": "/garage-door-repair/california/placentia/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/placentia/local-garage-door-repair-2/",
+      "source": "/garage-door-repair/california/placentia/local-garage-door-repair-2",
       "destination": "/garage-door-repair/california/placentia/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/santa-monica/garage-door-santa-monica/",
+      "source": "/garage-door-repair/california/orange/local-garage-door-repair-3",
+      "destination": "/garage-door-repair/california/orange/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-door-repair/california/santa-monica/garage-door-santa-monica",
       "destination": "/garage-door-repair/california/santa-monica/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/santa-monica/garage-door-santa-monica-2/",
+      "source": "/garage-door-repair/california/santa-monica/garage-door-santa-monica-2",
       "destination": "/garage-door-repair/california/santa-monica/",
       "permanent": true
     },
     {
-      "source": "/garage-door-repair/california/santa-monica/garage-door-santa-monica-3/",
+      "source": "/garage-door-repair/california/santa-monica/garage-door-santa-monica-3",
       "destination": "/garage-door-repair/california/santa-monica/",
       "permanent": true
     }
