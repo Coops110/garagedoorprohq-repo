@@ -5,23 +5,55 @@ const base = SITE.domain.replace(/\/$/, '');
 const abs = (u) => (String(u).startsWith('http') ? u : base + u);
 
 // ── Organization / WebSite (site-wide, homepage) ─────────────
+// ORG_ID / SITE_ID are the entity graph the 2026-10-21 audit found missing:
+// Organization and WebSite existed but were unlinked, and every guide
+// repeated an anonymous publisher instead of pointing at one entity. Anything
+// that needs the publisher now references these by @id rather than restating
+// it, so there is exactly one Organization node on the site.
+export const ORG_ID = base + '/#organization';
+export const SITE_ID = base + '/#website';
+
 export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
+    '@id': ORG_ID,
     '@type': 'Organization',
-    name: SITE.legalName,
+    // SITE.name, not SITE.legalName. The audit found the publisher named two
+    // different things in the same markup — "GarageDoorProHQ Garage Door
+    // Directory" on the Organization against "GarageDoorProHQ" on Articles.
+    // One name everywhere; legalName carries the longer form, which is what
+    // that property is for.
+    name: SITE.name,
+    legalName: SITE.legalName,
     url: base + '/',
     description: SITE.description,
     email: SITE.email,
+    logo: {
+      '@type': 'ImageObject',
+      url: base + '/logo.png',
+      width: 512,
+      height: 512,
+    },
+    // Points at the page that actually states the editorial standards,
+    // rather than asserting principles with nothing behind them.
+    publishingPrinciples: base + '/editorial-guidelines/',
+    // No sameAs. GarageDoorProHQ Rules.md, 2026-10-31: "Social: none." There
+    // are no real profiles to list, and sameAs pointing at profiles that do
+    // not exist is a fabricated identity claim, not a markup improvement.
+    // Add this the day real profiles exist, not before.
   };
 }
 
 export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
+    '@id': SITE_ID,
     '@type': 'WebSite',
     name: SITE.name,
     url: base + '/',
+    // Links the site to its publisher instead of leaving two unconnected
+    // top-level nodes, which is what the audit found.
+    publisher: { '@id': ORG_ID },
     potentialAction: {
       '@type': 'SearchAction',
       target: {
@@ -138,8 +170,16 @@ export function articleSchema({ title, description, url, datePublished, dateModi
     url: abs(url),
     datePublished,
     dateModified: dateModified || datePublished,
-    author: { '@type': 'Organization', name: SITE.legalName },
-    publisher: { '@type': 'Organization', name: SITE.legalName },
+    // By @id, not a restated anonymous Organization. Every guide was emitting
+    // its own unconnected publisher node under a name that disagreed with the
+    // Organization's; these now resolve to the single entity.
+    //
+    // Still an Organization author rather than a Person. That is the audit's
+    // E-E-A-T finding and it is not a markup fix: it needs a real named author
+    // with real credentials, which is Chris's call, not something to invent
+    // here. Left honest rather than papered over.
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
   };
 }
 
