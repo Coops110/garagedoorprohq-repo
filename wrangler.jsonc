@@ -1,0 +1,14 @@
+{
+  // Cloudflare Workers static assets. No Worker script: everything is served
+  // from dist/, with public/_redirects and public/_headers copied in by the build.
+  "name": "garagedoorprohq",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // Astro builds about/index.html and every canonical is /about/ with the
+    // slash (trailingSlash: 'always'). auto-trailing-slash serves /about/ and
+    // redirects /about to it, matching vercel.json's trailingSlash: true.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

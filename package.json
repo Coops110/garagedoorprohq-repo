@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "check:pages": "node scripts/check-pages.mjs",
-    "prebuild": "node scripts/check-pages.mjs && node scripts/check-content.mjs && node scripts/validate-data-consistency.mjs",
+    "prebuild": "node scripts/check-pages.mjs && node scripts/check-content.mjs && node scripts/validate-data-consistency.mjs && node scripts/write-cloudflare-redirects.mjs",
     "build": "astro build",
   "postbuild": "node scripts/check-us-spelling.mjs",
     "preview": "astro preview",

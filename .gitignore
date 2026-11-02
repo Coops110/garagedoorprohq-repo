@@ -15,3 +15,9 @@ data-work/
 
 # Vercel CLI project link (contains project + org IDs)
 .vercel
+
+# Generated from vercel.json at build time by scripts/write-cloudflare-redirects.mjs
+public/_redirects
+
+# Wrangler local state
+.wrangler/
