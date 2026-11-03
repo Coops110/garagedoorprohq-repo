@@ -1,0 +1,199 @@
+---
+// ─────────────────────────────────────────────────────────────
+//  DIAGRAM LIBRARY — the drawings, offered for reuse under CC BY 4.0.
+//
+//  Why this page exists: as of 2026-11-03 the site has ONE external backlink,
+//  from an auto-directory, and that is the binding constraint on every ranking
+//  on it. These twelve SVGs are the only asset here that somebody else has a
+//  reason to put on their own page, and the competition for "garage door parts
+//  diagram" is auto-generated spam on compromised hosts. A correct, freely
+//  licensed set has almost no legitimate competitor.
+//
+//  The licence is deliberately CC BY and not CC BY-NC. Non-commercial would
+//  exclude the garage door companies and trade blogs who are exactly the people
+//  likely to embed a spring diagram — which would protect the drawings from the
+//  only use that helps us.
+//
+//  TWO DELIBERATE OMISSIONS, both for the same reason:
+//
+//  - cost-map is data-driven. Its callouts are matched out of a guide's own
+//    costTable by src/lib/costmap.js and the prices render in the LEGEND, not
+//    in the drawing. Shipped as a standalone file it would be numbered markers
+//    pointing at figures that are not in the file — and a third party could pair
+//    them with their own prices. The one-source-of-truth rule that keeps the
+//    city and business pages honest applies here too.
+//  - hero-door is decorative, aria-hidden and has no accessible name. It is an
+//    illustration, not a reference drawing, and has nothing to caption.
+//
+//  `data-diagram` on each wrapper is the contract with
+//  scripts/extract-diagrams.py, which reads the BUILT page and writes the
+//  standalone files. The page declares the name and the extractor follows it,
+//  so the two cannot drift.
+// ─────────────────────────────────────────────────────────────
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Figure from '../components/Figure.astro';
+import { SITE } from '../lib/site.js';
+import { getDiagram } from '../lib/diagrams.js';
+
+import TorsionSystem from '../components/diagrams/TorsionSystem.astro';
+import SpringTypes from '../components/diagrams/SpringTypes.astro';
+import PhotoEye from '../components/diagrams/PhotoEye.astro';
+import BalanceTest from '../components/diagrams/BalanceTest.astro';
+import OpenerTypes from '../components/diagrams/OpenerTypes.astro';
+import SpringLife from '../components/diagrams/SpringLife.astro';
+import DoorLayers from '../components/diagrams/DoorLayers.astro';
+import WindingCone from '../components/diagrams/WindingCone.astro';
+import TrolleyCord from '../components/diagrams/TrolleyCord.astro';
+import RollingCode from '../components/diagrams/RollingCode.astro';
+
+const COMPONENTS = {
+  TorsionSystem, SpringTypes, PhotoEye, BalanceTest, OpenerTypes,
+  SpringLife, DoorLayers, WindingCone, TrolleyCord, RollingCode,
+};
+
+// The release set, in reading order rather than registry order: anatomy first,
+// then the two things that hurt people, then the opener.
+//
+// `panels` is how many <svg> elements the component renders, which is NOT
+// always obvious from its source: BalanceTest draws one <svg> inside a .map()
+// and produces three. Get it wrong and the page offers a download URL that was
+// never written. scripts/extract-diagrams.py compares these links against what
+// it actually extracts and fails on any disagreement, so this list cannot drift
+// from the drawings without the pipeline saying so.
+const RELEASE = [
+  { name: 'torsion-system', panels: 1 },
+  { name: 'spring-types', panels: 2 },
+  { name: 'winding-cone', panels: 1 },
+  { name: 'spring-life', panels: 1 },
+  { name: 'door-layers', panels: 1 },
+  { name: 'balance-test', panels: 3 },
+  { name: 'photo-eye', panels: 1 },
+  { name: 'opener-types', panels: 2 },
+  { name: 'trolley-cord', panels: 1 },
+  { name: 'rolling-code', panels: 1 },
+];
+
+// Same guard as the guide template: a name here with no component rendered as
+// nothing at all, silently, on the page whose entire purpose is the drawings.
+const items = RELEASE.map(({ name, panels }) => {
+  const d = getDiagram(name);
+  if (!d) throw new Error(`diagrams.astro: "${name}" is not in src/lib/diagrams.js`);
+  const Svg = COMPONENTS[d.component];
+  if (!Svg) {
+    throw new Error(
+      `diagrams.astro: "${name}" names component "${d.component}", which is not imported here.`
+    );
+  }
+  // A single-panel diagram keeps the clean filename; only a multi-panel one is
+  // suffixed, matching what the extractor writes.
+  const files = panels === 1
+    ? [name]
+    : Array.from({ length: panels }, (_, i) => `${name}-${i + 1}`);
+  return { name, d, Svg, files };
+});
+
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Diagrams', url: '/diagrams/' },
+];
+
+const credit = `Diagram by ${SITE.name} (${SITE.domain}), CC BY 4.0`;
+const creditHtml =
+  `<a href="${SITE.domain}/diagrams/">Diagram by ${SITE.name}</a>, `
+  + `<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>`;
+---
+<BaseLayout
+  title="Garage Door Diagrams, Free to Reuse"
+  description="Ten original garage door diagrams — springs, cables, safety sensors, openers and door anatomy — drawn in-house and free to reuse with credit."
+  canonical="/diagrams/"
+>
+  <div class="wrap-narrow">
+    <Breadcrumbs items={crumbs} />
+
+    <article style="margin-top:1rem;">
+      <h1 style="margin:1rem 0 .5rem;">Garage door diagrams, free to reuse</h1>
+
+      <div class="prose">
+        <p>
+          Every drawing on this site is original, authored by hand as SVG, and made for
+          one purpose: to show someone standing in front of a door that will not open
+          what they are actually looking at. There are no photographs here and never will
+          be — a photo of a van or a technician next to a listing would imply we have
+          seen that business, and we have not.
+        </p>
+        <p>
+          You are welcome to take any of them. They are more useful on your page than
+          sitting on ours.
+        </p>
+
+        <div class="highlight-box">
+          <h2 style="margin-top:0;font-size:1.05rem;">The license, in plain terms</h2>
+          <p style="margin:.4rem 0;">
+            These diagrams are released under
+            {' '}<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">Creative Commons Attribution 4.0</a>.
+            You may use them anywhere, including commercially, including on a competing
+            site, and you may modify them. The single condition is credit with a link.
+          </p>
+          <p style="margin:.4rem 0;">Copy this wherever you use one:</p>
+          <p style="margin:.4rem 0;">
+            <code style="display:block;padding:.6rem;background:var(--paper);border:1px solid var(--line);border-radius:4px;font-size:.82rem;overflow-wrap:anywhere;">{creditHtml}</code>
+          </p>
+          <p style="margin:.4rem 0 0;font-size:.85rem;" class="muted">
+            Plain text, if you cannot use a link: {credit}
+          </p>
+        </div>
+
+        <p>
+          If you modify a drawing, please say so in the credit. The reason is not vanity:
+          these are used to explain which part of a garage door is under enough tension
+          to injure someone, and we would rather an altered version not be read as ours.
+        </p>
+      </div>
+
+      {items.map(({ name, d, Svg, files }) => (
+        <section class="section-sm" data-diagram={name}>
+          <h2 style="font-size:1.2rem;">{d.caption.split(/[.:]/)[0]}</h2>
+          <Figure caption={d.caption} legend={d.legend || []}>
+            <Svg id={`dl-${name}`} />
+          </Figure>
+          <p style="font-size:.85rem;">
+            {files.map((f, i) => (
+              <>
+                {i > 0 && <span class="muted"> · </span>}
+                <a href={`/diagrams/${f}.svg`} download>Download {f}.svg</a>
+              </>
+            ))}
+            <span class="muted">
+              {files.length > 1 ? ' — one file per panel. ' : ' — '}
+              SVG, scales to any size, colors baked in.
+            </span>
+          </p>
+        </section>
+      ))}
+
+      <div class="prose">
+        <h2>What is not here, and why</h2>
+        <p>
+          The cost map that appears on the repair-cost guide is missing on purpose. Its
+          numbered markers are matched against that guide's own price table and the
+          figures render in the legend beside it, not inside the drawing. Released as a
+          standalone file it would be a set of markers pointing at prices that are not in
+          the file — easy to pair with someone else's numbers, and impossible for us to
+          keep honest. Prices belong with the guide that owns them.
+        </p>
+        <p>
+          The homepage illustration is also not here. It is decorative rather than
+          explanatory, and there is nothing to label on it.
+        </p>
+
+        <h2>Found a mistake?</h2>
+        <p>
+          These are drawn from manufacturer documentation and trade practice, not from
+          site visits. If something in one is wrong, tell us and we will fix the drawing
+          rather than argue about it: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+        </p>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
