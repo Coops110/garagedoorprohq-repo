@@ -67,10 +67,41 @@ const emWord = emergency.length === 1 ? 'one' : formatCount(emergency.length);
 const emNoun = emergency.length === 1 ? 'company' : 'companies';
 const emVerb = emergency.length === 1 ? 'advertises' : 'advertise';
 
+// How many listings here carry a matched licence, stated INCLUDING when the
+// answer is none.
+//
+// The old clause was `lic && c.licensedCount ? ... : ''`, so a licensing
+// state with zero matches said nothing at all. Phoenix has 46 listings and 0
+// matched numbers, and the page simply did not mention licensing counts --
+// the 2026-11-02 audit's finding. Silence there is the worst available
+// answer, because the whole site is built on the badge meaning something, so
+// a reader is entitled to know when it is absent everywhere and why.
+//
+// "we have not matched one" rather than "they are unlicensed" is the
+// important half. In Arizona in particular a company may well hold a
+// perfectly good ROC licence that we simply have not tied to this record.
+//
+// Four cases, not two, because the first version shipped "of which 1 have a
+// license number" to Torrance and five other cities. 11 of the 17 cities
+// with a badge have exactly one, so the singular is the COMMON case here,
+// and "all of them" would read oddly on a city with a single listing.
+const licMatched = `license number matched to an active record on the ${lic?.authorityShort} register`;
+const licClause = !lic
+  ? ''
+  : c.licensedCount === 0
+    ? `, none of which has a license number matched to ${lic.article} ${lic.authorityShort} record yet — which means we have not matched one, not that they are unlicensed`
+    : c.count === 1
+      ? `, and it has a ${licMatched}`
+      : c.licensedCount === c.count
+        ? `, and all of them have a ${licMatched}`
+        : c.licensedCount === 1
+          ? `, one of which has a ${licMatched}`
+          : `, ${c.licensedCount} of which have a ${licMatched}`;
+
 const faqs = [
   {
     q: `How many garage door companies are there in ${c.city}, ${c.stateCode}?`,
-    a: `${SITE.name} lists ${c.count} garage door ${c.count === 1 ? 'company' : 'companies'} in ${c.city}, ${c.stateCode}${lic && c.licensedCount ? `, of which ${c.licensedCount === c.count ? 'all' : c.licensedCount} have a license number matched to an active record on the ${lic.authorityShort} register` : ''}. ${CLAIMS.listingMeaning}`,
+    a: `${SITE.name} lists ${c.count} garage door ${c.count === 1 ? 'company' : 'companies'} in ${c.city}, ${c.stateCode}${licClause}. ${CLAIMS.listingMeaning}`,
   },
   {
     // National estimates, said to be national. This read "Most repairs in
@@ -223,6 +254,32 @@ const schemas = [
       )}
     </div>
 
+    {/* What the order on this page actually is.
+        Neither /editorial-guidelines/ nor /get-listed/ explained it, and
+        /get-listed/ only promised that listings are "ordered the same way
+        whether anyone pays" — which says what the order is NOT. The 11-02
+        audit read the first six Houston cards as a pinned block followed by
+        A-Z, which is a reasonable guess and wrong: they are simply the
+        highest-confidence records, and the gap after the sixth is the ad
+        slot.
+
+        `sortForDisplay` is completeness (licence 4, street 2, website 1),
+        then source confidence, then name. Houston splits 112 / 12 across two
+        completeness tiers, so almost the whole page is one tier ordered by
+        confidence then alphabetically.
+
+        Described, never scored. The confidence value is Overture's measure of
+        how sure it is about the RECORD, and printing it would read as a
+        rating of the business, which this site has no basis to publish --
+        see the note on sortForDisplay in data.js. */}
+    <p class="claim-note">
+      This order is not a ranking. Listings with a street address and a website
+      come first, then those with less on record; within each group we follow how
+      confident the public dataset is about the record itself, then alphabetical
+      order. That is a measure of the record, not of the company. We do not rank
+      by quality, and nothing on this page is paid for.
+    </p>
+
     <div class="grid grid-3">
       {businesses.map((b, i) => (
         <>
@@ -333,6 +390,21 @@ const schemas = [
             </p>
           </div>
           <p>{CLAIMS.licenceMeaning}</p>
+          {/* In a licensing state with nothing matched, say so here as well as
+              in the FAQ. The two answer different questions: the FAQ answers
+              "how many are there", this answers "why is there no badge on any
+              of these". Phoenix is 46 listings and 0 matches, and leaving a
+              reader to infer the reason from an absence is the one thing the
+              badge rules exist to prevent. */}
+          {c.licensedCount === 0 && (
+            <p>
+              No listing in {c.city} currently carries a badge: none of the
+              {' '}{formatCount(c.count)} {c.count === 1 ? 'company' : 'companies'} here
+              has a license number matched to {lic.article} {lic.authorityShort} record
+              yet. That is a gap in what we have matched, not a finding about any of
+              them, so ask for the number and check it yourself.
+            </p>
+          )}
         </>
       ) : (
         noLicenceGuidance(c.state).map((p) => <p class="mt-2">{p}</p>)
