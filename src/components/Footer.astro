@@ -4,9 +4,29 @@ import { getAllStates, getCitiesByState } from '../lib/data.js';
 import { guides } from '../lib/guides.js';
 
 const states = getAllStates();
-// Top cities from the largest state, for internal linking depth.
-const topState = states[0];
-const topCities = topState ? getCitiesByState(topState.stateSlug).slice(0, 5) : [];
+
+// Top cities from EVERY state, not just the largest one.
+//
+// This was five Texas cities and nothing else, because it took states[0] and
+// getAllStates() sorts by listing count. Texas is the biggest state here, so
+// California, Arizona and Florida -- 387 listings and 59 cities between them,
+// and all three of the states where a license can be verified at all -- had
+// no city reachable from the footer of any page. The 2026-11-02 audit's
+// internal-linking finding.
+//
+// Three per state rather than five from one, and the state code in every
+// label already tells them apart, so the column needs no subheadings.
+//
+// The floor matters more than the cap. Florida's third city has 2 listings
+// and its fourth has fewer: site-wide linking is the strongest signal this
+// site can send about a page, and spending it on a city page with two
+// entries would point it at the thinnest pages we publish. So Florida
+// contributes two cities and the column holds 11 rather than a round 12.
+const MIN_FOOTER_CITY = 3;
+const topCities = states.flatMap((s) =>
+  getCitiesByState(s.stateSlug)
+    .filter((c) => c.count >= MIN_FOOTER_CITY)
+    .slice(0, 3));
 const year = new Date().getFullYear();
 
 // Deliberately NOT rendering sister-site links here. See SISTER_SITES in
