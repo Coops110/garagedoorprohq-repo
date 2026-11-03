@@ -140,10 +140,23 @@ const schemas = [
       {lic && (
         <p>
           <strong>License-verified</strong> counts listings whose license number we matched
-          to an active record on the {lic.authority} register. {lic.tradeScope} It is one of only three states with a register we can check a number against, so this column
+          to an active record on the {lic.authority} register. {lic.tradeScope}
+          {/* The second half of this paragraph differs by state, because the
+              reason a figure is zero differs. In CA and FL a match could still
+              happen. In AZ it cannot, and tradeScope just above already states
+              that the register carries no garage-door classification, so the
+              AZ arm says what that means for the column rather than repeating
+              the fact. */}
+          {lic.namesTheTrade ? (
+            <>{' '}It is one of only three states with a register we can check a number against, so this column
           exists here and does not exist on most other state pages. A zero does not mean
           the companies are unlicensed — it means we have not matched a number yet, often
-          because the license is held under a different registered name.
+          because the license is held under a different registered name.</>
+          ) : (
+            <>{' '}Every figure in this column is therefore zero, and it will stay that
+          way: with no such classification on the register, there is no number for us
+          to match. It does not mean these companies are unlicensed.</>
+          )}
         </p>
       )}
 

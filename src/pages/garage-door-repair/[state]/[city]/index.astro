@@ -94,7 +94,9 @@ const licMatched = `license number matched to an active record on the ${lic?.aut
 const licClause = !lic
   ? ''
   : c.licensedCount === 0
-    ? `, none of which has a license number matched to ${lic.article} ${lic.authorityShort} record yet — which means we have not matched one, not that they are unlicensed`
+    ? lic.namesTheTrade
+      ? `, none of which has a license number matched to ${lic.article} ${lic.authorityShort} record yet — which means we have not matched one, not that they are unlicensed`
+      : `, and none of them carries a license badge: ${lic.state} licenses the contractor rather than the trade, so the ${lic.authorityShort} register has no garage door classification for us to check a number against`
     : c.count === 1
       ? `, and it has a ${licMatched}`
       : c.licensedCount === c.count
@@ -405,17 +407,38 @@ const schemas = [
           {/* In a licensing state with nothing matched, say so here as well as
               in the FAQ. The two answer different questions: the FAQ answers
               "how many are there", this answers "why is there no badge on any
-              of these". Phoenix is 46 listings and 0 matches, and leaving a
-              reader to infer the reason from an absence is the one thing the
-              badge rules exist to prevent. */}
+              of these". Leaving a reader to infer the reason from an absence is
+              the one thing the badge rules exist to prevent.
+
+              The reason differs by state, which is why this branches rather than
+              interpolating a noun. In California and Florida a match could still
+              happen, so "yet" is accurate. In Arizona it never will: the ROC
+              licenses the contractor, not the trade, so there is no garage door
+              classification to match a number against, and the honest sentence
+              is about the register rather than about our matching. "Yet" was
+              blaming a gap in our work for a fact about Arizona on 11 city pages
+              -- and licClause above hands the same claim to the FAQPage schema. */}
           {c.licensedCount === 0 && (
-            <p>
-              No listing in {c.city} currently carries a badge: none of the
-              {' '}{formatCount(c.count)} {c.count === 1 ? 'company' : 'companies'} here
-              has a license number matched to {lic.article} {lic.authorityShort} record
-              yet. That is a gap in what we have matched, not a finding about any of
-              them, so ask for the number and check it yourself.
-            </p>
+            lic.namesTheTrade ? (
+              <p>
+                No listing in {c.city} currently carries a badge: none of the
+                {' '}{formatCount(c.count)} {c.count === 1 ? 'company' : 'companies'} here
+                has a license number matched to {lic.article} {lic.authorityShort} record
+                yet. That is a gap in what we have matched, not a finding about any of
+                them, so ask for the number and check it yourself.
+              </p>
+            ) : (
+              <p>
+                No listing in {c.city} carries a license badge, and none will:
+                {' '}{lic.state} licenses the contractor rather than the trade, so the
+                {' '}{lic.authorityShort} register has no garage door classification for us
+                to check a number against. That is a fact about the register, not a
+                finding about any of the {formatCount(c.count)}
+                {' '}{c.count === 1 ? 'company' : 'companies'} here. Any of them may hold
+                a current {lic.authorityShort} license, so ask for the number and check it
+                yourself.
+              </p>
+            )
           )}
         </>
       ) : (

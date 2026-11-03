@@ -224,7 +224,9 @@ const mapEmbed = b.lat != null && b.lng != null
         ) : (
           <p class="claim-note">
             {lic
-              ? `We have not matched ${lic.article} ${lic.authorityShort} license number to this business. That is not a finding against the company — it may hold a license under a different registered name. Ask them for the number and check it yourself on the ${lic.authorityShort} register.`
+              ? lic.namesTheTrade
+                ? `We have not matched ${lic.article} ${lic.authorityShort} license number to this business. That is not a finding against the company — it may hold a license under a different registered name. Ask them for the number and check it yourself on the ${lic.authorityShort} register.`
+                : `${b.state} licenses the contractor rather than the trade, so the ${lic.authorityShort} register has no garage door classification for us to check a number against. That is not a finding against this company, which may well hold a current ${lic.authorityShort} license. Ask them for the number and check it yourself on the ${lic.authorityShort} register.`
               : `${b.state} does not license garage door installation as a separate trade, so there is no state garage door register to check. Ask for a certificate of general liability insurance instead.`}
           </p>
         )}
