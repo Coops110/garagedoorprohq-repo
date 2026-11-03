@@ -390,9 +390,14 @@ const schemas = [
       {lic ? (
         <>
           <p class="mt-2">
+            {/* {' '} is load-bearing: an interpolation that ends a line in text
+                position loses the newline entirely, so {lic.authority} glued
+                itself to the next word and 59 live pages read "Arizona
+                Registrar of Contractors (ROC)register". Keep the space
+                explicit, or keep the next word on the same line. */}
             {lic.tradeScope} Any company quoting you should give you its license
-            number on request, and you can confirm it on the {lic.authority}
-            register without any expertise:
+            number on request, and you can confirm it on the{' '}
+            {lic.authority} register without any expertise:
           </p>
           <div class="highlight-box">
             <ol style="margin:0 0 0 1.2rem;">
