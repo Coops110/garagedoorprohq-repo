@@ -89,6 +89,43 @@ const licenceStates = listSentence(Object.values(LICENCE_STATES).map((s) => s.st
         <li>Charge you anything, ever, for the listing</li>
       </ul>
 
+      {/* Already listed: correct it, or have it taken down.
+          This page only ever addressed businesses that were NOT yet listed,
+          and the 2026-11-02 audit's finding was that there is no owner
+          correction path. There was one, on /get-listed/thanks/ — which only
+          a business that had already submitted a request would ever see. So
+          the 700 companies listed from public data, none of whom asked to be
+          here, had no route at all.
+
+          "No reason required" is deliberate and matches the wording already
+          on the thanks page. A directory built from data a business never
+          submitted does not get to interview them about why they want out. */}
+      <h2 id="already-listed">Already listed? Correct it or have it removed</h2>
+      <p>
+        Most listings here were compiled from public, openly licensed business data,
+        so if yours is one of them you never asked us to publish it. Two things you
+        can do about that, both by email to
+        {' '}<a href={`mailto:${LEGAL.contactEmail}?subject=${encodeURIComponent(SITE.name + ' listing correction')}`}>
+          <strong>{LEGAL.contactEmail}</strong></a>:
+      </p>
+      <ul>
+        <li>
+          <strong>Correct it.</strong> Send the business name, the page it is on and
+          what is wrong. Phone numbers, addresses and service categories are the
+          usual ones. If you hold a license in California, Florida or Arizona, send
+          the number and we will check it against the register.
+        </li>
+        <li>
+          <strong>Have it removed.</strong> Ask, and it goes. We do not require a
+          reason and we will not try to talk you out of it. The page is replaced by
+          a redirect to your city, so nobody lands on a dead link.
+        </li>
+      </ul>
+      <p class="claim-note">
+        Either way you are dealing with a person and not a form, and nothing is
+        charged, upsold or conditional on anything.
+      </p>
+
       {formLive ? (
         <form
           action="https://api.web3forms.com/submit"
