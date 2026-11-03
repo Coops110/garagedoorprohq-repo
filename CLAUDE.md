@@ -155,9 +155,31 @@ The differentiator is honesty about a weak evidence base, not a strong one.
   `CLAIMS.licenceMeaning` in `site.js` so it cannot drift between a badge, the
   editorial guidelines, `llms.txt` and the terms: *we check licence numbers
   against the state register; we do not inspect workmanship.*
-- Only **CA, FL and AZ** license the trade (`src/lib/licensing.js`). In the
-  other 47 states, pages must say there is no register to check rather than
-  leaving a missing badge to read as a failed check.
+- Only **CA, FL and AZ** have a contractor register this site can check a
+  licence number against (`src/lib/licensing.js`), and only **CA and FL**
+  license garage door work as its own classification. **Arizona licenses the
+  contractor, not the trade** — corrected 2026-11-03. In the other 47 states,
+  pages must say there is no register to check rather than leaving a missing
+  badge to read as a failed check.
+
+  That three-versus-two distinction cost twelve places to fix, and it is worth
+  knowing how it got there. This file and the whole site said all three states
+  licensed the trade, and `licensing.js` gave Arizona's classification as
+  "ROC-283 Garage Doors, Gates and Similar Devices". **There is no such
+  classification.** The AZ ROC's own list carries 146 of them and contains
+  neither "283" nor the word "garage"; Arizona prints licence *numbers* as
+  "ROC 284792", which is almost certainly where "ROC-283" came from. What
+  Arizona requires is a licence for any job over $1,000, or any job needing a
+  permit (A.R.S. § 32-1121).
+
+  The wrong claim spread because one templated sentence slotted
+  `lic.classification` into shared copy, so a single wrong noun rendered on
+  151 Arizona pages plus `llms.txt`, `/about/`, the home page, the editorial
+  guidelines and the directory hub. **`namesTheTrade` is what templates branch
+  on now, and each state carries its own `tradeScope` and `licenceRule`
+  sentence.** Do not reintroduce a shared sentence with a classification
+  interpolated into it — the difference between these states is a whole
+  sentence, not a noun.
 - Terms of service says we "do not endorse, recommend, certify, vet or
   guarantee" any listing. Never write copy that contradicts it.
 

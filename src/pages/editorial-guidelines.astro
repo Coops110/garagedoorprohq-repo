@@ -108,11 +108,11 @@ const states = Object.values(LICENCE_STATES);
 
         <h2>What a license badge means</h2>
         <p>
-          Three states license garage door work as a distinct trade, each through its own register:
+          Three states keep a contractor register we can check a license number against. Two of them license garage door work as its own classification; the third licenses the contractor rather than the trade:
         </p>
         <ul>
           {states.map((s) => (
-            <li><strong>{s.state}</strong> — {s.authority}, {s.classification}</li>
+            <li><strong>{s.state}</strong> — {s.authority}, {s.classification || 'no garage-door classification; a license is required for any job over $1,000 or needing a permit'}</li>
           ))}
         </ul>
         <p>

@@ -90,11 +90,13 @@ They are the difference between describing it accurately and overstating it.
   date shown on the listing. It is not a check of insurance, pricing,
   qualifications or workmanship, and it does not confirm the license is
   still current now.
-- **Three states license garage door work as a distinct trade**, so a
-  license badge is only ever possible in those three:
-${licenceStates.map(([code, s]) => `  - ${s.state} (${code}) — ${s.authority}, ${s.classification}, check at ${s.searchUrl}`).join('\n')}
-  In the other 47 states the absence of a badge means there is no
-  garage-door-specific register to check, not that a check failed.
+- **Three states keep a contractor register we can check a license number
+  against**, so a license badge is only ever possible in those three. Two of
+  them license garage door work as its own classification. Arizona licenses
+  the contractor rather than the trade and has no garage-door classification:
+${licenceStates.map(([code, s]) => `  - ${s.state} (${code}) — ${s.authority}, ${s.classification || 'NO garage-door classification exists; a license is required for any job over $1,000 or any job needing a permit'}, check at ${s.searchUrl}`).join('\n')}
+  In the other 47 states the absence of a badge means there is no register to
+  check, not that a check failed.
 - **${CLAIMS.listingMeaning}** We have not visited these businesses, inspected
   their work or spoken to their customers, and we do not rank them by quality.
 - **Cost figures are national 2026 estimates, not quotes.** Ranges vary by

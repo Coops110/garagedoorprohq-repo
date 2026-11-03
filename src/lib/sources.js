@@ -106,7 +106,12 @@ export const SOURCES = {
     label: 'Contractor search — Registrar of Contractors',
     publisher: 'State of Arizona',
     url: 'https://roc.az.gov/contractor-search',
-    note: 'Arizona classification ROC-283 covers garage doors, gates and similar devices.',
+    // Was "Arizona classification ROC-283 covers garage doors, gates and
+    // similar devices." No such classification exists. The register's own
+    // classification list was read on 2026-11-03: 146 classifications, and
+    // neither "283" nor "garage" appears anywhere on it. Full working in the
+    // header of src/lib/licensing.js.
+    note: 'Arizona has no garage-door classification. A license is required for any job over $1,000, and for any job needing a permit whatever it costs, so garage door work falls under a general residential or another specialty class.',
     checked: '2026-10-31',
   },
 

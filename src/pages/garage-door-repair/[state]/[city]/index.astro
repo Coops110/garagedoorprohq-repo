@@ -96,7 +96,7 @@ const faqs = [
       ? `Are garage door companies in ${c.city} licensed?`
       : `Do garage door companies in ${c.city} need a license?`,
     a: lic
-      ? `${c.state} licenses the trade through the ${lic.authority} under ${lic.classification}. Ask any company for its license number and check it on the ${lic.authorityShort} register yourself — it takes about a minute. ${CLAIMS.licenceMeaning}`
+      ? `${lic.licenceRule} Ask any company for its license number and check it on the ${lic.authorityShort} register yourself — it takes about a minute. ${CLAIMS.licenceMeaning}`
       : `${c.state} does not license garage door installation as a separate trade, so there is no state garage door register to check. Ask for a certificate of general liability insurance instead, and check whether your city requires a permit for the work.`,
   },
   {
@@ -311,9 +311,9 @@ const schemas = [
       {lic ? (
         <>
           <p class="mt-2">
-            {c.state} is one of three states that license garage door work as its own classification.
-            Any company quoting you should give you its license number on request, and
-            you can confirm it on the {lic.authority} register without any expertise:
+            {lic.tradeScope} Any company quoting you should give you its license
+            number on request, and you can confirm it on the {lic.authority}
+            register without any expertise:
           </p>
           <div class="highlight-box">
             <ol style="margin:0 0 0 1.2rem;">

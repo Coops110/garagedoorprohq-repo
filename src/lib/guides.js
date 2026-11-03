@@ -106,7 +106,7 @@ export const guides = [
           'Ask for the price in parts and labor separately. It is the single fastest way to see whether a quote is high on the component, high on the hours, or fair.',
           'Get the cycle rating in writing when springs are quoted. A 10,000-cycle spring and a 25,000-cycle spring look identical in the van and differ by roughly $40–$80 a pair fitted, but the high-cycle spring lasts two to three times longer. On a door you open six times a day it is the clearest value upgrade in the trade.',
           'Confirm whether the diagnostic fee is credited against the repair. Most companies credit it; the ones that do not should tell you before they drive out, and a company that will not answer that on the phone has told you something useful.',
-          'Where the state licenses the trade — California, Florida and Arizona are the three that license garage door work specifically — ask for the license number and check it yourself on the state register. It takes about a minute, and it is the one credential a homeowner can verify without expertise.',
+          'California, Florida and Arizona are the three states with a contractor register you can check — California and Florida license garage door work by name, Arizona licenses the contractor — so ask for the license number and look it up yourself. It takes about a minute, and it is the one credential a homeowner can verify without expertise.',
         ],
       },
     ],
@@ -453,7 +453,7 @@ export const guides = [
         body: [
           'Leave the door closed and stop using the opener. With a spring gone, the opener is attempting to lift the full weight of the door on its own, which is how one failure becomes two.',
           'If the door is open and a vehicle is under it, do not lower it by hand. Clamp the track below the bottom roller with locking pliers on both sides so it cannot travel, move the car out, and leave the door where it is until a technician arrives.',
-          'Then get two quotes for a pair replacement rather than one spring, and ask for the cycle rating in writing. Where the state licenses the trade — California, Florida and Arizona — ask for the license number and check it on the state register yourself.',
+          'Then get two quotes for a pair replacement rather than one spring, and ask for the cycle rating in writing. In California, Florida and Arizona there is a state register you can check a license number against yourself, so ask for the number.',
         ],
       },
       {
@@ -497,18 +497,23 @@ export const guides = [
     title: 'How to Hire a Garage Door Company',
     h1: 'How to Hire a Garage Door Company: A Homeowner’s Checklist',
     description:
-      'What to ask a garage door company before you book, which states license the trade, and how to check a contractor license number yourself.',
+      'What to ask a garage door company before you book, which states have a register to check, and how to look up a contractor license number yourself.',
     keyword: 'how to hire a garage door company',
     datePublished: '2026-08-11',
     dateModified: '2026-10-31',
     readTime: 8,
     quickAnswer:
-      'Ask for the price split into parts and labor, the spring cycle rating in writing, whether the diagnostic fee is credited, and proof of liability insurance. In California, Florida and Arizona the trade is licensed at state level and you can check a license number yourself in about a minute. Most other states license only general contractors, or nothing at all.',
+      'Ask for the price split into parts and labor, the spring cycle rating in writing, whether the diagnostic fee is credited, and proof of liability insurance. California, Florida and Arizona each keep a public register you can check a license number against in about a minute: California and Florida license garage door work by name, and Arizona licenses the contractor for any job over $1,000. Most other states license only general contractors, or nothing at all.',
     sections: [
       {
         h2: 'Three states license this trade specifically',
         body: [
-          'Unlike HVAC or electrical work, garage door installation is not a licensed trade in most of the United States. Three states license it specifically: California, through the Contractors State License Board as a C-61/D-28 limited specialty classification; Florida, through the Department of Business and Professional Regulation as a Garage Door Installation Specialty Contractor; and Arizona, through the Registrar of Contractors under classification ROC-283.',
+          // Arizona was listed here as "classification ROC-283" until
+          // 2026-11-03. No such classification exists -- the register's own
+          // list has 146 of them and mentions neither "283" nor "garage".
+          // The working is in the header of src/lib/licensing.js.
+          'Unlike HVAC or electrical work, garage door installation is not a licensed trade in most of the United States. Two states license it by name: California, through the Contractors State License Board as a C-61/D-28 limited specialty classification, and Florida, through the Department of Business and Professional Regulation as a Garage Door Installation Specialty Contractor.',
+          'Arizona is the third state with a register worth checking, but it works differently and the difference matters when you are reading a quote. The Registrar of Contractors has no garage-door classification at all, so an Arizona garage door company holds a general residential or another specialty license. What Arizona does require is a license for any job over $1,000, and for any job needing a permit whatever it costs. So in Arizona the question is not "does this license cover garage doors" but "is this contractor licensed, and does the class cover residential work of this kind".',
           'Everywhere else, the work either falls under a general contractor license, is licensed only at city or county level, or is not licensed at all. That is not a loophole a contractor is exploiting — it is simply how the trade is regulated, and it means "licensed" is a much weaker signal in most of the country than homeowners assume.',
           'The practical consequence: in the 47 states without a trade license, verify insurance rather than licensure, and treat a company’s answers about parts, ratings and warranties as your real screening tool.',
         ],
@@ -516,7 +521,7 @@ export const guides = [
       {
         h2: 'How to check a license yourself',
         body: [
-          'In all three licensing states the register is public, free and searchable by license number or business name. Search the number the company gives you, and check three things: that the status reads active, that the classification actually covers garage door work, and that the name on the license matches the company quoting you. A license belonging to a different entity is the most common discrepancy.',
+          'In all three states the register is public, free and searchable by license number or business name. Search the number the company gives you, and check three things: that the status reads active, that the classification covers the work (garage doors by name in California and Florida, residential construction of this kind in Arizona), and that the name on the license matches the company quoting you. A license belonging to a different entity is the most common discrepancy.',
           'Ask for the number before the visit, not after. A company that will not give it over the phone in a state that requires one has answered a different and more useful question.',
           'Where a listing on this site shows a verified license, it means we matched the business to an active record on that state’s register. We check license numbers against the state register; we do not inspect workmanship, and a listing is never a recommendation.',
         ],
@@ -550,11 +555,11 @@ export const guides = [
     faqs: [
       {
         q: 'Do garage door installers need a license?',
-        a: 'Only in California (CSLB C-61/D-28), Florida (DBPR Garage Door Installation Specialty Contractor) and Arizona (ROC-283) is the trade licensed specifically at state level. Elsewhere it falls under a general contractor license, is licensed locally, or is not licensed at all.',
+        a: 'Two states license the trade by name: California (CSLB C-61/D-28) and Florida (DBPR Garage Door Installation Specialty Contractor). Arizona requires a contractor license for any job over $1,000 or needing a permit, but has no garage-door classification. Everywhere else the work falls under a general contractor license, is licensed locally, or is not licensed at all.',
       },
       {
         q: 'How do I check if a garage door company is licensed?',
-        a: 'In California, Florida and Arizona, search the state register by license number or business name. Check that the status is active, the classification covers garage door work, and the name on the license matches the company quoting you.',
+        a: 'In California, Florida and Arizona, search the state register by license number or business name. Check that the status is active, that the name on the license matches the company quoting you, and that the classification covers the work — garage doors by name in California and Florida, and residential construction of this kind in Arizona, which has no garage-door classification.',
       },
       {
         q: 'What should I ask a garage door company before hiring them?',
@@ -646,7 +651,7 @@ export const guides = [
         body: [
           'The line is easy to state: anything you can see and reach from the floor is fair game. Anything involving the springs, the lift cables, or the inside of the motor head is not.',
           'The springs above the door hold enough stored energy to cause serious injury, and they stay loaded whether the door is open, closed or already broken. The logic board inside the opener is mains-connected. Neither is a reasonable place to learn, and neither failure is common enough to be worth the risk of finding out.',
-          'A diagnostic visit runs $75–$150 and is normally credited against the repair if you go ahead, so calling someone once the free checks are exhausted often costs nothing extra. Where the state licenses the trade — California, Florida and Arizona license garage door work specifically — ask for the license number and check it on the state register yourself. It takes about a minute.',
+          'A diagnostic visit runs $75–$150 and is normally credited against the repair if you go ahead, so calling someone once the free checks are exhausted often costs nothing extra. In California, Florida and Arizona there is a state register you can check a license number against, so ask for the number and look it up yourself. It takes about a minute.',
         ],
       },
     ],

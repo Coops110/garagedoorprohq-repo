@@ -2,11 +2,45 @@
 //  STATE LICENSING — the site's one real differentiator, and the one
 //  place where over-claiming would be a false representation.
 //
-//  Garage door work is licensed as a distinct trade in exactly three
-//  states. Everywhere else it falls under a general contractor license, is
-//  licensed at city or county level, or is not licensed at all. That is a
-//  fact about regulation, not a gap in our research, and pages in the other
-//  47 states must say so rather than implying a check we cannot make.
+//  THREE STATES HAVE A REGISTER WE CAN CHECK A NUMBER AGAINST. TWO OF THEM
+//  LICENSE GARAGE DOOR WORK BY NAME. That distinction is new on 2026-11-03
+//  and it is the whole reason this comment is shouting.
+//
+//  Until today this file said the trade was "licensed as a distinct trade in
+//  exactly three states" and gave Arizona's classification as "ROC-283
+//  Garage Doors, Gates and Similar Devices". There is no such
+//  classification. The AZ ROC's own classification list
+//  (https://roc.az.gov/license-classifications, read 2026-11-03) carries 146
+//  classifications across its general, dual and specialty groups, and the
+//  string "283" does not appear on the page. Neither does the word "garage".
+//  The only classifications mentioning doors at all are R-7 and C-7
+//  Carpentry ("metal doors or door frames"), R-60 and C-60 Finish Carpentry,
+//  R-14 Fencing ("automatic gates") and R-24 Ornamental Metals.
+//
+//  "ROC-283" was almost certainly a licence NUMBER mistaken for a
+//  classification code: Arizona prints its numbers as "ROC 284792", which is
+//  what the register's own contractor-search records show.
+//
+//  What Arizona actually requires is a licence for any job over $1,000, or
+//  any job needing a permit whatever it costs (A.R.S. § 32-1121, the statute
+//  the ROC's own page links to for the handyman exemption). So Arizona
+//  licenses the CONTRACTOR, not the trade.
+//
+//  California (CSLB D-28) and Florida (DBPR Garage Door Installation
+//  Specialty Contractor, Florida Administrative Code 61G4-15.100(1)(k)) were
+//  both re-checked the same day and are correct as stated.
+//
+//  Everywhere outside these three, garage door work falls under a general
+//  contractor license, is licensed at city or county level, or is not
+//  licensed at all. That is a fact about regulation, not a gap in our
+//  research, and pages in the other 47 states must say so rather than
+//  implying a check we cannot make.
+//
+//  `namesTheTrade` is what templates branch on. Do not reintroduce a shared
+//  sentence with the classification slotted into it: the difference between
+//  Arizona and the other two is a whole sentence, not a noun, which is
+//  exactly how the wrong claim survived in twelve places at once. Each state
+//  carries its own `tradeScope` and `licenceRule` for that reason.
 //
 //  The wording below is the wording that ships. It has to stay consistent
 //  with /terms/ ("we do not endorse, recommend, certify, vet or guarantee")
@@ -21,7 +55,12 @@ export const LICENCE_STATES = {
     authority: 'California Contractors State License Board (CSLB)',
     authorityShort: 'CSLB',
     article: 'a',    // "a CSLB license" — spoken "see-ess-ell-bee"
+    namesTheTrade: true,
     classification: 'C-61/D-28 Doors, Gates and Activating Devices',
+    tradeScope:
+      'California licenses garage door work as its own classification, C-61/D-28 Doors, Gates and Activating Devices.',
+    licenceRule:
+      'Yes. California licenses the trade through the Contractors State License Board under C-61/D-28 Doors, Gates and Activating Devices.',
     searchUrl: 'https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx',
     searchLabel: 'CSLB license check',
     // What a homeowner should confirm once they are on the register.
@@ -38,7 +77,12 @@ export const LICENCE_STATES = {
     authority: 'Florida Department of Business and Professional Regulation (DBPR)',
     authorityShort: 'DBPR',
     article: 'a',    // "a DBPR license" — spoken "dee-bee-pee-arr"
+    namesTheTrade: true,
     classification: 'Garage Door Installation Specialty Contractor',
+    tradeScope:
+      'Florida licenses garage door work as its own classification, Garage Door Installation Specialty Contractor.',
+    licenceRule:
+      'Yes. Florida licenses the trade through the Department of Business and Professional Regulation as a Garage Door Installation Specialty Contractor.',
     searchUrl: 'https://www.myfloridalicense.com/wl11.asp',
     searchLabel: 'DBPR license search',
     verifySteps: [
@@ -54,18 +98,34 @@ export const LICENCE_STATES = {
     authority: 'Arizona Registrar of Contractors (ROC)',
     authorityShort: 'AZ ROC',
     article: 'an',   // "an AZ ROC license" — spoken "ay-zee rock"
-    classification: 'ROC-283 Garage Doors, Gates and Similar Devices',
+    // The odd one out. See the header: there is no garage-door
+    // classification in Arizona, so this is null rather than a plausible
+    // code, and every template must handle null rather than print it.
+    namesTheTrade: false,
+    classification: null,
+    tradeScope:
+      'Arizona licenses the contractor rather than the trade: the Registrar of Contractors has no garage-door classification, but a license is required for any job over $1,000, and for any job needing a permit whatever it costs.',
+    licenceRule:
+      'Yes for most jobs, though not as a garage door trade. Arizona requires an AZ ROC license for any job over $1,000, and for any job needing a permit whatever it costs. The Registrar of Contractors has no garage-door classification, so the work falls under a general residential or another specialty class.',
     searchUrl: 'https://roc.az.gov/contractor-search',
     searchLabel: 'AZ ROC contractor search',
     verifySteps: [
       'Search the ROC contractor database by license number or business name.',
       'Check the license status is Active.',
-      'Check the classification list includes ROC-283, or a general residential class that covers the work.',
+      'Check the classification covers residential construction of this kind. Arizona has no garage-door classification, so expect a general residential or another specialty class rather than one naming garage doors.',
       'Check the license holder name matches the company quoting you.',
       'Check the complaint history shown on the same record.',
     ],
   },
 };
+
+// True only where the register names garage door work as its own
+// classification, which is California and Florida. Arizona has a register
+// worth checking and no such classification, so a page that needs to say
+// "the trade is licensed here" must use this and not licenceInfo() alone.
+export function namesTheTrade(stateCode) {
+  return Boolean(LICENCE_STATES[stateCode]?.namesTheTrade);
+}
 
 export function licenceInfo(stateCode) {
   return LICENCE_STATES[stateCode] || null;

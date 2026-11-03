@@ -57,7 +57,7 @@ const faqs = [
   {
     q: `Do garage door installers need a license in ${s.state}?`,
     a: lic
-      ? `Yes. ${s.state} licenses the trade through the ${lic.authority} under ${lic.classification}. You can check any license number yourself on the state register in about a minute.`
+      ? `${lic.licenceRule} You can check any license number yourself on the state register in about a minute.`
       : `Not as a separate trade. ${s.state} has no garage-door-specific state license, so the work falls under a general contractor license, a local registration, or no license at all depending on the job. Ask for proof of liability insurance instead.`,
   },
   {
@@ -144,9 +144,12 @@ const schemas = [
       </h2>
       {lic ? (
         <>
+          {/* Per-state sentence, NOT a shared one with the classification
+              slotted in. Arizona has no garage-door classification, and the
+              shared version printed one for two years. See licensing.js. */}
           <p class="mt-2">
-            {s.state} is one of three states that license garage door work as a distinct trade. The {lic.authority} issues {lic.classification}, and the
-            register is public, free and searchable by license number or business name.
+            {lic.tradeScope} The {lic.authority} register is public, free and
+            searchable by license number or business name.
           </p>
           <div class="highlight-box">
             <h3>Verify a license yourself, in about a minute</h3>

@@ -235,7 +235,7 @@ const mapEmbed = b.lat != null && b.lng != null
           </p>
           <p>
             {lic
-              ? `Garage door work is a licensed trade in ${b.state} — the ${lic.authority} issues ${lic.classification}. That makes the license number the one credential you can verify yourself in about a minute, and it is worth doing before any work starts.`
+              ? `${lic.tradeScope} That makes the license number the one credential you can verify yourself in about a minute, and it is worth doing before any work starts.`
               : `Garage door work is not licensed as a separate trade in ${b.state}, so ask for proof of general liability insurance rather than a license number, and check whether ${b.city} requires a permit for your job.`}
           </p>
           <p>
