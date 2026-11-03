@@ -3,7 +3,7 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import BizCard from '../../../../components/BizCard.astro';
 import AdSlot from '../../../../components/AdSlot.astro';
-import { SITE, CLAIMS } from '../../../../lib/site.js';
+import { SITE, CLAIMS, THIN_CITY_NOINDEX_MAX } from '../../../../lib/site.js';
 import {
   getAllCities, getCity, getBusinessesByCity, formatCount, formatPhone,
   advertisesEmergency,
@@ -25,6 +25,11 @@ const { state, city } = Astro.params;
 const c = getCity(state, city);
 const businesses = getBusinessesByCity(state, city);
 const lic = licenceInfo(c.stateCode);
+
+// Published, not indexed. See THIN_CITY_NOINDEX_MAX in site.js for the
+// decision and its blast radius. `followLinks` is the important half: this
+// page is the only internal link to the listings inside it.
+const thinCity = c.count <= THIN_CITY_NOINDEX_MAX;
 
 const cityUrl = `/garage-door-repair/${state}/${city}/`;
 
@@ -167,6 +172,8 @@ const schemas = [
     `${c.count} garage door repair and installation companies in ${c.city}, ${c.stateCode}, with phone numbers, service categories and local cost guidance.`,
   )}
   canonical={cityUrl}
+  noindex={thinCity}
+  followLinks={thinCity}
   image="/og/directory.png"
   imageAlt={`Garage door companies in ${c.city}, ${c.stateCode} on ${SITE.name}`}
   schemas={schemas}

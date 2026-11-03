@@ -1,4 +1,4 @@
-import { SITE } from '../lib/site.js';
+import { SITE, THIN_CITY_NOINDEX_MAX } from '../lib/site.js';
 import { getAllStates, getAllCities, getAllBusinesses } from '../lib/data.js';
 import { guides } from '../lib/guides.js';
 import { glossary } from '../lib/glossary.js';
@@ -114,7 +114,16 @@ export async function GET() {
     }
   }
 
-  for (const c of getAllCities()) {
+  // Thin city pages are noindexed, so they are skipped here too. The
+  // filesystem scan above only respects noindex on STATIC pages -- it greps
+  // their source for `noindex = true` -- and a city page is a dynamic route,
+  // so without this line the sitemap would submit 35 URLs that tell Google
+  // not to index them. That earns a Search Console warning and nothing else.
+  //
+  // The LISTINGS inside those cities stay in the sitemap, below. They are not
+  // noindexed, and with "noindex, follow" on the city page they keep an
+  // internal link path as well.
+  for (const c of getAllCities().filter((c) => c.count > THIN_CITY_NOINDEX_MAX)) {
     entries.push(url(
       `${base}/garage-door-repair/${c.stateSlug}/${c.citySlug}/`,
       freshestIn(byCity.get(`${c.stateSlug}/${c.citySlug}`) || []),

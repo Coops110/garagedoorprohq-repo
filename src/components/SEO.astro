@@ -11,6 +11,19 @@ const {
   image,              // OG image path; falls back to the site card below
   imageAlt,           // describes the card, not the page
   noindex = false,
+  // Only meaningful alongside noindex. `noindex` on its own emits
+  // "noindex, nofollow", which is right for a dead end like /404/ or
+  // /get-listed/thanks/ -- there is nothing beyond them worth crawling.
+  //
+  // It is WRONG for a thin city page. Those pages are the only internal link
+  // to the listings inside them, so nofollow would tell Google to stop
+  // following the links to 85 listing pages, 8 of them licence-badged. The
+  // listings are in the sitemap independently, but a page reachable only by
+  // sitemap on a domain with almost nothing indexed is close to orphaned.
+  //
+  // "noindex, follow" is the standard directive for exactly this: do not
+  // index this thin page, do keep crawling through it.
+  followLinks = false,
   schemas = [],       // array of JSON-LD objects
   type = 'website',
 } = Astro.props;
@@ -49,7 +62,7 @@ function safeJsonLd(obj) {
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalUrl} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{noindex && <meta name="robots" content={followLinks ? 'noindex, follow' : 'noindex, nofollow'} />}
 {GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION} />}
 
 <!-- Fonts are self-hosted from /fonts/ — see the @font-face block at the top

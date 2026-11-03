@@ -137,6 +137,28 @@ export const LEGAL = {
 // and the terms of service. Terms say we do not endorse, recommend,
 // certify, vet or guarantee any listing — nothing on the site may imply
 // otherwise.
+// ── THIN CITY PAGES: PUBLISHED, NOT INDEXED ─────────────────
+//  Chris, 2026-11-03: "Thin listings, we leave them on. If there's only a
+//  couple, but just out index them." Threshold confirmed the same day as
+//  three or fewer.
+//
+//  A city page at or below this count is still built, still linked from its
+//  state hub and its compare page, still in llms.txt, and still perfectly
+//  usable — it is simply not offered to Google. Nothing is deleted and no
+//  listing is held back, which is the half of the decision that matters: the
+//  site's position is that a city with one real company is worth publishing,
+//  it is just not worth asking Google to rank.
+//
+//  At 3 this covers 35 of the 84 cities and 85 of the 699 listings. It falls
+//  hardest on California — 26 of its 44 city pages — because California has
+//  the long tail of Los Angeles neighbourhoods. The listing pages inside
+//  these cities are NOT noindexed: a listing is the page with something
+//  unique on it, and 8 of the 26 licence badges sit in these cities.
+//
+//  That is also why these pages emit "noindex, follow" rather than the
+//  default "noindex, nofollow". See the note in SEO.astro.
+export const THIN_CITY_NOINDEX_MAX = 3;
+
 export const CLAIMS = {
   // States where the trade itself is licensed and a badge is possible.
   licenceStates: ['CA', 'FL', 'AZ'],
