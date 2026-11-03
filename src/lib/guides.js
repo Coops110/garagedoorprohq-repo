@@ -62,7 +62,7 @@ export const guides = [
     },
     sections: [
       {
-        h2: 'What moves the price',
+        h2: 'What makes a garage door repair cost more?',
         body: [
           'Four things decide a garage door repair bill: which part failed, whether the door is single or double width, how quickly you need someone there, and local labor rates. The part itself is often the smaller half of the invoice. A torsion spring is a $40–$90 component; most of what you pay is the twenty minutes of skilled, genuinely dangerous work needed to fit it safely.',
           'Double-width doors cost more across almost every job. They are heavier, so they use heavier springs and cables, and a single panel spans further and costs more to replace. Assume the upper end of every range below for a 16-foot door, and expect some jobs to land above it: a double-width torsion spring pair runs $350–$600 against $250–$550 for a single-width pair.',
@@ -79,7 +79,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'Openers: repair or replace',
+        h2: 'Should you repair or replace a garage door opener?',
         body: [
           'Opener faults split into cheap and terminal. A misaligned photo-eye sensor, a failed capacitor, a stripped plastic drive gear or a dead remote are all cheap — $100–$300 covers most of them, and a sensor realignment can be at the bottom of that range. A burnt-out motor or a cracked logic board on a fifteen-year-old chain-drive unit is terminal, because the parts cost approaches the price of a new opener that comes with a warranty.',
           'A new opener installed runs $300–$700 depending on drive type and horsepower. Belt drives cost more than chain drives and are markedly quieter, which matters if there is a bedroom over the garage.',
@@ -102,7 +102,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'How to avoid overpaying',
+        h2: 'How do you avoid overpaying for a garage door repair?',
         body: [
           'Ask for the price in parts and labor separately. It is the single fastest way to see whether a quote is high on the component, high on the hours, or fair.',
           'Get the cycle rating in writing when springs are quoted. A 10,000-cycle spring and a 25,000-cycle spring look identical in the van and differ by roughly $40–$80 a pair fitted, but the high-cycle spring lasts two to three times longer. On a door you open six times a day it is the clearest value upgrade in the trade.',
@@ -173,7 +173,7 @@ export const guides = [
     },
     sections: [
       {
-        h2: 'Torsion or extension: which springs you have',
+        h2: 'Which springs do you have, torsion or extension?',
         diagram: 'spring-types',
         body: [
           'Look above the door. A single steel bar running horizontally above the opening, with one or two springs wound around it, is a torsion system — that is what most doors fitted in the last thirty years use. Long springs running parallel to the horizontal tracks on each side, stretching as the door closes, are extension springs, common on older and lighter single doors.',
@@ -181,7 +181,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'Why the pair costs barely more than one',
+        h2: 'Why does the pair cost barely more than one spring?',
         body: [
           'The labor and the service call are the bulk of the invoice, and both are already paid for once the technician is on the ladder. The second spring is mostly the part cost, which is why one spring at $180–$350 becomes a pair at $250–$550 rather than double.',
           'The reason to do it is not the discount, it is the cycle count. Both springs were fitted on the same day and have done the same number of openings, so when one goes the other is typically within months of the same fate. Replacing one means booking the same job twice inside a year and paying the service call twice.',
@@ -202,7 +202,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'Signs a spring is about to go',
+        h2: 'How do you know a garage door spring is about to break?',
         body: [
           'A visible gap of two or three inches in one of the springs above the door means it has already snapped — that is the single unambiguous sign. Before that point, look for a door that lifts unevenly or sags on one side, feels much heavier by hand than it used to, opens jerkily, or makes the opener strain and stall partway.',
           'A door that will not lift at all, or lifts a few inches and stops, is the classic broken-spring presentation. Do not keep pressing the opener button: with the springs gone, the opener is trying to lift the door’s full weight alone, and that is how a $250 spring job becomes a $250 spring job plus a $500 opener.',
@@ -326,7 +326,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'Faults worth repairing',
+        h2: 'Which opener faults are worth repairing?',
         body: [
           'A stripped plastic drive gear is the classic repairable failure on chain-drive units. The gear is designed as the sacrificial part; the motor is fine, and $120–$300 buys years more service.',
           'A failed capacitor presents as a motor that hums but does not turn. It is a $120–$250 job and worth doing on any unit under about twelve years old.',
@@ -334,7 +334,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'When to stop repairing',
+        h2: 'When should you stop repairing an opener and replace it?',
         body: [
           'A burnt-out motor is the end. So is a cracked housing, a bent rail, or a second board failure on the same unit. Any of those on an opener over ten years old means the money belongs in a replacement.',
           'The rule that keeps this simple: if the quoted repair is more than half the installed price of a new opener, replace instead. At $300–$700 installed, that means a repair quote above roughly $200–$350 on an old unit deserves a direct comparison rather than an automatic yes.',
@@ -342,7 +342,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'Installing a new opener: what the $300–$700 covers',
+        h2: 'What does $300–$700 cover when installing a new opener?',
         body: [
           'A replacement opener installed runs $300–$700, and that figure splits almost exactly in two. The unit itself is $150–$400 over the counter depending on drive type and horsepower, and the labor is $150–$300 for a straightforward swap onto an existing rail and existing wiring, which is two to three hours on site. Asking for a quote in those two parts is the fastest way to see whether a high number is a premium unit, a long job, or neither.',
           'Three things are commonly quoted separately rather than included, so ask about each one. Removing and hauling away the old unit runs $30–$100. A new rail is needed if the drive type changes, because a chain rail and a belt rail are not interchangeable. And where the existing wall control is a simple two-wire button, a current opener with a wired wall panel can need new low-voltage cable run to it, which is $75–$175 rather than a rounding error.',
@@ -446,7 +446,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'What you would actually save',
+        h2: 'What would you actually save doing it yourself?',
         body: [
           'A torsion spring is a $40–$90 part. A professional pair replacement costs $250–$550 fitted. Buying the springs and fitting them yourself saves roughly $100–$250 in labor — assuming you already own correctly sized winding bars, vice grips and a wind-up chart for your door, and assuming you get the wind count right first time.',
           'Get the wind count wrong and the door is unbalanced, which transfers load onto the opener and shortens the life of a $300–$700 unit. Order the wrong wire size, inside diameter, length or wind direction — four measurements, all easy to get wrong from a photograph — and the door is out of service until the right part arrives.',
@@ -461,7 +461,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'The jobs that are genuinely fine to do yourself',
+        h2: 'Which garage door jobs are safe to do yourself?',
         diagram: 'balance-test',
         body: [
           'Plenty of garage door maintenance carries no stored-energy risk at all. Cleaning and realigning the photo-eye sensors near the floor. Replacing remote batteries. Wiping the tracks out — tracks are cleaned, not greased. Lubricating hinges, rollers and the spring coil itself with a garage-door-specific lubricant, which is the single maintenance job that most extends component life.',
@@ -511,7 +511,7 @@ export const guides = [
       'Ask for the price split into parts and labor, the spring cycle rating in writing, whether the diagnostic fee is credited, and proof of liability insurance. California, Florida and Arizona each keep a public register you can check a license number against in about a minute: California and Florida license garage door work by name, and Arizona licenses the contractor for any job over $1,000. Most other states license only general contractors, or nothing at all.',
     sections: [
       {
-        h2: 'Three states license this trade specifically',
+        h2: 'Which states license garage door work?',
         body: [
           // Arizona was listed here as "classification ROC-283" until
           // 2026-11-03. No such classification exists -- the register's own
@@ -524,7 +524,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'How to check a license yourself',
+        h2: 'How do you check a contractor license yourself?',
         body: [
           'In all three states the register is public, free and searchable by license number or business name. Search the number the company gives you, and check three things: that the status reads active, that the classification covers the work (garage doors by name in California and Florida, residential construction of this kind in Arizona), and that the name on the license matches the company quoting you. A license belonging to a different entity is the most common discrepancy.',
           'Ask for the number before the visit, not after. A company that will not give it over the phone in a state that requires one has answered a different and more useful question.',
@@ -539,7 +539,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'The four questions that reveal a quote',
+        h2: 'Which four questions reveal whether a quote is fair?',
         body: [
           'Ask for parts and labor separately. A fair spring job is a modest part and skilled labor; a quote that will not separate the two is hiding which half is inflated.',
           'Ask for the spring cycle rating in writing. A 10,000-cycle and a 25,000-cycle spring are indistinguishable once fitted and differ by $40–$80 on a pair. Being quoted the cheap spring at the high-cycle price is the most common way to be overcharged in this trade.',
@@ -611,7 +611,7 @@ export const guides = [
       'Three checks cost nothing and cover most opener service calls: mains power at the outlet, the photo-eye sensors near the floor, and the emergency release cord. Work through them in that order. If the door starts to close then reverses with the opener light flashing, it is the photo-eyes. If the motor runs but nothing moves, the release cord has been pulled. Beyond those, a diagnostic visit runs $75–$150 and is normally credited against the repair.',
     sections: [
       {
-        h2: 'The three checks that cost nothing',
+        h2: 'What should you check first when an opener stops working?',
         body: [
           'Start with power, because a dead circuit presents exactly like a dead motor: no light, no hum, no response from either the wall button or the remote. Garage outlets frequently share a circuit with an exterior socket, so whatever tripped it may be outside and nothing to do with the door. Check the breaker and, if the outlet is a GFCI, its reset button.',
           'Second, look at the two photo-eye sensors mounted about six inches above the floor on either side of the opening. They are the most common cause of an opener that appears broken, and they are one of the few parts of the system a homeowner is actively meant to touch. Both should show a steady indicator light. A blinking light, or one that has gone dark, means the pair are no longer seeing each other.',
@@ -627,7 +627,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'The motor runs but the door does not move',
+        h2: 'Why does the motor run but the door not move?',
         diagram: 'trolley-cord',
         body: [
           'Two causes, easily told apart by watching the trolley — the carriage that travels along the rail. If the trolley is moving and the door is not, the emergency release has been pulled and the door is simply disconnected. Re-latching is usually a matter of pulling the cord back toward the door and running the opener until the carriage clicks in, though the exact method varies between makes.',
@@ -636,7 +636,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'The remote does nothing but the wall button works',
+        h2: 'Why does the wall button work but not the remote?',
         diagram: 'rolling-code',
         body: [
           'This narrows the fault usefully. The wall button working proves the motor, the drive and the power supply are all fine, so the problem is the remote, its battery, or the receiver’s memory of it. Nothing expensive is implicated.',
@@ -732,7 +732,7 @@ export const guides = [
     },
     sections: [
       {
-        h2: 'How to tell which system you have, in ten seconds',
+        h2: 'How can you tell which spring system you have?',
         body: [
           'Open the door fully and look up. A single steel shaft running horizontally across the wall directly above the opening, with one or two tightly wound springs threaded onto it, is a torsion system. Two long springs running front-to-back along the horizontal tracks instead, one each side, visibly stretching as the door closes, are extension springs.',
           'The two are unmistakable once you know what you are looking at, and the difference matters more than most homeowners expect. It changes the replacement price, it changes how the door fails, and it changes what a competent quote should include.',
@@ -740,7 +740,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'What each one actually does',
+        h2: 'What does each spring type actually do?',
         body: [
           'Both types do the same job: counterbalance the weight of the door so that the opener, or your arm, only has to overcome friction rather than lift 150 to 300 pounds of steel. A garage door opener is not built to lift a door. It is built to move a door that is already balanced.',
           'A torsion spring stores that energy in twist. It is wound onto a shaft that spans the opening, and as the door lowers the spring winds tighter; as the door rises it unwinds and gives the energy back. Because that one shaft drives both lift cables from a drum at each end, the pull on the two sides is mechanically linked and therefore even. This is why torsion doors track straighter, sit level, and are generally quieter.',
@@ -852,7 +852,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'Lubrication: what to use, and what to leave dry',
+        h2: 'What should you lubricate, and what should stay dry?',
         body: [
           'Twice a year, apply a garage-door-specific lubricant to the hinges, the roller stems and bearings, the torsion spring coil, and the end bearing plates. A lithium or silicone-based product sold for the purpose is what you want. The whole job takes about ten minutes and it is the single maintenance task that most extends the life of the moving parts.',
           'Do not use WD-40 as the lubricant. It is a solvent and water displacer, not a lubricant — it will free a seized part beautifully and then leave it dry, which is worse than where you started. It has a legitimate place in cleaning a gummed-up roller, but something has to go on afterwards.',
@@ -868,7 +868,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'What wears out, and roughly when',
+        h2: 'What wears out on a garage door, and when?',
         diagram: 'spring-life',
         body: [
           'Springs are the shortest-lived major component. A standard 10,000-cycle spring lasts roughly seven years at four openings a day and about half that at eight. Lift cables are steel under constant load and tend to reach the end of their life at a similar age, which is why they are usually replaced alongside springs — the labor overlaps almost entirely, and a cable pair costs $130–$250 on its own visit.',
@@ -886,7 +886,7 @@ export const guides = [
         ],
       },
       {
-        h2: 'What a paid tune-up should actually include',
+        h2: 'What should a paid garage door tune-up include?',
         body: [
           'A professional tune-up runs $75–$150 and should cover: a balance check with the opener disconnected, spring tension adjustment, lubrication of every moving part, tightening of track fixings and hinge fasteners, roller inspection, cable inspection along their whole length, photo-eye alignment, and force and limit checks on the opener.',
           'Ask what the visit includes before booking, and be a little wary of a tune-up priced well below that range. A heavily discounted service call has to recover its margin somewhere, and it usually does so in whatever the visit discovers. That is not automatically dishonest — but it is worth knowing which of the two things you have bought.',

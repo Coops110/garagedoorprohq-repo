@@ -329,7 +329,10 @@ const schemas = [
         a contractor, and every figure comes from our own guide so the two
         cannot drift. */}
     <section class="section">
-      <h2 style="font-size:1.3rem;">What garage door work costs in {c.city}</h2>
+      {/* Query form, per the 2026-11-02 GEO finding that 0 of 4 city H2s
+          were questions. The declarative answer still opens the paragraph
+          underneath, which is the part an assistant quotes. */}
+      <h2 style="font-size:1.3rem;">What does garage door work cost in {c.city}?</h2>
       <p class="mt-2">
         These are national 2026 estimates from our own
         {' '}<a href="/guides/garage-door-repair-cost/">garage door repair cost guide</a>,
@@ -371,7 +374,9 @@ const schemas = [
             the page. Written out as "in {City}" rather than picking a/an:
             a/an by first letter still gets Ontario right and hour wrong, and
             the phrasing reads better than either article anyway. */}
-        {lic ? `Check a contractor's license in ${c.city} yourself` : `Licensing and insurance in ${c.state}`}
+        {lic
+          ? `How do you check a contractor's license in ${c.city}?`
+          : `What should you ask about licensing and insurance in ${c.state}?`}
       </h2>
       {lic ? (
         <>
