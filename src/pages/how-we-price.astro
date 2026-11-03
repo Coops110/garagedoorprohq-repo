@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE, LEGAL, CLAIMS } from '../lib/site.js';
 import { LICENCE_STATES } from '../lib/licensing.js';
 import { guides } from '../lib/guides.js';
+import { listSentence } from '../lib/data.js';
 import attribution from '../data/overture-attribution.json';
 
 // The 2026-10-21 audit's E-E-A-T finding was that claims like "$260 national
@@ -123,7 +124,7 @@ const newest = dated[dated.length - 1];
 
         <h2>What we check, and what we cannot</h2>
         <p>
-          {CLAIMS.licenceMeaning} In {states.map((s) => s.state).join(', ')} that check is
+          {CLAIMS.licenceMeaning} In {listSentence(states.map((s) => s.state))} that check is
           possible because each of those states publishes a contractor register. California
           and Florida license garage door work as its own classification; Arizona licenses
           the contractor rather than the trade. In the other 47 there is no register to

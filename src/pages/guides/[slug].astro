@@ -138,7 +138,13 @@ const modified = new Date(g.dateModified || g.datePublished)
     <Breadcrumbs items={crumbs} />
 
     <article class="prose">
-      <span class="eyebrow">{g.pillar ? 'Cost guide' : 'Guide'}</span>
+      {/* Was `g.pillar ? 'Cost guide' : 'Guide'`, which labelled the hiring
+          CHECKLIST a cost guide because it happens to be a pillar — the
+          2026-11-02 audit's finding, and it cost the licence-checker persona
+          clarity on the page built for them. Deriving it from `costTable`
+          instead would have labelled the torsion comparison a cost guide
+          too, so the label is explicit per guide. */}
+      <span class="eyebrow">{g.eyebrow || 'Guide'}</span>
       <h1 style="margin:.5rem 0 .75rem;">{g.h1}</h1>
       <p class="muted" style="font-size:.85rem;margin-bottom:1.5rem;">
         Updated {modified} · {g.readTime} min read · Researched in-house by {SITE.name}

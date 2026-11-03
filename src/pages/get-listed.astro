@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE, LEGAL, CLAIMS } from '../lib/site.js';
 import { LICENCE_STATES } from '../lib/licensing.js';
 import { breadcrumbSchema } from '../lib/schema.js';
+import { listSentence } from '../lib/data.js';
 
 const crumbs = [
   { name: 'Home', url: '/' },
@@ -16,7 +17,7 @@ const schemas = [breadcrumbSchema(crumbs)];
 // if AirProHQ's key were reused — land in the wrong inbox. A mailto with a
 // prefilled subject is a worse UX and a strictly better outcome.
 const formLive = Boolean(SITE.web3FormsKey);
-const licenceStates = Object.values(LICENCE_STATES).map((s) => s.state).join(', ');
+const licenceStates = listSentence(Object.values(LICENCE_STATES).map((s) => s.state));
 ---
 <BaseLayout
   {/* The brand grew from GarageDoorHQ to GarageDoorProHQ, so the " | brand"

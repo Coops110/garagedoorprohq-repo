@@ -220,6 +220,25 @@ export function formatCount(n) {
   return (n || 0).toLocaleString('en-US');
 }
 
+// "California, Florida and Arizona", not "California, Florida, Arizona".
+//
+// Both /how-we-price/ and /get-listed/ built their state list with
+// `.map(s => s.state).join(', ')`, which reads as an unfinished sentence --
+// the 2026-11-02 audit caught it on /how-we-price/, the page assistants use
+// to describe our method, and missed the identical bug on /get-listed/.
+// A helper rather than two hand-written strings, so the next list is right
+// by default and a fourth licensing state would not reintroduce it.
+//
+// No Oxford comma, matching the site's existing copy ("springs, openers,
+// cables and panels").
+export function listSentence(items, conjunction = 'and') {
+  const a = items.filter(Boolean).map(String);
+  if (a.length === 0) return '';
+  if (a.length === 1) return a[0];
+  if (a.length === 2) return `${a[0]} ${conjunction} ${a[1]}`;
+  return `${a.slice(0, -1).join(', ')} ${conjunction} ${a[a.length - 1]}`;
+}
+
 // Three jobs, three functions, because Overture stores these inconsistently:
 // 430 bare 10-digit strings, 216 already E.164, 134 formatted some other way.
 // Letting that reach the page meant a reader saw "3104845992" on one card and

@@ -24,6 +24,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-repair-cost',
+    eyebrow: 'Cost guide',
     sources: ['dasma102', 'cslb', 'dbpr', 'azroc'],
     pillar: true,
     heroDiagram: 'cost-map',
@@ -145,6 +146,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-spring-replacement-cost',
+    eyebrow: 'Cost guide',
     sources: ['dasma102', 'dasma190', 'springEyeInjuries'],
     pillar: false,
     parent: 'garage-door-repair-cost',
@@ -250,6 +252,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-opener-repair-cost',
+    eyebrow: 'Cost guide',
     sources: ['cfr1211', 'sb969'],
     pillar: false,
     parent: 'garage-door-repair-cost',
@@ -405,6 +408,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'why-diy-spring-repair-is-dangerous',
+    eyebrow: 'Safety',
     sources: ['springEyeInjuries', 'dasma190', 'cslb', 'dbpr', 'azroc'],
     pillar: false,
     parent: 'garage-door-repair-cost',
@@ -492,6 +496,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'hiring-a-garage-door-company',
+    eyebrow: 'Checklist',
     sources: ['dasma102', 'cslb', 'dbpr', 'azroc'],
     pillar: true,
     title: 'How to Hire a Garage Door Company',
@@ -583,6 +588,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-opener-wont-work',
+    eyebrow: 'Troubleshooting',
     sources: ['cfr1211', 'cslb', 'dbpr', 'azroc'],
     pillar: false,
     parent: 'garage-door-repair-cost',
@@ -690,6 +696,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'torsion-vs-extension-springs',
+    eyebrow: 'Comparison',
     sources: ['dasma102', 'dasma190', 'springEyeInjuries'],
     pillar: false,
     parent: 'garage-door-repair-cost',
@@ -810,6 +817,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-maintenance',
+    eyebrow: 'Maintenance',
     sources: ['cfr1211', 'dasma102', 'dasma190'],
     pillar: true,
     heroDiagram: 'balance-test',
