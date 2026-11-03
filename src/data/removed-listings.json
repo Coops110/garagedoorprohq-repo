@@ -198,6 +198,17 @@
     "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
+    "source": "/garage-door-repair/arizona/phoenix/solutions-garage-cabinets/",
+    "destination": "/garage-door-repair/arizona/phoenix/",
+    "id": "da0196fb-6e58-4da6-b6cf-9a7859b21d9b",
+    "name": "Solutions Garage Cabinets",
+    "slug": "solutions-garage-cabinets",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-11-03",
+    "reason": "Not a garage door company: it sells garage cabinets and storage. Removed on Chris's instruction, 2026-11-03. The 2026-10-31 off-trade sweep missed it because the word \"garage\" in a business name counted as a garage-door signal and overrode every other test, and because its source category is the deliberately-kept \"contractor\". Its Overture services array claims \"Garage door service\", which it does not provide."
+  },
+  {
     "source": "/garage-door-repair/arizona/queen-creek/wright-choice-glassworks-llc/",
     "destination": "/garage-door-repair/arizona/queen-creek/",
     "id": "a28a45c3-f03c-41e7-90c0-dfb209234b6e",

@@ -3734,6 +3734,11 @@
       "permanent": true
     },
     {
+      "source": "/garage-door-repair/arizona/phoenix/solutions-garage-cabinets/",
+      "destination": "/garage-door-repair/arizona/phoenix/",
+      "permanent": true
+    },
+    {
       "source": "/garage-door-repair/arizona/queen-creek/wright-choice-glassworks-llc/",
       "destination": "/garage-door-repair/arizona/queen-creek/",
       "permanent": true

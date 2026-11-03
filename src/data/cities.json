@@ -18,10 +18,10 @@
   "state": "Arizona",
   "stateCode": "AZ",
   "stateSlug": "arizona",
-  "count": 47,
+  "count": 46,
   "licensedCount": 0,
-  "withWebsite": 43,
-  "withAddress": 47,
+  "withWebsite": 42,
+  "withAddress": 46,
   "lat": 33.423527,
   "lng": -112.036751
  },

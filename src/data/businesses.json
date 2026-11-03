@@ -4419,37 +4419,6 @@
     "licenceMatchedOn": null
   },
   {
-    "id": "da0196fb-6e58-4da6-b6cf-9a7859b21d9b",
-    "name": "Solutions Garage Cabinets",
-    "slug": "solutions-garage-cabinets",
-    "phone": "+16028423665",
-    "website": "http://www.solutionsgaragecabinets.com/",
-    "street": "2550 E Rose Garden Ln",
-    "city": "Phoenix",
-    "citySlug": "phoenix",
-    "state": "Arizona",
-    "stateCode": "AZ",
-    "stateSlug": "arizona",
-    "postalCode": "85050",
-    "lat": 33.67775,
-    "lng": -112.027542,
-    "confidence": 0.92,
-    "services": [
-      "General contracting",
-      "Locksmith",
-      "Garage door service"
-    ],
-    "sourceCategory": "contractor",
-    "metro": "phoenix_az",
-    "licenceNumber": null,
-    "licenceAuthority": null,
-    "licenceStatus": null,
-    "licenceClass": null,
-    "licenceExpires": null,
-    "licenceCheckedOn": null,
-    "licenceMatchedOn": null
-  },
-  {
     "id": "79beb1b1-2f6e-4eb1-8bd7-b226f94c6d55",
     "name": "101 Garage Doors",
     "slug": "101-garage-doors",
