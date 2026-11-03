@@ -57,8 +57,14 @@ const faqs = [
     //
     // The honest version is more useful anyway: it gives the figure, says what
     // it is, and names the thing that actually moves it locally.
+    //
+    // "a price specific to {City}", NOT "a {City}-specific price": the second
+    // read "a Orlando-specific price" on 11 of the 84 cities, in the visible
+    // FAQ and in the FAQPage schema both. Phrased to take no article at all,
+    // because an a/an helper would still get "a Universal City" wrong -- the
+    // test is the sound, not the letter.
     q: `How much does garage door repair cost in ${c.city}?`,
-    a: `We do not publish a ${c.city}-specific price, because we have no data that would support one. Our 2026 national estimates: most repairs land in the $150–$400 range, a torsion spring pair runs $250–$550, an opener repair $100–$300, and a replacement opener $300–$700 installed. Expect a $75–$150 diagnostic fee, usually credited against the work. Local labor rates and a double-width door both push the figure toward the top of each range.`,
+    a: `We do not publish a price specific to ${c.city}, because we have no data that would support one. Our 2026 national estimates: most repairs land in the $150–$400 range, a torsion spring pair runs $250–$550, an opener repair $100–$300, and a replacement opener $300–$700 installed. Expect a $75–$150 diagnostic fee, usually credited against the work. Local labor rates and a double-width door both push the figure toward the top of each range.`,
   },
   {
     q: lic
