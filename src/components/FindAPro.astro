@@ -1,0 +1,56 @@
+---
+import { getAllCities, getAllStates, formatCount } from '../lib/data.js';
+
+// ─────────────────────────────────────────────────────────────
+//  FIND A PRO — the directory route out of a guide.
+//
+//  The 2026-11-02 audit's strongest SXO finding was that the two guides
+//  carrying the most commercial intent, spring-replacement cost and
+//  opener-repair cost, had ZERO /garage-door-repair/ links inside <main>.
+//  Every directory link on them came from the shared header and footer, so
+//  a reader who had just learned what a spring costs had no path to anyone
+//  who could fit one. The two guides that did have a block sat it at 93%
+//  and 98% of the page, which on a phone is past the point almost nobody
+//  reaches.
+//
+//  So this block renders DIRECTLY UNDER THE COST TABLE on any guide that
+//  has one, which is the moment the question changes from "what does this
+//  cost" to "who does it". Guides without a table keep it near the end,
+//  where there is no equivalent moment to aim at.
+//
+//  Four cities, not three. The top four by listing count happen to be one
+//  per state — Houston TX, Phoenix AZ, Los Angeles CA, Orlando FL — so the
+//  smallest list that covers every state we actually hold data for is also
+//  the four biggest city pages. Three would drop Florida entirely.
+// ─────────────────────────────────────────────────────────────
+const { omitHiringLink = false } = Astro.props;
+
+const cities = getAllCities().slice(0, 4);
+const stateCount = getAllStates().length;
+---
+<div class="highlight-box">
+  <h2>Find a garage door company near you</h2>
+  <p>
+    The figures on this page are national estimates. For the companies that
+    actually work in your area, with phone numbers and the service categories
+    they advertise, start with the largest city lists below or browse the full
+    directory by state.
+  </p>
+  <ul class="link-list" style="margin-top:.75rem;">
+    {cities.map((c) => (
+      <li>
+        <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>
+          Garage door repair in {c.city}, {c.stateCode}
+        </a>
+        <span class="n">{formatCount(c.count)}</span>
+      </li>
+    ))}
+  </ul>
+  <p class="mt-2">
+    <a href="/garage-door-repair/">Browse all {stateCount} states</a>{omitHiringLink
+      ? '.'
+      : ', '}{!omitHiringLink && (
+      <>or read the <a href="/guides/hiring-a-garage-door-company/">hiring checklist</a> before you call around.</>
+    )}
+  </p>
+</div>

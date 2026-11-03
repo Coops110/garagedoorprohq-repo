@@ -5,7 +5,8 @@ import BizCard from '../../../../components/BizCard.astro';
 import AdSlot from '../../../../components/AdSlot.astro';
 import { SITE, CLAIMS } from '../../../../lib/site.js';
 import {
-  getAllCities, getCity, getBusinessesByCity, formatCount,
+  getAllCities, getCity, getBusinessesByCity, formatCount, formatPhone,
+  advertisesEmergency,
 } from '../../../../lib/data.js';
 import { licenceInfo, noLicenceGuidance } from '../../../../lib/licensing.js';
 import { getGuide } from '../../../../lib/guides.js';
@@ -40,7 +41,31 @@ const crumbs = [
 // and the only reliable fix is one source of truth.
 const repair = getGuide('garage-door-repair-cost');
 const costRows = (repair?.costTable?.rows || []).filter(([job]) =>
-  /service call|torsion spring — pair|opener repair|off-track|panel replacement|opener replacement/i.test(job));
+  /service call|torsion spring — pair|opener repair|off-track|panel replacement|opener replacement|after-hours/i.test(job));
+
+// The after-hours premium is READ from the repair-cost guide, never restated.
+// It is quoted in the "door stuck" box below as well as in the table, and a
+// figure typed out twice on one page is a figure that will eventually
+// disagree with itself.
+const afterHours = (repair?.costTable?.rows || [])
+  .find(([job]) => /after-hours/i.test(job))?.[1] || '';
+
+// Listings whose own website advertises 24/7 or emergency callout. The page
+// held this data and did nothing with it: Houston tags 43 of its 124, Phoenix
+// 18 of 47. Because a card renders only its first three service tags, most of
+// those were not even visible, let alone reachable as a group.
+//
+// Surfaced as an anchor to a list further down the page, NOT as a JavaScript
+// filter. This audience is standing in a driveway on a phone, and an anchor
+// works before any script has run, with no new tap targets to get wrong.
+const emergency = businesses.filter(advertisesEmergency);
+// Agreement is templated across 84 cities and 22 of them have none, so every
+// variant has to read right. "1 company ... that advertise" shipped on the
+// first build of this; the site has already had "1 Garage Door Companies in
+// Goodyear, AZ" once, for exactly this reason.
+const emWord = emergency.length === 1 ? 'one' : formatCount(emergency.length);
+const emNoun = emergency.length === 1 ? 'company' : 'companies';
+const emVerb = emergency.length === 1 ? 'advertises' : 'advertise';
 
 const faqs = [
   {
@@ -140,6 +165,64 @@ const schemas = [
       {' '}first so you know which four questions actually reveal a quote.
     </p>
 
+    {/* ─────────────────────────────────────────────────────────
+        "Door stuck?" — the audit's highest-severity SXO finding was that a
+        city page offered nothing at all to the reader it is most likely to
+        have: someone whose door has just failed, on a phone, in a driveway.
+
+        THREE SAFETY LINES AND NOTHING ELSE. Every one of them is a "do not".
+        There is no procedure here, no tool, no sequence and no mention of how
+        anything is released, and there must never be — the site's whole
+        position on spring work is that a partial instruction is more
+        dangerous than none, and /guides/why-diy-spring-repair-is-dangerous/
+        exists to say so. This box links there; it does not summarise it.
+
+        The after-hours figure is read from the repair-cost guide, so the one
+        number in the box cannot drift from the table below it.
+        ───────────────────────────────────────────────────────── */}
+    <div class="alert-box">
+      <span class="alert-label">Door stuck, or a spring has snapped?</span>
+      <p>Three things worth knowing before you call anyone:</p>
+      <ul style="margin:.7rem 0 0 1.2rem;">
+        <li style="margin-bottom:.4rem;">
+          <strong>Stop pressing the opener button.</strong> With a spring gone the
+          opener is trying to lift the entire weight of the door on its own, and
+          that is how one repair becomes two.
+        </li>
+        <li style="margin-bottom:.4rem;">
+          <strong>If the door is closed, leave it closed.</strong> There is nothing
+          to be gained by getting it open before a technician is there.
+        </li>
+        <li style="margin-bottom:.4rem;">
+          <strong>Do not touch the springs, the cables or the winding cones</strong>,
+          and keep everyone from under a door that is already open. A spring stays
+          loaded after it breaks, and on a two-spring door the other one is still
+          fully wound.
+        </li>
+      </ul>
+      <p class="mt-2">
+        <a href="/guides/why-diy-spring-repair-is-dangerous/">Why spring work is not a DIY job</a>
+        {' '}explains what the stored energy actually is. It is deliberately not a
+        how-to.
+      </p>
+      {afterHours && (
+        <p class="mt-2">
+          Calling out of hours costs more: same-day, evening and weekend work
+          typically {afterHours.replace(/^add /, 'adds ')} on top of the prices in
+          the table below. If the door is closed and no vehicle is trapped, a normal
+          weekday slot is the cheapest decision available to you.
+        </p>
+      )}
+      {emergency.length > 0 && (
+        <p class="mt-2">
+          <a href="#emergency">
+            See the {emWord} {emNoun} in {c.city} that {emVerb} 24/7 or
+            emergency service →
+          </a>
+        </p>
+      )}
+    </div>
+
     <div class="grid grid-3">
       {businesses.map((b, i) => (
         <>
@@ -152,6 +235,37 @@ const schemas = [
         </>
       ))}
     </div>
+
+    {/* The 24/7 list the box above links to. A plain anchored list rather
+        than a filtered view of the grid: it repeats only the name and the
+        number, which is all the hurried reader wants, and it needs no script.
+
+        CLAIMS.hoursMeaning is rendered verbatim and first. This is the
+        company's own marketing claim, not opening hours, and this site does
+        not publish opening hours from any source. Presenting a self-declared
+        tag as a fact about availability would be exactly the kind of
+        over-claim the licence badge rules exist to prevent. */}
+    {emergency.length > 0 && (
+      <section class="section" id="emergency">
+        <h2 style="font-size:1.3rem;">
+          The {emWord} {emNoun} in {c.city} that {emVerb} 24/7 or emergency service
+        </h2>
+        <p class="claim-note">{CLAIMS.hoursMeaning}</p>
+        {/* The name links to the profile and the number is plain text, NOT a
+            second anchor. `.link-list a` is a 44px flex block, so two anchors
+            in one <li> render as two stacked rows and the pairing stops
+            reading as one business. The profile one tap away carries the
+            Call button. */}
+        <ul class="link-list mt-2">
+          {emergency.map((b) => (
+            <li>
+              <a href={`/garage-door-repair/${state}/${city}/${b.slug}/`}>{b.name}</a>
+              {b.phone && <span class="n">{formatPhone(b.phone)}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     {/* Per-city cost table. Genuinely page-specific rather than boilerplate
         padding: it answers the question someone on this page is about to ask

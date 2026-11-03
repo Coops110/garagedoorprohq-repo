@@ -51,6 +51,12 @@ export const guides = [
         ['Torsion spring — pair', '$250 – $550'],
         ['Panel replacement (per panel)', '$250 – $800'],
         ['Opener replacement, installed', '$300 – $700'],
+        // In the table so there is ONE source for it. The city pages' new
+        // "door stuck" box quotes the after-hours premium, and this guide's
+        // prose and FAQ already did -- three places for one figure, which on
+        // AirProHQ is exactly how a number starts disagreeing with itself.
+        // The city template now reads this row instead of restating it.
+        ['Same-day, after-hours or weekend premium', 'add $50 – $150'],
       ],
     },
     sections: [
@@ -241,18 +247,30 @@ export const guides = [
     sources: ['cfr1211', 'sb969'],
     pillar: false,
     parent: 'garage-door-repair-cost',
-    title: 'Garage Door Opener Repair Cost 2026',
-    h1: 'Garage Door Opener Repair Cost in 2026',
+    // Title and h1 cover repair AND installation, because one page does.
+    // "garage door opener installation cost" was landing on a repair-led
+    // guide -- the 2026-11-02 audit's SXO finding, where the SERP leaders are
+    // all installation cost guides covering the unit/labor split and the
+    // add-ons. The fix is the section below, NOT a second page: the rule
+    // against two pages on one keyword is absolute, and `keyword` therefore
+    // stays as it was so nothing in PLANNED is shadowed either.
+    //
+    // The title is 42 characters, which renders at exactly the 60-character
+    // limit once SEO.astro appends " | GarageDoorProHQ". "Installation" in
+    // full would breach it and fitTitle would silently fall back, so the
+    // title says "Install" and the h1 says "Installation".
+    title: 'Garage Door Opener Repair and Install Cost',
+    h1: 'Garage Door Opener Repair and Installation Cost in 2026',
     description:
-      'Garage door opener repair costs $100–$300 in 2026; a new opener installed runs $300–$700. Which faults are worth fixing and which are terminal.',
+      'Garage door opener repair costs $100–$300 in 2026 and a new opener installed runs $300–$700. What the installation covers, and which faults are terminal.',
     keyword: 'garage door opener repair cost',
     datePublished: '2026-08-11',
-    dateModified: '2026-10-31',
-    readTime: 7,
+    dateModified: '2026-11-03',
+    readTime: 9,
     quickAnswer:
-      'Most garage door opener repairs cost $100–$300 in 2026. Sensor realignment is $85–$200, a drive gear or capacitor $120–$300, a logic board $150–$400. A replacement opener installed runs $300–$700. If the repair exceeds half the replacement cost and the unit is over ten years old, replace it.',
+      'Most garage door opener repairs cost $100–$300 in 2026. Sensor realignment is $85–$200, a drive gear or capacitor $120–$300, a logic board $150–$400. A replacement opener installed runs $300–$700, which splits into $150–$400 for the unit and $150–$300 of labor. If the repair exceeds half the replacement cost and the unit is over ten years old, replace it.',
     costTable: {
-      caption: 'Garage door opener repairs and replacement, installed cost 2026',
+      caption: 'Garage door opener repair, replacement and installation, installed cost 2026',
       rows: [
         ['Photo-eye sensor realign or replace', '$85 – $200'],
         ['Remote or keypad replacement', '$40 – $120'],
@@ -264,6 +282,28 @@ export const guides = [
         ['Logic board', '$150 – $400'],
         ['New chain-drive opener, installed', '$300 – $550'],
         ['New belt-drive opener, installed', '$400 – $700'],
+        // The split below reconciles exactly to the $300-$700 installed
+        // range: $150 + $150 and $400 + $300. That is deliberate, and it is
+        // the whole reason to publish a split at all -- a unit band and a
+        // labor band that do not add up to the installed figure on the row
+        // above would make all three numbers worthless.
+        //
+        // No hourly rate is quoted. Two to three hours on site is stated in
+        // the prose, but dividing one range by the other produces a rate
+        // band far wider than anything that could be defended, and the
+        // competitors' "$60-$80 an hour" is their figure, not ours.
+        ['Opener unit alone, over the counter', '$150 – $400'],
+        ['Labor, straightforward opener swap', '$150 – $300'],
+        ['Haul away the old opener', '$30 – $100'],
+        // Labelled "added during an install" rather than left bare, because
+        // the row eight above prices a REPLACEMENT remote or keypad at
+        // $40-$120 on its own visit. Both are right and the difference is
+        // the service call, so the labels have to carry that or the table
+        // looks like it contradicts itself.
+        ['Extra remote, added during an install', '$25 – $75'],
+        ['Exterior keypad, added during an install', '$50 – $120'],
+        ['Battery backup, added during an install', '$60 – $150'],
+        ['Wall control and new low-voltage wiring', '$75 – $175'],
       ],
     },
     sections: [
@@ -290,6 +330,16 @@ export const guides = [
           'A burnt-out motor is the end. So is a cracked housing, a bent rail, or a second board failure on the same unit. Any of those on an opener over ten years old means the money belongs in a replacement.',
           'The rule that keeps this simple: if the quoted repair is more than half the installed price of a new opener, replace instead. At $300–$700 installed, that means a repair quote above roughly $200–$350 on an old unit deserves a direct comparison rather than an automatic yes.',
           'There is also a safety floor. Any opener made before 1993 predates the federal requirement for photo-eye entrapment protection, and openers from that era should be replaced rather than repaired regardless of what has failed.',
+        ],
+      },
+      {
+        h2: 'Installing a new opener: what the $300–$700 covers',
+        body: [
+          'A replacement opener installed runs $300–$700, and that figure splits almost exactly in two. The unit itself is $150–$400 over the counter depending on drive type and horsepower, and the labor is $150–$300 for a straightforward swap onto an existing rail and existing wiring, which is two to three hours on site. Asking for a quote in those two parts is the fastest way to see whether a high number is a premium unit, a long job, or neither.',
+          'Three things are commonly quoted separately rather than included, so ask about each one. Removing and hauling away the old unit runs $30–$100. A new rail is needed if the drive type changes, because a chain rail and a belt rail are not interchangeable. And where the existing wall control is a simple two-wire button, a current opener with a wired wall panel can need new low-voltage cable run to it, which is $75–$175 rather than a rounding error.',
+          'Accessories are cheaper fitted while the technician is already there than bought as their own visit, and that is the whole difference between these figures and the replacement row in the table above. An extra remote is $25–$75 supplied and programmed, an exterior keypad $50–$120, and a battery backup $60–$150 retrofitted to an opener that did not come with one. In California a battery backup is not an upgrade to consider: Health and Safety Code § 19892 has required one on any residential opener sold or installed in the state since July 1, 2019.',
+          'A first-time installation, where no opener has ever been fitted, is a different job from a swap and costs more. The ceiling structure has to take the load and may need blocking added, there has to be a power outlet within reach of the unit, and the door itself has to be confirmed as balanced before a motor is attached to it. Expect it at or above the top of the $300–$700 range, and expect a visit to quote it rather than a figure over the phone.',
+          'One thing worth settling before anyone orders a unit: if the door is heavy by hand, the springs are the job and the opener is the symptom. Fitting a new opener to an unbalanced door puts a new motor straight back under the same overload. The balance test further down this page takes a minute and costs nothing.',
         ],
       },
       {
@@ -330,6 +380,14 @@ export const guides = [
       {
         q: 'How much is a new garage door opener installed?',
         a: 'A chain-drive opener runs $300–$550 installed and a belt drive $400–$700. Wall-mount jackshaft and direct-drive units sit at or above the top of that range.',
+      },
+      {
+        q: 'What does garage door opener installation cost on its own?',
+        a: 'Installation is the labor half of the $300–$700 installed price: $150–$300 for a straightforward swap onto an existing rail, two to three hours on site, against $150–$400 for the unit itself. Hauling the old opener away adds $30–$100, and new wall-control wiring $75–$175 where it is needed.',
+      },
+      {
+        q: 'Is first-time garage door opener installation more expensive?',
+        a: 'Yes. With no opener previously fitted, the ceiling structure has to take the load and may need blocking, a power outlet has to be within reach, and the door has to be confirmed balanced first. Expect it at or above the top of the $300–$700 range, quoted on a visit rather than over the phone.',
       },
     ],
     related: ['garage-door-repair-cost', 'garage-door-spring-replacement-cost', 'hiring-a-garage-door-company', 'garage-door-opener-wont-work'],

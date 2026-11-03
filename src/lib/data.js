@@ -70,6 +70,28 @@ export function siteFactsFor(business) {
   return f && Object.keys(f).length > 1 ? f : null;
 }
 
+// The exact string staged by stage-site-facts.mjs for a business whose own
+// website advertises round-the-clock or emergency callout.
+const EMERGENCY_TAG = 'emergency / 24-7';
+
+// Businesses whose OWN WEBSITE advertises 24/7 or emergency service.
+//
+// This is a self-declared claim and nothing more. It is NOT opening hours,
+// which this site may not publish from any source — see the note at the top
+// of this file and CLAIMS.hoursMeaning, which is rendered verbatim anywhere
+// this accessor's output is shown.
+//
+// Worth knowing how much of the directory this covers, because the 2026-11-02
+// audit undercounted it badly: it reported 13 emergency-tagged cards in
+// Houston against 43 in the data, and 4 in Phoenix against 18. The cards
+// render only the first three service tags, so counting what was visible on
+// the page missed roughly two thirds of them. 273 listings site-wide carry
+// the tag, and 22 of the 84 cities carry none — hence every caller below
+// checking for an empty list rather than assuming one.
+export function advertisesEmergency(business) {
+  return Boolean(siteFactsFor(business)?.services?.includes(EMERGENCY_TAG));
+}
+
 // What the companies in one state say about themselves, in aggregate. The
 // state hubs were 121-194 words of prose each and said nothing that was not
 // true of every other state; this is the part that genuinely differs —

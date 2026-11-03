@@ -4,8 +4,9 @@ import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { SITE, CLAIMS } from '../../../lib/site.js';
 import {
   getAllStates, getState, getCitiesByState, formatCount, stateFactsSummary,
+  getBusinessesByState,
 } from '../../../lib/data.js';
-import { licenceInfo, noLicenceGuidance } from '../../../lib/licensing.js';
+import { licenceInfo, noLicenceGuidance, licenceIsCurrent } from '../../../lib/licensing.js';
 import { breadcrumbSchema, itemListSchema, faqSchema } from '../../../lib/schema.js';
 import { fitTitle, fitDescription } from '../../../lib/seo.js';
 
@@ -18,6 +19,28 @@ const s = getState(state);
 const cities = getCitiesByState(state);
 const lic = licenceInfo(s.stateCode);
 const facts = stateFactsSummary(s.stateCode);
+
+// The badged listings, as a group you can actually get to.
+//
+// The 2026-11-02 audit found that "26 license-verified" at the top of this
+// page was a dead number: the one claim on the whole site that a reader
+// cannot check at a glance, and no route to the listings it counts. Worse,
+// the SERP for "garage door contractor license california" is made up almost
+// entirely of per-contractor licence-record pages, which is exactly the page
+// type our verified listings already are. They were unreachable except by
+// opening cities one at a time.
+//
+// Filtered through licenceIsCurrent, the same gate the badge itself uses, so
+// this list and the badges can never disagree about who is verified — and so
+// the count in the heading stays equal to s.licensedCount, which cities.json
+// also computes from badged listings only.
+//
+// `(b) => licenceIsCurrent(b)` and not a bare `.filter(licenceIsCurrent)`:
+// Array.filter passes the index as the second argument, which lands in the
+// `asOf` parameter and throws on `asOf.getFullYear`. It failed loudly here,
+// which is the good outcome, but the same mistake against a function that
+// coerced instead of throwing would have shipped a wrong list quietly.
+const verified = lic ? getBusinessesByState(state).filter((b) => licenceIsCurrent(b)) : [];
 
 const url = `/garage-door-repair/${state}/`;
 const crumbs = [
@@ -80,7 +103,13 @@ const schemas = [
     <p class="muted mb-3">
       {formatCount(s.count)} {s.count === 1 ? 'listing' : 'listings'} across
       {' '}{s.cityCount} {s.cityCount === 1 ? 'city' : 'cities'}
-      {lic && s.licensedCount > 0 ? ` · ${s.licensedCount} license-verified` : ''}
+      {/* Linked, not stated. See the note on `verified` above. */}
+      {lic && verified.length > 0 && (
+        <>
+          {' · '}
+          <a href="#license-verified">{verified.length} license-verified</a>
+        </>
+      )}
     </p>
 
     <p class="claim-note">
@@ -135,6 +164,30 @@ const schemas = [
         noLicenceGuidance(s.state).map((p) => <p class="mt-2">{p}</p>)
       )}
     </section>
+
+    {verified.length > 0 && (
+      <section class="section" id="license-verified">
+        <h2 style="font-size:1.3rem;">
+          The {formatCount(verified.length)} license-verified {verified.length === 1 ? 'listing' : 'listings'} in {s.state}
+        </h2>
+        <p class="claim-note">
+          {CLAIMS.licenceMeaning} Each number below was matched to an active record
+          on the {lic.authorityShort} register on the date shown on that listing, and
+          we do not re-check it afterwards, so confirm it yourself before you book.
+          {' '}<a href={lic.searchUrl} rel="nofollow noopener" target="_blank">{lic.searchLabel}</a>.
+        </p>
+        <ul class="link-list mt-2">
+          {verified.map((b) => (
+            <li>
+              <a href={`/garage-door-repair/${b.stateSlug}/${b.citySlug}/${b.slug}/`}>
+                {b.name}
+              </a>
+              <span class="n">{b.city} · #{b.licenceNumber}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     {/* State hubs were 121-194 words of prose and said nothing that was not
         equally true of every other state — Arizona 276 words, Florida 251,

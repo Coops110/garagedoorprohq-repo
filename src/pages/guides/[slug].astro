@@ -14,6 +14,7 @@ import { getDiagram } from '../../lib/diagrams.js';
 import { costCallouts } from '../../lib/costmap.js';
 import { sourcesFor } from '../../lib/sources.js';
 import Figure from '../../components/Figure.astro';
+import FindAPro from '../../components/FindAPro.astro';
 import TorsionSystem from '../../components/diagrams/TorsionSystem.astro';
 import SpringTypes from '../../components/diagrams/SpringTypes.astro';
 import PhotoEye from '../../components/diagrams/PhotoEye.astro';
@@ -94,10 +95,17 @@ const related = (g.related || []).map(getGuide).filter(Boolean);
 const guideSources = sourcesFor(g.sources || []);
 const terms = getTerms(g.glossary || []);
 
-// Pillars link out to the highest-listing city pages — real depth into the
-// directory rather than a dead-end article. Empty until listings are staged,
-// and the block below simply does not render then.
-const topCities = g.pillar ? getAllCities().slice(0, 3) : [];
+// Every guide links out to the directory — real depth rather than a dead-end
+// article. WHERE it links from is the part that matters: see the note in
+// FindAPro.astro. A guide with a cost table gets the block under the table,
+// at the moment the reader's question turns from "what does this cost" into
+// "who does it"; a guide without one gets it near the end instead. It renders
+// in exactly one of the two places, never both.
+const proUnderTable = Boolean(g.costTable);
+// Nothing links to itself.
+const onHiringGuide = g.slug === 'hiring-a-garage-door-company';
+// Empty until listings are staged, and FindAPro then renders an empty list.
+const haveListings = getAllCities().length > 0;
 
 const schemas = [
   breadcrumbSchema(crumbs),
@@ -174,6 +182,8 @@ const modified = new Date(g.dateModified || g.datePublished)
           based on, and what they are not.
         </p>
       )}
+
+      {haveListings && proUnderTable && <FindAPro omitHiringLink={onHiringGuide} />}
 
       {HeroSvg && (
         <Figure caption={hero.caption} legend={heroLegend}>
@@ -278,21 +288,7 @@ const modified = new Date(g.dateModified || g.datePublished)
         </section>
       )}
 
-      {topCities.length > 0 && (
-        <section>
-          <h2>Find a garage door pro near you</h2>
-          <ul class="link-list" style="margin-top:.75rem;">
-            {topCities.map((c) => (
-              <li>
-                <a href={`/garage-door-repair/${c.stateSlug}/${c.citySlug}/`}>
-                  Garage door repair in {c.city}, {c.stateCode}
-                </a>
-                <span class="n">{c.count}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      {haveListings && !proUnderTable && <FindAPro omitHiringLink={onHiringGuide} />}
 
       {/* Every cost figure on the site is an estimate, and saying so once
           per guide is the difference between a researched range and an
