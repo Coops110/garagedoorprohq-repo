@@ -262,6 +262,33 @@ if (!lapsed.length && !lapsingSoon.length) {
   ok(`no licence badge has expired or lapses within 60 days`);
 }
 
+// ── MOJIBAKE IN THE DATA (audit 2026-11-02) ───────────────────────
+//
+// "Overhead Door Company of Southeast Texasâ„¢" was live in Kemah: a ™
+// (UTF-8 E2 84 A2) that some step in the pipeline read as cp1252 and wrote
+// back as three characters. It survived every existing check because it is
+// perfectly valid JSON and a perfectly valid string -- only a human reading
+// the rendered page would notice, and the page is one of 701.
+//
+// The test is a mojibake marker (â, Ã, Â) immediately followed by another
+// non-ASCII character. That is the signature of a double-encoding and it
+// does not occur in real names: "José" and "Peña" have one non-ASCII
+// character with ASCII either side, so they do not match.
+const MOJIBAKE = /[\u00e2\u00c3\u00c2][^\x00-\x7f]/;
+const dataFiles = ['businesses.json', 'cities.json', 'removed-listings.json', 'site-facts.json'];
+const mojibake = [];
+for (const name of dataFiles) {
+  const text = readFileSync(new URL(`../src/data/${name}`, import.meta.url), 'utf8');
+  text.split('\n').forEach((line, i) => {
+    if (MOJIBAKE.test(line)) mojibake.push(`${name}:${i + 1}  ${line.trim().slice(0, 110)}`);
+  });
+}
+if (mojibake.length) {
+  fail(`${mojibake.length} line(s) of source data contain mojibake (a double-encoded character). Fix the character, do not strip the line:\n      ${mojibake.slice(0, 6).join('\n      ')}`);
+} else {
+  ok(`no mojibake in ${dataFiles.length} data files`);
+}
+
 if (failed) {
   console.error('\nData consistency check failed -- see FAIL lines above.');
   process.exit(1);
