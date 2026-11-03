@@ -41,42 +41,11 @@ CIRCLE = re.compile(r'<circle cx="([\d.-]+)" cy="([\d.-]+)" r="([\d.]+)"')
 OG_IMAGE = re.compile(r'<meta property="og:image" content="([^"]+)"')
 OG_IMAGE_ALT = re.compile(r'<meta property="og:image:alt" content="[^"]+"')
 
-# An interpolation that ends a line in TEXT position loses the newline
-# entirely, so {expr} glues itself to the next word. That shipped: with
-# {lic.authority} alone at the end of a line, 59 live city pages read
-# "Arizona Registrar of Contractors (ROC)register without any expertise".
-# Nothing about the source looked wrong — the defect exists only in the
-# rendered output, which is the one place this script looks, so this is
-# exactly the class of bug it should own.
-#
-# Only punctuation-adjacent glue is detectable without a dictionary. These
-# four shapes do not occur in English prose and fire zero times on a clean
-# build, which is the bar for adding a check at all: one false positive and
-# the next person switches it off. Glue between two lowercase words
-# ("Arizonalicenses", from a bare {lic.state}) is NOT caught. This narrows
-# the hole, it does not close it.
-GLUE = [
-    (re.compile(r'\)[A-Za-z]'), 'closing paren followed by a letter'),
-    (re.compile(r'[A-Za-z]\('), 'letter followed by an opening paren'),
-    (re.compile(r':[A-Za-z]'), 'colon followed by a letter'),
-    (re.compile(r';[A-Za-z]'), 'semicolon followed by a letter'),
-]
-
-# Checked against visible prose only. <head>, <script> (so JSON-LD too),
-# <style> and inline <svg> all legitimately carry these shapes.
-NON_PROSE = [re.compile(p, re.S) for p in (
-    r'<head.*?</head>', r'<script.*?</script>',
-    r'<style.*?</style>', r'<svg.*?</svg>')]
-
-# URLs, emails and URI schemes carry colons and parens by design. None appears
-# in today's output, but a future page adding one must not read as a defect.
-URLISH = re.compile(r'https?://\S+|\b[\w.+-]+@[\w.-]+\.\w+|\b(?:mailto|tel):\S+')
-
-
-def prose(html):
-    for rx in NON_PROSE:
-        html = rx.sub(' ', html)
-    return URLISH.sub(' ', unescape(re.sub(r'<[^>]*>', ' ', html)))
+# Words glued together by an interpolation used to be checked here. That
+# check now lives in scripts/check-rendered-prose.mjs, which runs in
+# postbuild and therefore gates every build including Cloudflare's. This
+# script is Python, Python is local-only on this project, so a check kept
+# here only ran when somebody remembered to run it. One home, no drift.
 
 
 # Derived from the canonical tags the build actually emitted, never hardcoded. A
@@ -221,14 +190,6 @@ for f in pages:
                 fail('callout marker clipped by its viewBox', page,
                      f'cx={cx:g} cy={cy:g} r={r:g} in viewBox {vb.group(1)}')
 
-    # Two words run together because an interpolation swallowed its space.
-    text = prose(html)
-    for rx, what in GLUE:
-        m = rx.search(text)
-        if m:
-            fail(f'words glued together in prose ({what})', page,
-                 f'…{text[max(0, m.start() - 40):m.start() + 30].strip()}…')
-
 for url, hits in canonicals.items():
     if len(hits) > 1:
         fail('duplicate canonical', hits[0], f'{url} also claimed by {len(hits) - 1} other page(s)')
@@ -238,8 +199,7 @@ if not fails:
     print(f'  ✓ all pass — title ≤{TITLE_MAX}, description {DESC_MIN}–{DESC_MAX}, '
           f'one h1, canonical present, unique canonicals, images have alt, '
           f'every inline svg labelled or explicitly decorative, '
-          f'og:image present with alt and backed by a real file, '
-          f'no words glued together in prose')
+          f'og:image present with alt and backed by a real file')
     sys.exit(0)
 
 print()
