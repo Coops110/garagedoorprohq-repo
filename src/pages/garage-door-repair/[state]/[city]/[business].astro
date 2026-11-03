@@ -109,7 +109,7 @@ const mapEmbed = b.lat != null && b.lng != null
              word that implies a current verification. */
           <div class="claim-note">
             <p style="margin:0 0 .5rem;">
-              <strong>License #{b.licenceNumber}</strong> — the
+              <strong>License #{b.licenceNumber}</strong>: the
               {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authorityShort}</a>
               {' '}register showed this license expired on {b.licenceExpires}
               {b.licenceCheckedOn ? ` when we last checked on ${b.licenceCheckedOn}` : ''}, so this
@@ -120,7 +120,7 @@ const mapEmbed = b.lat != null && b.lng != null
               routinely and our copy of the register is only as current as the date
               above. Ask them for the current number and check it yourself on the
               {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authorityShort} register</a>
-              {' '}before work starts — it takes about a minute.
+              {' '}before work starts. It takes about a minute.
             </p>
           </div>
         ) : b.licenceNumber ? (

@@ -65,12 +65,26 @@ const schemas = [breadcrumbSchema(crumbs), organizationSchema()];
       {stats.businesses > 0 && (
         <>
           <h2>Where it is up to</h2>
+          {/* Two claims removed here on 2026-11-02, both left behind by the
+              10-31 changes:
+
+              "a working phone number" -- we hold a phone number for every
+              listing and they are all in one format, which is not the same as
+              having dialed them. "Working" is the kind of word this site
+              cannot support about 701 businesses.
+
+              "a city page with two listings on it is not worth publishing" --
+              Chris dropped the three-listing minimum on 10-31 and 17 cities
+              now publish with one or two listings. The page was still carrying
+              the old policy as a reason, which made the live site an argument
+              against itself. */}
           <p>
             {formatCount(stats.businesses)} listings across {formatCount(stats.cities)}
-            {' '}cities in {formatCount(stats.states)} states, every one with a working phone
+            {' '}cities in {formatCount(stats.states)} states, every one with a phone
             number. The directory is being built metro by metro rather than dumped
-            nationally in one go, because a city page with two listings on it is not worth
-            publishing.
+            nationally in one go, and a city page publishes with whatever the data
+            supports, down to a single listing, with the count shown at
+            the top so you can judge it for yourself.
           </p>
         </>
       )}
