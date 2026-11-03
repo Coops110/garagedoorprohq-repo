@@ -29,6 +29,46 @@ const lic = licenceInfo(b.stateCode);
 // below then says what expired and when, which is more useful to a
 // homeowner than silence and keeps the real register data on the page.
 const licenceCurrent = licenceIsCurrent(b);
+
+// ── SAME NAME, SAME CITY ─────────────────────────────────────
+//  11 groups and 24 pages share a name with another listing in their own
+//  city, and every one of them rendered an identical <title>. The audit
+//  logged this as "the 3 same-name same-city titles"; the real list is
+//  Garage Door Hero (Anaheim), DH Pace (Tempe), A1 Garage Door Service
+//  (Phoenix), Seal Beach Garage Door Repair, A Plus Garage Doors (Glendale),
+//  A1 Garage Door Service (Orlando, three), Garage Door Doctor Repair,
+//  Veteran Garage Door Repair and Garage Door Houston (all Houston), Garage
+//  Door Spring TX (Spring, three) and New Caney Garage Door Repair.
+//
+//  These are real separate branches with different addresses, not duplicate
+//  records, so the fix is to tell them apart and never to rename either: a
+//  business name comes from the source data and is not ours to edit.
+//
+//  ZIP first, because it is short. It separates 8 of the 11 groups. The
+//  other 3 share a ZIP, so they fall through to the street. The state code
+//  is dropped from the disambiguated form to buy back four characters, and
+//  a ZIP implies the state anyway.
+//
+//  One page still cannot be disambiguated inside the 42-character budget:
+//  Seal Beach Garage Door Repair on Pacific Coast Hwy. Its name alone is 30
+//  characters. It keeps the shared title, and fitTitle falls through to it
+//  rather than shipping something truncated. 23 of 24 is the honest result,
+//  and the h1 block and the description below separate all 24 regardless.
+const streetToken = (x) => (x?.street || '')
+  .replace(/^\d+[-\d]*\s*/, '')
+  .replace(/,?\s*\b(Ste|Suite|Unit|Apt|Bldg|Office|Fl|Floor|#).*$/i, '')
+  .trim();
+
+const sameName = getBusinessesByCity(b.stateSlug, b.citySlug).filter((x) => x.name === b.name);
+const myStreet = streetToken(b);
+const dq = sameName.length < 2
+  ? null
+  : b.postalCode && sameName.filter((x) => x.postalCode === b.postalCode).length === 1
+    ? `${b.city} ${b.postalCode}`
+    : myStreet && sameName.filter((x) => streetToken(x) === myStreet).length === 1
+      ? `${myStreet}, ${b.city}`
+      : null;
+
 const facts = siteFactsFor(b);
 // Guides matched to what this company advertises. Only fires where the
 // business actually claims the service, so a listing with no self-declared
@@ -72,6 +112,9 @@ const mapEmbed = b.lat != null && b.lng != null
 ---
 <BaseLayout
   title={fitTitle(
+    /* Disambiguated candidates first, and only for a name shared with
+       another listing in the same city. See the note on `dq` above. */
+    ...(dq ? [`${b.name} — ${dq}`, `${b.name} — ${myStreet || b.postalCode}`] : []),
     `${b.name} — Garage Doors in ${b.city}, ${b.stateCode}`,
     `${b.name} — ${b.city}, ${b.stateCode}`,
     `${clamp(b.name, 40)} — ${b.city}, ${b.stateCode}`,
@@ -102,6 +145,12 @@ const mapEmbed = b.lat != null && b.lng != null
       : null,
     b.licenceNumber && licenceCurrent
       ? `${b.name}, ${b.city} ${b.stateCode}. License #${b.licenceNumber} matched to an active ${lic?.authorityShort} record, checked ${b.licenceCheckedOn}. Phone and repair costs.`
+      : null,
+    /* A shared name gets the street into the description too, so a SERP
+       snippet separates the branches even on the one page whose <title>
+       could not be made unique inside the character budget. */
+    dq && b.street
+      ? `${b.name} at ${b.street}, ${b.city}, ${b.stateCode}. Phone number, service categories and what local garage door repairs typically cost.`
       : null,
     `${b.name} is a garage door company in ${b.city}, ${b.stateCode}. Contact details, service categories${b.licenceNumber ? ' and license verification' : ''} and local repair costs.`,
     `${b.name} — garage door company in ${b.city}, ${b.stateCode}. Phone number, services and what local garage door repairs typically cost.`,
