@@ -53,17 +53,19 @@
 #
 #       So there is no classification to filter an export by, which means
 #       there is no AZ equivalent of the CA and FL files. The only route to
-#       Arizona licence data is looking up each business by name on the
+#       Arizona licence data would be looking up each business by name on the
 #       contractor search, one at a time — 136 listings.
 #
-#       Before anyone spends that afternoon: match-licences.py REFUSES
-#       Arizona, by design, and will tell you so. Guard 4 ("the licence must
-#       actually cover garage door work") cannot be satisfied where no
-#       classification covers it, and what an Arizona badge should assert is
-#       an open question for Chris — an active ROC number shows the contractor
-#       is licensed, not that the licence covers garage doors, which is a
-#       weaker claim than CA or FL and needs its own wording. Settle that
-#       first; the 136 lookups are worthless until it is settled.
+#       DO NOT SPEND THAT AFTERNOON. Chris decided on 2026-11-03 that Arizona
+#       is never badged, so those 136 lookups are closed, not deferred.
+#       match-licences.py REFUSES Arizona by design and will say so. Guard 4
+#       ("the licence must actually cover garage door work") cannot be
+#       satisfied where no classification covers it: an active ROC number
+#       shows the contractor is licensed, not that the licence covers garage
+#       doors. That is a weaker claim than CA or FL, and CLAIMS.licenceMeaning
+#       says exactly one thing on purpose. Arizona pages therefore state what
+#       the register does not carry, rather than leaving a missing badge to
+#       read as a failed check — see namesTheTrade in src/lib/licensing.js.
 #
 #   python scripts/fetch-licences.py --ca-file=~/Downloads/cslb.csv
 #   python scripts/fetch-licences.py --fl-file=… --az-file=…
@@ -243,10 +245,11 @@ def main():
     python scripts/fetch-licences.py --az-file=path/to/roc.csv   (see below)
 
   AZ is still accepted here, because normalising a file is harmless and the
-  normaliser will be wanted if the Arizona question is ever settled. But
-  match-licences.py REFUSES Arizona and will say so: the ROC has no
-  garage-door classification, so there is nothing to export by and nothing
-  for guard 4 to check. Read the AZ note in this file's header first.
+  mapping is worth keeping if Arizona ever creates a garage-door
+  classification. It has not, and Chris decided on 2026-11-03 that Arizona is
+  never badged, so match-licences.py REFUSES Arizona and will say so: the ROC
+  has no garage-door classification, which means there is nothing to export by
+  and nothing for guard 4 to check. Read the AZ note in the header first.
 
   Then:
     python scripts/match-licences.py

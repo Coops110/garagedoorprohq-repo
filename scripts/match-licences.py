@@ -462,7 +462,8 @@ def main():
             print(f'    {why}.')
             print(f'    {n_biz} listing(s) and {n_rows} register record(s) skipped.')
             print('    Not a data problem and not a bug — see UNSUPPORTED_CLASS_STATES.')
-            print(f'    What an {st} badge should assert needs a decision from Chris first.')
+            print(f'    DECIDED 2026-11-03: {st} is never badged. This is the finished')
+            print('    state, not a gap waiting on a decision.')
 
     in_scope = [b for b in businesses if (b.get('stateCode') or '').upper() in VALID_CLASSES]
     from collections import Counter
