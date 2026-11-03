@@ -24,7 +24,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-repair-cost',
-    sources: ['cslb', 'dbpr', 'azroc'],
+    sources: ['dasma102', 'cslb', 'dbpr', 'azroc'],
     pillar: true,
     heroDiagram: 'cost-map',
     title: 'Garage Door Repair Cost in 2026: By Job',
@@ -145,6 +145,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-spring-replacement-cost',
+    sources: ['dasma102', 'dasma190', 'springEyeInjuries'],
     pillar: false,
     parent: 'garage-door-repair-cost',
     title: 'Garage Door Spring Replacement Cost 2026',
@@ -224,7 +225,12 @@ export const guides = [
       },
       {
         q: 'Can I replace a garage door spring myself?',
-        a: 'You should not. A wound torsion spring stores enough energy to cause serious injury or death if released incorrectly, and the winding bars have to be handled in a specific sequence. The saving is roughly $100–$250 of labor against that risk.',
+        // Was "serious injury or death". Every other passage on the site says
+        // "serious injury", which the sources now support -- permanent loss of
+        // vision in the cited case series. Nothing we have read supports the
+        // "or death", so it is gone rather than left standing as the strongest
+        // claim on the site with the least behind it.
+        a: 'You should not. A wound torsion spring stores enough energy to cause serious and permanent injury if released incorrectly, and the winding bars have to be handled in a specific sequence. The saving is roughly $100–$250 of labor against that risk.',
       },
       {
         q: 'How do I know if my garage door spring is broken?',
@@ -399,7 +405,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'why-diy-spring-repair-is-dangerous',
-    sources: ['cslb', 'dbpr', 'azroc'],
+    sources: ['springEyeInjuries', 'dasma190', 'cslb', 'dbpr', 'azroc'],
     pillar: false,
     parent: 'garage-door-repair-cost',
     title: 'Why DIY Garage Door Spring Repair Is Risky',
@@ -423,7 +429,15 @@ export const guides = [
         diagram: 'torsion-system',
         body: [
           'A torsion spring does not simply hold a door up. It is wound under tension so that it counterbalances the door’s entire weight — 150 pounds for a typical insulated single, well over 300 for a double. That energy is held in a coil of hardened steel on a bar above your head, and it stays there whether the door is open, closed, or already broken.',
-          'Releasing it is done with winding bars inserted into the spring cone, turned in a controlled sequence. If a bar slips, is the wrong size, or is substituted with a screwdriver, the spring unwinds against whatever is holding it. Hand and forearm fractures are the common outcome. Head injuries are the serious one.',
+          // "Hand and forearm fractures are the common outcome" was the one
+          // sentence on this page making a claim about how OFTEN something
+          // happens, and nothing cited supported it -- the 2026-11-02 audit's
+          // finding was that this guide's sources were the three licence
+          // registers, which say nothing about injury at all. Replaced with
+          // what the bodies in the way are, which is geometry, plus the one
+          // injury claim we now have a primary source for.
+          'Releasing it is done with winding bars inserted into the spring cone, turned in a controlled sequence. If a bar slips, is the wrong size, or is substituted with a screwdriver, the spring unwinds against whatever is holding it, and what is in the way is hands, forearms and the head.',
+          'The injury that is hardest to undo is to the eye. An ophthalmology case series published in 2023 describes seven people treated at one Boston hospital after a garage door spring dislodged at high velocity, every one of them while working on their own door. Vision in the injured eye afterwards ranged from 20/125 to no light perception. It is listed in the sources at the end of this page.',
           'Even a spring that has already snapped is not safe. The remaining coil holds residual tension, and the second spring on a two-spring door is still fully wound.',
         ],
       },
@@ -478,7 +492,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'hiring-a-garage-door-company',
-    sources: ['cslb', 'dbpr', 'azroc'],
+    sources: ['dasma102', 'cslb', 'dbpr', 'azroc'],
     pillar: true,
     title: 'How to Hire a Garage Door Company',
     h1: 'How to Hire a Garage Door Company: A Homeowner’s Checklist',
@@ -671,6 +685,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'torsion-vs-extension-springs',
+    sources: ['dasma102', 'dasma190', 'springEyeInjuries'],
     pillar: false,
     parent: 'garage-door-repair-cost',
     heroDiagram: 'spring-types',
@@ -750,7 +765,7 @@ export const guides = [
         h2: 'Why this page describes and does not instruct',
         body: [
           'Everything above exists so you can identify what you have, read a quote, and ask a question that gets a straight answer. None of it is a procedure, and that is deliberate rather than an oversight.',
-          'A wound torsion spring on a double door holds roughly 150–300 pounds of stored force, released through winding bars in a controlled sequence. An extension spring at rest in a closed door is a loaded line. Both stay loaded after a failure, and on a two-spring door the survivor is still fully wound after the first has gone. Against that, the labor saved by doing it yourself is around $100–$250. The injuries are routinely fractures of the hand and forearm.',
+          'A wound torsion spring on a double door holds roughly 150–300 pounds of stored force, released through winding bars in a controlled sequence. An extension spring at rest in a closed door is a loaded line. Both stay loaded after a failure, and on a two-spring door the survivor is still fully wound after the first has gone. Against that, the labor saved by doing it yourself is around $100–$250. A 2023 ophthalmology case series of seven eye injuries from dislodged springs, every one during an attempted home repair, is in the sources at the end of this page.',
           'The genuinely useful homeowner skill here is detection, not replacement. Twice a year, with the door closed, pull the release cord, lift the door by hand to waist height and let go. A balanced door stays where you put it. One that slides down or drifts up has a spring losing its rating — and that is the moment to call someone, not the moment to buy tools.',
         ],
       },
@@ -790,7 +805,7 @@ export const guides = [
   // ═══════════════════════════════════════════════════════════
   {
     slug: 'garage-door-maintenance',
-    sources: ['cfr1211'],
+    sources: ['cfr1211', 'dasma102', 'dasma190'],
     pillar: true,
     heroDiagram: 'balance-test',
     title: 'Garage Door Maintenance: What and When',
