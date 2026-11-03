@@ -1,5 +1,6 @@
 import { SITE } from './site.js';
 import { e164Phone } from './data.js';
+import { licenceIsCurrent } from './licensing.js';
 
 const base = SITE.domain.replace(/\/$/, '');
 
@@ -129,8 +130,11 @@ export function businessSchema(b, url) {
     schema.knowsAbout = b.services;
   }
   // A license is a real, externally checkable credential, so it belongs in
-  // the structured data where a rating does not.
-  if (b.licenceNumber) {
+  // the structured data where a rating does not. It comes out again the
+  // moment the register record expires: the badge and the markup are the
+  // same claim, and leaving the machine-readable half asserting a lapsed
+  // credential is the version nobody would catch by eye.
+  if (licenceIsCurrent(b)) {
     schema.hasCredential = {
       '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'license',

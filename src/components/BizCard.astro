@@ -1,5 +1,6 @@
 ---
 import { telHref, formatPhone, siteFactsFor } from '../lib/data.js';
+import { licenceIsCurrent } from '../lib/licensing.js';
 
 // ─────────────────────────────────────────────────────────────
 //  There is no star rating on this card, and there must not be one.
@@ -28,6 +29,11 @@ const tel = telHref(biz.phone);
 // one is a third-party dataset's category, the other is the company's own
 // claim — and a reader who cannot tell which they are looking at is being
 // misled by the layout. `selfDeclared` drives both the content and the label.
+// A licence number alone is not enough to show the badge: an expired
+// register record makes the badge a false claim, and a missing badge is
+// better than a false one. The listing page says what expired and when.
+const licenceCurrent = licenceIsCurrent(biz);
+
 const facts = siteFactsFor(biz);
 const selfDeclared = facts?.services?.length > 0;
 const tags = selfDeclared ? facts.services : (biz.services || []);
@@ -41,7 +47,7 @@ const tags = selfDeclared ? facts.services : (biz.services || []);
         {biz.postalCode ? ` ${biz.postalCode}` : ''}
       </div>
     </div>
-    {biz.licenceNumber && (
+    {licenceCurrent && (
       <div class="biz-badges">
         <span class="badge badge-license" title="License number matched to an active record on the state register">
           ✓ License verified

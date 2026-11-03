@@ -85,3 +85,42 @@ export function noLicenceGuidance(stateName) {
     `It is also worth asking your city or county building department whether a permit is required for the work, particularly for a full door replacement — the answer varies between neighboring jurisdictions.`,
   ];
 }
+
+// ── BADGE EXPIRY ──────────────────────────────────────────────
+//  The 2026-11-02 audit found "✓ State license verified" still showing on
+//  a CSLB record that had expired on 10/31/2026, because the badge only
+//  ever tested that a licence number existed. The register data we hold
+//  includes the expiry date, so the badge can test it — and must, since
+//  the Rules line is "a missing badge is better than a false one" and an
+//  expired licence is the single most likely way for the badge to become
+//  false without anyone touching the data.
+//
+//  This is evaluated at build time, so a badge only drops off on the next
+//  build after the expiry date. validate-data-consistency.mjs warns on
+//  anything expired or lapsing within 60 days so the rebuild is prompted
+//  rather than discovered by the next audit.
+//
+//  Stored format is MM/DD/YYYY, the format the registers themselves use.
+export function parseLicenceExpiry(value) {
+  if (!value) return null;
+  const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(String(value).trim());
+  if (!m) return null;
+  const [, mm, dd, yyyy] = m;
+  const d = new Date(Number(yyyy), Number(mm) - 1, Number(dd));
+  // Rejects 02/31/2027 and friends, which Date would roll forward silently.
+  if (d.getMonth() !== Number(mm) - 1 || d.getDate() !== Number(dd)) return null;
+  return d;
+}
+
+// True only when we can still stand behind the badge. A licence with no
+// recorded expiry keeps its badge — nothing in the data says it lapsed —
+// but a date we cannot parse is treated as lapsed, because the alternative
+// is showing a verification claim we cannot date.
+export function licenceIsCurrent(biz, asOf = new Date()) {
+  if (!biz?.licenceNumber) return false;
+  if (!biz.licenceExpires) return true;
+  const expires = parseLicenceExpiry(biz.licenceExpires);
+  if (!expires) return false;
+  const today = new Date(asOf.getFullYear(), asOf.getMonth(), asOf.getDate());
+  return expires >= today;
+}

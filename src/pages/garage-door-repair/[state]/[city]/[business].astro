@@ -7,7 +7,7 @@ import { SITE, CLAIMS } from '../../../../lib/site.js';
 import {
   getAllBusinesses, getBusiness, getBusinessesByCity, nearbyInCity, telHref, formatPhone, siteFactsFor,
 } from '../../../../lib/data.js';
-import { licenceInfo } from '../../../../lib/licensing.js';
+import { licenceInfo, licenceIsCurrent } from '../../../../lib/licensing.js';
 import { getGuide } from '../../../../lib/guides.js';
 import { breadcrumbSchema, businessSchema } from '../../../../lib/schema.js';
 import { fitTitle, fitDescription, clamp } from '../../../../lib/seo.js';
@@ -24,6 +24,11 @@ const b = getBusiness(state, city, business);
 const nearby = nearbyInCity(b, 3);
 
 const lic = licenceInfo(b.stateCode);
+// An expired register record makes the badge a false claim, so the badge
+// tests the expiry date and not just the presence of a number. The block
+// below then says what expired and when, which is more useful to a
+// homeowner than silence and keeps the real register data on the page.
+const licenceCurrent = licenceIsCurrent(b);
 const facts = siteFactsFor(b);
 // Guides matched to what this company advertises. Only fires where the
 // business actually claims the service, so a listing with no self-declared
@@ -89,7 +94,7 @@ const mapEmbed = b.lat != null && b.lng != null
     <div class="biz-layout">
       <div>
         <div style="display:flex;gap:.4rem;margin-bottom:.6rem;flex-wrap:wrap;">
-          {b.licenceNumber && <span class="badge badge-license">✓ State license verified</span>}
+          {licenceCurrent && <span class="badge badge-license">✓ State license verified</span>}
           {b.services?.[0] && <span class="badge badge-cat">{b.services[0]}</span>}
         </div>
 
@@ -98,7 +103,27 @@ const mapEmbed = b.lat != null && b.lng != null
           {b.street ? `${b.street}, ` : ''}{b.city}, {b.stateCode}{b.postalCode ? ` ${b.postalCode}` : ''}
         </p>
 
-        {b.licenceNumber ? (
+        {b.licenceNumber && !licenceCurrent ? (
+          /* The register showed this license expired. We keep the number and
+             the dates, because they are still facts we hold, and drop every
+             word that implies a current verification. */
+          <div class="claim-note">
+            <p style="margin:0 0 .5rem;">
+              <strong>License #{b.licenceNumber}</strong> — the
+              {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authorityShort}</a>
+              {' '}register showed this license expired on {b.licenceExpires}
+              {b.licenceCheckedOn ? ` when we last checked on ${b.licenceCheckedOn}` : ''}, so this
+              listing shows no verified-license badge.
+            </p>
+            <p style="margin:0;">
+              That is not a finding against the company. Licenses are renewed
+              routinely and our copy of the register is only as current as the date
+              above. Ask them for the current number and check it yourself on the
+              {' '}<a href={lic?.searchUrl} rel="nofollow noopener" target="_blank">{lic?.authorityShort} register</a>
+              {' '}before work starts — it takes about a minute.
+            </p>
+          </div>
+        ) : b.licenceNumber ? (
           /* Everything asserted here is a fact from the register, plus the date
              we read it. The expiry and classification are shown because they are
              the two things that decide whether the badge still means anything

@@ -8,6 +8,7 @@
 //
 //  Usage: node scripts/validate-data-consistency.mjs
 import { readFileSync } from 'node:fs';
+import { licenceIsCurrent, parseLicenceExpiry } from '../src/lib/licensing.js';
 
 const businesses = JSON.parse(readFileSync(new URL('../src/data/businesses.json', import.meta.url), 'utf8'));
 const cities = JSON.parse(readFileSync(new URL('../src/data/cities.json', import.meta.url), 'utf8'));
@@ -15,6 +16,7 @@ const cities = JSON.parse(readFileSync(new URL('../src/data/cities.json', import
 let failed = false;
 const fail = (msg) => { console.error(`FAIL: ${msg}`); failed = true; };
 const ok = (msg) => console.log(`OK: ${msg}`);
+const warn = (msg) => console.warn(`WARN: ${msg}`);
 
 const citiesSum = cities.reduce((s, c) => s + c.count, 0);
 if (citiesSum !== businesses.length) {
@@ -218,6 +220,46 @@ if (badSources.length) {
   fail(`${badSources.length} invalid vercel.json route pattern(s) — Vercel will reject the deployment with no build and no error in \`vercel ls\`:\n      ${badSources.slice(0, 4).join('\n      ')}`);
 } else {
   ok(`all ${(vercelCfg.headers || []).length + (vercelCfg.redirects || []).length} vercel.json route patterns are valid`);
+}
+
+// ── LICENCE BADGE EXPIRY (audit 2026-11-02) ────────────────────────
+//
+// The audit found "✓ State license verified" live on a CSLB record that
+// expired on 10/31/2026. The badge now tests the expiry date, so the site
+// can no longer show that claim — but the badge only re-evaluates on a
+// build, and the data only improves when someone re-checks the register.
+// So this reports rather than asserts:
+//
+//   - an unparseable expiry FAILS, because it is a data bug and it silently
+//     suppresses a badge we are entitled to show;
+//   - an expired or soon-to-lapse badge WARNS. Failing would block builds
+//     from the day a licence lapses, including while Chris is away, which
+//     would make a push-blocking emergency out of a listing that is already
+//     rendering honestly.
+//
+// Rule: "a missing badge is better than a false one."
+const badged = businesses.filter((b) => b.licenceNumber);
+const unparseableExpiry = badged.filter(
+  (b) => b.licenceExpires && !parseLicenceExpiry(b.licenceExpires)
+);
+if (unparseableExpiry.length) {
+  fail(`${unparseableExpiry.length} licence expiry date(s) are not MM/DD/YYYY and will suppress the badge, e.g. ${unparseableExpiry[0].name}: "${unparseableExpiry[0].licenceExpires}". Fix the data in businesses.json.`);
+} else {
+  ok(`all ${badged.length} licence expiry dates parse as MM/DD/YYYY`);
+}
+
+const soon = new Date();
+soon.setDate(soon.getDate() + 60);
+const lapsed = badged.filter((b) => !licenceIsCurrent(b));
+const lapsingSoon = badged.filter((b) => licenceIsCurrent(b) && !licenceIsCurrent(b, soon));
+if (lapsed.length) {
+  warn(`${lapsed.length} licence(s) have expired, so those listings show no badge and are not in licensedCount: ${lapsed.map((b) => `${b.name} (${b.city}, ${b.stateCode}) ${b.licenceExpires}`).join('; ')}. Re-check the register, update businesses.json, then run: node scripts/regenerate-city-counts.mjs`);
+}
+if (lapsingSoon.length) {
+  warn(`${lapsingSoon.length} licence badge(s) lapse within 60 days: ${lapsingSoon.map((b) => `${b.name} (${b.city}, ${b.stateCode}) ${b.licenceExpires}`).join('; ')}. The badge drops off on the first build after each date.`);
+}
+if (!lapsed.length && !lapsingSoon.length) {
+  ok(`no licence badge has expired or lapses within 60 days`);
 }
 
 if (failed) {

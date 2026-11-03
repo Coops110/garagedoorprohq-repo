@@ -14,6 +14,7 @@
 //
 //  Usage: node scripts/regenerate-city-counts.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
+import { licenceIsCurrent } from '../src/lib/licensing.js';
 
 const BIZ_FILE = new URL('../src/data/businesses.json', import.meta.url);
 const CITIES_FILE = new URL('../src/data/cities.json', import.meta.url);
@@ -37,7 +38,11 @@ for (const c of cityMap.values()) { c.count = 0; c.licensedCount = 0; c.withWebs
 for (const b of businesses) {
   const c = cityMap.get(`${b.stateCode}|${b.citySlug}`);
   c.count++;
-  if (b.licenceNumber) c.licensedCount++;
+  // Counts what the pages will actually badge, not what holds a number:
+  // an expired register record shows no badge, so counting it would leave
+  // "N license-verified" on the city and state hubs overstating by one.
+  // Re-run this script after any badge lapses (the build warns).
+  if (licenceIsCurrent(b)) c.licensedCount++;
   if (b.website) c.withWebsite++;
   if (b.street || b.address) c.withAddress++;
 }
