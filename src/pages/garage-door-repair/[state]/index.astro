@@ -6,7 +6,9 @@ import {
   getAllStates, getState, getCitiesByState, formatCount, stateFactsSummary,
   getBusinessesByState,
 } from '../../../lib/data.js';
-import { licenceInfo, noLicenceGuidance, licenceIsCurrent } from '../../../lib/licensing.js';
+import {
+  licenceInfo, noLicenceGuidance, licenceIsCurrent, LICENCE_STATES,
+} from '../../../lib/licensing.js';
 import { breadcrumbSchema, itemListSchema, faqSchema } from '../../../lib/schema.js';
 import { fitTitle, fitDescription } from '../../../lib/seo.js';
 
@@ -162,6 +164,53 @@ const schemas = [
             </p>
           </div>
           <p>{CLAIMS.licenceMeaning}</p>
+
+          {/* The three registers side by side, so a reader who is checking a
+              licence can see what each state's actually covers.
+
+              Only on the three hubs that HAVE a register. The same table on
+              the Texas hub would be boilerplate on the one page where it is
+              least relevant, and "state hubs say nothing that is not equally
+              true of every other state" was its own audit finding. Texas
+              keeps noLicenceGuidance, which is about Texas.
+
+              Arizona's row is why this is a table and not a sentence: its
+              cell says no classification exists, which no shared phrasing
+              could carry. */}
+          <h3 style="margin-top:1.5rem;">The three state registers, side by side</h3>
+          <div class="table-scroll">
+            <table class="cost-table">
+              <caption>Where garage door work is licensed at state level, and what each register covers</caption>
+              <thead>
+                <tr>
+                  <th scope="col">State</th>
+                  <th scope="col">What the register covers</th>
+                  <th scope="col">Look it up</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.values(LICENCE_STATES).map((r) => (
+                  <tr>
+                    <th scope="row" style="font-weight:600;">{r.state}</th>
+                    <td>
+                      {r.classification
+                        ? `${r.authorityShort} ${r.classification}`
+                        : `${r.authorityShort} licenses the contractor, not the trade. No garage-door classification exists; a license is required for any job over $1,000 or needing a permit.`}
+                    </td>
+                    <td>
+                      <a href={r.searchUrl} rel="nofollow noopener" target="_blank">{r.searchLabel}</a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="claim-note">
+            Everywhere else there is no state garage door register to check, so a
+            listing without a badge has not failed a check — there was nothing to
+            check against. <a href="/guides/hiring-a-garage-door-company/">What to
+            ask instead</a>.
+          </p>
         </>
       ) : (
         noLicenceGuidance(s.state).map((p) => <p class="mt-2">{p}</p>)

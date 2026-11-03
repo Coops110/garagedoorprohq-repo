@@ -78,6 +78,31 @@ const mapEmbed = b.lat != null && b.lng != null
     clamp(b.name, 58),
   )}
   description={fitDescription(
+    /* A verified listing leads its description with the licence facts, not
+       with the words "license verification".
+
+       The 2026-11-02 audit's reason is the SERP: "garage door contractor
+       license california" returns almost nothing but per-contractor licence
+       RECORD pages (cslb.ca.gov plus about 17 prelien.co pages), which is
+       exactly the page type a verified listing here already is. The page was
+       competing for that query with a description that mentioned a licence
+       without ever showing one.
+
+       Two candidates because the class name does not always fit. The first
+       carries "(C-61/D-28)" and breaks 155 characters for 9 of the 27 badged
+       listings; the second drops the class and fits all 27. fitDescription
+       picks per listing, so a long business name loses the class rather than
+       the number. Checked across all 27 before shipping.
+
+       Never "vetted" or "verified pro" -- the claim is a register match on a
+       stated date, which is what CLAIMS.licenceMeaning says and all this
+       wording asserts. */
+    b.licenceNumber && licenceCurrent
+      ? `${b.name} in ${b.city}, ${b.stateCode}: license #${b.licenceNumber} (${(b.licenceClass || '').split(' ')[0]}) matched to an active ${lic?.authorityShort} record, checked ${b.licenceCheckedOn}. Phone and 2026 repair costs.`
+      : null,
+    b.licenceNumber && licenceCurrent
+      ? `${b.name}, ${b.city} ${b.stateCode}. License #${b.licenceNumber} matched to an active ${lic?.authorityShort} record, checked ${b.licenceCheckedOn}. Phone and repair costs.`
+      : null,
     `${b.name} is a garage door company in ${b.city}, ${b.stateCode}. Contact details, service categories${b.licenceNumber ? ' and license verification' : ''} and local repair costs.`,
     `${b.name} — garage door company in ${b.city}, ${b.stateCode}. Phone number, services and what local garage door repairs typically cost.`,
     `Garage door company in ${b.city}, ${b.stateCode}. Phone number, service categories and what local garage door repair and installation typically costs.`,
