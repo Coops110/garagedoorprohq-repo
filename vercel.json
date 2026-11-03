@@ -3754,6 +3754,11 @@
       "permanent": true
     },
     {
+      "source": "/garage-door-repair/arizona/scottsdale/quick-response-garage-cabinets/",
+      "destination": "/garage-door-repair/arizona/scottsdale/",
+      "permanent": true
+    },
+    {
       "source": "/garage-door-repair/arizona/scottsdale/the-glass-guru/",
       "destination": "/garage-door-repair/arizona/scottsdale/",
       "permanent": true

@@ -122,10 +122,10 @@
   "state": "Arizona",
   "stateCode": "AZ",
   "stateSlug": "arizona",
-  "count": 17,
+  "count": 16,
   "licensedCount": 0,
-  "withWebsite": 15,
-  "withAddress": 17,
+  "withWebsite": 14,
+  "withAddress": 16,
   "lat": 33.501038,
   "lng": -111.912827
  },

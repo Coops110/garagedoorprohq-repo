@@ -242,6 +242,17 @@
     "reason": "Not a garage door company: business name identifies a different trade. Removed on Chris's instruction, 2026-10-31, after the audit found glass, window and shower firms listed as garage door businesses."
   },
   {
+    "source": "/garage-door-repair/arizona/scottsdale/quick-response-garage-cabinets/",
+    "destination": "/garage-door-repair/arizona/scottsdale/",
+    "id": "086f8f5d-8452-4631-80aa-f2da09c80e1e",
+    "name": "Quick Response Garage Cabinets",
+    "slug": "quick-response-garage-cabinets",
+    "state": "Arizona",
+    "stateCode": "AZ",
+    "removedOn": "2026-11-03",
+    "reason": "Not a garage door company: it sells garage cabinets and storage. Removed on Chris's instruction, 2026-11-03, after it was raised as the only sibling of Solutions Garage Cabinets. This one was filed under the site's own core source category, \"garage_door_service\", with a services array reading [\"Garage door service\"] — so no category test could have caught it and only the name identifies the trade."
+  },
+  {
     "source": "/garage-door-repair/arizona/scottsdale/the-glass-guru/",
     "destination": "/garage-door-repair/arizona/scottsdale/",
     "id": "f117534f-85fa-4dcf-9a36-dcee43037f29",

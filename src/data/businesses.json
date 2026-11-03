@@ -10109,35 +10109,6 @@
     "licenceMatchedOn": null
   },
   {
-    "id": "086f8f5d-8452-4631-80aa-f2da09c80e1e",
-    "name": "Quick Response Garage Cabinets",
-    "slug": "quick-response-garage-cabinets",
-    "phone": "4804709213",
-    "website": "https://www.quickresponsegaragecabinets.com/",
-    "street": "2401 W Phelps Rd Ste B1",
-    "city": "Scottsdale",
-    "citySlug": "scottsdale",
-    "state": "Arizona",
-    "stateCode": "AZ",
-    "stateSlug": "arizona",
-    "postalCode": "85023",
-    "lat": 33.637146,
-    "lng": -112.110161,
-    "confidence": 0.92,
-    "services": [
-      "Garage door service"
-    ],
-    "sourceCategory": "garage_door_service",
-    "metro": "phoenix_az",
-    "licenceNumber": null,
-    "licenceAuthority": null,
-    "licenceStatus": null,
-    "licenceClass": null,
-    "licenceExpires": null,
-    "licenceCheckedOn": null,
-    "licenceMatchedOn": null
-  },
-  {
     "id": "3150e170-abe9-4a49-bb4f-7e1f3769aeb7",
     "name": "A1 Garage Door Service",
     "slug": "a1-garage-door-service",
