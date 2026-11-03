@@ -58,7 +58,7 @@ export const guides = [
         h2: 'What moves the price',
         body: [
           'Four things decide a garage door repair bill: which part failed, whether the door is single or double width, how quickly you need someone there, and local labor rates. The part itself is often the smaller half of the invoice. A torsion spring is a $40–$90 component; most of what you pay is the twenty minutes of skilled, genuinely dangerous work needed to fit it safely.',
-          'Double-width doors cost more across almost every job. They are heavier, so they use heavier springs and cables, and a single panel spans further and costs more to replace. Assume the upper end of every range below for a 16-foot door.',
+          'Double-width doors cost more across almost every job. They are heavier, so they use heavier springs and cables, and a single panel spans further and costs more to replace. Assume the upper end of every range below for a 16-foot door, and expect some jobs to land above it: a double-width torsion spring pair runs $350–$600 against $250–$550 for a single-width pair.',
           'Timing matters more than most people expect. An after-hours or same-day emergency call typically adds $50–$150, and some companies charge a flat weekend premium. If the door is closed and the car is not trapped behind it, waiting until a normal weekday slot is the cheapest decision available to you.',
         ],
       },

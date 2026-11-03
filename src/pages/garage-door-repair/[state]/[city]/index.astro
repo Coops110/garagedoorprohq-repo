@@ -64,7 +64,7 @@ const faqs = [
     // because an a/an helper would still get "a Universal City" wrong -- the
     // test is the sound, not the letter.
     q: `How much does garage door repair cost in ${c.city}?`,
-    a: `We do not publish a price specific to ${c.city}, because we have no data that would support one. Our 2026 national estimates: most repairs land in the $150–$400 range, a torsion spring pair runs $250–$550, an opener repair $100–$300, and a replacement opener $300–$700 installed. Expect a $75–$150 diagnostic fee, usually credited against the work. Local labor rates and a double-width door both push the figure toward the top of each range.`,
+    a: `We do not publish a price specific to ${c.city}, because we have no data that would support one. Our 2026 national estimates: most repairs land in the $150–$400 range, a torsion spring pair runs $250–$550, an opener repair $100–$300, and a replacement opener $300–$700 installed. Expect a $75–$150 diagnostic fee, usually credited against the work. Local labor rates move the figure within each range, and a double-width door can take a job above it: a double-width torsion spring pair runs $350–$600 against $250–$550 for a single-width pair.`,
   },
   {
     q: lic
@@ -163,7 +163,8 @@ const schemas = [
         These are national 2026 estimates from our own
         {' '}<a href="/guides/garage-door-repair-cost/">garage door repair cost guide</a>,
         not quotes from the companies above. Labor rates in {c.city} move the
-        figure up or down, and a double-width door sits at the top of every range.
+        figure up or down, and a double-width door can take a job above these ranges
+        rather than to the top of them.
       </p>
       <div class="table-scroll">
         <table class="cost-table">
