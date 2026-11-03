@@ -41,8 +41,29 @@
 #   FL  https://www.myfloridalicense.com/  ->  DBPR licensee data / public
 #       records downloads. Take the construction industry (CILB) licensee file.
 #
-#   AZ  https://azroc.my.site.com/AZRoc/s/contractor-search
-#       Search classification 283, then export the results.
+#   AZ  THERE IS NO FILE TO GET, and this is not a limitation of the portal.
+#
+#       This entry used to read "Search classification 283, then export the
+#       results". There is no ROC-283 classification — the ROC's own list
+#       (https://roc.az.gov/license-classifications, read 2026-11-03) carries
+#       146 classifications and contains neither "283" nor the word "garage".
+#       Arizona licenses the CONTRACTOR, not the trade: a licence is required
+#       for any job over $1,000 or needing a permit (A.R.S. § 32-1121). Full
+#       working in the header of src/lib/licensing.js.
+#
+#       So there is no classification to filter an export by, which means
+#       there is no AZ equivalent of the CA and FL files. The only route to
+#       Arizona licence data is looking up each business by name on the
+#       contractor search, one at a time — 136 listings.
+#
+#       Before anyone spends that afternoon: match-licences.py REFUSES
+#       Arizona, by design, and will tell you so. Guard 4 ("the licence must
+#       actually cover garage door work") cannot be satisfied where no
+#       classification covers it, and what an Arizona badge should assert is
+#       an open question for Chris — an active ROC number shows the contractor
+#       is licensed, not that the licence covers garage doors, which is a
+#       weaker claim than CA or FL and needs its own wording. Settle that
+#       first; the 136 lookups are worthless until it is settled.
 #
 #   python scripts/fetch-licences.py --ca-file=~/Downloads/cslb.csv
 #   python scripts/fetch-licences.py --fl-file=… --az-file=…
@@ -219,7 +240,13 @@ def main():
 
     python scripts/fetch-licences.py --ca-file=path/to/cslb.csv
     python scripts/fetch-licences.py --fl-file=path/to/dbpr.csv
-    python scripts/fetch-licences.py --az-file=path/to/roc.csv
+    python scripts/fetch-licences.py --az-file=path/to/roc.csv   (see below)
+
+  AZ is still accepted here, because normalising a file is harmless and the
+  normaliser will be wanted if the Arizona question is ever settled. But
+  match-licences.py REFUSES Arizona and will say so: the ROC has no
+  garage-door classification, so there is nothing to export by and nothing
+  for guard 4 to check. Read the AZ note in this file's header first.
 
   Then:
     python scripts/match-licences.py

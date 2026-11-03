@@ -1,5 +1,11 @@
-# Matches published listings against state licence registers, for the three
-# states that license garage door work: CA, FL and AZ.
+# Matches published listings against state licence registers.
+#
+# TWO states, not three. California (CSLB C-61/D-28) and Florida (DBPR Garage
+# Door Installation Specialty Contractor) license garage door work as its own
+# classification, so guard 4 below can be applied to them. Arizona has a
+# register worth checking but NO garage-door classification, so guard 4 cannot
+# be satisfied there at all and AZ is refused rather than silently matched --
+# see UNSUPPORTED_CLASS_STATES.
 #
 # WHY THIS SCRIPT IS THE RISKIEST ONE IN THE REPO
 # A licence badge is the only claim this site makes that a reader cannot check
@@ -69,7 +75,39 @@ OUT_REJECTED = Path('data-work/licence-rejected.csv')
 VALID_CLASSES = {
     'CA': (re.compile(r'C-?61.*D-?28|D-?28', re.I), 'C-61/D-28 Doors, Gates and Activating Devices'),
     'FL': (re.compile(r'garage\s*door', re.I), 'Garage Door Installation Specialty Contractor'),
-    'AZ': (re.compile(r'\b(ROC-?)?283\b|garage\s*door', re.I), 'ROC-283 Garage Doors, Gates and Similar Devices'),
+}
+
+# States with a public register but no classification covering garage door
+# work, so guard 4 cannot be applied and no badge can be issued.
+#
+# ARIZONA WAS A LIVE BUG HERE until 2026-11-03, and it is worth spelling out,
+# because it would have failed in the worst available way. The entry read:
+#
+#     'AZ': (re.compile(r'\b(ROC-?)?283\b|garage\s*door', re.I),
+#            'ROC-283 Garage Doors, Gates and Similar Devices'),
+#
+# There is no ROC-283 classification. The AZ ROC's own classification list
+# carries 146 entries and contains neither "283" nor the word "garage" (read
+# 2026-11-03; full working in the header of src/lib/licensing.js). So:
+#
+#   * No real Arizona register record could ever satisfy that pattern. An AZ
+#     run would report zero matches and read as a data problem rather than an
+#     impossible condition -- the whole enrichment job wasted looking for a
+#     fault that was in the guard.
+#   * Far worse, anything that DID pass would have been stamped with
+#     `licenceClass` = "ROC-283 Garage Doors, Gates and Similar Devices" from
+#     the second element, printing a classification that does not exist onto a
+#     listing page and into its JSON-LD. A fabricated credential, which is
+#     precisely what this file's bar exists to prevent.
+#
+# Refused loudly rather than guessed. What an Arizona badge should assert is a
+# real question and not a code decision: an active ROC number shows the
+# contractor is licensed, NOT that the licence covers garage doors. That is a
+# weaker claim than CA or FL and would need its own wording rather than the
+# shared "State license verified" badge. Chris's call.
+UNSUPPORTED_CLASS_STATES = {
+    'AZ': ('the AZ ROC has no garage-door classification, so "this licence covers '
+           'garage door work" cannot be established from the register at all'),
 }
 
 ACTIVE_WORDS = ('active', 'current', 'valid', 'clear')
@@ -129,11 +167,17 @@ def load_registers():
 def index_registers(rows):
     """Group register records by normalised name, keeping only active licences
     whose classification covers garage door work."""
-    index, skipped = {}, {'inactive': 0, 'wrong_class': 0, 'unusable_name': 0}
+    index, skipped = {}, {'inactive': 0, 'wrong_class': 0, 'unusable_name': 0,
+                          'unsupported_state': 0}
     for r in rows:
         state = (r.get('state') or '').upper()
         pattern = VALID_CLASSES.get(state, (None, None))[0]
         if pattern is None:
+            # Counted, not silently dropped. If someone has gone to the
+            # trouble of downloading an AZ register file, they need to be told
+            # it cannot be used and why, not watch it produce zero badges.
+            if state in UNSUPPORTED_CLASS_STATES:
+                skipped['unsupported_state'] += 1
             continue
         # Each state has its own word for "in good standing". CSLB uses CLEAR;
         # without it all 2,786 California records are discarded on status alone.
@@ -407,6 +451,19 @@ def main():
         w.writeheader()
         w.writerows(rejected)
 
+    # Say it first and plainly, so nobody reads "0 badged" in a state with a
+    # real register and concludes the data is at fault.
+    for st, why in UNSUPPORTED_CLASS_STATES.items():
+        n_biz = sum(1 for b in businesses if (b.get('stateCode') or '').upper() == st)
+        n_rows = sum(1 for r in registers if (r.get('state') or '').upper() == st)
+        if n_biz or n_rows:
+            print()
+            print(f'  REFUSED: {st} cannot be badged from the register.')
+            print(f'    {why}.')
+            print(f'    {n_biz} listing(s) and {n_rows} register record(s) skipped.')
+            print('    Not a data problem and not a bug — see UNSUPPORTED_CLASS_STATES.')
+            print(f'    What an {st} badge should assert needs a decision from Chris first.')
+
     in_scope = [b for b in businesses if (b.get('stateCode') or '').upper() in VALID_CLASSES]
     from collections import Counter
     by_reason = Counter(r['reason'] for r in rejected)
@@ -418,6 +475,7 @@ def main():
     dropped, not active              {skipped['inactive']}
     dropped, wrong classification    {skipped['wrong_class']}
     dropped, name too generic        {skipped['unusable_name']}
+    dropped, state unsupported       {skipped['unsupported_state']}
   usable register names              {len(index)}
 
   listings in a licensing state      {len(in_scope)}
