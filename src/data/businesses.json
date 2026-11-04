@@ -743,7 +743,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "08/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -1008,7 +1008,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "01/31/2028",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -1096,7 +1096,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "10/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -1273,7 +1273,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "05/31/2028",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -1389,7 +1389,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "03/31/2028",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -2015,13 +2015,13 @@
     ],
     "sourceCategory": "garage_door_service",
     "metro": "los_angeles_ca",
-    "licenceNumber": null,
-    "licenceAuthority": null,
-    "licenceStatus": null,
-    "licenceClass": null,
-    "licenceExpires": null,
-    "licenceCheckedOn": null,
-    "licenceMatchedOn": null
+    "licenceNumber": "988151",
+    "licenceAuthority": "California Contractors State License Board",
+    "licenceStatus": "Active",
+    "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
+    "licenceExpires": "11/30/2026",
+    "licenceCheckedOn": "2026-11-04",
+    "licenceMatchedOn": "phone"
   },
   {
     "id": "2cfedfff-2627-4973-ad7b-51294b53e256",
@@ -2499,7 +2499,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "09/30/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -2528,7 +2528,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "04/30/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -2710,7 +2710,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "11/30/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -4530,13 +4530,13 @@
     ],
     "sourceCategory": "garage_door_service",
     "metro": "los_angeles_ca",
-    "licenceNumber": "1099104",
-    "licenceAuthority": "California Contractors State License Board",
-    "licenceStatus": "Active",
-    "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
-    "licenceExpires": "11/30/2026",
-    "licenceCheckedOn": "2026-08-11",
-    "licenceMatchedOn": "phone"
+    "licenceNumber": null,
+    "licenceAuthority": null,
+    "licenceStatus": null,
+    "licenceClass": null,
+    "licenceExpires": null,
+    "licenceCheckedOn": null,
+    "licenceMatchedOn": null
   },
   {
     "id": "d729f4da-4db5-49fb-ab39-84088c5d27e2",
@@ -4710,7 +4710,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "09/30/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -4830,7 +4830,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "10/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -4859,8 +4859,8 @@
     "licenceAuthority": "California Contractors State License Board",
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
-    "licenceExpires": "10/31/2026",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceExpires": "10/31/2028",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -5364,7 +5364,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "12/31/2026",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -5424,7 +5424,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "11/30/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -5515,7 +5515,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "01/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -5602,7 +5602,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "01/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -6044,7 +6044,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "05/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -6137,7 +6137,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "07/31/2028",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -6168,7 +6168,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "07/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -6285,7 +6285,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "04/30/2028",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -6316,7 +6316,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "07/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -6639,7 +6639,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "02/29/2028",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -6997,7 +6997,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "01/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -7026,7 +7026,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "07/31/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -7114,7 +7114,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "11/30/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
@@ -7228,13 +7228,13 @@
     ],
     "sourceCategory": "garage_door_service",
     "metro": "los_angeles_ca",
-    "licenceNumber": "1085336",
-    "licenceAuthority": "California Contractors State License Board",
-    "licenceStatus": "Active",
-    "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
-    "licenceExpires": "12/31/2027",
-    "licenceCheckedOn": "2026-08-11",
-    "licenceMatchedOn": "phone"
+    "licenceNumber": null,
+    "licenceAuthority": null,
+    "licenceStatus": null,
+    "licenceClass": null,
+    "licenceExpires": null,
+    "licenceCheckedOn": null,
+    "licenceMatchedOn": null
   },
   {
     "id": "13f106f2-a805-4b06-977f-076f7a30990e",
@@ -8412,7 +8412,7 @@
     "licenceStatus": "Active",
     "licenceClass": "C-61/D-28 Doors, Gates and Activating Devices",
     "licenceExpires": "04/30/2027",
-    "licenceCheckedOn": "2026-08-11",
+    "licenceCheckedOn": "2026-11-04",
     "licenceMatchedOn": "phone"
   },
   {
